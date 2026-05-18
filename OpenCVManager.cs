@@ -23,7 +23,7 @@ namespace WIA_ViewerProgram
         static List<OpenCvSharp.Point> ReultsImgPoint = new List<OpenCvSharp.Point> {};
         private int ResultWidth = 1000;
         private int ResultHeight = 300;
-        public int GridCount = 44;
+        public int GridCount = 44;/// 수정 될수 있음!
 
 
         public OpenCVManager()
