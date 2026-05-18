@@ -1,0 +1,19 @@
+{
+  "LoginData": [
+    {
+      "mode": "operator",
+      "userid": "operator",
+      "pw": "1234"
+    },
+    {
+      "mode": "admin",
+      "userid": "admin",
+      "pw": "1234"
+    },
+    {
+      "mode": "master",
+      "userid": "master",
+      "pw": "1234"
+    }
+  ]
+}
