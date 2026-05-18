@@ -12550,9 +12550,9 @@
             CaldataPanel.Controls.Add(RearOriginPictureBox);
             CaldataPanel.Controls.Add(FrontCalResult);
             CaldataPanel.Controls.Add(pictureBox4);
-            CaldataPanel.Location = new Point(213, 168);
+            CaldataPanel.Location = new Point(1783, 313);
             CaldataPanel.Name = "CaldataPanel";
-            CaldataPanel.Size = new Size(1698, 903);
+            CaldataPanel.Size = new Size(37, 63);
             CaldataPanel.TabIndex = 13;
             CaldataPanel.Visible = false;
             CaldataPanel.Paint += (this.CaldataPanel_Paint);

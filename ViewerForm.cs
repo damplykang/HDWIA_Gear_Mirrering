@@ -1,4 +1,4 @@
-using Euresys.Open_eVision;
+
 using ScottPlot.WinForms;
 using System.Globalization;
 using System.Xml.Linq;

@@ -1,4 +1,7 @@
 ﻿using ActUtlType64Lib;
+using Newtonsoft.Json.Linq;
+using ScottPlot.Colormaps;
+using SkiaSharp;
 using System.IO;
 using System.Text;
 using System.Text.Json;
@@ -51,8 +54,15 @@ namespace WIA_ViewerProgram
 
         //"C:\\Users\\Admin\\Documents\\Keyence\\XG-X VisionTerminal\\USB\\SD2\\Vision\\"=> 수정해야함
         // 테스트용 경로
-        const string FilePath = "C:\\Users\\dampl\\OneDrive\\Desktop\\TEST_TXT\\";//이폴더에 통합 CSV파일 저장!
+        const string FilePath = "C:\\Users\\Admin\\Documents\\Keyence\\XG-X VisionTerminal\\USB\\SD2\\Vision\\";//이폴더에 통합 CSV파일 저장!
 
+        //거리 감지 센서값 저장하기 위해 필요한 변수들
+        int SensingAdress = 6100;// 시작주소
+        string SensingDataSavePath = "-";
+        List<float> sensingDist = new List<float>();
+
+        //시작할때 쓰레기 폴더 시행횟수 999에 있는 모든 데이터를 삭제함 
+        string trashfolder="-";
 
         public PLC()
         {
@@ -240,9 +250,14 @@ namespace WIA_ViewerProgram
                                         // string csvFilename = "\\ResultOutput.csv"; 파일 이름은 이걸로 통일!
                                         //만들어진경로에 csv파일을 데이터별로 저장한다.                                        
                                         //AC작업 
-                                        CSVFileCreate("Acceleration");
+                                        CSVFileCreate("AC");
                                         //DC작업
-                                        CSVFileCreate("Deceleration");
+                                        CSVFileCreate("DC");
+                                        //
+                                        DistSensingDataSave();
+                                        /// 시행횟수 999폴더는 무조건 삭제...
+                                        /// 
+                                        DeletTrashFolder();
 
                                        ActUtlType.SetDevice(MoniterAdrress, 0);
                                     }
@@ -435,14 +450,23 @@ namespace WIA_ViewerProgram
                                 string csvContent = string.Join(",", selectedValues);
                                 //config.FTP를 활용해서 
                                 string CSVPath = config.FTP + date + "\\" + model + "\\" + bcr + "\\" + runcount + "\\" + geartype;
-
+                                SensingDataSavePath = config.FTP + date + "\\" + model + "\\" + bcr + "\\" + runcount;// 거리감지 센서를 져장하기 위한 패스
+                                
                                 string fullPath = Path.Combine(CSVPath, "ResultOutput.csv");
+                                if (int.Parse(runcount)<999) { 
                                 Directory.CreateDirectory(CSVPath);
                                 using (StreamWriter sw = new StreamWriter(fullPath, append: true))
                                 {
                                     sw.WriteLine(csvContent);
                                 }
 
+                                logger.LogInfo("Data", $" 데이터 저장 경로 {fullPath} / 데이터 : {selectedValues[0]},{selectedValues[1]},{selectedValues[2]}, {selectedValues[3]} etc");
+                                } 
+                                else
+                                {
+                                    trashfolder = config.FTP + date + "\\" + model + "\\" + bcr + "\\" + runcount;// 999가 라는 폴더가 있다면 업데이트
+                                    //runcount ==999는 쓰레기통이므로 아무작업 안함
+                                }
                                 rowsAppended++;
                             }
                         }
@@ -468,12 +492,112 @@ namespace WIA_ViewerProgram
 
         }
 
+        public void DistSensingDataSave()
+        {
+            int count = 1;
+            int startAddress = SensingAdress;
+            string fullPath = Path.Combine(SensingDataSavePath, "SensorData.csv");
+
+            try
+            {
+                // [개선 2] 폴더 생성은 루프 밖에서 단 한 번만!
+                Directory.CreateDirectory(SensingDataSavePath);
+
+                // [개선 2] 파일 스트림을 루프 밖에서 열어 성능 최적화
+                using (StreamWriter sw = new StreamWriter(fullPath, append: true))
+                {
+                    while (true)
+                    {
+                        int value1, value2, value3;
+
+                        // [개선 5] 개별 GetDevice 대신 Block으로 한 번에 읽으면 훨씬 좋으나, 
+                        // 기존 구조를 유지한다면 최소한 아래와 같이 에러 체크가 필요합니다.
+                        int r1 = ActUtlType.GetDevice($"D{startAddress}", out value1);
+                        int r2 = ActUtlType.GetDevice($"D{startAddress + 2}", out value2);
+                        int r3 = ActUtlType.GetDevice($"D{startAddress + 4}", out value3);
+
+                        // [개선 3] 통신 에러 발생 시 처리 (0이 아니면 에러)
+                        if (r1 != 0 || r2 != 0 || r3 != 0)
+                        {
+                            // 로그를 남기거나 사용자 알림 후 루프 탈출
+                            logger.LogError("PLC", $"통신에러 : (D{startAddress}번 :{r1}),(D{startAddress + 2}번 :{r2}),(D{startAddress + 4}번 :{r3})");
+                            break;
+                        }
+
+                        // [개선 1] 정확한 종료 조건 검사 (합산이 아닌 각각 0인지 확인)
+                        if (value1 == 0 && value2 == 0 && value3 == 0)
+                        {
+                            if (count>1) {
+                                int last;
+                                ActUtlType.GetDevice($"D{startAddress - 2}", out last);
+                                logger.LogError("PLC", $" PLC읽기 종료 : D{startAddress - 2}어드레스에서 종료 됨 값: {last} ");
+                                break;
+                            }
+                            else
+                            {   //처음부터 조질경우        
+                                logger.LogError("PLC", $" PLC읽기 종료 : D{startAddress}어드레스에서 종료 됨 값: {value1} ");
+                            }
+                        }
+
+                        if (count==44)
+                        {
+                            //홈개수는 반드시 43개!
+                            logger.LogInfo("PLC", $" PLC읽기 종료 총 43개의 데이터 읽기 완료 : 저장 경로 {fullPath} ");
+                            break;
+                        }
+
+                        // CSV 데이터 행 작성
+                        short temp = (short)value1;
+                        sw.WriteLine($"{count},{temp / (float)1000}");
+
+                        logger.LogInfo("PLC", $" PLC읽기 및 저장 완료 / 저장 경로 {fullPath} / 홈번호: {count} / data :{temp / (float)1000} ");
+
+                        // 주소 및 카운트 증가
+                        startAddress += 2;
+                        count++;
+                    }
+                } // using 블록을 나가면서 파일이 안전하게 닫힙니다 (Close 자동 호출)
+            }
+            catch (Exception ex)
+            {
+                // 파일 쓰기 권한 오류, 경로 오류 등 예외 처리
+                logger.LogError("PLC", $"오류 발생: {ex.Message}");
+            }
+        }
 
 
-       
 
-        
-
-        
+        public void DeletTrashFolder()
+        {
+            try
+            {
+                //trashfolder를 삭제 시도
+                if (Directory.Exists(trashfolder))
+                {
+                    // 2. 폴더 삭제 (두 번째 인자를 true로 주어야 하위 파일 및 폴더까지 전부 삭제됩니다)
+                    Directory.Delete(trashfolder, true);
+                    logger.LogInfo("폴더 삭제 성공",$"폴더 경로 : {trashfolder}");
+                }
+                else
+                {
+                    logger.LogInfo("폴더 삭제 실패", $"폴더가 존재하지 않습니다. 폴더 경로 : {trashfolder}");
+                }
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                // 권한이 없는 경우 예외 처리 (예: 관리자 권한 필요, 읽기 전용 등)
+                logger.LogError("폴더 삭제 실패", $"권한이 없어 폴더를 삭제할 수 없습니다: {ex.Message} 폴더 경로 : {trashfolder}");
+            }
+            catch (IOException ex)
+            {
+                // 폴더 내 파일이 다른 프로그램에서 사용 중이거나 lock이 걸린 경우 예외 처리
+                logger.LogError("폴더 삭제 실패", $"폴더가 사용 중이거나 입출력 오류가 발생했습니다: {ex.Message} 폴더 경로 : {trashfolder}");
+            }
+            catch (Exception ex)
+            {
+                // 그 외 예상치 못한 기타 예외 처리
+                logger.LogError("폴더 삭제 실패", $"폴더 삭제중 오류가 발생했습니다: {ex.Message} 폴더 경로 : {trashfolder}");
+            }
+        }
     }
 }
