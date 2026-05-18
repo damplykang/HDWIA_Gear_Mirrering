@@ -1,4 +1,4 @@
-# HDWIA_Gear (WIA Viewer)
+# HDWIA_Gear (WIA Viewer) _ 20260518
 
 기어(GEAR) 비전 검사 데이터를 조회·분석하는 Windows Forms 데스크톱 뷰어입니다. Mitsubishi PLC 모니터링, Keyence TCP 연동, Open eVision / OpenCV 기반 이미지 처리, Front/Rear 검사 결과 시각화를 하나의 화면(1920×1080)에서 제공합니다.
 
