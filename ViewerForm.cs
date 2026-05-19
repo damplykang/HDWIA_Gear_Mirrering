@@ -1,5 +1,7 @@
 
+using ScottPlot.Plottables;
 using ScottPlot.WinForms;
+using System.Diagnostics;
 using System.Globalization;
 using System.Xml.Linq;
 using static System.Windows.Forms.DataFormats;
@@ -150,7 +152,7 @@ namespace WIA_ViewerProgram
 
             SingleStaticPanelCountUpButton.Click += SingleStaticPanelCountUpButton_Click;
             SingleStaticPanelCountDownButton.Click += SingleStaticPanelCountDownButton_Click;
-            if (1 <= SingleStaticPanelCount && SingleStaticPanelCount <= 3)
+            if (1 <= SingleStaticPanelCount && SingleStaticPanelCount <= 4)
                 ApplySingleStaticPanelCountUI();
 
             FrontOriginPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -162,7 +164,7 @@ namespace WIA_ViewerProgram
             KeyenceSettingbtr.Click += KeyenceSettingbtr_Click;
             KeyenceConnetingCheckbtr.Click += KeyenceConnetingCheckbtr_Click;
             // 데이터수신 / 수신중지 토글 → Keyence IP·Port로 TCP 연결 후 콘솔에 수신 로그
-            
+
 
             _plc.LoadFromJson();
             PLCSettingbtr.Click += PLCSettingbtr_Click;
@@ -185,7 +187,8 @@ namespace WIA_ViewerProgram
                 1 => "단일 통계 [1]",
                 2 => "단일 통계 [2]",
                 3 => "단일 통계 [3]",
-                _ => $"단일 통계 [{SingleStaticPanelCount}]"
+                4 => "단일 통계 [4]",
+                _ => $"-"
             };
 
             if (SingleStaticPanelCount == 1)
@@ -196,6 +199,7 @@ namespace WIA_ViewerProgram
                 SingleStaticPanel_1.Visible = true;
                 SingleStaticPanel_3.Visible = false;
                 SingleStaticPanel_2.Visible = false;
+                SingleStaticPanel_4.Visible = false;
             }
             else if (SingleStaticPanelCount == 2)
             {
@@ -205,6 +209,7 @@ namespace WIA_ViewerProgram
                 SingleStaticPanel_2.Visible = true;
                 SingleStaticPanel_1.Visible = false;
                 SingleStaticPanel_3.Visible = false;
+                SingleStaticPanel_4.Visible = false;
             }
             else if (SingleStaticPanelCount == 3)
             {
@@ -212,6 +217,17 @@ namespace WIA_ViewerProgram
                 SingleStaticPanel_3.Size = new Size(1700, 746);
                 SingleStaticPanel_3.BackColor = Color.Black;
                 SingleStaticPanel_3.Visible = true;
+                SingleStaticPanel_2.Visible = false;
+                SingleStaticPanel_1.Visible = false;
+                SingleStaticPanel_4.Visible = false;
+            }
+            else if (SingleStaticPanelCount == 4)
+            {
+                SingleStaticPanel_4.Location = new Point(0, 70);
+                SingleStaticPanel_4.Size = new Size(1700, 746);
+                SingleStaticPanel_4.BackColor = Color.Black;
+                SingleStaticPanel_4.Visible = true;
+                SingleStaticPanel_3.Visible = false;
                 SingleStaticPanel_2.Visible = false;
                 SingleStaticPanel_1.Visible = false;
             }
@@ -231,14 +247,14 @@ namespace WIA_ViewerProgram
                 return;
             }
 
-            if (SingleStaticPanelCount >= 4)
+            if (SingleStaticPanelCount >= 5)
             {
-                SingleStaticPanelCount = 3;
+                SingleStaticPanelCount = 4;
                 return;
             }
 
             SingleStaticPanelCount++;
-            if (1 <= SingleStaticPanelCount && SingleStaticPanelCount <= 3)
+            if (1 <= SingleStaticPanelCount && SingleStaticPanelCount <= 4)
                 ApplySingleStaticPanelCountUI();
         }
 
@@ -256,7 +272,7 @@ namespace WIA_ViewerProgram
             }
 
             SingleStaticPanelCount--;
-            if (1 <= SingleStaticPanelCount && SingleStaticPanelCount <= 3)
+            if (1 <= SingleStaticPanelCount && SingleStaticPanelCount <= 4)
                 ApplySingleStaticPanelCountUI();
         }
 
@@ -456,50 +472,56 @@ namespace WIA_ViewerProgram
             {
                 f5Path = Path.Combine(FrontPath, $"0{F5.Text}.jpg");
             }
-
-            if (int.Parse(R1.Text) >= 10)
+            // 기어개수가 43개라면!
+            // 레시피에 따라 맞춰 줘야하는 개 달라지므로 이걸 유념해야함!
+            int r1_Count = (int.Parse(R1.Text) + 20 % 43) + 1;
+            int r2_Count = (int.Parse(R2.Text) + 20 % 43) + 1;
+            int r3_Count = (int.Parse(R3.Text) + 20 % 43) + 1;
+            int r4_Count = (int.Parse(R4.Text) + 20 % 43) + 1;
+            int r5_Count = (int.Parse(R5.Text) + 20 % 43) + 1;
+            if (r1_Count >= 10)
             {
-                r1Path = Path.Combine(RearPath, $"{R1.Text}.jpg");
+                r1Path = Path.Combine(RearPath, $"{r1_Count}.jpg");
             }
             else
             {
-                r1Path = Path.Combine(RearPath, $"0{R1.Text}.jpg");
+                r1Path = Path.Combine(RearPath, $"0{r1_Count}.jpg");
             }
 
-            if (int.Parse(R2.Text) >= 10)
+            if (r2_Count >= 10)
             {
-                r2Path = Path.Combine(RearPath, $"{R2.Text}.jpg");
+                r2Path = Path.Combine(RearPath, $"{r2_Count}.jpg");
             }
             else
             {
-                r2Path = Path.Combine(RearPath, $"0{R2.Text}.jpg");
+                r2Path = Path.Combine(RearPath, $"0{r2_Count}.jpg");
             }
 
-            if (int.Parse(R3.Text) >= 10)
+            if (r3_Count >= 10)
             {
-                r3Path = Path.Combine(RearPath, $"{R3.Text}.jpg");
+                r3Path = Path.Combine(RearPath, $"{r3_Count}.jpg");
             }
             else
             {
-                r3Path = Path.Combine(RearPath, $"0{R3.Text}.jpg");
+                r3Path = Path.Combine(RearPath, $"0{r3_Count}.jpg");
             }
 
-            if (int.Parse(R4.Text) >= 10)
+            if (r4_Count >= 10)
             {
-                r4Path = Path.Combine(RearPath, $"{R4.Text}.jpg");
+                r4Path = Path.Combine(RearPath, $"{r4_Count}.jpg");
             }
             else
             {
-                r4Path = Path.Combine(RearPath, $"0{R4.Text}.jpg");
+                r4Path = Path.Combine(RearPath, $"0{r4_Count}.jpg");
             }
 
-            if (int.Parse(R5.Text) >= 10)
+            if (r5_Count >= 10)
             {
-                r5Path = Path.Combine(RearPath, $"{R5.Text}.jpg");
+                r5Path = Path.Combine(RearPath, $"{r5_Count}.jpg");
             }
             else
             {
-                r5Path = Path.Combine(RearPath, $"0{R5.Text}.jpg");
+                r5Path = Path.Combine(RearPath, $"0{r5_Count}.jpg");
             }
 
             if (!TryLoadPicture(F1picturebox, f1Path, "Front F1")) missingImages.Add(f1Path);
@@ -936,7 +958,7 @@ namespace WIA_ViewerProgram
         /// <summary>수신 중이면 버튼 문구를 "수신중지", 아니면 "데이터수신".</summary>
         private void UpdateKeyenceConnetingbtrText(bool receiving)
         {
-            
+
         }
 
         private void RefreshPlcTcpDisplay()
@@ -1097,6 +1119,28 @@ namespace WIA_ViewerProgram
                 || float.TryParse(raw?.Trim(), NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
+        /// <summary>
+        /// CSV 유효 행 수를 반환합니다. 첫 열 최댓값이 있으면 행 수와 비교해 더 큰 값을 씁니다(배열 크기·읽기 상한).
+        /// </summary>
+        private static int ResolveCsvRowCount(string csvPath, int maxHallIndexFromFirstColumn)
+        {
+            int lineCount = 0;
+            foreach (string line in ReadLinesShared(csvPath))
+            {
+                if (!string.IsNullOrWhiteSpace(line))
+                {
+                    lineCount++;
+                }
+            }
+
+            if (maxHallIndexFromFirstColumn < 0)
+            {
+                return lineCount;
+            }
+
+            return Math.Max(maxHallIndexFromFirstColumn, lineCount);
+        }
+
         private void OnNavigationLabelClick(object? sender, EventArgs e)
         {
             if (sender is not Label clickedLabel)
@@ -1148,7 +1192,7 @@ namespace WIA_ViewerProgram
                 MoniteringEndbtr.BringToFront();
                 KeyenceSettingbtr.BringToFront();
                 KeyenceConnetingCheckbtr.BringToFront();
-                
+
             }
 
             // RECIPE 패널 표시 여부: RECIPE 라벨일 때만 표시
@@ -1851,33 +1895,52 @@ namespace WIA_ViewerProgram
                 return;
             }
 
-            SingleStaticPanel.Location = new Point(10, 97);
-            SingleStaticPanel.Size = new Size(1699, 819);
-            SingleStaticPanel.Visible = true;
-            selectedListSelectRowNumber = -1;
 
-            ListLabel.BackColor = Color.FromArgb(64, 64, 64);
-            ListLabel.ForeColor = Color.White;
-            SingleStaticLabel.BackColor = Color.White;
             SingleStaticLabel.ForeColor = Color.Black;
-            //FrontHallMaxCount RearHallMaxCount => 이두개는 여기서 업그레이드 해야함
+            //FrontHallMaxCount RearHallMaxCount => 첫 열(홀 번호) 최댓값; 없으면 유효 행 수로 대체
             foreach (string line in ReadLinesShared(frontcsvpath))
             {
-                // 쉼표로 분리하여 배열에 담기
-                string[] values = line.Split(',');
-                if (FrontHallMaxCount < int.Parse(values[0]))
+                if (string.IsNullOrWhiteSpace(line))
                 {
-                    FrontHallMaxCount = int.Parse(values[0]);
+                    continue;
+                }
+
+                string[] values = line.Split(',');
+                if (values.Length > 0 && int.TryParse(values[0].Trim(), out int hallIndex))
+                {
+                    FrontHallMaxCount = Math.Max(FrontHallMaxCount, hallIndex);
                 }
             }
             foreach (string line in ReadLinesShared(reartcsvpath))
             {
-                // 쉼표로 분리하여 배열에 담기
-                string[] values = line.Split(',');
-                if (RearHallMaxCount < int.Parse(values[0]))
+                if (string.IsNullOrWhiteSpace(line))
                 {
-                    RearHallMaxCount = int.Parse(values[0]);
+                    continue;
                 }
+
+                string[] values = line.Split(',');
+                if (values.Length > 0 && int.TryParse(values[0].Trim(), out int hallIndex))
+                {
+                    RearHallMaxCount = Math.Max(RearHallMaxCount, hallIndex);
+                }
+            }
+
+            FrontHallMaxCount = ResolveCsvRowCount(frontcsvpath, FrontHallMaxCount);
+            RearHallMaxCount = ResolveCsvRowCount(reartcsvpath, RearHallMaxCount);
+            if (FrontHallMaxCount <= 0 || RearHallMaxCount <= 0)
+            {
+                Logger.LogWarning("FileIO", "CSV 데이터 없음 (단일 통계)", _LoginManager?.UserInputID ?? "",
+                    $"FrontRows={FrontHallMaxCount}, RearRows={RearHallMaxCount} | {frontcsvpath} | {reartcsvpath}");
+                MessageBox.Show(
+                    this,
+                    "ResultOutput.csv 파일은 있으나 유효한 검사 데이터가 없습니다.\n"
+                    + "· 폴더에 원본 CSV가 있는지 확인하세요.\n"
+                    + "· PLC 모니터링으로 데이터가 적재되었는지 확인하세요.",
+                    "CSV 데이터 없음",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                SingleStaticPanel.Visible = false;
+                return;
             }
 
             // csv 파일 데이터 지표
@@ -1890,12 +1953,25 @@ namespace WIA_ViewerProgram
             float[] FSPatternX = new float[FrontHallMaxCount];
             float[] FSPatternY = new float[FrontHallMaxCount];
 
-            //단일 Front의 데이터 읽어와서 전체 저장
+            //모든 라인을 우선 다읽어와서 저장 후 하나씩 처리
+            string[] ACLines = null;
+            string[] DCLines = null;
+
+            try
+            {
+                ACLines = File.ReadAllLines(frontcsvpath);
+                DCLines = File.ReadAllLines(reartcsvpath);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError("FileIO", $"파일을 읽어오는데 에러가 발생했습니다 ex : {ex}");
+            }
+
             try
             {
                 int count = 0;
                 // 한 줄씩 읽어오기
-                foreach (string line in ReadLinesShared(frontcsvpath))
+                foreach (string line in ACLines)
                 {
                     if (count >= FrontHallMaxCount)
                     {
@@ -1947,7 +2023,7 @@ namespace WIA_ViewerProgram
             {
                 int count = 0;
                 // 한 줄씩 읽어오기
-                foreach (string line in ReadLinesShared(reartcsvpath))
+                foreach (string line in DCLines)
                 {
                     // 쉼표로 분리하여 배열에 담기
                     string[] values = line.Split(',');
@@ -2038,6 +2114,470 @@ namespace WIA_ViewerProgram
             PlotIndexScatter(DecelerationHeight, RSingleHeight, rearPointCount, "Deceleration Height");
             PlotIndexScatter(DecelerationarArea, RSingleArea, rearPointCount, "Decelerationar Area");
 
+            double ACTotaqlScore = -1;
+            double DCTotaqlScore = -1;
+
+            // label 값들 업데이트 해야함 인접치 누적치 단일치 rout 그레이드에 대한 값들을 업데이트 해야함
+            string front_ScoreGradepath = Path.Combine(FrontPath, "ScoreGrade.csv");
+            string rear_ScoreGradetcsvpath = Path.Combine(RearPath, "ScoreGrade.csv");
+
+            try
+            {
+                // 파일을 배타적 모드(None)로 열어봅니다.
+                using (FileStream stream = File.Open(front_ScoreGradepath, FileMode.Open, FileAccess.Read, FileShare.None))
+                {
+                    stream.Close();
+                }
+            }
+            catch (IOException)
+            {
+                // 파일이 다른 프로세스에 의해 사용 중이면 IOException이 발생합니다.
+                MessageBox.Show($"{front_ScoreGradepath}파일이 다른 프로그램에서 사용 중입니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.LogWarning("CSV", $"Acceleratrion 파일 생성 중 접근 시도 \n파일경로 :{front_ScoreGradepath}");
+                return;
+            }
+
+
+            try
+            {
+                // 파일을 배타적 모드(None)로 열어봅니다.
+                using (FileStream stream = File.Open(rear_ScoreGradetcsvpath, FileMode.Open, FileAccess.Read, FileShare.None))
+                {
+                    stream.Close();
+                }
+            }
+            catch (IOException)
+            {
+                // 파일이 다른 프로세스에 의해 사용 중이면 IOException이 발생합니다.
+                MessageBox.Show($"{rear_ScoreGradetcsvpath}파일이 다른 프로그램에서 사용 중입니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.LogWarning("CSV", $"Deceleratrion 파일 생성 중 접근 시도 \n파일경로 :{rear_ScoreGradetcsvpath}");
+
+                return;
+            }
+
+            if (File.Exists(front_ScoreGradepath))
+            {
+                //파일들을 읽어와야함
+                string[] lines = File.ReadAllLines(front_ScoreGradepath);
+                //string[] values = line.Split(',');
+                string[] Values = lines[1].Split(',');
+                ACPeakX_MaxOne.Text = double.Parse(Values[1]).ToString("F2");
+                ACPeakX_MaxInterval.Text = double.Parse(Values[2]).ToString("F2");
+                ACPeakX__nugeock.Text = double.Parse(Values[3]).ToString("F2");
+                ACPeakX_ROUT.Text = double.Parse(Values[4]).ToString("F2");
+                ACPeakX_Grade.Text = Values[5] + $"\n[{double.Parse(Values[6]).ToString()}]";
+
+                Values = lines[3].Split(',');
+                ACPeakY_MaxOne.Text = double.Parse(Values[1]).ToString("F2");
+                ACPeakY_MaxInterval.Text = double.Parse(Values[2]).ToString("F2");
+                ACPeakY__nugeock.Text = double.Parse(Values[3]).ToString("F2");
+                ACPeakY_ROUT.Text = double.Parse(Values[4]).ToString("F2");
+                ACPeakY_Grade.Text = Values[5] + $"\n[{double.Parse(Values[6]).ToString()}]";
+
+                Values = lines[5].Split(',');
+                ACWidth_MaxOne.Text = double.Parse(Values[1]).ToString("F2");
+                ACWidth_MaxInterval.Text = double.Parse(Values[2]).ToString("F2");
+                ACWidth_Sum.Text = double.Parse(Values[3]).ToString("F2");
+                ACWidth_ROUT.Text = double.Parse(Values[4]).ToString("F2");
+                ACWidth_Grade.Text = Values[5] + $"\n[{double.Parse(Values[6]).ToString()}]";
+
+                Values = lines[7].Split(',');
+                ACHeigth_MaxOne.Text = double.Parse(Values[1]).ToString("F2");
+                ACHeigth_MaxInterval.Text = double.Parse(Values[2]).ToString("F2");
+                ACHeigth_Sum.Text = double.Parse(Values[3]).ToString("F2");
+                ACHeigth_ROUT.Text = double.Parse(Values[4]).ToString("F2");
+                ACHeigth_Grade.Text = Values[5] + $"\n[{double.Parse(Values[6]).ToString()}]";
+
+                Values = lines[9].Split(',');
+                ACArea_MaxOne.Text = double.Parse(Values[1]).ToString("F2");
+                ACArea_MaxInterval.Text = double.Parse(Values[2]).ToString("F2");
+                ACArea_Sum.Text = double.Parse(Values[3]).ToString("F2");
+                ACArea_ROUT.Text = double.Parse(Values[4]).ToString("F2");
+                ACArea_Grade.Text = Values[5] + $"\n[{double.Parse(Values[6]).ToString()}]";
+
+                Values = lines[11].Split(',');
+                ACTotaqlScore = double.Parse(Values[1]);
+                Logger.LogInfo("CSV", $"Acceleratrion 점수, 등급 동록 완료 \n파일경로 :{front_ScoreGradepath}");
+            }
+            else
+            {
+                //파일없음 로그 남겨야함
+                Logger.LogWarning("CSV", $"Acceleratrion 점수, 등급 파일 없음 \n파일경로 :{front_ScoreGradepath}");
+            }
+
+
+            if (File.Exists(rear_ScoreGradetcsvpath))
+            {
+                //파일들을 읽어와야함
+                string[] lines = File.ReadAllLines(rear_ScoreGradetcsvpath);
+                //string[] values = line.Split(',');
+                string[] Values = lines[1].Split(',');
+                DCPeakX_MaxOne.Text = double.Parse(Values[1]).ToString("F2");
+                DCPeakX_MaxInterval.Text = double.Parse(Values[2]).ToString("F2");
+                DCPeakX__nugeock.Text = double.Parse(Values[3]).ToString("F2");
+                DCPeakX_ROUT.Text = double.Parse(Values[4]).ToString("F2");
+                DCPeakX_Grade.Text = Values[5] + $"\n[{double.Parse(Values[6]).ToString()}]";
+
+                Values = lines[3].Split(',');
+                DCPeakY_MaxOne.Text = double.Parse(Values[1]).ToString("F2");
+                DCPeakY_MaxInterval.Text = double.Parse(Values[2]).ToString("F2");
+                DCPeakY__nugeock.Text = double.Parse(Values[3]).ToString("F2");
+                DCPeakY_ROUT.Text = double.Parse(Values[4]).ToString("F2");
+                DCPeakY_Grade.Text = Values[5] + $"\n[{double.Parse(Values[6]).ToString()}]";
+
+                Values = lines[5].Split(',');
+                DCWidth_MaxOne.Text = double.Parse(Values[1]).ToString("F2");
+                DCWidth_MaxInterval.Text = double.Parse(Values[2]).ToString("F2");
+                DCWidth_Sum.Text = double.Parse(Values[3]).ToString("F2");
+                DCWidth_ROUT.Text = double.Parse(Values[4]).ToString("F2");
+                DCWidth_Grade.Text = Values[5] + $"\n[{double.Parse(Values[6]).ToString()}]";
+
+                Values = lines[7].Split(',');
+                DCHeigth_MaxOne.Text = double.Parse(Values[1]).ToString("F2");
+                DCHeigth_MaxInterval.Text = double.Parse(Values[2]).ToString("F2");
+                DCHeigth_Sum.Text = double.Parse(Values[3]).ToString("F2");
+                DCHeigth_ROUT.Text = double.Parse(Values[4]).ToString("F2");
+                DCHeigth_Grade.Text = Values[5] + $"\n[{double.Parse(Values[6]).ToString()}]";
+
+                Values = lines[9].Split(',');
+                DCArea_MaxOne.Text = double.Parse(Values[1]).ToString("F2");
+                DCArea_MaxInterval.Text = double.Parse(Values[2]).ToString("F2");
+                DCArea_Sum.Text = double.Parse(Values[3]).ToString("F2");
+                DCArea_ROUT.Text = double.Parse(Values[4]).ToString("F2");
+                DCArea_Grade.Text = Values[5] + $"\n[{double.Parse(Values[6]).ToString()}]";
+
+                Values = lines[11].Split(',');
+                DCTotaqlScore = double.Parse(Values[1]);
+                Logger.LogInfo("CSV", $"Deceleratrion 점수, 등급 동록 완료 \n파일경로 :{rear_ScoreGradetcsvpath}");
+            }
+            else
+            {
+                //파일없음 로그 남겨야함
+                Logger.LogWarning("CSV", $"Deceleratrion 점수, 등급 파일 없음 \n파일경로 :{rear_ScoreGradetcsvpath}");
+            }
+            //Total 등급 및 스코어
+            double TotalScore = (ACTotaqlScore * 0.5 + DCTotaqlScore * 0.5);
+            int TotalGrade = TotalScore switch
+            {
+                >= 96 => 1,
+                >= 91 => 2,
+                >= 86 => 3,
+                >= 81 => 4,
+                _ => 5  // else와 같은 역할 (기본값)
+            };
+
+            int ACTotalGrade = ACTotaqlScore switch
+            {
+                >= 96 => 1,
+                >= 91 => 2,
+                >= 86 => 3,
+                >= 81 => 4,
+                _ => 5  // else와 같은 역할 (기본값)
+            };
+
+            int DCTotalGrade = DCTotaqlScore switch
+            {
+                >= 96 => 1,
+                >= 91 => 2,
+                >= 86 => 3,
+                >= 81 => 4,
+                _ => 5  // else와 같은 역할 (기본값)
+            };
+
+            TotalGradeScore.Text = $"기어 등급 : {TotalGrade}[{TotalScore.ToString("F0")}]";
+            ACFinalGradelabel.Text = $"Drive : {ACTotalGrade}[{ACTotaqlScore.ToString("F0")}]";
+            DCFinalGradelabel.Text = $"Coast : {DCTotalGrade}[{DCTotaqlScore.ToString("F0")}]";
+
+            //단일치 g1~g5 그레이드 개수 표기
+            //FSinglePeakX
+            //FSinglePeakY
+            //RSinglePeakX
+            //RSinglePeakY
+            //FrontHallMaxCount
+            //RearHallMaxCount
+            int[] ACpeakxMaxGradeCount = new int[5];
+            int[] ACpeakyMaxGradeCount = new int[5];
+            int[] DCpeakxMaxGradeCount = new int[5];
+            int[] DCpeakyMaxGradeCount = new int[5];
+
+            foreach (double ACpeakX in FSinglePeakX)
+            {
+                double Value = Math.Abs(ACpeakX - FSinglePeakX.Average());
+                if (Value >= 38.1)
+                {
+                    ACpeakxMaxGradeCount[4]++;
+                }
+                else if (Value >= 33.2)
+                {
+                    ACpeakxMaxGradeCount[3]++;
+                }
+                else if (Value >= 28.9)
+                {
+                    ACpeakxMaxGradeCount[2]++;
+                }
+                else if (Value >= 25.1)
+                {
+                    ACpeakxMaxGradeCount[1]++;
+                }
+                else
+                {
+                    ACpeakxMaxGradeCount[0]++;
+                }
+            }
+
+            foreach (double ACpeaky in FSinglePeakY)
+            {
+                double Value = Math.Abs(ACpeaky - FSinglePeakY.Average());
+                if (Value >= 9.2)
+                {
+                    ACpeakyMaxGradeCount[4]++;
+                }
+                else if (Value >= 8.0)
+                {
+                    ACpeakyMaxGradeCount[3]++;
+                }
+                else if (Value >= 7.0)
+                {
+                    ACpeakyMaxGradeCount[2]++;
+                }
+                else if (Value >= 6.1)
+                {
+                    ACpeakyMaxGradeCount[1]++;
+                }
+                else
+                {
+                    ACpeakyMaxGradeCount[0]++;
+                }
+            }
+
+            foreach (double DCpeakX in RSinglePeakX)
+            {
+                double Value = Math.Abs(DCpeakX - RSinglePeakX.Average());
+                if (Value >= 18.4)
+                {
+                    DCpeakxMaxGradeCount[4]++;
+                }
+                else if (Value >= 16.0)
+                {
+                    DCpeakxMaxGradeCount[3]++;
+                }
+                else if (Value >= 13.9)
+                {
+                    DCpeakxMaxGradeCount[2]++;
+                }
+                else if (Value >= 12.1)
+                {
+                    DCpeakxMaxGradeCount[1]++;
+                }
+                else
+                {
+                    DCpeakxMaxGradeCount[0]++;
+                }
+            }
+
+            foreach (double DCpeaky in RSinglePeakY)
+            {
+
+                double Value = Math.Abs(DCpeaky - RSinglePeakY.Average());
+                if (Value >= 7.7)
+                {
+                    DCpeakyMaxGradeCount[4]++;
+                }
+                else if (Value >= 6.7)
+                {
+                    DCpeakyMaxGradeCount[3]++;
+                }
+                else if (Value >= 5.9)
+                {
+                    DCpeakyMaxGradeCount[2]++;
+                }
+                else if (Value >= 5.1)
+                {
+                    DCpeakyMaxGradeCount[1]++;
+                }
+                else
+                {
+                    DCpeakyMaxGradeCount[0]++;
+                }
+            }
+
+            label274.Text = ACpeakxMaxGradeCount[0].ToString();
+            label272.Text = ACpeakxMaxGradeCount[1].ToString();
+            label270.Text = ACpeakxMaxGradeCount[2].ToString();
+            label244.Text = ACpeakxMaxGradeCount[3].ToString();
+            label268.Text = ACpeakxMaxGradeCount[4].ToString();
+
+            label284.Text = ACpeakyMaxGradeCount[0].ToString();
+            label282.Text = ACpeakyMaxGradeCount[1].ToString();
+            label280.Text = ACpeakyMaxGradeCount[2].ToString();
+            label276.Text = ACpeakyMaxGradeCount[3].ToString();
+            label278.Text = ACpeakyMaxGradeCount[4].ToString();
+
+            label294.Text = (ACpeakyMaxGradeCount[0] + ACpeakxMaxGradeCount[0]).ToString();
+            label292.Text = (ACpeakyMaxGradeCount[1] + ACpeakxMaxGradeCount[1]).ToString();
+            label290.Text = (ACpeakyMaxGradeCount[2] + ACpeakxMaxGradeCount[2]).ToString();
+            label286.Text = (ACpeakyMaxGradeCount[3] + ACpeakxMaxGradeCount[3]).ToString();
+            label288.Text = (ACpeakyMaxGradeCount[4] + ACpeakxMaxGradeCount[4]).ToString();
+
+            label315.Text = DCpeakxMaxGradeCount[0].ToString();
+            label314.Text = DCpeakxMaxGradeCount[1].ToString();
+            label313.Text = DCpeakxMaxGradeCount[2].ToString();
+            label311.Text = DCpeakxMaxGradeCount[3].ToString();
+            label312.Text = DCpeakxMaxGradeCount[4].ToString();
+            label310.Text = DCpeakyMaxGradeCount[0].ToString();
+            label309.Text = DCpeakyMaxGradeCount[1].ToString();
+            label306.Text = DCpeakyMaxGradeCount[2].ToString();
+            label304.Text = DCpeakyMaxGradeCount[3].ToString();
+            label305.Text = DCpeakyMaxGradeCount[4].ToString();
+            label303.Text = (DCpeakyMaxGradeCount[0] + DCpeakxMaxGradeCount[0]).ToString();
+            label302.Text = (DCpeakyMaxGradeCount[1] + DCpeakxMaxGradeCount[1]).ToString();
+            label300.Text = (DCpeakyMaxGradeCount[2] + DCpeakxMaxGradeCount[2]).ToString();
+            label296.Text = (DCpeakyMaxGradeCount[3] + DCpeakxMaxGradeCount[3]).ToString();
+            label298.Text = (DCpeakyMaxGradeCount[4] + DCpeakxMaxGradeCount[4]).ToString();
+
+            //이상치- outlier계산 필요
+            /*
+            FSinglePeakX = new float[FrontHallMaxCount];
+            FSinglePeakY = new float[FrontHallMaxCount];
+            FSingleWidth = new float[FrontHallMaxCount];
+            FSingleHeight = new float[FrontHallMaxCount];
+            FSingleArea = new float[FrontHallMaxCount];
+            FSPatternX = new float[FrontHallMaxCount];
+            FSPatternY = new float[FrontHallMaxCount];
+            RSinglePeakX = new float[FrontHallMaxCount];
+            RSinglePeakY = new float[FrontHallMaxCount];
+            RSingleWidth = new float[FrontHallMaxCount];
+            RSingleHeight = new float[FrontHallMaxCount];
+            RSingleArea = new float[FrontHallMaxCount];
+            RSPatternX = new float[FrontHallMaxCount];
+            RSPatternY = new float[FrontHallMaxCount];              
+             */
+            int ACPeakxOutlierCount = 0;
+            int ACPeakyOutlierCount = 0;
+            int ACWidthOutlierCount = 0;
+            int ACHeightOutlierCount = 0;
+            int ACAreaOutlierCount = 0;
+            int DCPeakxOutlierCount = 0;
+            int DCPeakyOutlierCount = 0;
+            int DCWidthOutlierCount = 0;
+            int DCHeightOutlierCount = 0;
+            int DCAreaOutlierCount = 0;
+            //이상치 기준!
+            double addRatio = 0.7;
+
+            foreach (double value in FSinglePeakX)
+            {
+                if (value <= addRatio * FSinglePeakX.Average())
+                {
+                    ACPeakxOutlierCount++;
+                }
+            }
+
+
+            foreach (double value in FSinglePeakY)
+            {
+                if (value <= addRatio * FSinglePeakY.Average())
+                {
+                    ACPeakyOutlierCount++;
+                }
+            }
+
+            foreach (double value in FSingleWidth)
+            {
+                if (value <= addRatio * FSingleWidth.Average())
+                {
+                    ACWidthOutlierCount++;
+                }
+            }
+
+            foreach (double value in FSingleHeight)
+            {
+                if (value <= addRatio * FSingleHeight.Average())
+                {
+                    ACHeightOutlierCount++;
+                }
+            }
+
+            foreach (double value in FSingleArea)
+            {
+                if (value <= addRatio * FSingleArea.Average())
+                {
+                    ACAreaOutlierCount++;
+                }
+            }
+
+            foreach (double value in RSinglePeakX)
+            {
+                if (value <= addRatio * RSinglePeakX.Average())
+                {
+                    DCPeakxOutlierCount++;
+                }
+            }
+
+
+            foreach (double value in RSinglePeakY)
+            {
+                if (value <= addRatio * RSinglePeakY.Average())
+                {
+                    DCPeakyOutlierCount++;
+                }
+            }
+
+            foreach (double value in RSingleWidth)
+            {
+                if (value <= addRatio * RSingleWidth.Average())
+                {
+                    DCWidthOutlierCount++;
+                }
+            }
+
+            foreach (double value in RSingleHeight)
+            {
+                if (value <= addRatio * RSingleHeight.Average())
+                {
+                    DCHeightOutlierCount++;
+                }
+            }
+
+            foreach (double value in RSingleArea)
+            {
+                if (value <= addRatio * RSingleArea.Average())
+                {
+                    DCAreaOutlierCount++;
+                }
+            }
+
+            label334.Text = ACPeakxOutlierCount.ToString();
+            label333.Text = ACPeakyOutlierCount.ToString();
+            label332.Text = ACWidthOutlierCount.ToString();
+            label331.Text = ACHeightOutlierCount.ToString();
+            label330.Text = ACAreaOutlierCount.ToString();
+            label328.Text = (ACPeakxOutlierCount + ACPeakyOutlierCount + ACWidthOutlierCount + ACHeightOutlierCount + ACAreaOutlierCount).ToString();
+            label327.Text = (((ACPeakxOutlierCount + ACPeakyOutlierCount + ACWidthOutlierCount + ACHeightOutlierCount + ACAreaOutlierCount) / ((double)5 * (double)FSinglePeakX.Length)) * 100).ToString("F2");
+
+            label342.Text = DCPeakxOutlierCount.ToString();
+            label341.Text = DCPeakyOutlierCount.ToString();
+            label340.Text = DCWidthOutlierCount.ToString();
+            label339.Text = DCHeightOutlierCount.ToString();
+            label338.Text = DCAreaOutlierCount.ToString();
+            label336.Text = (DCPeakxOutlierCount + DCPeakyOutlierCount + DCWidthOutlierCount + DCHeightOutlierCount + DCAreaOutlierCount).ToString();
+            label335.Text = (((DCPeakxOutlierCount + DCPeakyOutlierCount + DCWidthOutlierCount + DCHeightOutlierCount + DCAreaOutlierCount) / ((double)5 * (double)RSinglePeakX.Length)) * 100).ToString("F2");
+
+
+
+
+            ListPanel.Visible = false;
+
+            SingleStaticPanel.Location = new Point(10, 97);
+            SingleStaticPanel.Size = new Size(1699, 819);
+            SingleStaticPanel.Visible = true;
+            selectedListSelectRowNumber = -1;
+
+            ListLabel.BackColor = Color.FromArgb(64, 64, 64);
+            ListLabel.ForeColor = Color.White;
+            SingleStaticLabel.BackColor = Color.White;
+            SingleStaticLabel.ForeColor = Color.FromArgb(64, 64, 64);
+
         }
 
 
@@ -2055,242 +2595,21 @@ namespace WIA_ViewerProgram
             double[] ys = new double[count];
             for (int i = 0; i < count; i++)
             {
-                xs[i] = i;
+                xs[i] = i + 1;
                 ys[i] = yValues[i];
             }
 
-            plot.Plot.Add.Scatter(xs, ys);
+
+
+            var scatterValue=plot.Plot.Add.Scatter(xs, ys);
             plot.Plot.Axes.Left.Label.Text = yAxisLabel;
             plot.Plot.Axes.Bottom.Label.Text = "Index";
+            plot.Plot.Axes.AutoScale();
             plot.Refresh();
         }
 
-        private void PluralStaticButton_Click(object sender, EventArgs e)
-        {
-            if (!EnsureLoggedIn())
-            {
-                return;
-            }
-
-            var vCount = CountListSelectWithV(ListDisplyPanel);
-            if (vCount < 2)
-            {
-                MessageBox.Show(
-                    this,
-                    "2개 이상 선택해 주세요.",
-                    "선택 확인",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
-
-
-
-            var selectedRowEntries = CollectSelectedListRowEntriesOrderedByRow();
-            if (selectedRowEntries.Count < 2)
-            {
-                MessageBox.Show(
-                    this,
-                    "선택된 시행 행이 부족합니다. 검색 후 V 표시를 두 개 이상 해 주세요.",
-                    "선택 확인",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
-
-            _ListFrontPath = new List<string>();
-            _ListRearPath = new List<string>();
-
-
-            // csv 파일 데이터 지표
-            //카운트, 최대점X, 최대점Y, 마모점 길이, 마모점 폭,마모점 크기, 패턴 x, 패턴 y
-            //하루(50개)에 대한 평균값을 저장 하기위한 변수들
-            List<float> FrontPeakXAvg = new List<float>();
-            List<float> FrontPeakyAvg = new List<float>();
-            List<float> FrontWidthAvg = new List<float>();
-            List<float> FrontHeightYAvg = new List<float>();
-            List<float> FrontAreaAvg = new List<float>();
-            List<float> FrontPatternXAvg = new List<float>();
-            List<float> FrontPatternYAvg = new List<float>();
-
-            List<float> RearPeakXAvg = new List<float>();
-            List<float> RearPeakyAvg = new List<float>();
-            List<float> RearWidthAvg = new List<float>();
-            List<float> RearHeightYAvg = new List<float>();
-            List<float> RearAreaAvg = new List<float>();
-            List<float> RearPatternXAvg = new List<float>();
-            List<float> RearPatternYAvg = new List<float>();
-
-            foreach (var rowEntry in selectedRowEntries)
-            {
-                var accelDir = Path.Combine(rowEntry.TrialFolderPath, "Acceleration");
-                var decelDir = Path.Combine(rowEntry.TrialFolderPath, "Deceleration");
-                string FrontPath = Path.Combine(accelDir, "ResultOutput.csv");
-                string RearPath = Path.Combine(decelDir, "ResultOutput.csv");
-                //복수 통계에서도 최종csv 파일이 있는 지확인 필요
-                //결과 csv파일이 없다면 각자 저장되어 있는 구조이므로
-                //반드시 결과csv파일을 만들어주고 시작
-                if (!(File.Exists(FrontPath)))
-                {
-                    if (Directory.Exists(accelDir)) //디렉토리가 있는 경우라면 
-                    {
-                        makeResultOutput(accelDir);
-                    }
-                    else
-                    {
-                        ShowMissingFileWarning("해당 디렉토리 없음", new List<string> { FrontPath });
-                    }
-                }
-
-                if (!(File.Exists(RearPath)))
-                {
-                    if (Directory.Exists(decelDir)) //디렉토리가 있는 경우라면 
-                    {
-                        makeResultOutput(decelDir);
-                    }
-                    else
-                    {
-                        ShowMissingFileWarning("해당 디렉토리 없음", new List<string> { RearPath });
-                    }
-                }
-
-
-                // csv 파일 데이터 지표
-                //카운트, 최대점X, 최대점Y, 마모점 길이, 마모점 폭,마모점 크기, 패턴 x, 패턴 y
-
-                float[] frontdataSum = new float[7];
-                float[] reardataSum = new float[7];
-
-                float[] frontdataAVG = new float[7];
-                float[] reardataAVG = new float[7];
-                int FrontHallMaxCount = -1;
-                int RearHallMaxCount = -1;
-
-
-                if (!File.Exists(FrontPath))
-                {
-                    Logger.LogWarning("FileIO", "CSV 파일 없음 (복수 통계 - Acceleration)", _LoginManager?.UserInputID ?? "", FrontPath);
-                    MessageBox.Show(
-                                this,
-                                "csv파일 없음 확인 필요" + FrontPath,
-                                "선택 확인",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-                    return;
-                }
-
-                foreach (string line in ReadLinesShared(FrontPath))
-                {
-                    string[] values = line.Split(',');
-                    for (int i = 0; i < 7; i++)
-                    {
-                        if (values.Length <= i + 1 || !TryParseCsvFloat(values[i + 1], out var parsed))
-                        {
-                            Logger.LogWarning("FileIO", "Acceleration CSV 파싱 실패 (복수 통계)", _LoginManager?.UserInputID ?? "", $"{FrontPath} | line={line}");
-                            parsed = 0f;
-                        }
-                        frontdataSum[i] += parsed;
-                    }
-                    if (FrontHallMaxCount < int.Parse(values[0]))
-                    {
-
-                        FrontHallMaxCount = int.Parse(values[0]);
-                    }
-                }
-                for (int i = 0; i < 7; i++)
-                {
-                    //하루치에 대한 
-                    //총 8개의 데이터에 대한 평균치
-                    frontdataAVG[i] = frontdataSum[i] / (float)FrontHallMaxCount;
-                }
-                //front csv파일 한개에데해 8가지 항목에 대한 50개의 평균값이 계산됨
-                //==>여기서부터는 csv파일이 여러개이므로 파일마다의 8가지 항목에 대한 평균을 저장하는 짓을 해야하고
-                //==>list를 활용해서 저장!
-
-                // csv 파일 데이터 지표
-                //카운트, 최대점X, 최대점Y, 마모점 길이, 마모점 폭,마모점 크기, 패턴 x, 패턴 y
-                FrontPeakXAvg.Add(frontdataAVG[0]);
-                FrontPeakyAvg.Add(frontdataAVG[1]);
-                FrontWidthAvg.Add(frontdataAVG[2]);
-                FrontHeightYAvg.Add(frontdataAVG[3]);
-                FrontAreaAvg.Add(frontdataAVG[4]);
-                FrontPatternXAvg.Add(frontdataAVG[5]);
-                FrontPatternYAvg.Add(frontdataAVG[6]);
-
-                // 여기서부턴 후방
-                if (!File.Exists(RearPath))
-                {
-                    Logger.LogWarning("FileIO", "CSV 파일 없음 (복수 통계 - Deceleration)", _LoginManager?.UserInputID ?? "", RearPath);
-                    MessageBox.Show(
-                     this,
-                     "csv파일 없음 확인 필요" + RearPath,
-                     "선택 확인",
-                     MessageBoxButtons.OK,
-                     MessageBoxIcon.Warning);
-                    return;
-                }
-
-                foreach (string line in ReadLinesShared(RearPath))
-                {
-                    string[] values = line.Split(',');
-                    for (int i = 0; i < 7; i++)
-                    {
-                        if (values.Length <= i + 1 || !TryParseCsvFloat(values[i + 1], out var parsed))
-                        {
-                            Logger.LogWarning("FileIO", "Deceleration CSV 파싱 실패 (복수 통계)", _LoginManager?.UserInputID ?? "", $"{RearPath} | line={line}");
-                            parsed = 0f;
-                        }
-                        reardataSum[i] += parsed;
-                    }
-                    if (RearHallMaxCount < int.Parse(values[0]))
-                    {
-
-                        RearHallMaxCount = int.Parse(values[0]);
-                    }
-                    //csv파일 별로 areax~angle까지의 평균값을 내자!
-                }
-                for (int i = 0; i < 7; i++)
-                {
-                    reardataAVG[i] = reardataSum[i] / (float)RearHallMaxCount;
-                }
-                // csv 파일 데이터 지표
-                //카운트, 최대점X, 최대점Y, 마모점 길이, 마모점 폭,마모점 크기, 패턴 x, 패턴 y
-                RearPeakXAvg.Add(frontdataAVG[0]);
-                RearPeakyAvg.Add(frontdataAVG[1]);
-                RearWidthAvg.Add(frontdataAVG[2]);
-                RearHeightYAvg.Add(frontdataAVG[3]);
-                RearAreaAvg.Add(frontdataAVG[4]);
-                RearPatternXAvg.Add(frontdataAVG[5]);
-                RearPatternYAvg.Add(frontdataAVG[6]);
-            }
-
-            PerulPlotIndexScatter(PerulFrontAreaX, FrontPeakXAvg, FrontPeakXAvg.Count, "AccelerationPeakXAvg");
-            PerulPlotIndexScatter(PerulFrontAreaY, FrontPeakyAvg, FrontPeakyAvg.Count, "AccelerationPeakYAvg");
-            PerulPlotIndexScatter(PerulRearAreaX, RearPeakXAvg, RearPeakXAvg.Count, "DecelerationPeakXAvg");
-            PerulPlotIndexScatter(PerulRearAreaY, RearPeakyAvg, RearPeakyAvg.Count, "DecelerationPeakYAvg");
-
-            PerulPlotIndexScatter(PerulFrontPeakX, FrontPatternXAvg, FrontPatternXAvg.Count, "AccelerationPatternXAvg");
-            PerulPlotIndexScatter(PerulFrontPeakY, FrontPatternYAvg, FrontPatternYAvg.Count, "AccelerationPatternYAvg");
-            PerulPlotIndexScatter(PerulRearPeakX, RearPatternXAvg, RearPatternXAvg.Count, "DecelerationPatternXAvg");
-            PerulPlotIndexScatter(PerulRearPeakY, RearPatternYAvg, RearPatternYAvg.Count, "DecelerationPatternYAvg");
-
-
-            PerulPlotIndexScatter(PerulFrontWidth, FrontWidthAvg, FrontWidthAvg.Count, "AccelerationWidthAvg");
-            PerulPlotIndexScatter(PerulFrontHeight, FrontHeightYAvg, FrontHeightYAvg.Count, "AccelerationHeightAvg");
-            PerulPlotIndexScatter(PerulFrontArea, FrontAreaAvg, FrontAreaAvg.Count, "AccelerationAreaAvg");
-            PerulPlotIndexScatter(PerulRearWidth, RearWidthAvg, RearWidthAvg.Count, "DecelerationWidthAvg");
-            PerulPlotIndexScatter(PerulRearHeight, RearHeightYAvg, RearHeightYAvg.Count, "DecelerationHeightAvg");
-            PerulPlotIndexScatter(PerulRearArea, RearAreaAvg, RearAreaAvg.Count, "DecelerationAreaAvg");
-            PerulStaticDisplayLabel.Text = "복수 통계[1]";
-            PerulStaticPanelDisplay(1);
-            ListLabel.BackColor = Color.FromArgb(64, 64, 64);
-            ListLabel.ForeColor = Color.White;
-            PluralStaticLabel.BackColor = Color.White;
-            PluralStaticLabel.ForeColor = Color.Black;
-            SettingPerulStaticPanel();
-        }
-
-        private void PerulPlotIndexScatter(FormsPlot plot, List<float> yValues, int count, string yAxisLabel)
+        //Bar 그리기!
+        private void PlotIndexBar(FormsPlot plot, float[] yValues, int count, string yAxisLabel)
         {
             plot.Plot.Clear();
             if (count <= 0)
@@ -2303,90 +2622,943 @@ namespace WIA_ViewerProgram
             double[] ys = new double[count];
             for (int i = 0; i < count; i++)
             {
-                xs[i] = i;
+                xs[i] = i + 1;
                 ys[i] = yValues[i];
             }
 
-            plot.Plot.Add.Scatter(xs, ys);
+            var barPlot = plot.Plot.Add.Bars(xs, ys);
+            foreach (var bar in barPlot.Bars)
+            {
+                bar.Label = bar.Value.ToString("F1");
+            }
             plot.Plot.Axes.Left.Label.Text = yAxisLabel;
             plot.Plot.Axes.Bottom.Label.Text = "Index";
+            plot.Plot.Axes.AutoScale();
             plot.Refresh();
         }
 
-        private void SettingPerulStaticPanel()
+        private void PluralStaticButton_Click(object sender, EventArgs e)
         {
-            PerulStaticPanelCount = 1;
-            PerulStaticPanel.Location = new Point(10, 90);
-            PerulStaticPanel.Size = new Size(1700, 810);
-            PerulStaticPanel.Visible = true;
+            // 패널 초기화
+            for (int i = PlurerFlowPanel1.Controls.Count - 1; i >= 0; i--)
+            {
+                Control control = PlurerFlowPanel1.Controls[i];
+
+                // 패널에서 도구 제거
+                PlurerFlowPanel1.Controls.RemoveAt(i);
+
+                // 메모리 자원 반환
+                control.Dispose();
+            }
+
+
+            if (!EnsureLoggedIn())
+            {
+                return;
+            }
+            //선택된 행의 패스들을 읽어오기 
+            var selectedRowEntries = CollectSelectedListRowEntriesOrderedByRow();
+            if (selectedRowEntries.Count < 2)
+            {
+                MessageBox.Show(
+                    this,
+                    "선택된 시행 행이 부족합니다. 검색 후 V 표시를 두 개 이상 해 주세요.",
+                    "선택 확인",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+            int count = 0;
+            float[] ACPeakXScores = new float[selectedRowEntries.Count];
+            float[] ACPeakYScores = new float[selectedRowEntries.Count];
+            float[] ACWidthScores = new float[selectedRowEntries.Count];
+            float[] ACHeightScores = new float[selectedRowEntries.Count];
+            float[] ACAreaScores = new float[selectedRowEntries.Count];
+            float[] ACPeakXMAD = new float[selectedRowEntries.Count];
+            float[] ACPeakYMAD = new float[selectedRowEntries.Count];
+            float[] ACWidthMAD = new float[selectedRowEntries.Count];
+            float[] ACHeightMAD = new float[selectedRowEntries.Count];
+            float[] ACAreaMAD = new float[selectedRowEntries.Count];
+
+            float[] DCPeakXScores = new float[selectedRowEntries.Count];
+            float[] DCPeakYScores = new float[selectedRowEntries.Count];
+            float[] DCWidthScores = new float[selectedRowEntries.Count];
+            float[] DCHeightScores = new float[selectedRowEntries.Count];
+            float[] DCAreaScores = new float[selectedRowEntries.Count];
+            float[] DCPeakXMAD = new float[selectedRowEntries.Count];
+            float[] DCPeakYMAD = new float[selectedRowEntries.Count];
+            float[] DCWidthMAD = new float[selectedRowEntries.Count];
+            float[] DCHeightMAD = new float[selectedRowEntries.Count];
+            float[] DCAreaMAD = new float[selectedRowEntries.Count];
+
+            int[] FinalGradeCount=new int[5];
+            int[] ACGradeCount = new int[5];
+            int[] DCGradeCount = new int[5];
+            double AC_DCFinalScore = 0;
+            double ACAddRatio = 0.5;
+
+            foreach (var rowEntry in selectedRowEntries)
+            {
+                AC_DCFinalScore = 0;
+                count++;
+                Label Countlabel = new Label();
+                Countlabel.Text = $"{count}";
+                Countlabel.Name = $"CoutLabel{count}";
+                Countlabel.AutoSize = false;
+                Countlabel.Size = new Size(75, 57);
+                Countlabel.Visible = true;
+                Countlabel.ForeColor = Color.White;
+                Countlabel.BackColor = Color.FromArgb(64, 64, 64);
+                Countlabel.TextAlign = ContentAlignment.MiddleCenter;
+                Countlabel.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                Countlabel.Margin = new Padding(3, 4, 3, 3);
+                PlurerFlowPanel1.Controls.Add(Countlabel);
+
+
+
+                Size Plurer2LabelSize = new Size(90, 57);
+
+                //SNO 라벨 생성 데이터는 음...?
+                Label SNolabel = new Label();
+                SNolabel.Text = $"S/NO{count}";
+                SNolabel.Name = $"SNOLabel{count}"; // 이후 수정해야함
+                SNolabel.AutoSize = false;
+                SNolabel.Size = new Size(131, 57);
+                SNolabel.Visible = true;
+                SNolabel.ForeColor = Color.White;
+                SNolabel.BackColor = Color.FromArgb(64, 64, 64);
+                SNolabel.TextAlign = ContentAlignment.MiddleCenter;
+                SNolabel.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                SNolabel.Margin = new Padding(3, 4, 3, 3);
+                PlurerFlowPanel1.Controls.Add(SNolabel);
+                //평균 편차의 절대값 평균에 해당하는 부분도 같이 만든다.
+                Label Countlabel2 = new Label();
+                Countlabel2.Text = $"{count}";
+                Countlabel2.Name = $"CoutLabel{count}";
+                Countlabel2.AutoSize = false;
+                Countlabel2.Size = new Size(74, 57);
+                Countlabel2.Visible = true;
+                Countlabel2.ForeColor = Color.White;
+                Countlabel2.BackColor = Color.FromArgb(64, 64, 64);
+                Countlabel2.TextAlign = ContentAlignment.MiddleCenter;
+                Countlabel2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                Countlabel2.Margin = new Padding(3, 4, 3, 3);
+                PlurerFlowPanel2.Controls.Add(Countlabel2);
+
+                Label SNolabel2 = new Label();
+                SNolabel2.Text = $"S/NO{count}";
+                SNolabel2.Name = $"SNOLabel{count}"; // 이후 수정해야함
+                SNolabel2.AutoSize = false;
+                SNolabel2.Size = new Size(131, 57);
+                SNolabel2.Visible = true;
+                SNolabel2.ForeColor = Color.White;
+                SNolabel2.BackColor = Color.FromArgb(64, 64, 64);
+                SNolabel2.TextAlign = ContentAlignment.MiddleCenter;
+                SNolabel2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                SNolabel2.Margin = new Padding(3, 4, 3, 3);
+                PlurerFlowPanel2.Controls.Add(SNolabel2);
+
+
+
+                var accelDir = Path.Combine(rowEntry.TrialFolderPath, "Acceleration");
+                var decelDir = Path.Combine(rowEntry.TrialFolderPath, "Deceleration");
+                string ACPath = Path.Combine(accelDir, "ScoreGrade.csv");
+                string DCPath = Path.Combine(decelDir, "ScoreGrade.csv");
+
+                ////파일이 있는지 확인 
+                //AC 
+                if (File.Exists(ACPath))
+                {
+                    string[] lines = File.ReadAllLines(ACPath);
+                    if (lines.Length > 2)
+                    {
+                        //파일에 있고 데이터있는 경우
+                        //PeakX_Score
+                        string[] values = lines[2].Split(",");
+                        string PeakX_Score = (double.Parse(values[6]) * 0.3).ToString("F2");
+                        Label AcPeakX_Score = new Label();
+                        AcPeakX_Score.Text = PeakX_Score;
+                        AcPeakX_Score.Name = $"ACPeakX{count}";
+                        AcPeakX_Score.AutoSize = false;
+                        AcPeakX_Score.Size = new Size(79, 57);
+                        AcPeakX_Score.Visible = true;
+                        AcPeakX_Score.ForeColor = Color.White;
+                        AcPeakX_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        AcPeakX_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        AcPeakX_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        AcPeakX_Score.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(AcPeakX_Score);
+                        ACPeakXScores[count - 1] = float.Parse(PeakX_Score);
+
+                        values = lines[4].Split(",");
+                        string PeakY_Score = (double.Parse(values[6]) * 0.3).ToString("F2");
+                        Label AcPeakY_Score = new Label();
+                        AcPeakY_Score.Text = PeakY_Score;
+                        AcPeakY_Score.Name = $"ACPeakY{count}";
+                        AcPeakY_Score.AutoSize = false;
+                        AcPeakY_Score.Size = new Size(74, 57);
+                        AcPeakY_Score.Visible = true;
+                        AcPeakY_Score.ForeColor = Color.White;
+                        AcPeakY_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        AcPeakY_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        AcPeakY_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        AcPeakY_Score.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(AcPeakY_Score);
+                        ACPeakYScores[count - 1] = float.Parse(PeakY_Score);
+
+                        values = lines[6].Split(",");
+                        string Width = (double.Parse(values[6]) * 0.2).ToString("F2");
+                        Label Width_Score = new Label();
+                        Width_Score.Text = Width;
+                        Width_Score.Name = $"ACWidth{count}";
+                        Width_Score.AutoSize = false;
+                        Width_Score.Size = new Size(89, 57);
+                        Width_Score.Visible = true;
+                        Width_Score.ForeColor = Color.White;
+                        Width_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        Width_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        Width_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Width_Score.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(Width_Score);
+                        ACWidthScores[count - 1] = float.Parse(Width);
+
+                        values = lines[8].Split(",");
+                        string Height = (double.Parse(values[6]) * 0.1).ToString("F2");
+                        Label Height_Score = new Label();
+                        Height_Score.Text = Height;
+                        Height_Score.Name = $"ACHeight{count}";
+                        Height_Score.AutoSize = false;
+                        Height_Score.Size = new Size(92, 57);
+                        Height_Score.Visible = true;
+                        Height_Score.ForeColor = Color.White;
+                        Height_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        Height_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        Height_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Height_Score.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(Height_Score);
+                        ACHeightScores[count - 1] = float.Parse(Height);
+
+
+                        values = lines[10].Split(",");
+                        string Area = (double.Parse(values[6]) * 0.1).ToString("F2");
+                        Label Area_Score = new Label();
+                        Area_Score.Text = Area;
+                        Area_Score.Name = $"ACArea{count}";
+                        Area_Score.AutoSize = false;
+                        Area_Score.Size = new Size(83, 57);
+                        Area_Score.Visible = true;
+                        Area_Score.ForeColor = Color.White;
+                        Area_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        Area_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        Area_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Area_Score.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(Area_Score);
+                        ACAreaScores[count - 1] = float.Parse(Area);
+
+                        values = lines[11].Split(",");
+                        string FinalScore = (double.Parse(values[1])).ToString("F2");
+                        Label AC_Final_Score = new Label();
+                        AC_Final_Score.Text = FinalScore;
+                        AC_Final_Score.Name = $"ACFinalScore{count}";
+                        AC_Final_Score.AutoSize = false;
+                        AC_Final_Score.Size = new Size(76, 57);
+                        AC_Final_Score.Visible = true;
+                        AC_Final_Score.ForeColor = Color.White;
+                        AC_Final_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        AC_Final_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        AC_Final_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        AC_Final_Score.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(AC_Final_Score);
+                        AC_DCFinalScore += (double.Parse(FinalScore)* ACAddRatio);
+                        //최종 등급
+                        values = lines[12].Split(",");
+                        string FinalGrade = (double.Parse(values[1])).ToString("F0");
+                        Label AC_Final_Grade = new Label();
+                        AC_Final_Grade.Text = FinalGrade;
+                        AC_Final_Grade.Name = $"ACFinalGeade{count}";
+                        AC_Final_Grade.AutoSize = false;
+                        AC_Final_Grade.Size = new Size(76, 57);
+                        AC_Final_Grade.Visible = true;
+                        AC_Final_Grade.ForeColor = Color.White;
+                        AC_Final_Grade.BackColor = Color.FromArgb(64, 64, 64);
+                        AC_Final_Grade.TextAlign = ContentAlignment.MiddleCenter;
+                        AC_Final_Grade.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        AC_Final_Grade.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(AC_Final_Grade);
+                        int ACGrade = int.Parse(FinalGrade);
+                        ACGradeCount[ACGrade-1]++;
+                        
+
+
+
+                        //이상치 비율 계산 필요
+                        int ACPeakxOutlierCount = 0;
+                        int ACPeakyOutlierCount = 0;
+                        int ACWidthOutlierCount = 0;
+                        int ACHeightOutlierCount = 0;
+                        int ACAreaOutlierCount = 0;
+
+                        double addRatio = 0.7;
+
+                        string[] ACLines = File.ReadAllLines(Path.Combine(accelDir, "ResultOutput.csv"));
+                        float[] FSinglePeakX = new float[ACLines.Length];
+                        float[] FSinglePeakY = new float[ACLines.Length];
+                        float[] FSingleWidth = new float[ACLines.Length];
+                        float[] FSingleHeight = new float[ACLines.Length];
+                        float[] FSingleArea = new float[ACLines.Length];
+                        int ACcount = 0;
+                        try
+                        {
+                            // 한 줄씩 읽어오기
+                            foreach (string line in ACLines)
+                            {
+                                // 쉼표로 분리하여 배열에 담기
+                                string[] va = line.Split(',');
+                                if (va.Length < 8)
+                                {
+                                    Logger.LogWarning("FileIO", "Acceleration CSV 포맷 이상 (복수 통계)", _LoginManager?.UserInputID ?? "", $"{Path.Combine(accelDir, "ResultOutput.csv")} | line={line}");
+                                    break;
+                                }
+                                if (!TryParseCsvFloat(va[1], out FSinglePeakX[ACcount])
+                                    || !TryParseCsvFloat(va[2], out FSinglePeakY[ACcount])
+                                    || !TryParseCsvFloat(va[3], out FSingleWidth[ACcount])
+                                    || !TryParseCsvFloat(va[4], out FSingleHeight[ACcount])
+                                    || !TryParseCsvFloat(va[5], out FSingleArea[ACcount])
+
+                                   )
+                                {
+                                    Logger.LogWarning("FileIO", "Acceleration CSV 숫자 파싱 실패 (복수 통계)", _LoginManager?.UserInputID ?? "", $"{Path.Combine(accelDir, "ResultOutput.csv")} | line={line}");
+                                    break;
+                                }
+                                ACcount++;
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Logger.LogError("FileIO", "Acceleration CSV 읽기 실패 (복수 통계)", _LoginManager?.UserInputID ?? "", $"{Path.Combine(accelDir, "ResultOutput.csv")} | {ex}");
+                            MessageBox.Show(this, "Acceleration CSV 파일을 읽는 중 오류가 발생했습니다.\n로그를 확인해 주세요.", "CSV 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        foreach (double value in FSinglePeakX)
+                        {
+
+
+                            if (value <= addRatio * FSinglePeakX.Average())
+                            {
+                                ACPeakxOutlierCount++;
+                            }
+                        }
+
+
+                        foreach (double value in FSinglePeakY)
+                        {
+                            if (value <= addRatio * FSinglePeakY.Average())
+                            {
+                                ACPeakyOutlierCount++;
+                            }
+                        }
+
+                        foreach (double value in FSingleWidth)
+                        {
+                            if (value <= addRatio * FSingleWidth.Average())
+                            {
+                                ACWidthOutlierCount++;
+                            }
+                        }
+
+                        foreach (double value in FSingleHeight)
+                        {
+                            if (value <= addRatio * FSingleHeight.Average())
+                            {
+                                ACHeightOutlierCount++;
+                            }
+                        }
+
+                        foreach (double value in FSingleArea)
+                        {
+                            if (value <= addRatio * FSingleArea.Average())
+                            {
+                                ACAreaOutlierCount++;
+                            }
+                        }
+                        double AC_OutlierRatio = ((ACPeakxOutlierCount + ACPeakyOutlierCount + ACWidthOutlierCount + ACHeightOutlierCount + ACAreaOutlierCount) / ((double)5 * (double)FSinglePeakX.Length)) * 100;
+
+                        Label AC_Final_Outlier = new Label();
+                        AC_Final_Outlier.Text = AC_OutlierRatio.ToString("F2");
+                        AC_Final_Outlier.Name = $"ACFinalOutlier{count}";
+                        AC_Final_Outlier.AutoSize = false;
+                        AC_Final_Outlier.Size = new Size(76, 57);
+                        AC_Final_Outlier.Visible = true;
+                        AC_Final_Outlier.ForeColor = Color.White;
+                        AC_Final_Outlier.BackColor = Color.FromArgb(64, 64, 64);
+                        AC_Final_Outlier.TextAlign = ContentAlignment.MiddleCenter;
+                        AC_Final_Outlier.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        AC_Final_Outlier.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(AC_Final_Outlier);
+
+
+
+                        //평균 편차의 절대값 평균에 해당하는 부분도 같이 만든다.
+
+                        double SinglePeakXMAD = FSinglePeakX.Select(num => Math.Abs(num - FSinglePeakX.Average())).Average();
+                        double SinglePeakYMAD = FSinglePeakY.Select(num => Math.Abs(num - FSinglePeakY.Average())).Average();
+                        double SingleWidthYMAD = FSingleWidth.Select(num => Math.Abs(num - FSingleWidth.Average())).Average();
+                        double SingleHeightMAD = FSingleHeight.Select(num => Math.Abs(num - FSingleHeight.Average())).Average();
+                        double SingleAreaMAD = FSingleArea.Select(num => Math.Abs(num - FSingleArea.Average())).Average();
+                        ACPeakXMAD[count - 1] = (float)SinglePeakXMAD;
+                        ACPeakYMAD[count - 1] = (float)SinglePeakYMAD;
+                        ACWidthMAD[count - 1] = (float)SingleWidthYMAD;
+                        ACHeightMAD[count - 1] = (float)SingleHeightMAD;
+                        ACAreaMAD[count - 1] = (float)SingleAreaMAD;
+
+                        Label AcPeakX_Score2 = new Label();
+                        AcPeakX_Score2.Text = SinglePeakXMAD.ToString("F2");
+                        AcPeakX_Score2.Name = $"ACPeakX{count}";
+                        AcPeakX_Score2.AutoSize = false;
+                        AcPeakX_Score2.Size = Plurer2LabelSize;
+                        AcPeakX_Score2.Visible = true;
+                        AcPeakX_Score2.ForeColor = Color.White;
+                        AcPeakX_Score2.BackColor = Color.FromArgb(64, 64, 64);
+                        AcPeakX_Score2.TextAlign = ContentAlignment.MiddleCenter;
+                        AcPeakX_Score2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        AcPeakX_Score2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(AcPeakX_Score2);
+
+
+                        Label AcPeakY_Score2 = new Label();
+                        AcPeakY_Score2.Text = SinglePeakYMAD.ToString("F2");
+                        AcPeakY_Score2.Name = $"ACPeakY{count}";
+                        AcPeakY_Score2.AutoSize = false;
+                        AcPeakY_Score2.Size = Plurer2LabelSize;
+                        AcPeakY_Score2.Visible = true;
+                        AcPeakY_Score2.ForeColor = Color.White;
+                        AcPeakY_Score2.BackColor = Color.FromArgb(64, 64, 64);
+                        AcPeakY_Score2.TextAlign = ContentAlignment.MiddleCenter;
+                        AcPeakY_Score2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        AcPeakY_Score2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(AcPeakY_Score2);
+
+                        Label Width_Score2 = new Label();
+                        Width_Score2.Text = SingleWidthYMAD.ToString("F2");
+                        Width_Score2.Name = $"ACWidth{count}";
+                        Width_Score2.AutoSize = false;
+                        Width_Score2.Size = Plurer2LabelSize;
+                        Width_Score2.Visible = true;
+                        Width_Score2.ForeColor = Color.White;
+                        Width_Score2.BackColor = Color.FromArgb(64, 64, 64);
+                        Width_Score2.TextAlign = ContentAlignment.MiddleCenter;
+                        Width_Score2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Width_Score2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(Width_Score2);
+
+                        Label Height_Score2 = new Label();
+                        Height_Score2.Text = SingleHeightMAD.ToString("F2");
+                        Height_Score2.Name = $"ACHeight{count}";
+                        Height_Score2.AutoSize = false;
+                        Height_Score2.Size = Plurer2LabelSize;
+                        Height_Score2.Visible = true;
+                        Height_Score2.ForeColor = Color.White;
+                        Height_Score2.BackColor = Color.FromArgb(64, 64, 64);
+                        Height_Score2.TextAlign = ContentAlignment.MiddleCenter;
+                        Height_Score2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Height_Score2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(Height_Score2);
+
+                        Label Area_Score2 = new Label();
+                        Area_Score2.Text = SingleAreaMAD.ToString("F2");
+                        Area_Score2.Name = $"ACArea{count}";
+                        Area_Score2.AutoSize = false;
+                        Area_Score2.Size = Plurer2LabelSize;
+                        Area_Score2.Visible = true;
+                        Area_Score2.ForeColor = Color.White;
+                        Area_Score2.BackColor = Color.FromArgb(64, 64, 64);
+                        Area_Score2.TextAlign = ContentAlignment.MiddleCenter;
+                        Area_Score2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Area_Score2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(Area_Score2);
+
+                        //최종 등급 => 평균 편차의 절대값 평균 패널에 붙일거
+                        values = lines[12].Split(",");
+                        string FinalGrade2 = (double.Parse(values[1])).ToString("F0");
+                        Label AC_Final_Grade2 = new Label();
+                        AC_Final_Grade2.Text = FinalGrade;
+                        AC_Final_Grade2.Name = $"ACFinalGeade{count}";
+                        AC_Final_Grade2.AutoSize = false;
+                        AC_Final_Grade2.Size = Plurer2LabelSize;
+                        AC_Final_Grade2.Visible = true;
+                        AC_Final_Grade2.ForeColor = Color.White;
+                        AC_Final_Grade2.BackColor = Color.FromArgb(64, 64, 64);
+                        AC_Final_Grade2.TextAlign = ContentAlignment.MiddleCenter;
+                        AC_Final_Grade2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        AC_Final_Grade2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(AC_Final_Grade2);
+
+                        //평균 편차의 절대값 평균에 해당하는 부분도 같이 만든다.
+                        Label AC_Final_Outlier2 = new Label();
+                        AC_Final_Outlier2.Text = AC_OutlierRatio.ToString("F2");
+                        AC_Final_Outlier2.Name = $"ACFinalOutlier{count}";
+                        AC_Final_Outlier2.AutoSize = false;
+                        AC_Final_Outlier2.Size = Plurer2LabelSize;
+                        AC_Final_Outlier2.Visible = true;
+                        AC_Final_Outlier2.ForeColor = Color.White;
+                        AC_Final_Outlier2.BackColor = Color.FromArgb(64, 64, 64);
+                        AC_Final_Outlier2.TextAlign = ContentAlignment.MiddleCenter;
+                        AC_Final_Outlier2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        AC_Final_Outlier2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(AC_Final_Outlier2);
+
+
+
+                    }
+                    else
+                    {
+                        Logger.LogError("CSV", $"CSV 파일에 데이터 없음 없음 \n 파일 경로 : {ACPath}");
+                    }
+
+
+                }
+                else
+                {
+                    Logger.LogError("CSV", $"CSV 파일 없음 \n 파일 경로 : {ACPath}");
+                }
+
+
+
+                //DC
+                if (File.Exists(DCPath))
+                {
+                    string[] lines = File.ReadAllLines(DCPath);
+                    if (lines.Length > 2)
+                    {
+                        //파일에 있고 데이터있는 경우
+                        //PeakX_Score
+                        string[] values = lines[2].Split(",");
+                        string PeakX_Score = (double.Parse(values[6]) * 0.3).ToString("F2");
+                        Label DcPeakX_Score = new Label();
+                        DcPeakX_Score.Text = PeakX_Score;
+                        DcPeakX_Score.Name = $"ACPeakX{count}";
+                        DcPeakX_Score.AutoSize = false;
+                        DcPeakX_Score.Size = new Size(83, 57);
+                        DcPeakX_Score.Visible = true;
+                        DcPeakX_Score.ForeColor = Color.White;
+                        DcPeakX_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        DcPeakX_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        DcPeakX_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        DcPeakX_Score.Margin = new Padding(3, 3, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(DcPeakX_Score);
+                        DCPeakXScores[count - 1] = float.Parse(PeakX_Score);
+
+                        values = lines[4].Split(",");
+                        string PeakY_Score = (double.Parse(values[6]) * 0.3).ToString("F2");
+                        Label DcPeakY_Score = new Label();
+                        DcPeakY_Score.Text = PeakY_Score;
+                        DcPeakY_Score.Name = $"ACPeakY{count}";
+                        DcPeakY_Score.AutoSize = false;
+                        DcPeakY_Score.Size = new Size(90, 57);
+                        DcPeakY_Score.Visible = true;
+                        DcPeakY_Score.ForeColor = Color.White;
+                        DcPeakY_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        DcPeakY_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        DcPeakY_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        DcPeakY_Score.Margin = new Padding(2, 3, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(DcPeakY_Score);
+                        DCPeakYScores[count - 1] = float.Parse(PeakY_Score);
+
+                        values = lines[6].Split(",");
+                        string Width = (double.Parse(values[6]) * 0.2).ToString("F2");
+                        Label Width_Score = new Label();
+                        Width_Score.Text = Width;
+                        Width_Score.Name = $"ACWidth{count}";
+                        Width_Score.AutoSize = false;
+                        Width_Score.Size = new Size(92, 57);
+                        Width_Score.Visible = true;
+                        Width_Score.ForeColor = Color.White;
+                        Width_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        Width_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        Width_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Width_Score.Margin = new Padding(2, 3, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(Width_Score);
+                        DCWidthScores[count - 1] = float.Parse(Width);
+
+                        values = lines[8].Split(",");
+                        string Height = (double.Parse(values[6]) * 0.1).ToString("F2");
+                        Label Height_Score = new Label();
+                        Height_Score.Text = Height;
+                        Height_Score.Name = $"ACHeight{count}";
+                        Height_Score.AutoSize = false;
+                        Height_Score.Size = new Size(95, 57);
+                        Height_Score.Visible = true;
+                        Height_Score.ForeColor = Color.White;
+                        Height_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        Height_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        Height_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Height_Score.Margin = new Padding(2, 3, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(Height_Score);
+                        DCHeightScores[count - 1] = float.Parse(Height);
+
+
+                        values = lines[10].Split(",");
+                        string Area = (double.Parse(values[6]) * 0.1).ToString("F2");
+                        Label Area_Score = new Label();
+                        Area_Score.Text = Area;
+                        Area_Score.Name = $"ACArea{count}";
+                        Area_Score.AutoSize = false;
+                        Area_Score.Size = new Size(95, 57);
+                        Area_Score.Visible = true;
+                        Area_Score.ForeColor = Color.White;
+                        Area_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        Area_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        Area_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Area_Score.Margin = new Padding(2, 3, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(Area_Score);
+                        DCAreaScores[count - 1] = float.Parse(Area);
+
+                        values = lines[11].Split(",");
+                        string FinalScore = (double.Parse(values[1])).ToString("F2");
+                        Label DC_Final_Score = new Label();
+                        DC_Final_Score.Text = FinalScore;
+                        DC_Final_Score.Name = $"ACFinalScore{count}";
+                        DC_Final_Score.AutoSize = false;
+                        DC_Final_Score.Size = new Size(88, 57);
+                        DC_Final_Score.Visible = true;
+                        DC_Final_Score.ForeColor = Color.White;
+                        DC_Final_Score.BackColor = Color.FromArgb(64, 64, 64);
+                        DC_Final_Score.TextAlign = ContentAlignment.MiddleCenter;
+                        DC_Final_Score.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        DC_Final_Score.Margin = new Padding(2, 3, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(DC_Final_Score);
+                        AC_DCFinalScore += (double.Parse(FinalScore)*(1- ACAddRatio));
+
+                        if (AC_DCFinalScore >= 96)
+                        {
+                            FinalGradeCount[0]++;
+                        }
+                        else if (AC_DCFinalScore >= 91)
+                        {
+                            FinalGradeCount[1]++;
+                        }
+
+                        else if (AC_DCFinalScore >= 86)
+                        {
+                            FinalGradeCount[2]++;
+                        }
+                        else if (AC_DCFinalScore >= 81) 
+                        {
+                            FinalGradeCount[3]++;
+                        }
+                        else
+                        {
+                            FinalGradeCount[4]++;
+                        }
+
+
+                            //최종 등급
+                            values = lines[12].Split(",");
+                        string FinalGrade = (double.Parse(values[1])).ToString("F0");
+                        Label DC_Final_Grade = new Label();
+                        DC_Final_Grade.Text = FinalGrade;
+                        DC_Final_Grade.Name = $"DCFinalGeade{count}";
+                        DC_Final_Grade.AutoSize = false;
+                        DC_Final_Grade.Size = new Size(75, 57);
+                        DC_Final_Grade.Visible = true;
+                        DC_Final_Grade.ForeColor = Color.White;
+                        DC_Final_Grade.BackColor = Color.FromArgb(64, 64, 64);
+                        DC_Final_Grade.TextAlign = ContentAlignment.MiddleCenter;
+                        DC_Final_Grade.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        DC_Final_Grade.Margin = new Padding(2, 3, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(DC_Final_Grade);
+                        DCGradeCount[int.Parse(FinalGrade) - 1]++;
+
+                        //
+
+                        //이상치 비율 계산 필요
+                        int DCPeakxOutlierCount = 0;
+                        int DCPeakyOutlierCount = 0;
+                        int DCWidthOutlierCount = 0;
+                        int DCHeightOutlierCount = 0;
+                        int DCAreaOutlierCount = 0;
+
+                        double addRatio = 0.7;
+
+                        string[] DCLines = File.ReadAllLines(Path.Combine(decelDir, "ResultOutput.csv"));
+                        float[] RSinglePeakX = new float[DCLines.Length];
+                        float[] RSinglePeakY = new float[DCLines.Length];
+                        float[] RSingleWidth = new float[DCLines.Length];
+                        float[] RSingleHeight = new float[DCLines.Length];
+                        float[] RSingleArea = new float[DCLines.Length];
+                        int DCCcount = 0;
+                        try
+                        {
+                            // 한 줄씩 읽어오기
+                            foreach (string line in DCLines)
+                            {
+
+                                // 쉼표로 분리하여 배열에 담기
+                                string[] va = line.Split(',');
+                                if (va.Length < 8)
+                                {
+                                    Logger.LogWarning("FileIO", "Dcceleration CSV 포맷 이상 (복수 통계)", _LoginManager?.UserInputID ?? "", $"{Path.Combine(decelDir, "ResultOutput.csv")} | line={line}");
+                                    break;
+                                }
+                                if (!TryParseCsvFloat(va[1], out RSinglePeakX[DCCcount])
+                                    || !TryParseCsvFloat(va[2], out RSinglePeakY[DCCcount])
+                                    || !TryParseCsvFloat(va[3], out RSingleWidth[DCCcount])
+                                    || !TryParseCsvFloat(va[4], out RSingleHeight[DCCcount])
+                                    || !TryParseCsvFloat(va[5], out RSingleArea[DCCcount])
+                                   )
+                                {
+                                    Logger.LogWarning("FileIO", "Dcceleration CSV 숫자 파싱 실패 (복수 통계)", _LoginManager?.UserInputID ?? "", $"{Path.Combine(decelDir, "ResultOutput.csv")} | line={line}");
+                                    break;
+                                }
+                                DCCcount++;
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Logger.LogError("FileIO", "Dcceleration CSV 읽기 실패 (복수 통계)", _LoginManager?.UserInputID ?? "", $"{Path.Combine(accelDir, "ResultOutput.csv")} | {ex}");
+                            MessageBox.Show(this, "Dcceleration CSV 파일을 읽는 중 오류가 발생했습니다.\n로그를 확인해 주세요.", "CSV 오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
+                        foreach (double value in RSinglePeakX)
+                        {
+                            if (value <= addRatio * RSinglePeakX.Average())
+                            {
+                                DCPeakxOutlierCount++;
+                            }
+                        }
+
+
+                        foreach (double value in RSinglePeakY)
+                        {
+                            if (value <= addRatio * RSinglePeakY.Average())
+                            {
+                                DCPeakyOutlierCount++;
+                            }
+                        }
+
+                        foreach (double value in RSingleWidth)
+                        {
+                            if (value <= addRatio * RSingleWidth.Average())
+                            {
+                                DCWidthOutlierCount++;
+                            }
+                        }
+
+                        foreach (double value in RSingleHeight)
+                        {
+                            if (value <= addRatio * RSingleHeight.Average())
+                            {
+                                DCHeightOutlierCount++;
+                            }
+                        }
+
+                        foreach (double value in RSingleArea)
+                        {
+                            if (value <= addRatio * RSingleArea.Average())
+                            {
+                                DCAreaOutlierCount++;
+                            }
+                        }
+
+                        double DC_OutlierRatio = ((DCPeakxOutlierCount + DCPeakyOutlierCount + DCWidthOutlierCount + DCHeightOutlierCount + DCAreaOutlierCount) / ((double)5 * (double)RSinglePeakX.Length)) * 100;
+
+                        Label DC_Final_Outlier = new Label();
+                        DC_Final_Outlier.Text = DC_OutlierRatio.ToString("F2");
+                        DC_Final_Outlier.Name = $"DCFinalOutlier{count}";
+                        DC_Final_Outlier.AutoSize = false;
+                        DC_Final_Outlier.Size = new Size(75, 57);
+                        DC_Final_Outlier.Visible = true;
+                        DC_Final_Outlier.ForeColor = Color.White;
+                        DC_Final_Outlier.BackColor = Color.FromArgb(64, 64, 64);
+                        DC_Final_Outlier.TextAlign = ContentAlignment.MiddleCenter;
+                        DC_Final_Outlier.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        DC_Final_Outlier.Margin = new Padding(2, 3, 3, 3);
+                        PlurerFlowPanel1.Controls.Add(DC_Final_Outlier);
+
+
+
+                        //평균 편차의 절대값 평균에 해당하는 부분도 같이 만든다.
+                        // 1. 데이터의 원본 평균 구하기
+                        // 2. 각 요소에서 평균을 뺀 절대값(Math.Abs)들의 평균을 다시 구하기                       
+                        double SinglePeakXMAD = RSinglePeakX.Select(num => Math.Abs(num - RSinglePeakX.Average())).Average();
+                        double SinglePeakYMAD = RSinglePeakY.Select(num => Math.Abs(num - RSinglePeakY.Average())).Average();
+                        double SingleWidthYMAD = RSingleWidth.Select(num => Math.Abs(num - RSingleWidth.Average())).Average();
+                        double SingleHeightMAD = RSingleHeight.Select(num => Math.Abs(num - RSingleHeight.Average())).Average();
+                        double SingleAreaMAD = RSingleArea.Select(num => Math.Abs(num - RSingleArea.Average())).Average();
+                        DCPeakXMAD[count - 1] = (float)SinglePeakXMAD;
+                        DCPeakYMAD[count - 1] = (float)SinglePeakYMAD;
+                        DCWidthMAD[count - 1] = (float)SingleWidthYMAD;
+                        DCHeightMAD[count - 1] = (float)SingleHeightMAD;
+                        DCAreaMAD[count - 1] = (float)SingleAreaMAD;
+
+                        Label AcPeakX_Score2 = new Label();
+                        AcPeakX_Score2.Text = SinglePeakXMAD.ToString("F2");
+                        AcPeakX_Score2.Name = $"ACPeakX{count}";
+                        AcPeakX_Score2.AutoSize = false;
+                        AcPeakX_Score2.Size = Plurer2LabelSize;
+                        AcPeakX_Score2.Visible = true;
+                        AcPeakX_Score2.ForeColor = Color.White;
+                        AcPeakX_Score2.BackColor = Color.FromArgb(64, 64, 64);
+                        AcPeakX_Score2.TextAlign = ContentAlignment.MiddleCenter;
+                        AcPeakX_Score2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        AcPeakX_Score2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(AcPeakX_Score2);
+
+
+                        Label AcPeakY_Score2 = new Label();
+                        AcPeakY_Score2.Text = SinglePeakYMAD.ToString("F2");
+                        AcPeakY_Score2.Name = $"ACPeakY{count}";
+                        AcPeakY_Score2.AutoSize = false;
+                        AcPeakY_Score2.Size = Plurer2LabelSize;
+                        AcPeakY_Score2.Visible = true;
+                        AcPeakY_Score2.ForeColor = Color.White;
+                        AcPeakY_Score2.BackColor = Color.FromArgb(64, 64, 64);
+                        AcPeakY_Score2.TextAlign = ContentAlignment.MiddleCenter;
+                        AcPeakY_Score2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        AcPeakY_Score2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(AcPeakY_Score2);
+
+                        Label Width_Score2 = new Label();
+                        Width_Score2.Text = SingleWidthYMAD.ToString("F2");
+                        Width_Score2.Name = $"ACWidth{count}";
+                        Width_Score2.AutoSize = false;
+                        Width_Score2.Size = Plurer2LabelSize;
+                        Width_Score2.Visible = true;
+                        Width_Score2.ForeColor = Color.White;
+                        Width_Score2.BackColor = Color.FromArgb(64, 64, 64);
+                        Width_Score2.TextAlign = ContentAlignment.MiddleCenter;
+                        Width_Score2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Width_Score2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(Width_Score2);
+
+                        Label Height_Score2 = new Label();
+                        Height_Score2.Text = SingleHeightMAD.ToString("F2");
+                        Height_Score2.Name = $"ACHeight{count}";
+                        Height_Score2.AutoSize = false;
+                        Height_Score2.Size = Plurer2LabelSize;
+                        Height_Score2.Visible = true;
+                        Height_Score2.ForeColor = Color.White;
+                        Height_Score2.BackColor = Color.FromArgb(64, 64, 64);
+                        Height_Score2.TextAlign = ContentAlignment.MiddleCenter;
+                        Height_Score2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Height_Score2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(Height_Score2);
+
+                        Label Area_Score2 = new Label();
+                        Area_Score2.Text = SingleAreaMAD.ToString("F2");
+                        Area_Score2.Name = $"ACArea{count}";
+                        Area_Score2.AutoSize = false;
+                        Area_Score2.Size = Plurer2LabelSize;
+                        Area_Score2.Visible = true;
+                        Area_Score2.ForeColor = Color.White;
+                        Area_Score2.BackColor = Color.FromArgb(64, 64, 64);
+                        Area_Score2.TextAlign = ContentAlignment.MiddleCenter;
+                        Area_Score2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        Area_Score2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(Area_Score2);
+
+                        //최종 등급 => 평균 편차의 절대값 평균 패널에 붙일거
+                        values = lines[12].Split(",");
+                        string FinalGrade2 = (double.Parse(values[1])).ToString("F0");
+                        Label DC_Final_Grade2 = new Label();
+                        DC_Final_Grade2.Text = FinalGrade;
+                        DC_Final_Grade2.Name = $"ACFinalGeade{count}";
+                        DC_Final_Grade2.AutoSize = false;
+                        DC_Final_Grade2.Size = Plurer2LabelSize;
+                        DC_Final_Grade2.Visible = true;
+                        DC_Final_Grade2.ForeColor = Color.White;
+                        DC_Final_Grade2.BackColor = Color.FromArgb(64, 64, 64);
+                        DC_Final_Grade2.TextAlign = ContentAlignment.MiddleCenter;
+                        DC_Final_Grade2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        DC_Final_Grade2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(DC_Final_Grade2);
+
+                        //평균 편차의 절대값 평균에 해당하는 부분도 같이 만든다.
+                        Label DC_Final_Outlier2 = new Label();
+                        DC_Final_Outlier2.Text = DC_OutlierRatio.ToString("F2");
+                        DC_Final_Outlier2.Name = $"ACFinalOutlier{count}";
+                        DC_Final_Outlier2.AutoSize = false;
+                        DC_Final_Outlier2.Size = Plurer2LabelSize;
+                        DC_Final_Outlier2.Visible = true;
+                        DC_Final_Outlier2.ForeColor = Color.White;
+                        DC_Final_Outlier2.BackColor = Color.FromArgb(64, 64, 64);
+                        DC_Final_Outlier2.TextAlign = ContentAlignment.MiddleCenter;
+                        DC_Final_Outlier2.Font = new Font("맑은 고딕", 15, FontStyle.Bold);
+                        DC_Final_Outlier2.Margin = new Padding(3, 4, 3, 3);
+                        PlurerFlowPanel2.Controls.Add(DC_Final_Outlier2);
+                    }
+                    else
+                    {
+                        Logger.LogError("CSV", $"CSV 파일에 데이터 없음 없음 \n 파일 경로 : {DCPath}");
+                    }
+
+
+                }
+                else
+                {
+                    Logger.LogError("CSV", $"CSV 파일 없음 \n 파일 경로 : {DCPath}");
+                }
+
+
+
+            }
+            PlotIndexScatter(ACPeakXScorePlot, ACPeakXScores, ACPeakXScores.Length, "ACPeakXScore");
+            PlotIndexScatter(ACPeakYScorePlot, ACPeakYScores, ACPeakYScores.Length, "ACPeakYScores");
+            PlotIndexScatter(ACWidthScorePlot, ACWidthScores, ACWidthScores.Length, "ACWidthScores");
+            PlotIndexScatter(ACHeightScorePlot, ACHeightScores, ACHeightScores.Length, "ACHeightScores");
+            PlotIndexScatter(ACAreaScorePlot, ACAreaScores, ACAreaScores.Length, "ACAreaScores");
+
+            PlotIndexScatter(ACPeakXMADPlot, ACPeakXMAD, ACPeakXMAD.Length, "ACPeakXMAD");
+            PlotIndexScatter(ACPeakYMADPlot, ACPeakYMAD, ACPeakYMAD.Length, "ACPeakYMAD");
+            PlotIndexScatter(ACWidthMADPlot, ACWidthMAD, ACWidthMAD.Length, "ACWidthMAD");
+            PlotIndexScatter(ACHeightMADPlot, ACHeightMAD, ACHeightMAD.Length, "ACHeightMAD");
+            PlotIndexScatter(ACAreaMADPlot, ACAreaMAD, ACAreaMAD.Length, "ACAreaMAD");
+
+
+            PlotIndexScatter(DCPeakXScorePlot,  DCPeakXScores,   DCPeakXScores.Length,  "DCPeakXScore");
+            PlotIndexScatter(DCPeakYScorePlot,  DCPeakYScores,   DCPeakYScores.Length,  "DCPeakYScores");
+            PlotIndexScatter(DCWidthScorePlot,  DCWidthScores,   DCWidthScores.Length,  "DCWidthScores");
+            PlotIndexScatter(DCHeightScorePlot, DCHeightScores,  DCHeightScores.Length, "DCHeightScores");
+            PlotIndexScatter(DCAreaScorePlot,   DCAreaScores,    DCAreaScores.Length,   "DCAreaScores");
+
+            PlotIndexScatter(DCPeakXMADPlot,  DCPeakXMAD, DCPeakXMAD.Length,  "DCPeakXMAD");
+            PlotIndexScatter(DCPeakYMADPlot,  DCPeakYMAD, DCPeakYMAD.Length,  "DCPeakYMAD");
+            PlotIndexScatter(DCWidthMADPlot,  DCWidthMAD, DCWidthMAD.Length,  "DCWidthMAD");
+            PlotIndexScatter(DCHeightMADPlot, DCHeightMAD,DCHeightMAD.Length, "DCHeightMAD");
+            PlotIndexScatter(DCAreaMADPlot,   DCAreaMAD,  DCAreaMAD.Length,   "DCAreaMAD");
+
+
+            //float로 형변환 하기
+            float[] tempdoubleArray = FinalGradeCount.Select(f => (float)f).ToArray();
+            PlotIndexBar(FinalGradeCountPlot, tempdoubleArray, FinalGradeCount.Length,"FinalGrade");
+            tempdoubleArray = ACGradeCount.Select(f => (float)f).ToArray();
+            PlotIndexBar(FinalACGradeCountPlot, tempdoubleArray, FinalGradeCount.Length, "FinalACGrade");
+            tempdoubleArray = DCGradeCount.Select(f => (float)f).ToArray();
+            PlotIndexBar(FinalDCGradeCountPlot, tempdoubleArray, FinalGradeCount.Length, "FinalDCGrade");
+
+
+
+
+            SettingPerulStaticPanel();
         }
 
-        private void PerulStaticPanelDisplay(int panelIndex)
-        {
-            // 1~3만 표시(디자이너에 PerulStaticPanel_1~3 존재)
-            PerulStaticPanel_1.Location = new Point(0, 70);
-            PerulStaticPanel_1.Size = new Size(1700, 746);
-            PerulStaticPanel_2.Location = new Point(0, 70);
-            PerulStaticPanel_2.Size = new Size(1700, 746);
-            PerulStaticPanel_3.Location = new Point(0, 70);
-            PerulStaticPanel_3.Size = new Size(1700, 746);
 
-            PerulStaticPanel_1.Visible = panelIndex == 1;
-            PerulStaticPanel_3.Visible = panelIndex == 2;
-            PerulStaticPanel_2.Visible = panelIndex == 3;
-        }
+
+
+
 
         private void PluralStaticLabel_Click(object sender, EventArgs e)
         {
             SettingPerulStaticPanel();
         }
 
-        private void PerulStaticPanelCountUpButton_Click(object sender, EventArgs e)
-        {
-            if (!EnsureLoggedIn())
-            {
-                return;
-            }
-
-            if (PerulStaticPanelCount > 3)
-            {
-                PerulStaticPanelCount = 3;
-            }
-            else
-            {
-                PerulStaticPanelCount++;
-            }
-
-            if (0 < PerulStaticPanelCount && PerulStaticPanelCount < 4)
-            {
-                PerulStaticDisplayLabel.Text = $"복수 통계[{PerulStaticPanelCount}]";
-                PerulStaticPanelDisplay(PerulStaticPanelCount);
-            }
-        }
-
-        private void PerulStaticPanelCountDownButton_Click(object sender, EventArgs e)
-        {
-            if (!EnsureLoggedIn())
-            {
-                return;
-            }
-
-            if (PerulStaticPanelCount < 1)
-            {
-                PerulStaticPanelCount = 1;
-            }
-            else
-            {
-                PerulStaticPanelCount--;
-            }
 
 
-            if (PerulStaticPanelCount is >= 1 and <= 3)
-            {
-                PerulStaticDisplayLabel.Text = $"복수 통계[{PerulStaticPanelCount}]";
-                PerulStaticPanelDisplay(PerulStaticPanelCount);
-            }
-        }
+
 
         private void SingleStaticLabel_Click(object sender, EventArgs e)
         {
@@ -2421,10 +3593,6 @@ namespace WIA_ViewerProgram
             CaldataPanel.Visible = false;
         }
 
-        private void CaldataPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void CalFrontImgSelectButton_Click(object? sender, EventArgs e)
         {
@@ -2470,72 +3638,18 @@ namespace WIA_ViewerProgram
             }
         }
 
-        private void FrontOriginPictureBox_Click(object sender, EventArgs e)
+
+
+
+
+        private void CaliBtr_Click(object sender, EventArgs e)
         {
 
-            /*
-             1. 클릭했을 때 이미지가 있다면 2번 실행, 없다면 'front 이미지를 선택해 주세요'라는 경고 메시지를 띄우고 해당 함수를 종료
-             2. CalFrontOriginImgPath에서 opencv를 이용해서 원본이미지 열기
-             3. 원본이미지에서 4개포인트 찍기 => 마우스 클릭으로 찍을수 있게해야함
-             4. 찍은 곳의 좌표는 별도로 저장되게 셋팅
-             5. opencv 함수를 사용해서 해당 영역을 스트레칭 실시
-             */
+            //이후에는 이게 AC/DC인지 구분하고 // 레시피별로 구분해야됨
+            Bitmap bitmap = _CV.GearGridWarpPerspective(CalRearOriginImgPath);
 
-            if (FrontOriginPictureBox.Image != null)
-            {
-                CalPointSettingPanel.Visible = true;
-                CalPointSettingPanel.Location = new Point(1587, 163);
-                CalPointSettingPanel.Size = new Size(335, 917);
-                CalPointSettingPanel.BringToFront();
-                PointCount.Text = "-";
-                _CV.SetPath(CalFrontOriginImgPath);
-
-                _CV.ImPointSetting();
-
-            }
-            else
-            {
-                MessageBox.Show("Acceleration 이미지를 선택해주세요.", "오류",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-
-            }
-
-
-
-
-        }
-
-        private void PointCompletButton_Click(object sender, EventArgs e)
-        {
-            // 포인트가 44개가 찍혀 있는지 확인 해서 
-
-            PointCount.Text = _CV.GridPoint.Count.ToString();
-            if (_CV.GridPoint.Count < _CV.GridCount)
-            {
-                MessageBox.Show($"포인트 설정을 완료해주세요\n 포인트 개수 : {_CV.GridPoint.Count}개", "포인트 설정",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                _CV.GridPoint.Clear();
-                _CV.ImPointSetting();
-                return;
-            }
-
-            MessageBox.Show($"포인트 설정 완료\n 포인트 개수 : {_CV.GridPoint.Count}개 설정 완료", "포인트 설정",
-            MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            CalPointSettingPanel.Visible = false;
-            // 확인 버튼이 눌리고 셋팅이 끝나면 아래 내용을 진행 함
-            //픽쳐박스에 해당 변형된 이미지 넣어야함
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            Bitmap bitmap = _CV.GearGridWarpPerspective();
-
-            FrontCalResult.SizeMode = PictureBoxSizeMode.StretchImage;
-            FrontCalResult.Image = bitmap;
-            _CV.GridPoint.Clear();
+            RearCalResult.SizeMode = PictureBoxSizeMode.StretchImage;
+            RearCalResult.Image = bitmap;
         }
 
 
@@ -2594,9 +3708,117 @@ namespace WIA_ViewerProgram
 
         }
 
-        private void MoniteringEndbtr_Click_1(object sender, EventArgs e)
+        private void PluerPageDownbtr_Click(object sender, EventArgs e)
         {
+            PerulStaticPanelCount--;
+            if (PerulStaticPanelCount <= 1)
+            {
+                PerulStaticPanelCount = 1;
+            }
+
+            PerulStaticPanelUpdate();
+        }
+
+        private void PluerPageUpbtr_Click(object sender, EventArgs e)
+        {
+            PerulStaticPanelCount++;
+            if (PerulStaticPanelCount >= 8)
+            {
+                PerulStaticPanelCount = 7;
+            }
+
+            PerulStaticPanelUpdate();
 
         }
+
+        public void PerulStaticPanelUpdate()
+        {
+            if (PerulStaticPanelCount == 1)
+            {
+                PerulStaticDisplayLabel.Text = "복수 통계 : 가중치 반영 최종 점수";
+                PerulStaticPanel_1.BringToFront();
+
+            }
+            else if (PerulStaticPanelCount == 2)
+            {
+                PerulStaticDisplayLabel.Text = "복수 통계 : MAD";
+                PerulStaticPanel_2.BringToFront();
+            }
+            else if (PerulStaticPanelCount == 3)
+            {
+                PerulStaticDisplayLabel.Text = "복수 통계 : Acceleration 점수";
+                PerulStaticPanel_3.BringToFront();
+            }
+            else if (PerulStaticPanelCount == 4)
+            {
+                PerulStaticDisplayLabel.Text = "복수 통계 : Acceleration MAD";
+                PerulStaticPanel_4.BringToFront();
+            }
+            else if (PerulStaticPanelCount == 5)
+            {
+                PerulStaticDisplayLabel.Text = "복수 통계 : Dcceleration 점수";
+                PerulStaticPanel_5.BringToFront();
+            }
+            else if (PerulStaticPanelCount == 6)
+            {
+                PerulStaticDisplayLabel.Text = "복수 통계 : Dcceleration MAD";
+                PerulStaticPanel_6.BringToFront();
+            }
+            else if (PerulStaticPanelCount == 7)
+            {
+                PerulStaticDisplayLabel.Text = "복수 통계 : 등급 통계";
+                PerulStaticPanel_7.BringToFront();
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void SettingPerulStaticPanel()
+        {
+            PerulStaticPanelCount = 1;
+            PerulStaticPanel.Location = new Point(10, 90);
+            PerulStaticPanel.Size = new Size(1700, 810);
+            PerulStaticPanel.Visible = true;
+            ListPanel.Visible = false;
+            ListLabel.ForeColor = Color.White;
+            ListLabel.BackColor = Color.FromArgb(64, 64, 64);
+            PluralStaticLabel.ForeColor = Color.Black;
+            PluralStaticLabel.BackColor = Color.White;
+            PerulStaticPanel_1.Visible = true;
+            PerulStaticPanel_1.Location = new Point(3, 61);
+            PerulStaticPanel_1.Size = new Size(1676, 700);
+            PerulStaticDisplayLabel.Text = "복수 통계 : 가중치 반영 최종 점수";
+            PerulStaticPanel_2.Location = new Point(3, 61);
+            PerulStaticPanel_2.Size = new Size(1676, 700);
+            PerulStaticPanel_2.Visible = true;
+
+            PerulStaticPanel_3.Location = new Point(3, 61);
+            PerulStaticPanel_3.Size = new Size(1676, 700);
+            PerulStaticPanel_3.Visible = true;
+
+
+            PerulStaticPanel_4.Location = new Point(3, 61);
+            PerulStaticPanel_4.Size = new Size(1676, 700);
+            PerulStaticPanel_4.Visible = true;
+
+
+            PerulStaticPanel_5.Location = new Point(3, 61);
+            PerulStaticPanel_5.Size = new Size(1676, 700);
+            PerulStaticPanel_5.Visible = true;
+
+            PerulStaticPanel_6.Location = new Point(3, 61);
+            PerulStaticPanel_6.Size = new Size(1676, 700);
+            PerulStaticPanel_6.Visible = true;
+
+            PerulStaticPanel_7.Location = new Point(3, 61);
+            PerulStaticPanel_7.Size = new Size(1676, 700);
+            PerulStaticPanel_7.Visible = true;
+
+
+            PerulStaticPanel_1.BringToFront();
+        }
+
     }
 }

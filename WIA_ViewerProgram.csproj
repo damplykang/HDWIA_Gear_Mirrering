@@ -22,8 +22,9 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageReference Include="OpenCvSharp4" Version="4.13.0.20260330" />
-    <PackageReference Include="OpenCvSharp4.Extensions" Version="4.13.0.20260330" />
+    <PackageReference Include="OpenCvSharp4" Version="4.13.0.20260528" />
+    <PackageReference Include="OpenCvSharp4.Extensions" Version="4.13.0.20260528" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.13.0.20260528" />
     <PackageReference Include="ScottPlot" Version="5.1.58" />
     <PackageReference Include="ScottPlot.WinForms" Version="5.1.58" />
     <Compile Update="ViewerForm.cs" />
