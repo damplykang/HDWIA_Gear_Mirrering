@@ -9,15 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <COMReference Include="ActUtlType64Lib">
-      <WrapperTool>tlbimp</WrapperTool>
-      <VersionMinor>0</VersionMinor>
-      <VersionMajor>5</VersionMajor>
-      <Guid>719a5fab-eb1c-4b52-98bc-f8c9f6912d04</Guid>
-      <Lcid>0</Lcid>
-      <Isolated>false</Isolated>
+    <!-- COM ResolveComReference는 dotnet CLI에서 미지원(MSB4803). 사전 생성 Interop DLL 참조 -->
+    <Reference Include="Interop.ActUtlType64Lib">
+      <HintPath>lib\Interop.ActUtlType64Lib.dll</HintPath>
       <EmbedInteropTypes>true</EmbedInteropTypes>
-    </COMReference>
+      <Private>true</Private>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
