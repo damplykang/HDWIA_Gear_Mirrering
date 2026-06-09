@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -210,6 +211,8 @@ namespace WIA_ViewerProgram
                 });
 
                 File.WriteAllText("./LoginData.json", json);
+                ReadJson();
+                BoolLoginCheck=false;
                 logger.LogInfo("Login", "비밀번호 변경 완료", FixedProgramLoginMode ?? ProgramLoginMode);
             }
             catch (Exception ex)
@@ -217,6 +220,56 @@ namespace WIA_ViewerProgram
                 logger.LogError("Login", $"비밀번호 변경 실패: {ex.Message}", FixedProgramLoginMode ?? ProgramLoginMode, ex.StackTrace);
                 throw;
             }
+        }
+
+        public bool UnlockCheck(string pw)
+        {
+
+            if (UserInputID == OperatorID)
+            {
+                if (pw == OperatorPW)
+                {
+                    BoolLoginCheck = true;
+                    logger.LogInfo("Login", $"자금 해제 실페 성공 - 모드: {ProgramLoginMode}", OperatorID);
+                    return true;
+                }
+                else
+                {
+                    logger.LogWarning("Login", $"잠금해제 실패 - 모드: {ProgramLoginMode}, 이유: 비밀번호 불일치", OperatorID);
+                }
+
+            }
+            else if(UserInputID==AdminID)
+            {
+                if (pw == AdminPW)
+                {
+                    BoolLoginCheck = true;
+                    logger.LogInfo("Login", $"자금 해제 실페 성공 - 모드: {ProgramLoginMode}", AdminID);
+                    return true;
+                }
+                else
+                {
+                    logger.LogWarning("Login", $"잠금해제 실패 - 모드: {ProgramLoginMode}, 이유: 비밀번호 불일치", AdminID);
+                }
+
+            }
+            else if (UserInputID==MasterID)
+            {
+                if (pw == MasterPW)
+                {
+                    BoolLoginCheck = true;
+                    logger.LogInfo("Login", $"자금 해제 실페 성공 - 모드: {ProgramLoginMode}", MasterID);
+                    return true;
+                }
+                else
+                {
+                    logger.LogWarning("Login", $"잠금해제 실패 - 모드: {ProgramLoginMode}, 이유: 비밀번호 불일치", MasterID);
+                }
+
+            }
+
+
+            return false;
         }
 
     }

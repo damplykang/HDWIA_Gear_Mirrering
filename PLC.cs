@@ -15,7 +15,7 @@ namespace WIA_ViewerProgram
         public string Ip { get; set; } = "";
         public int StationNumber { get; set; }
         public int MoniteringCycle { get; set; }
-        public string MoniterAdrress { get; set; } = "D3000";
+        public string MoniterAdrress { get; set; } = "D6000";
     }
 
 
@@ -49,12 +49,13 @@ namespace WIA_ViewerProgram
         private Task? _monitoringTask;
         int CurrentTrigerValue;
 
-        /// <summary>모니터링할 디바이스 주소 문자열 (예: D3000, M100).</summary>
-        public string MoniterAdrress = "D3000";
+        /// <summary>모니터링할 디바이스 주소 문자열 (예: D6000, M100).</summary>
+        public string MoniterAdrress = "D6000";
         private string hex;
 
         //"C:\\Users\\Admin\\Documents\\Keyence\\XG-X VisionTerminal\\USB\\SD2\\Vision\\"=> 수정해야함
         // 테스트용 경로
+        //"C:\\Users\\xodnj\\Desktop\\txt\\"
         const string FilePath = "C:\\Users\\Admin\\Documents\\Keyence\\XG-X VisionTerminal\\USB\\SD2\\Vision\\";//이폴더에 통합 CSV파일 저장!
 
         //거리 감지 센서값 저장하기 위해 필요한 변수들
@@ -63,14 +64,14 @@ namespace WIA_ViewerProgram
         List<float> sensingDist = new List<float>();
 
         //시작할때 쓰레기 폴더 시행횟수 999에 있는 모든 데이터를 삭제함 
-        string trashfolder="-";
+        string trashfolder = "-";
         string AC_CSVFullPath = "-";
         string DC_CSVFullPath = "-";
 
         public PLC()
         {
             PictureEnd = false;
-            MoniterAdrress = "D3000";
+            MoniterAdrress = "D6000";
         }
 
         public void LoadFromJson()
@@ -86,7 +87,7 @@ namespace WIA_ViewerProgram
                     Ip = "";
                     StationNumber = 0;
                     MoniteringCycle = 0;
-                    MoniterAdrress = "D3000";
+                    MoniterAdrress = "D6000";
                     logger.LogInfo("PLC", "PLCSetting.json 없음 — 기본값으로 새 파일 생성", "", JsonPath);
                     SaveToJson();
                     return;
@@ -99,7 +100,7 @@ namespace WIA_ViewerProgram
                     Ip = "";
                     StationNumber = 0;
                     MoniteringCycle = 0;
-                    MoniterAdrress = "D3000";
+                    MoniterAdrress = "D6000";
                     logger.LogWarning("PLC", "PLCSetting.json 역직렬화 결과 null — 기본값 사용", "", JsonPath);
                     return;
                 }
@@ -107,7 +108,7 @@ namespace WIA_ViewerProgram
                 Ip = data.Ip ?? "";
                 StationNumber = data.StationNumber;
                 MoniteringCycle = data.MoniteringCycle;
-                MoniterAdrress = string.IsNullOrWhiteSpace(data.MoniterAdrress) ? "D3000" : data.MoniterAdrress.Trim();
+                MoniterAdrress = string.IsNullOrWhiteSpace(data.MoniterAdrress) ? "D6000" : data.MoniterAdrress.Trim();
                 logger.LogInfo("PLC", "PLC 설정 로드 완료", "", $"Ip={Ip}, Station={StationNumber}, Cycle={MoniteringCycle}ms, Address={MoniterAdrress}");
             }
             catch (Exception ex)
@@ -115,7 +116,7 @@ namespace WIA_ViewerProgram
                 Ip = "";
                 StationNumber = 0;
                 MoniteringCycle = 0;
-                MoniterAdrress = "D3000";
+                MoniterAdrress = "D6000";
                 logger.LogError("PLC", "PLCSetting.json 로드 중 예외 — 기본값 사용", "", $"{ex.Message}");
             }
         }
@@ -216,7 +217,7 @@ namespace WIA_ViewerProgram
                 _monitoringCancellationTokenSource = new CancellationTokenSource();
                 var cancellationToken = _monitoringCancellationTokenSource.Token;
 
-                
+
 
                 _monitoringTask = Task.Run(async () =>
                 {
@@ -253,25 +254,24 @@ namespace WIA_ViewerProgram
                                         // 만들어 진 경로에 데이터를 저장한다
                                         // string csvFilename = "\\ResultOutput.csv"; 파일 이름은 이걸로 통일!
                                         //만들어진경로에 csv파일을 데이터별로 저장한다.                                        
-                                        //AC작업                                         
+                                        //AC작업
+
                                         CSVFileCreate("AC");
                                         //DC작업
                                         CSVFileCreate("DC");
                                         DcDataSort(); //Dc데이터 정렬하기
-                                        
-                                        DcJpgRename();
+                                        DcJpgRename();// DC의 이미지 순서 저장
                                         DistSensingDataSave();//=> 센싱 데이터 저장 
-                                        
                                         //AC/ DC의 RESULT OUTPUT 데이터에서 PEAK X , PEAK Y, WIDTH, HEIGHT, AREA에 대해서 
                                         //단일치, 인접치, 누적치, R/OUT을 우선 계산
                                         // 이후 등급 계산 
                                         GradeCSVCreate();
                                         /// 시행횟수 999폴더는 무조건 삭제...
                                         DeletTrashFolder();
-                                        DC_CSVFullPath = "-";
-                                        AC_CSVFullPath = "-"; 
+                                        DC_CSVFullPath = "DC_CSVFullPath- 초기화 : 등급 점수를 두번 저장하지 않기 위한 초기화";
+                                        AC_CSVFullPath = "ACC_CSVFullPath- 초기화 : 등급 점수를 두번 저장하지 않기 위한 초기화 ";
 
-                                      
+
 
                                         ActUtlType.SetDevice(MoniterAdrress, 0);
                                     }
@@ -421,6 +421,7 @@ namespace WIA_ViewerProgram
         //ac/ dc 데이터를 만들어서 저장해야함
         public void CSVFileCreate(string CameraInfo)
         {
+            //수정 해야함
             string TXTfilePath = FilePath + CameraInfo;
             int linesProcessed = 0;
             int linesSkippedBadFormat = 0;
@@ -441,14 +442,16 @@ namespace WIA_ViewerProgram
 
                     foreach (string filePath in files)
                     {   //파일 하나씩 읽어서 다읽고 생성
-                        foreach (string line in File.ReadLines(filePath))
+                        string[] FileAllLines = File.ReadAllLines(filePath);
+                        foreach (string line in FileAllLines)
                         {
                             // 여기서 각 줄(line)을 처리합니다.
                             if (!string.IsNullOrWhiteSpace(line))
                             {
                                 linesProcessed++;
                                 string[] values = line.Split(',');
-                                const int minCols = 15; // 0~6 메타 + 데이터 8컬럼(7~14)
+                                
+                                const int minCols = 16; // 0~6 메타 + 데이터 9컬럼(7~15)
                                 if (values.Length < minCols)
                                 {
                                     linesSkippedBadFormat++;
@@ -464,34 +467,59 @@ namespace WIA_ViewerProgram
                                 //감속쪽 데이터는 이후에도 맞춰줘야함
                                 // ---------------- 여기나오는 20 , 43은 txt파일을 읽어서 만드는거기 때문에 
                                 //모든 데이터를 읽어 올순 없고 나중에 레시피마다 기어개수가 달라지는 것을 고려하여 수정해주자
-                                if(CameraInfo == "DC")//DC의 홈과 AC의 홈의 데이터를 맞추기 위한 작업
+
+                                //--------------★기억 개수에 따른 수정이 필요 한 부분-------------------------
+                                if (CameraInfo == "DC")//DC의 홈과 AC의 홈의 데이터를 맞추기 위한 작업
                                 {
-                                    values[7] = (((int.Parse(values[7])+20)%43)+1).ToString();
+                                    int count = FileAllLines.Length;
+                                    
+                                    if (count == 43) 
+                                    { 
+                                        values[7] = (((int.Parse(values[7]) + 20) % count) + 1).ToString(); 
+                                    }
+                                    else if (count == 46)
+                                    {
+                                        values[7] = (((int.Parse(values[7]) + 22) % count) + 1).ToString();
+                                    }
+                                    else if (count == 41)
+                                    {
+                                        values[7] = (((int.Parse(values[7]) + 100000) % count) + 1).ToString();
+                                    }
+                                    else if (count == 48)
+                                    {
+                                        values[7] = (((int.Parse(values[7]) + 100000) % count) + 1).ToString();
+                                    }
+                                    else if (count == 50)
+                                    {
+                                        values[7] = (((int.Parse(values[7]) + 100000) % count) + 1).ToString();
+                                    }                                    
                                 }
 
-                                string[] selectedValues = values.Skip(7).Take(8).ToArray();
+                                string[] selectedValues = values.Skip(7).Take(9).ToArray();
                                 string csvContent = string.Join(",", selectedValues);
+                               
                                 //config.FTP를 활용해서 
                                 string CSVPath = config.FTP + date + "\\" + model + "\\" + bcr + "\\" + folderNUM + "\\" + geartype;
                                 SensingDataSavePath = config.FTP + date + "\\" + model + "\\" + bcr + "\\" + folderNUM;// 거리감지 센서를 져장하기 위한 패스
-                                
+
                                 string fullPath = Path.Combine(CSVPath, "ResultOutput.csv");
-                                if (CameraInfo=="AC")
+                                if (CameraInfo == "AC")
                                 {
                                     AC_CSVFullPath = CSVPath;
                                 }
-                                else if(CameraInfo == "DC")
+                                else if (CameraInfo == "DC")
                                 {
                                     DC_CSVFullPath = CSVPath;
                                 }
-                                if (int.Parse(folderNUM) <999) { //폴더 번호가 999 아니라면
+                                if (int.Parse(folderNUM) < 999)
+                                { //폴더 번호가 999 아니라면
                                     Directory.CreateDirectory(CSVPath);
                                     using (StreamWriter sw = new StreamWriter(fullPath, append: true))
                                     {
-                                    sw.WriteLine(csvContent);
-                                    }    
+                                        sw.WriteLine(csvContent);
+                                    }
                                     logger.LogInfo("Data", $"{CameraInfo} 데이터 저장 경로 {fullPath} \n 데이터 : {selectedValues[0]},{selectedValues[1]},{selectedValues[2]}, {selectedValues[3]}...etc");
-                                } 
+                                }
                                 else
                                 {
                                     trashfolder = config.FTP + date + "\\" + model + "\\" + bcr + "\\" + folderNUM;// 999가 라는 폴더가 있다면 업데이트
@@ -557,7 +585,8 @@ namespace WIA_ViewerProgram
                         // [개선 1] 정확한 종료 조건 검사 (합산이 아닌 각각 0인지 확인)
                         if (value1 == 0 && value2 == 0 && value3 == 0)
                         {
-                            if (count>1) {
+                            if (count > 1)
+                            {
                                 int last;
                                 ActUtlType.GetDevice($"D{startAddress - 2}", out last);
                                 logger.LogError("PLC", $" PLC읽기 종료 : D{startAddress - 2}어드레스에서 종료 됨 값: {last} ");
@@ -569,13 +598,6 @@ namespace WIA_ViewerProgram
                             }
                         }
 
-                        if (count==44)
-                        {
-                            //홈개수는 반드시 43개!
-                            logger.LogInfo("PLC", $" PLC읽기 종료 총 43개의 데이터 읽기 완료 : 저장 경로 {fullPath} ");
-                            break;
-                        }
-
                         // CSV 데이터 행 작성
                         short temp = (short)value1;
                         sw.WriteLine($"{count},{temp / (float)1000}");
@@ -585,6 +607,7 @@ namespace WIA_ViewerProgram
                         // 주소 및 카운트 증가
                         startAddress += 2;
                         count++;
+
                     }
                 } // using 블록을 나가면서 파일이 안전하게 닫힙니다 (Close 자동 호출)
             }
@@ -606,7 +629,7 @@ namespace WIA_ViewerProgram
                 {
                     // 2. 폴더 삭제 (두 번째 인자를 true로 주어야 하위 파일 및 폴더까지 전부 삭제됩니다)
                     Directory.Delete(trashfolder, true);
-                    logger.LogInfo("트래쉬 폴더{999} 폴더 삭제 성공",$"폴더 경로 : {trashfolder}");
+                    logger.LogInfo("트래쉬 폴더{999} 폴더 삭제 성공", $"폴더 경로 : {trashfolder}");
                 }
                 else
                 {
@@ -641,8 +664,8 @@ namespace WIA_ViewerProgram
             // grade에 관련된 내용 계산해야함
 
             //여기는 이후에 삭제 된다!
-            //AC_CSVFullPath = "C:\\Users\\dampl\\OneDrive\\Desktop\\Vision\\20260513\\WRRG3ICEOPEN8025TR3909\\JX1260123179A27-7-3-7-0-\\02\\Acceleration";
-            //DC_CSVFullPath = "C:\\Users\\dampl\\OneDrive\\Desktop\\Vision\\20260513\\WRRG3ICEOPEN8025TR3909\\JX1260123179A27-7-3-7-0-\\02\\Deceleration";
+           // AC_CSVFullPath = "C:\\Users\\xodnj\\Desktop\\Vision\\20260625\\WRJKICEOPEN8535TR3909\\RG1260521035A21-9-3-0-0-\\1\\Acceleration";
+            //DC_CSVFullPath = "C:\\Users\\xodnj\\Desktop\\Vision\\20260625\\WRJKICEOPEN8535TR3909\\RG1260521035A21-9-3-0-0-\\1\\Deceleration";
 
             double AC_FinalScore;
             int AC_FinalGrade;
@@ -651,27 +674,30 @@ namespace WIA_ViewerProgram
             int DC_FinalGrade;
 
 
-            if (File.Exists(AC_CSVFullPath+ "\\ResultOutput.csv"))
+            if (File.Exists(AC_CSVFullPath + "\\ResultOutput.csv"))
             {
                 //AC 파일이 제대로 만들어져서 존재 하는 경우
-                string firstLine = File.ReadLines(AC_CSVFullPath+ "\\ResultOutput.csv").FirstOrDefault();
+                string firstLine = File.ReadLines(AC_CSVFullPath + "\\ResultOutput.csv").FirstOrDefault();
 
                 if (string.IsNullOrWhiteSpace(firstLine))
                 {
                     // 파일은 있지만 내용이 비어 있는 겨우
-                    logger.LogError("CSV", $"AC - ResultOutput.csv 파일이 비어 있습니다.  \n파일 경로 :{AC_CSVFullPath+ "\\ResultOutput.csv"}");
+                    logger.LogError("CSV", $"AC - ResultOutput.csv 파일이 비어 있습니다.  \n파일 경로 :{AC_CSVFullPath + "\\ResultOutput.csv"}");
                 }
                 else
                 {
                     //파일도있고 내부에 내용도 있는 경우
                     // 라인들을 읽어서 새로운 파일들 만들어야함
-                    double[] sum = new double[5]; 
+                    // 0 : PeakX/ 1 : PeakY /2 : AreaX /3 : AreaY/ 4: Length / 5:Heigth /6: Area /7: Distance/
                     string[] lines = File.ReadAllLines(AC_CSVFullPath + "\\ResultOutput.csv");
-                    List <double> Peakx_total = new List<double>();
+                    List<double> Peakx_total = new List<double>();
                     List<double> Peaky_total = new List<double>();
+                    List<double> Areax_total = new List<double>();
+                    List<double> Areay_total = new List<double>();
                     List<double> Width_total = new List<double>();
                     List<double> Height_total = new List<double>();
                     List<double> Area_total = new List<double>();
+                    List<double> Distance_total = new List<double>();
                     int DataMaxCount = lines.Length; // 기어마다 개수가 달라지므로!
 
                     foreach (string line in lines)
@@ -679,61 +705,176 @@ namespace WIA_ViewerProgram
                         string[] values = line.Split(',');
                         Peakx_total.Add(double.Parse(values[1]));
                         Peaky_total.Add(double.Parse(values[2]));
-                        Width_total.Add(double.Parse(values[3]));
-                        Height_total.Add(double.Parse(values[4]));
-                        Area_total.Add(double.Parse(values[5]));
-                        sum[0] += double.Parse(values[1]); // peak x
-                        sum[1] += double.Parse(values[2]); // peak y
-                        sum[2] += double.Parse(values[3]); // width
-                        sum[3] += double.Parse(values[4]); // height
-                        sum[4] += double.Parse(values[5]); // area
+                        Areax_total.Add(double.Parse(values[3]));
+                        Areay_total.Add(double.Parse(values[4]));
+                        Width_total.Add(double.Parse(values[5]));
+                        Height_total.Add(double.Parse(values[6]));
+                        Area_total.Add(double.Parse(values[7]));
+                        Distance_total.Add(double.Parse(values[8]));
                     }
-                    
-                    double peakx_avg = sum[0] / (double)DataMaxCount;
-                    double peaky_avg = sum[1] / (double)DataMaxCount;
-                    double Width_avg = sum[2] / (double)DataMaxCount;
-                    double Height_avg = sum[3] / (double)DataMaxCount;
-                    double Area_avg = sum[4] / (double)DataMaxCount;
 
-                    //----------------peakx에 대한 단일치 인접치 누적치 r/out 구하기--------------------
-                    double Peakx_Max= -1;//peakx의 단일치
+                    double Peakx_avg = Peakx_total.Average();
+                    double Peaky_avg   = Peaky_total.Average();
+                    double Areax_avg   = Areax_total.Average();
+                    double Areay_avg   = Areay_total.Average();
+                    double Width_avg   = Width_total.Average();
+                    double Height_avg  = Height_total.Average();
+                    double Area_avg    = Area_total.Average();
+                    double Distance_avg = Distance_total.Average();
+
+                    //-----------------AC Distance 에 대한 단일 인접 누적 r/out 구하기----------------------
+                    double Distance_Max = -1;//Distance의 단일치
+                    double Distance_MaxInterval = -1;//Distance의 인접치 차이중 가장큰거
+                    double Pre_Distance_data = Distance_total[0];
+                    double Distance_nugeock = 0; //peak 누적치;
+                    double Distance_MaxDATA = -1;
+                    double Distance_MinDATA = 99999;
+                    foreach (double Value in Distance_total)
+                    {
+                        //단일치 구하기
+                        if (Distance_Max <= Math.Abs(Value - Distance_avg))
+                        {
+                            Distance_Max = Math.Abs(Value - Distance_avg);
+                        }
+                        //인접치 구하기
+                        if (Distance_MaxInterval <= Math.Abs(Value - Pre_Distance_data))
+                        {
+                            Distance_MaxInterval = Math.Abs(Value - Pre_Distance_data);
+                        }
+                        Pre_Distance_data = Value;
+
+                        //R/OUT 구하기 위한 사전 준비
+                        if (Distance_MaxDATA < Value)
+                        {
+                            Distance_MaxDATA = Value;
+                        }
+                        if (Distance_MinDATA > Value)
+                        {
+                            Distance_MinDATA = Value;
+                        }
+
+                        Distance_nugeock += Value * Value;
+                    }
+                    Distance_nugeock /= (double)Distance_total.Count;
+                    Distance_nugeock = Math.Sqrt(Distance_nugeock);
+                    //R/OUT 구하기
+                    double Distance_ROUT = Distance_MaxDATA - Distance_MinDATA;
+
+                    //-----------------AC Areay 에 대한 단일 인접 누적 r/out 구하기----------------------
+                    double Areay_Max = -1;//Areay의 단일치
+                    double Areay_MaxInterval = -1;//Areay의 인접치 차이중 가장큰거
+                    double Pre_Areay_data = Areay_total[0];
+                    double Areay_nugeock = 0; //peak 누적치;
+                    double Areay_MaxDATA = -1;
+                    double Areay_MinDATA = 99999;
+                    foreach (double Value in Areay_total)
+                    {
+                        //단일치 구하기
+                        if (Areay_Max <= Math.Abs(Value - Areay_avg))
+                        {
+                            Areay_Max = Math.Abs(Value - Areay_avg);
+                        }
+                        //인접치 구하기
+                        if (Areay_MaxInterval <= Math.Abs(Value - Pre_Areay_data))
+                        {
+                            Areay_MaxInterval = Math.Abs(Value - Pre_Areay_data);
+                        }
+                        Pre_Areay_data = Value;
+
+                        //R/OUT 구하기 위한 사전 준비
+                        if (Areay_MaxDATA < Value)
+                        {
+                            Areay_MaxDATA = Value;
+                        }
+                        if (Areay_MinDATA > Value)
+                        {
+                            Areay_MinDATA = Value;
+                        }
+
+                        Areay_nugeock += Value * Value;
+                    }
+                    Areay_nugeock /= (double)Areay_total.Count;
+                    Areay_nugeock = Math.Sqrt(Areay_nugeock);
+                    //R/OUT 구하기
+                    double Areay_ROUT = Areay_MaxDATA - Areay_MinDATA;
+
+                    //-----------------AC AreaX 에 대한 단일 인접 누적 r/out 구하기----------------------
+                    double Areax_Max = -1;//Areax의 단일치
+                    double Areax_MaxInterval = -1;//Areax의 인접치 차이중 가장큰거
+                    double Pre_Areax_data = Areax_total[0];
+                    double Areax_nugeock = 0; //peak 누적치;
+                    double Areax_MaxDATA = -1;
+                    double Areax_MinDATA = 99999;
+                    foreach (double Value in Areax_total)
+                    {
+                        //단일치 구하기
+                        if (Areax_Max <= Math.Abs(Value - Areax_avg))
+                        {
+                            Areax_Max = Math.Abs(Value - Areax_avg);
+                        }
+                        //인접치 구하기
+                        if (Areax_MaxInterval <= Math.Abs(Value - Pre_Areax_data))
+                        {
+                            Areax_MaxInterval = Math.Abs(Value - Pre_Areax_data);
+                        }
+                        Pre_Areax_data = Value;
+
+                        //R/OUT 구하기 위한 사전 준비
+                        if (Areax_MaxDATA < Value)
+                        {
+                            Areax_MaxDATA = Value;
+                        }
+                        if (Areax_MinDATA > Value)
+                        {
+                            Areax_MinDATA = Value;
+                        }
+
+                        Areax_nugeock += Value * Value;
+                    }
+                    Areax_nugeock /= (double)Areax_total.Count;
+                    Areax_nugeock = Math.Sqrt(Areax_nugeock);
+                    //R/OUT 구하기
+                    double Areax_ROUT = Areax_MaxDATA - Areax_MinDATA;
+
+                    //----------------AC Peakx 단일치 인접치 누적치 r/out 구하기--------------------
+                    double Peakx_Max = -1;//peakx의 단일치
                     double Peakx_MaxInterval = -1;//peakx의 인접치 차이중 가장큰거
                     double Pre_pkakx_data = Peakx_total[0];
                     double Peakx_nugeock = 0; //peak 누적치;
                     double Peakx_MaxDATA = -1;
                     double Peakx_MinDATA = 99999;
-                    foreach (double pkakx_data in Peakx_total)
+                    foreach (double Value in Peakx_total)
                     {
                         //단일치 구하기
-                        if (Peakx_Max <= Math.Abs(pkakx_data - peakx_avg))
+                        if (Peakx_Max <= Math.Abs(Value - Peakx_avg))
                         {
-                            Peakx_Max = Math.Abs(pkakx_data - peakx_avg);
+                            Peakx_Max = Math.Abs(Value - Peakx_avg);
                         }
                         //인접치 구하기
-                        if (Peakx_MaxInterval <= Math.Abs(pkakx_data - Pre_pkakx_data))
+                        if (Peakx_MaxInterval <= Math.Abs(Value - Pre_pkakx_data))
                         {
-                            Peakx_MaxInterval = Math.Abs(pkakx_data - Pre_pkakx_data);
+                            Peakx_MaxInterval = Math.Abs(Value - Pre_pkakx_data);
                         }
-                        Pre_pkakx_data = pkakx_data;
+                        Pre_pkakx_data = Value;
 
                         //R/OUT 구하기 위한 사전 준비
-                        if (Peakx_MaxDATA < pkakx_data)
+                        if (Peakx_MaxDATA < Value)
                         {
-                            Peakx_MaxDATA = pkakx_data;
+                            Peakx_MaxDATA = Value;
                         }
-                        if (Peakx_MinDATA > pkakx_data)
+                        if (Peakx_MinDATA > Value)
                         {
-                            Peakx_MinDATA = pkakx_data;
+                            Peakx_MinDATA = Value;
                         }
 
-                        Peakx_nugeock += pkakx_data * pkakx_data;
+                        Peakx_nugeock += Value * Value;
                     }
-                    Peakx_nugeock /= (double)DataMaxCount ;
+                    Peakx_nugeock /= (double)Peakx_total.Count;
                     Peakx_nugeock = Math.Sqrt(Peakx_nugeock);
                     //R/OUT 구하기
                     double Peakx_ROUT = Peakx_MaxDATA - Peakx_MinDATA;
-                    
-                    //--------------peak y에 대한 값 단일치/ 인접치 / 누적치/ rout 구하기------------------
+
+                    //----------------AC Peaky 단일치 인접치 누적치 r/out 구하기--------------------
                     double Peaky_Max = -1;//peakx의 단일치
                     double Peaky_MaxInterval = -1;//peakx의 인접치 차이중 가장큰거
                     double Pre_pkaky_data = Peaky_total[0];
@@ -743,9 +884,9 @@ namespace WIA_ViewerProgram
                     foreach (double peaky_data in Peaky_total)
                     {
                         //단일치 구하기
-                        if (Peaky_Max <= Math.Abs(peaky_data - peaky_avg))
+                        if (Peaky_Max <= Math.Abs(peaky_data - Peaky_avg))
                         {
-                            Peaky_Max = Math.Abs(peaky_data - peaky_avg);
+                            Peaky_Max = Math.Abs(peaky_data - Peaky_avg);
                         }
                         //인접치 구하기
                         if (Peaky_MaxInterval <= Math.Abs(peaky_data - Pre_pkaky_data))
@@ -764,11 +905,11 @@ namespace WIA_ViewerProgram
                         }
                         Peaky_nugeock += peaky_data * peaky_data;
                     }
-                    Peaky_nugeock /= (double)DataMaxCount;
+                    Peaky_nugeock /= (double)Peaky_total.Count;
                     Peaky_nugeock = Math.Sqrt(Peaky_nugeock);
                     double Peaky_ROUT = Peaky_MaxDATA - Peaky_MinDATA;
 
-                    //--------------Width에 대한 값 단일치/ 인접치 / 누적치/ rout 구하기-------------------
+                    //----------------AC Width 단일치 인접치 누적치 r/out 구하기--------------------
                     double Width_Max = -1;//peakx의 단일치
                     double Width_MaxInterval = -1;//peakx의 인접치 차이중 가장큰거
                     double Pre_Width_data = Width_total[0];
@@ -788,7 +929,7 @@ namespace WIA_ViewerProgram
                             Width_MaxInterval = Math.Abs(Width_data - Pre_Width_data);
                         }
                         Pre_Width_data = Width_data;
-                  
+
                         //R/OUT 구하기 위한 사전 준비
                         if (Width_MaxDATA < Width_data)
                         {
@@ -800,13 +941,13 @@ namespace WIA_ViewerProgram
                         }
                         Width_nugeock += Width_data * Width_data;
                     }
-                    Width_nugeock /= (double)DataMaxCount;
+                    Width_nugeock /= (double)Width_total.Count;
                     Width_nugeock = Math.Sqrt(Width_nugeock);
                     //R/OUT 구하기
                     double Width_ROUT = Width_MaxDATA - Width_MinDATA;
 
 
-                    //--------------height 에대한 단일/ 인점 /누적 /rout 구하기---------------------
+                    //----------------AC Height 단일치 인접치 누적치 r/out 구하기--------------------
                     double Height_Max = -1;//peakx의 단일치
                     double Height_MaxInterval = -1;//peakx의 인접치 차이중 가장큰거
                     double Pre_Height_data = Height_total[0];
@@ -837,12 +978,12 @@ namespace WIA_ViewerProgram
                         }
                         Height_nugeock += Height_data * Height_data;
                     }
-                    Height_nugeock /= (double)DataMaxCount;
+                    Height_nugeock /= (double)Height_total.Count;
                     Height_nugeock = Math.Sqrt(Height_nugeock);
                     //R/OUT 구하기
                     double Height_ROUT = Height_MaxDATA - Height_MinDATA;
 
-                    //--------------------area에 대한 단일/ 인접 /누적 /rout 구하기-------------------
+                    //----------------AC Area 단일치 인접치 누적치 r/out 구하기--------------------
                     double Area_Max = -1;//peakx의 단일치
                     double Area_MaxInterval = -1;//peakx의 인접치 차이중 가장큰거
                     double Pre_Area_data = Area_total[0];
@@ -874,20 +1015,349 @@ namespace WIA_ViewerProgram
                         }
                         Area_nugeock += Area_data * Area_data;
                     }
-                    Area_nugeock /= (double)DataMaxCount;
+                    Area_nugeock /= (double)Area_total.Count;
                     Area_nugeock = Math.Sqrt(Area_nugeock);
                     //R/OUT 구하기
                     double Area_ROUT = Area_MaxDATA - Area_MinDATA;
+                    //--------------------------------AC Distance의 스코어 계산!-------------------------------------------------
+                    double Distance_Max_score = 0;
+                    if (Distance_Max >= 38.1)
+                    {
+                        Distance_Max_score = 0.2 * 60;
+                    }
+                    else if (Distance_Max >= 33.2)
+                    {
+                        Distance_Max_score = 0.2 * 70;
+                    }
+                    else if (Distance_Max >= 28.9)
+                    {
+                        Distance_Max_score = 0.2 * 80;
+                    }
+                    else if (Distance_Max >= 25.1)
+                    {
+                        Distance_Max_score = 0.2 * 90;
+                    }
+                    else
+                    {
+                        Distance_Max_score = 0.2 * 100;
+                    }
+                    double Distance_MaxInterval_score = 0;
+
+                    if (Distance_MaxInterval >= 17.3)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 60;
+                    }
+                    else if (Distance_MaxInterval >= 15.8)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 70;
+                    }
+                    else if (Distance_MaxInterval >= 14.4)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 80;
+                    }
+                    else if (Distance_MaxInterval >= 13.1)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 90;
+                    }
+                    else
+                    {
+                        Distance_MaxInterval_score = 0.3 * 100;
+                    }
+                    double Distance_nugeock_score = 0;
+                    if (Distance_nugeock >= 12.2)
+                    {
+                        Distance_nugeock_score = 0.4 * 60;
+                    }
+                    else if (Distance_nugeock >= 10.2)
+                    {
+                        Distance_nugeock_score = 0.4 * 70;
+                    }
+                    else if (Distance_nugeock >= 8.5)
+                    {
+                        Distance_nugeock_score = 0.4 * 80;
+                    }
+                    else if (Distance_nugeock >= 7.1)
+                    {
+                        Distance_nugeock_score = 0.4 * 90;
+                    }
+                    else
+                    {
+                        Distance_nugeock_score = 0.4 * 100;
+                    }
+                    double Distance_ROUT_score = 0.0;
+                    if (Distance_ROUT >= 54.7)
+                    {
+                        Distance_ROUT_score = 0.1 * 60;
+                    }
+                    else if (Distance_ROUT >= 49.7)
+                    {
+                        Distance_ROUT_score = 0.1 * 70;
+                    }
+                    else if (Distance_ROUT >= 45.2)
+                    {
+                        Distance_ROUT_score = 0.1 * 80;
+                    }
+                    else if (Distance_ROUT >= 40.1)
+                    {
+                        Distance_ROUT_score = 0.1 * 90;
+                    }
+                    else
+                    {
+                        Distance_ROUT_score = 0.1 * 100;
+                    }
+                    double Distance_FinalScore = Distance_Max_score + Distance_MaxInterval_score + Distance_nugeock_score + Distance_ROUT_score;
+                    string Distance_Grade;
+                    if (Distance_FinalScore >= 96)
+                    {
+                        Distance_Grade = "A";
+                    }
+                    else if (Distance_FinalScore >= 91)
+                    {
+                        Distance_Grade = "B";
+                    }
+                    else if (Distance_FinalScore >= 86)
+                    {
+                        Distance_Grade = "C";
+                    }
+                    else if (Distance_FinalScore >= 81)
+                    {
+                        Distance_Grade = "D";
+                    }
+                    else
+                    {
+                        Distance_Grade = "E";
+                    }
+
+                    //--------------------------------AC Areay의 스코어 계산!-------------------------------------------------
+                    double Areay_Max_score = 0;
+                    if (Areay_Max >= 9.2)
+                    {
+                        Areay_Max_score = 0.2 * 60;
+                    }
+                    else if (Areay_Max >= 8.0)
+                    {
+                        Areay_Max_score = 0.2 * 70;
+                    }
+                    else if (Areay_Max >= 7.0)
+                    {
+                        Areay_Max_score = 0.2 * 80;
+                    }
+                    else if (Peakx_Max >= 6.1)
+                    {
+                        Areay_Max_score = 0.2 * 90;
+                    }
+                    else
+                    {
+                        Areay_Max_score = 0.2 * 100;
+                    }
+
+                    double Areay_MaxInterval_score = 0;
+                    if (Areay_MaxInterval >= 4.4)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 60;
+                    }
+                    else if (Areay_MaxInterval >= 3.7)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 70;
+                    }
+                    else if (Areay_MaxInterval >= 3.4)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 80;
+                    }
+                    else if (Areay_MaxInterval >= 3.1)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 90;
+                    }
+                    else
+                    {
+                        Areay_MaxInterval_score = 0.3 * 100;
+                    }
+                    /// PEAK y 누적치 점수
+                    double Areay_nugeock_score = 0;
+                    if (Areay_nugeock >= 3.4)
+                    {
+                        Areay_nugeock_score = 0.4 * 60;
+                    }
+                    else if (Areay_nugeock >= 2.8)
+                    {
+                        Areay_nugeock_score = 0.4 * 70;
+                    }
+                    else if (Areay_nugeock >= 2.4)
+                    {
+                        Areay_nugeock_score = 0.4 * 80;
+                    }
+                    else if (Areay_nugeock >= 2.0)
+                    {
+                        Areay_nugeock_score = 0.4 * 90;
+                    }
+                    else
+                    {
+                        Areay_nugeock_score = 0.4 * 100;
+                    }
+                    //PEAK X R/OUT
+                    double Areay_ROUT_score = 0.0;
+                    if (Areay_ROUT >= 13.4)
+                    {
+                        Areay_ROUT_score = 0.1 * 60;
+                    }
+                    else if (Areay_ROUT >= 12.2)
+                    {
+                        Areay_ROUT_score = 0.1 * 70;
+                    }
+                    else if (Areay_ROUT >= 11.1)
+                    {
+                        Areay_ROUT_score = 0.1 * 80;
+                    }
+                    else if (Areay_ROUT >= 10.1)
+                    {
+                        Areay_ROUT_score = 0.1 * 90;
+                    }
+                    else
+                    {
+                        Areay_ROUT_score = 0.1 * 100;
+                    }
+                    double Areay_FinalScore = Areay_Max_score + Areay_MaxInterval_score + Areay_nugeock_score + Areay_ROUT_score;
+                    string Areay_Grade;
+                    if (Areay_FinalScore >= 96)
+                    {
+                        Areay_Grade = "A";
+                    }
+                    else if (Areay_FinalScore >= 91)
+                    {
+                        Areay_Grade = "B";
+                    }
+                    else if (Areay_FinalScore >= 86)
+                    {
+                        Areay_Grade = "C";
+                    }
+                    else if (Areay_FinalScore >= 81)
+                    {
+                        Areay_Grade = "D";
+                    }
+                    else
+                    {
+                        Areay_Grade = "E";
+                    }
+
+                    //--------------------------------AC Areax의 스코어 계산!-------------------------------------------------
+                    double Areax_Max_score = 0;
+                    if (Areax_Max >= 38.1)
+                    {
+                        Areax_Max_score = 0.2 * 60;
+                    }
+                    else if (Areax_Max >= 33.2)
+                    {
+                        Areax_Max_score = 0.2 * 70;
+                    }
+                    else if (Areax_Max >= 28.9)
+                    {
+                        Areax_Max_score = 0.2 * 80;
+                    }
+                    else if (Areax_Max >= 25.1)
+                    {
+                        Areax_Max_score = 0.2 * 90;
+                    }
+                    else
+                    {
+                        Areax_Max_score = 0.2 * 100;
+                    }
+                    double Areax_MaxInterval_score = 0;
+
+                    if (Areax_MaxInterval >= 17.3)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 60;
+                    }
+                    else if (Areax_MaxInterval >= 15.8)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 70;
+                    }
+                    else if (Areax_MaxInterval >= 14.4)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 80;
+                    }
+                    else if (Areax_MaxInterval >= 13.1)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 90;
+                    }
+                    else
+                    {
+                        Areax_MaxInterval_score = 0.3 * 100;
+                    }
+                    /// PEAK X 누적치
+                    double Areax_nugeock_score = 0;
+                    if (Areax_nugeock >= 12.2)
+                    {
+                        Areax_nugeock_score = 0.4 * 60;
+                    }
+                    else if (Areax_nugeock >= 10.2)
+                    {
+                        Areax_nugeock_score = 0.4 * 70;
+                    }
+                    else if (Areax_nugeock >= 8.5)
+                    {
+                        Areax_nugeock_score = 0.4 * 80;
+                    }
+                    else if (Areax_nugeock >= 7.1)
+                    {
+                        Areax_nugeock_score = 0.4 * 90;
+                    }
+                    else
+                    {
+                        Areax_nugeock_score = 0.4 * 100;
+                    }
+                    //PEAK X R/OUT
+                    double Areax_ROUT_score = 0.0;
+                    if (Areax_ROUT >= 54.7)
+                    {
+                        Areax_ROUT_score = 0.1 * 60;
+                    }
+                    else if (Areax_ROUT >= 49.7)
+                    {
+                        Areax_ROUT_score = 0.1 * 70;
+                    }
+                    else if (Areax_ROUT >= 45.2)
+                    {
+                        Areax_ROUT_score = 0.1 * 80;
+                    }
+                    else if (Areax_ROUT >= 40.1)
+                    {
+                        Areax_ROUT_score = 0.1 * 90;
+                    }
+                    else
+                    {
+                        Areax_ROUT_score = 0.1 * 100;
+                    }
+                    double Areax_FinalScore = Areax_Max_score + Areax_MaxInterval_score + Areax_nugeock_score + Areax_ROUT_score;
+                    string Areax_Grade;
+                    if (Areax_FinalScore >= 96)
+                    {
+                        Areax_Grade = "A";
+                    }
+                    else if (Areax_FinalScore >= 91)
+                    {
+                        Areax_Grade = "B";
+                    }
+                    else if (Areax_FinalScore >= 86)
+                    {
+                        Areax_Grade = "C";
+                    }
+                    else if (Areax_FinalScore >= 81)
+                    {
+                        Areax_Grade = "D";
+                    }
+                    else
+                    {
+                        Areax_Grade = "E";
+                    }
 
 
-                    //--------------------------------peakx의 스코어 계산!-------------------------------------------------
-                    // peakx의 스코어 계산!
+                    //--------------------------------AC Peakx의 스코어 계산!-------------------------------------------------
                     double peakx_Max_score = 0;
-                    if (Peakx_Max>= 38.1)
+                    if (Peakx_Max >= 38.1)
                     {
                         peakx_Max_score = 0.2 * 60;
                     }
-                    else if (Peakx_Max>=33.2)
+                    else if (Peakx_Max >= 33.2)
                     {
                         peakx_Max_score = 0.2 * 70;
                     }
@@ -904,6 +1374,7 @@ namespace WIA_ViewerProgram
                         peakx_Max_score = 0.2 * 100;
                     }
                     double Peakx_MaxInterval_score = 0;
+
                     if (Peakx_MaxInterval >= 17.3)
                     {
                         Peakx_MaxInterval_score = 0.3 * 60;
@@ -973,7 +1444,8 @@ namespace WIA_ViewerProgram
                     if (Peakx_FinalScore >= 96)
                     {
                         Peakx_Grade = "A";
-                    }else if (Peakx_FinalScore >= 91)
+                    }
+                    else if (Peakx_FinalScore >= 91)
                     {
                         Peakx_Grade = "B";
                     }
@@ -985,11 +1457,12 @@ namespace WIA_ViewerProgram
                     {
                         Peakx_Grade = "D";
                     }
-                    else{
+                    else
+                    {
                         Peakx_Grade = "E";
                     }
 
-                    //--------------------------------peaky의 스코어 계산!-------------------------------------------------
+                    //--------------------------------AC Peaky의 스코어 계산!-------------------------------------------------
                     double peaky_Max_score = 0;
                     if (Peaky_Max >= 9.2)
                     {
@@ -1099,7 +1572,7 @@ namespace WIA_ViewerProgram
                     {
                         Peaky_Grade = "E";
                     }
-                    //--------------------------------Width의 스코어 계산!-------------------------------------------------
+                    //-------------------------------AC Width의 스코어 계산!-------------------------------------------------
                     double Width_Max_score = 0;
                     if (Width_Max >= 50.3)
                     {
@@ -1187,7 +1660,7 @@ namespace WIA_ViewerProgram
                     {
                         Width_ROUT_score = 0.1 * 100;
                     }
-                    double Width_FinalScore = peaky_Max_score + Width_MaxInterval_score + Width_nugeock_score + Width_ROUT_score;
+                    double Width_FinalScore = Width_Max_score + Width_MaxInterval_score + Width_nugeock_score + Width_ROUT_score;
                     string Width_Grade;
                     if (Width_FinalScore >= 96)
                     {
@@ -1209,9 +1682,9 @@ namespace WIA_ViewerProgram
                     {
                         Width_Grade = "E";
                     }
-                    //--------------------------------Height의 스코어 계산!-------------------------------------------------
+                    //--------------------------------AC Height의 스코어 계산!-------------------------------------------------
                     double Height_Max_score = 0;
-                    if (Height_Max >=13.8)
+                    if (Height_Max >= 13.8)
                     {
                         Height_Max_score = 0.2 * 60;
                     }
@@ -1297,7 +1770,7 @@ namespace WIA_ViewerProgram
                     {
                         Height_ROUT_score = 0.1 * 100;
                     }
-                    double Height_FinalScore = peaky_Max_score + Height_MaxInterval_score + Height_nugeock_score + Height_ROUT_score;
+                    double Height_FinalScore = Height_Max_score + Height_MaxInterval_score + Height_nugeock_score + Height_ROUT_score;
                     string Height_Grade;
                     if (Height_FinalScore >= 96)
                     {
@@ -1320,7 +1793,7 @@ namespace WIA_ViewerProgram
                         Height_Grade = "E";
                     }
 
-                    //--------------------------------Area의 스코어 계산!-------------------------------------------------
+                    //--------------------------------AC Area의 스코어 계산!-------------------------------------------------
                     double Area_Max_score = 0;
                     if (Area_Max >= 8383.1)
                     {
@@ -1334,7 +1807,7 @@ namespace WIA_ViewerProgram
                     {
                         Area_Max_score = 0.2 * 80;
                     }
-                    else if (Area_Max >=5512.1)                       
+                    else if (Area_Max >= 5512.1)
                     {
                         Area_Max_score = 0.2 * 90;
                     }
@@ -1408,7 +1881,7 @@ namespace WIA_ViewerProgram
                     {
                         Area_ROUT_score = 0.1 * 100;
                     }
-                    double Area_FinalScore = peaky_Max_score + Area_MaxInterval_score + Area_nugeock_score + Area_ROUT_score;
+                    double Area_FinalScore = Area_Max_score + Area_MaxInterval_score + Area_nugeock_score + Area_ROUT_score;
                     string Area_Grade;
                     if (Area_FinalScore >= 96)
                     {
@@ -1433,17 +1906,20 @@ namespace WIA_ViewerProgram
                     // 가속쪽 최종 점수및 등급 계산
                     // double AC_FinalScore;
                     //int AC_FinalGrade
-                    AC_FinalScore = Peakx_FinalScore*0.3 + Peaky_FinalScore * 0.3+ Width_FinalScore * 0.1+Height_FinalScore*0.2+Area_FinalScore*0.1;
-                    if (AC_FinalScore>=96)
+                    AC_FinalScore = Peakx_FinalScore * 0.2 + Peaky_FinalScore * 0.15 + Areax_FinalScore * 0.2 + Areay_FinalScore * 0.15 + Width_FinalScore * 0.05 + Height_FinalScore * 0.1 + Area_FinalScore * 0.05 + Distance_FinalScore * 0.1;
+                    if (AC_FinalScore >= 96)
                     {
                         AC_FinalGrade = 1;
-                    }else if (AC_FinalScore >= 91)
+                    }
+                    else if (AC_FinalScore >= 91)
                     {
                         AC_FinalGrade = 2;
-                    }else if (AC_FinalScore >= 86)
+                    }
+                    else if (AC_FinalScore >= 86)
                     {
-                        AC_FinalGrade = 3;  
-                    }else if (AC_FinalScore >= 81)
+                        AC_FinalGrade = 3;
+                    }
+                    else if (AC_FinalScore >= 81)
                     {
                         AC_FinalGrade = 4;
                     }
@@ -1456,23 +1932,89 @@ namespace WIA_ViewerProgram
                     string head = $"Acceleration,단일치,인접치,누적치,R/OUT,등급,점수";
                     string Peakx_value = $"Peakx_측정값,{Peakx_Max},{Peakx_MaxInterval},{Peakx_nugeock},{Peakx_ROUT},{Peakx_Grade},{Peakx_FinalScore}";
                     string Peakx_scroe = $"Peakx_가중치반영 점수,{peakx_Max_score},{Peakx_MaxInterval_score},{Peakx_nugeock_score},{Peakx_ROUT_score},{Peakx_Grade},{Peakx_FinalScore}";
+                    
                     string Peaky_value = $"Peaky_측정값,{Peaky_Max},{Peaky_MaxInterval},{Peaky_nugeock},{Peaky_ROUT},{Peaky_Grade},{Peaky_FinalScore}";
-                    string Peaky_scroe = $"Peaky_가중치반영 점수,{peakx_Max_score},{Peaky_MaxInterval_score},{Peaky_nugeock_score},{Peaky_ROUT_score},{Peaky_Grade},{Peaky_FinalScore}";
+                    string Peaky_scroe = $"Peaky_가중치반영 점수,{peaky_Max_score},{Peaky_MaxInterval_score},{Peaky_nugeock_score},{Peaky_ROUT_score},{Peaky_Grade},{Peaky_FinalScore}";
+
+                    string Areax_value = $"Areax_측정값,{Areax_Max},{Areax_MaxInterval},{Areax_nugeock},{Areax_ROUT},{Areax_Grade},{Areax_FinalScore}";
+                    string Areax_scroe = $"Areax_가중치반영 점수,{Areax_Max_score},{Areax_MaxInterval_score},{Areax_nugeock_score},{Areax_ROUT_score},{Areax_Grade},{Areax_FinalScore}";
+
+                    string Areay_value = $"Areay_측정값,{Areay_Max},{Areay_MaxInterval},{Areay_nugeock},{Areay_ROUT},{Areay_Grade},{Areay_FinalScore}";
+                    string Areay_scroe = $"Areay_가중치반영 점수,{Areay_Max_score},{Areay_MaxInterval_score},{Areay_nugeock_score},{Areay_ROUT_score},{Areay_Grade},{Areay_FinalScore}";
+
 
                     string Width_value = $"Width_측정값,{Width_Max},{Width_MaxInterval},{Width_nugeock},{Width_ROUT},{Width_Grade},{Width_FinalScore}";
-                    string Width_scroe = $"Width_가중치반영 점수,{peakx_Max_score},{Width_MaxInterval_score},{Width_nugeock_score},{Width_ROUT_score},{Width_Grade},{Width_FinalScore}";
-                    
+                    string Width_scroe = $"Width_가중치반영 점수,{Width_Max_score},{Width_MaxInterval_score},{Width_nugeock_score},{Width_ROUT_score},{Width_Grade},{Width_FinalScore}";
+
                     string Height_value = $"Height_측정값,{Height_Max},{Height_MaxInterval},{Height_nugeock},{Height_ROUT},{Height_Grade},{Height_FinalScore}";
-                    string Height_scroe = $"Height_가중치반영 점수,{peakx_Max_score},{Height_MaxInterval_score},{Height_nugeock_score},{Height_ROUT_score},{Height_Grade},{Height_FinalScore}";
+                    string Height_scroe = $"Height_가중치반영 점수,{Height_Max_score},{Height_MaxInterval_score},{Height_nugeock_score},{Height_ROUT_score},{Height_Grade},{Height_FinalScore}";
 
                     string Area_value = $"Area_측정값,{Area_Max},{Area_MaxInterval},{Area_nugeock},{Area_ROUT},{Area_Grade},{Area_FinalScore}";
-                    string Area_scroe = $"Area_가중치반영 점수,{peakx_Max_score},{Area_MaxInterval_score},{Area_nugeock_score},{Area_ROUT_score},{Area_Grade},{Area_FinalScore}";
+                    string Area_scroe = $"Area_가중치반영 점수,{Area_Max_score},{Area_MaxInterval_score},{Area_nugeock_score},{Area_ROUT_score},{Area_Grade},{Area_FinalScore}";
+
+                    string Distance_value = $"Distance_측정값,{Distance_Max},{Distance_MaxInterval},{Distance_nugeock},{Distance_ROUT},{Distance_Grade},{Distance_FinalScore}";
+                    string Distance_scroe = $"Distance_가중치반영 점수,{Distance_Max_score},{Distance_MaxInterval_score},{Distance_nugeock_score},{Distance_ROUT_score},{Distance_Grade},{Distance_FinalScore}";
 
                     string Total_score = $"Total_score ,{AC_FinalScore}";
                     string Total_Grade = $"Total_Grade ,{AC_FinalGrade}";
+                    if (Peakx_avg == 0.0)
+                    {
+                        Peakx_value = $"Peakx_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Peakx_scroe = $"Peakx_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+                    if (Peaky_avg == 0.0)
+                    {
+                        Peaky_value = $"Peaky_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Peaky_scroe = $"Peaky_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+                    if (Width_avg == 0.0)
+                    {
+                        Width_value = $"Width_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Width_scroe = $"Width_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+                    if (Height_avg == 0.0)
+                    {
+                        Height_value = $"Height_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Height_scroe = $"Height_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+                    if (Area_avg == 0.0)
+                    {
+                        Area_value = $"Area_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Area_scroe = $"Area_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+                    if (Areax_avg == 0.0)
+                    {
+                        Areax_value = $"Areax_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Areax_scroe = $"Areax_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+
+                    if (Areay_avg == 0.0)
+                    {
+                        Areay_value = $"Areay_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Areay_scroe = $"Areay_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+
+                    if (Distance_avg == 0.0)
+                    {
+                        Distance_value = $"Distance_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Distance_scroe = $"Distance_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+
+                    if (Peakx_avg == 0.0 && Peaky_avg == 0.0 && Width_avg == 0.0 && Height_avg == 0.0 && Area_avg == 0.0)
+                    {
+                        Total_score = $"Total_score , -1";
+                        Total_Grade = $"Total_Grade , -1";
+                    }
 
                     if (!File.Exists(Path.Combine(AC_CSVFullPath, "ScoreGrade.csv"))) //파일이 존재 하지 않으면
-                    { 
+                    {
                         try
                         {
                             using (StreamWriter sw = new StreamWriter(Path.Combine(AC_CSVFullPath, "ScoreGrade.csv"), true, Encoding.UTF8))
@@ -1482,17 +2024,23 @@ namespace WIA_ViewerProgram
                                 sw.WriteLine(Peakx_scroe);
                                 sw.WriteLine(Peaky_value);
                                 sw.WriteLine(Peaky_scroe);
+                                sw.WriteLine(Areax_value);
+                                sw.WriteLine(Areax_scroe);
+                                sw.WriteLine(Areay_value);
+                                sw.WriteLine(Areay_scroe);
                                 sw.WriteLine(Width_value);
                                 sw.WriteLine(Width_scroe);
                                 sw.WriteLine(Height_value);
                                 sw.WriteLine(Height_scroe);
                                 sw.WriteLine(Area_value);
                                 sw.WriteLine(Area_scroe);
+                                sw.WriteLine(Distance_value);
+                                sw.WriteLine(Distance_scroe);
                                 sw.WriteLine(Total_score);
                                 sw.WriteLine(Total_Grade);
                             }
 
-                            
+
                             logger.LogInfo("CSV", $"AC - ScoreGrade.csv 파일 생성 완료.  \n파일 경로 :{AC_CSVFullPath + "\\ScoreGrade.csv"}");
                         }
                         catch (Exception ex)
@@ -1510,20 +2058,20 @@ namespace WIA_ViewerProgram
             }
             else
             {
-                logger.LogError("CSV",$"AC - ResultOutput.csv 파일이 없습니다.  \n파일 경로 :{AC_CSVFullPath + "\\ResultOutput.csv"}");
+                logger.LogError("CSV", $"AC - ResultOutput.csv 파일이 없습니다.  \n파일 경로 :{AC_CSVFullPath + "\\ResultOutput.csv"}");
             }
 
 
 
-            if (File.Exists(DC_CSVFullPath+ "\\ResultOutput.csv"))
+            if (File.Exists(DC_CSVFullPath + "\\ResultOutput.csv"))
             {
                 //DC 파일이 제대로 만들어져서 존재 하는 경우
-                string firstLine = File.ReadLines(DC_CSVFullPath+ "\\ResultOutput.csv").FirstOrDefault();
+                string firstLine = File.ReadLines(DC_CSVFullPath + "\\ResultOutput.csv").FirstOrDefault();
 
                 if (string.IsNullOrWhiteSpace(firstLine))
                 {
                     // 파일은 있지만 내용이 비어 있는 겨우
-                    logger.LogError("CSV", $"DC - ResultOutput.csv 파일이 비어 있습니다.  \n파일 경로 :{DC_CSVFullPath+ "\\ResultOutput.csv"}");
+                    logger.LogError("CSV", $"DC - ResultOutput.csv 파일이 비어 있습니다.  \n파일 경로 :{DC_CSVFullPath + "\\ResultOutput.csv"}");
                 }
                 else
                 {
@@ -1533,31 +2081,151 @@ namespace WIA_ViewerProgram
                     string[] lines = File.ReadAllLines(DC_CSVFullPath + "\\ResultOutput.csv");
                     List<double> Peakx_total = new List<double>();
                     List<double> Peaky_total = new List<double>();
+                    List<double> Areax_total = new List<double>();
+                    List<double> Areay_total = new List<double>();
                     List<double> Width_total = new List<double>();
                     List<double> Height_total = new List<double>();
                     List<double> Area_total = new List<double>();
+                    List<double> Distance_total = new List<double>();
                     int DataMaxCount = lines.Length; // 기어마다 개수가 달라지므로!
                     foreach (string line in lines)
                     {
                         string[] values = line.Split(',');
                         Peakx_total.Add(double.Parse(values[1]));
                         Peaky_total.Add(double.Parse(values[2]));
-                        Width_total.Add(double.Parse(values[3]));
-                        Height_total.Add(double.Parse(values[4]));
-                        Area_total.Add(double.Parse(values[5]));
-                        sum[0] += double.Parse(values[1]); // peak x
-                        sum[1] += double.Parse(values[2]); // peak y
-                        sum[2] += double.Parse(values[3]); // width
-                        sum[3] += double.Parse(values[4]); // height
-                        sum[4] += double.Parse(values[5]); // area
+                        Areax_total.Add(double.Parse(values[3]));
+                        Areay_total.Add(double.Parse(values[4]));
+                        Width_total.Add(double.Parse(values[5]));
+                        Height_total.Add(double.Parse(values[6]));
+                        Area_total.Add(double.Parse(values[7]));
+                        Distance_total.Add(double.Parse(values[8]));
                     }
-                    double peakx_avg = sum[0] / (double)DataMaxCount;
-                    double peaky_avg = sum[1] / (double)DataMaxCount;
-                    double Width_avg = sum[2] / (double)DataMaxCount;
-                    double Height_avg = sum[3] / (double)DataMaxCount;
-                    double Area_avg = sum[4] / (double)DataMaxCount;
+                    double Peakx_avg = Peakx_total.Average();
+                    double Peaky_avg = Peaky_total.Average();
+                    double Areax_avg = Areax_total.Average();
+                    double Areay_avg = Areay_total.Average();
+                    double Width_avg = Width_total.Average();
+                    double Height_avg = Height_total.Average();
+                    double Area_avg = Area_total.Average();
+                    double Distance_avg = Distance_total.Average();
 
-                    //----------------peakx에 대한 단일치 인접치 누적치 r/out 구하기--------------------
+                     //-----------------DC Distance 에 대한 단일 인접 누적 r/out 구하기----------------------
+                    double Distance_Max = -1;//Distance의 단일치
+                    double Distance_MaxInterval = -1;//Distance의 인접치 차이중 가장큰거
+                    double Pre_Distance_data = Distance_total[0];
+                    double Distance_nugeock = 0; //peak 누적치;
+                    double Distance_MaxDATA = -1;
+                    double Distance_MinDATA = 99999;
+                    foreach (double Value in Distance_total)
+                    {
+                        //단일치 구하기
+                        if (Distance_Max <= Math.Abs(Value - Distance_avg))
+                        {
+                            Distance_Max = Math.Abs(Value - Distance_avg);
+                        }
+                        //인접치 구하기
+                        if (Distance_MaxInterval <= Math.Abs(Value - Pre_Distance_data))
+                        {
+                            Distance_MaxInterval = Math.Abs(Value - Pre_Distance_data);
+                        }
+                        Pre_Distance_data = Value;
+
+                        //R/OUT 구하기 위한 사전 준비
+                        if (Distance_MaxDATA < Value)
+                        {
+                            Distance_MaxDATA = Value;
+                        }
+                        if (Distance_MinDATA > Value)
+                        {
+                            Distance_MinDATA = Value;
+                        }
+
+                        Distance_nugeock += Value * Value;
+                    }                   
+                    Distance_nugeock /= (double)Distance_total.Count;
+                    Distance_nugeock = Math.Sqrt(Distance_nugeock);
+                    //R/OUT 구하기
+                    double Distance_ROUT = Distance_MaxDATA - Distance_MinDATA;
+
+                    //-----------------DC Areay 에 대한 단일 인접 누적 r/out 구하기----------------------
+                    double Areay_Max = -1;//Areay의 단일치
+                    double Areay_MaxInterval = -1;//Areay의 인접치 차이중 가장큰거
+                    double Pre_Areay_data = Areay_total[0];
+                    double Areay_nugeock = 0; //peak 누적치;
+                    double Areay_MaxDATA = -1;
+                    double Areay_MinDATA = 99999;
+                    foreach (double Value in Areay_total)
+                    {
+                        //단일치 구하기
+                        if (Areay_Max <= Math.Abs(Value - Areay_avg))
+                        {
+                            Areay_Max = Math.Abs(Value - Areay_avg);
+                        }
+                        //인접치 구하기
+                        if (Areay_MaxInterval <= Math.Abs(Value - Pre_Areay_data))
+                        {
+                            Areay_MaxInterval = Math.Abs(Value - Pre_Areay_data);
+                        }
+                        Pre_Areay_data = Value;
+
+                        //R/OUT 구하기 위한 사전 준비
+                        if (Areay_MaxDATA < Value)
+                        {
+                            Areay_MaxDATA = Value;
+                        }
+                        if (Areay_MinDATA > Value)
+                        {
+                            Areay_MinDATA = Value;
+                        }
+
+                        Areay_nugeock += Value * Value;
+                    }
+                    Areay_nugeock /= (double)Areay_total.Count;
+                    Areay_nugeock = Math.Sqrt(Areay_nugeock);
+                    //R/OUT 구하기
+                    double Areay_ROUT = Areay_MaxDATA - Areay_MinDATA;
+
+                    //-----------------DC AreaX 에 대한 단일 인접 누적 r/out 구하기----------------------
+                    double Areax_Max = -1;//Areax의 단일치
+                    double Areax_MaxInterval = -1;//Areax의 인접치 차이중 가장큰거
+                    double Pre_Areax_data = Areax_total[0];
+                    double Areax_nugeock = 0; //peak 누적치;
+                    double Areax_MaxDATA = -1;
+                    double Areax_MinDATA = 99999;
+                    foreach (double Value in Areax_total)
+                    {
+                        //단일치 구하기
+                        if (Areax_Max <= Math.Abs(Value - Areax_avg))
+                        {
+                            Areax_Max = Math.Abs(Value - Areax_avg);
+                        }
+                        //인접치 구하기
+                        if (Areax_MaxInterval <= Math.Abs(Value - Pre_Areax_data))
+                        {
+                            Areax_MaxInterval = Math.Abs(Value - Pre_Areax_data);
+                        }
+                        Pre_Areax_data = Value;
+
+                        //R/OUT 구하기 위한 사전 준비
+                        if (Areax_MaxDATA < Value)
+                        {
+                            Areax_MaxDATA = Value;
+                        }
+                        if (Areax_MinDATA > Value)
+                        {
+                            Areax_MinDATA = Value;
+                        }
+
+                        Areax_nugeock += Value * Value;
+                    }
+                    Areax_nugeock /= (double)Areax_total.Count;
+                    Areax_nugeock = Math.Sqrt(Areax_nugeock);
+                    //R/OUT 구하기
+                    double Areax_ROUT = Areax_MaxDATA - Areax_MinDATA;
+
+
+
+                    //----------------DC peakx에 대한 단일치 인접치 누적치 r/out 구하기--------------------
                     double Peakx_Max = -1;//peakx의 단일치
                     double Peakx_MaxInterval = -1;//peakx의 인접치 차이중 가장큰거
                     double Pre_pkakx_data = Peakx_total[0];
@@ -1567,9 +2235,9 @@ namespace WIA_ViewerProgram
                     foreach (double pkakx_data in Peakx_total)
                     {
                         //단일치 구하기
-                        if (Peakx_Max <= Math.Abs(pkakx_data - peakx_avg))
+                        if (Peakx_Max <= Math.Abs(pkakx_data - Peakx_avg))
                         {
-                            Peakx_Max = Math.Abs(pkakx_data - peakx_avg);
+                            Peakx_Max = Math.Abs(pkakx_data - Peakx_avg);
                         }
                         //인접치 구하기
                         if (Peakx_MaxInterval <= Math.Abs(pkakx_data - Pre_pkakx_data))
@@ -1577,7 +2245,7 @@ namespace WIA_ViewerProgram
                             Peakx_MaxInterval = Math.Abs(pkakx_data - Pre_pkakx_data);
                         }
                         Pre_pkakx_data = pkakx_data;
-             
+
                         //R/OUT 구하기 위한 사전 준비
                         if (Peakx_MaxDATA < pkakx_data)
                         {
@@ -1590,12 +2258,12 @@ namespace WIA_ViewerProgram
 
                         Peakx_nugeock += pkakx_data * pkakx_data;
                     }
-                    Peakx_nugeock /= (double)DataMaxCount;
+                    Peakx_nugeock /= (double)Peakx_total.Count;
                     Peakx_nugeock = Math.Sqrt(Peakx_nugeock);
                     //R/OUT 구하기
                     double Peakx_ROUT = Peakx_MaxDATA - Peakx_MinDATA;
 
-                    //--------------peak y에 대한 값 단일치/ 인접치 / 누적치/ rout 구하기------------------
+                    //-------------- DC peak y에 대한 값 단일치/ 인접치 / 누적치/ rout 구하기------------------
                     double Peaky_Max = -1;//peakx의 단일치
                     double Peaky_MaxInterval = -1;//peakx의 인접치 차이중 가장큰거
                     double Pre_pkaky_data = Peaky_total[0];
@@ -1605,9 +2273,9 @@ namespace WIA_ViewerProgram
                     foreach (double peaky_data in Peaky_total)
                     {
                         //단일치 구하기
-                        if (Peaky_Max <= Math.Abs(peaky_data - peaky_avg))
+                        if (Peaky_Max <= Math.Abs(peaky_data - Peaky_avg))
                         {
-                            Peaky_Max = Math.Abs(peaky_data - peaky_avg);
+                            Peaky_Max = Math.Abs(peaky_data - Peaky_avg);
                         }
                         //인접치 구하기
                         if (Peaky_MaxInterval <= Math.Abs(peaky_data - Pre_pkaky_data))
@@ -1615,7 +2283,7 @@ namespace WIA_ViewerProgram
                             Peaky_MaxInterval = Math.Abs(peaky_data - Pre_pkaky_data);
                         }
                         Pre_pkaky_data = peaky_data;
-            
+
                         //R/OUT 구하기 위한 사전 준비
                         if (Peaky_MaxDATA < peaky_data)
                         {
@@ -1627,12 +2295,12 @@ namespace WIA_ViewerProgram
                         }
                         Peaky_nugeock += peaky_data * peaky_data;
                     }
-                    Peaky_nugeock /= (double)DataMaxCount;
+                    Peaky_nugeock /= (double)Peaky_total.Count;
                     Peaky_nugeock = Math.Sqrt(Peaky_nugeock);
                     //R/OUT 구하기
                     double Peaky_ROUT = Peaky_MaxDATA - Peaky_MinDATA;
 
-                    //--------------Width에 대한 값 단일치/ 인접치 / 누적치/ rout 구하기-------------------
+                    //--------------DC Width에 대한 값 단일치/ 인접치 / 누적치/ rout 구하기-------------------
                     double Width_Max = -1;//peakx의 단일치
                     double Width_MaxInterval = -1;//peakx의 인접치 차이중 가장큰거
                     double Pre_Width_data = Width_total[0];
@@ -1664,13 +2332,13 @@ namespace WIA_ViewerProgram
                         }
                         Width_nugeock += Width_data * Width_data;
                     }
-                    Width_nugeock /= (double)DataMaxCount;
+                    Width_nugeock /= (double)Width_total.Count;
                     Width_nugeock = Math.Sqrt(Width_nugeock);
                     //R/OUT 구하기
                     double Width_ROUT = Width_MaxDATA - Width_MinDATA;
 
 
-                    //--------------height 에대한 단일/ 인점 /누적 /rout 구하기---------------------
+                    //--------------DC height 에대한 단일/ 인점 /누적 /rout 구하기---------------------
                     double Height_Max = -1;//peakx의 단일치
                     double Height_MaxInterval = -1;//peakx의 인접치 차이중 가장큰거
                     double Pre_Height_data = Height_total[0];
@@ -1701,12 +2369,12 @@ namespace WIA_ViewerProgram
                         }
                         Height_nugeock += Height_data * Height_data;
                     }
-                    Height_nugeock /= (double)DataMaxCount;
+                    Height_nugeock /= (double)Height_total.Count;
                     Height_nugeock = Math.Sqrt(Height_nugeock);
                     //R/OUT 구하기
                     double Height_ROUT = Height_MaxDATA - Height_MinDATA;
 
-                    //--------------------area에 대한 단일/ 인접 /누적 /rout 구하기-------------------
+                    //--------------------DC area에 대한 단일/ 인접 /누적 /rout 구하기-------------------
                     double Area_Max = -1;//peakx의 단일치
                     double Area_MaxInterval = -1;//peakx의 인접치 차이중 가장큰거
                     double Pre_Area_data = Area_total[0];
@@ -1737,13 +2405,351 @@ namespace WIA_ViewerProgram
                         }
                         Area_nugeock += Area_data * Area_data;
                     }
-                    Area_nugeock /= (double)DataMaxCount;
+                    Area_nugeock /= (double)Area_total.Count;
                     Area_nugeock = Math.Sqrt(Area_nugeock);
                     //R/OUT 구하기
                     double Area_ROUT = Area_MaxDATA - Area_MinDATA;
 
 
-                    //--------------------------------peakx의 스코어 계산!-------------------------------------------------
+                    //--------------------------------DCDistance의 스코어 계산!-------------------------------------------------
+                    double Distance_Max_score = 0;
+                    if (Distance_Max >= 7.7)
+                    {
+                        Distance_Max_score = 0.2 * 60;
+                    }
+                    else if (Distance_Max >= 6.7)
+                    {
+                        Distance_Max_score = 0.2 * 70;
+                    }
+                    else if (Distance_Max >= 5.9)
+                    {
+                        Distance_Max_score = 0.2 * 80;
+                    }
+                    else if (Peakx_Max >= 5.1)
+                    {
+                        Distance_Max_score = 0.2 * 90;
+                    }
+                    else
+                    {
+                        Distance_Max_score = 0.2 * 100;
+                    }
+
+                    double Distance_MaxInterval_score = 0;
+                    if (Distance_MaxInterval >= 4.8)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 60;
+                    }
+                    else if (Distance_MaxInterval >= 4.3)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 70;
+                    }
+                    else if (Distance_MaxInterval >= 4.0)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 80;
+                    }
+                    else if (Distance_MaxInterval >= 3.6)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 90;
+                    }
+                    else
+                    {
+                        Distance_MaxInterval_score = 0.3 * 100;
+                    }
+                    /// PEAK y 누적치 점수
+                    double Distance_nugeock_score = 0;
+                    if (Distance_nugeock >= 3.6)
+                    {
+                        Distance_nugeock_score = 0.4 * 60;
+                    }
+                    else if (Distance_nugeock >= 3.0)
+                    {
+                        Distance_nugeock_score = 0.4 * 70;
+                    }
+                    else if (Distance_nugeock >= 2.5)
+                    {
+                        Distance_nugeock_score = 0.4 * 80;
+                    }
+                    else if (Distance_nugeock >= 2.1)
+                    {
+                        Distance_nugeock_score = 0.4 * 90;
+                    }
+                    else
+                    {
+                        Distance_nugeock_score = 0.4 * 100;
+                    }
+                    //PEAK X R/OUT
+                    double Distance_ROUT_score = 0.0;
+                    if (Distance_ROUT >= 10.7)
+                    {
+                        Distance_ROUT_score = 0.1 * 60;
+                    }
+                    else if (Distance_ROUT >= 9.8)
+                    {
+                        Distance_ROUT_score = 0.1 * 70;
+                    }
+                    else if (Distance_ROUT >= 8.9)
+                    {
+                        Distance_ROUT_score = 0.1 * 80;
+                    }
+                    else if (Distance_ROUT >= 8.1)
+                    {
+                        Distance_ROUT_score = 0.1 * 90;
+                    }
+                    else
+                    {
+                        Distance_ROUT_score = 0.1 * 100;
+                    }
+                    double Distance_FinalScore = Distance_Max_score + Distance_MaxInterval_score + Distance_nugeock_score + Distance_ROUT_score;
+                    string Distance_Grade;
+                    if (Distance_FinalScore >= 96)
+                    {
+                        Distance_Grade = "A";
+                    }
+                    else if (Distance_FinalScore >= 91)
+                    {
+                        Distance_Grade = "B";
+                    }
+                    else if (Distance_FinalScore >= 86)
+                    {
+                        Distance_Grade = "C";
+                    }
+                    else if (Distance_FinalScore >= 81)
+                    {
+                        Distance_Grade = "D";
+                    }
+                    else
+                    {
+                        Distance_Grade = "E";
+                    }
+
+
+                    //--------------------------------DCAreay의 스코어 계산!-------------------------------------------------
+                    double Areay_Max_score = 0;
+                    if (Areay_Max >= 7.7)
+                    {
+                        Areay_Max_score = 0.2 * 60;
+                    }
+                    else if (Areay_Max >= 6.7)
+                    {
+                        Areay_Max_score = 0.2 * 70;
+                    }
+                    else if (Areay_Max >= 5.9)
+                    {
+                        Areay_Max_score = 0.2 * 80;
+                    }
+                    else if (Peakx_Max >= 5.1)
+                    {
+                        Areay_Max_score = 0.2 * 90;
+                    }
+                    else
+                    {
+                        Areay_Max_score = 0.2 * 100;
+                    }
+
+                    double Areay_MaxInterval_score = 0;
+                    if (Areay_MaxInterval >= 4.8)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 60;
+                    }
+                    else if (Areay_MaxInterval >= 4.3)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 70;
+                    }
+                    else if (Areay_MaxInterval >= 4.0)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 80;
+                    }
+                    else if (Areay_MaxInterval >= 3.6)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 90;
+                    }
+                    else
+                    {
+                        Areay_MaxInterval_score = 0.3 * 100;
+                    }
+                    /// PEAK y 누적치 점수
+                    double Areay_nugeock_score = 0;
+                    if (Areay_nugeock >= 3.6)
+                    {
+                        Areay_nugeock_score = 0.4 * 60;
+                    }
+                    else if (Areay_nugeock >= 3.0)
+                    {
+                        Areay_nugeock_score = 0.4 * 70;
+                    }
+                    else if (Areay_nugeock >= 2.5)
+                    {
+                        Areay_nugeock_score = 0.4 * 80;
+                    }
+                    else if (Areay_nugeock >= 2.1)
+                    {
+                        Areay_nugeock_score = 0.4 * 90;
+                    }
+                    else
+                    {
+                        Areay_nugeock_score = 0.4 * 100;
+                    }
+                    //PEAK X R/OUT
+                    double Areay_ROUT_score = 0.0;
+                    if (Areay_ROUT >= 10.7)
+                    {
+                        Areay_ROUT_score = 0.1 * 60;
+                    }
+                    else if (Areay_ROUT >= 9.8)
+                    {
+                        Areay_ROUT_score = 0.1 * 70;
+                    }
+                    else if (Areay_ROUT >= 8.9)
+                    {
+                        Areay_ROUT_score = 0.1 * 80;
+                    }
+                    else if (Areay_ROUT >= 8.1)
+                    {
+                        Areay_ROUT_score = 0.1 * 90;
+                    }
+                    else
+                    {
+                        Areay_ROUT_score = 0.1 * 100;
+                    }
+                    double Areay_FinalScore = Areay_Max_score + Areay_MaxInterval_score + Areay_nugeock_score + Areay_ROUT_score;
+                    string Areay_Grade;
+                    if (Areay_FinalScore >= 96)
+                    {
+                        Areay_Grade = "A";
+                    }
+                    else if (Areay_FinalScore >= 91)
+                    {
+                        Areay_Grade = "B";
+                    }
+                    else if (Areay_FinalScore >= 86)
+                    {
+                        Areay_Grade = "C";
+                    }
+                    else if (Areay_FinalScore >= 81)
+                    {
+                        Areay_Grade = "D";
+                    }
+                    else
+                    {
+                        Areay_Grade = "E";
+                    }
+
+                    //--------------------------------DC Areax의 스코어 계산!-------------------------------------------------
+                    // Areax의 스코어 계산!
+                    double Areax_Max_score = 0;
+                    if (Areax_Max >= 18.4)
+                    {
+                        Areax_Max_score = 0.2 * 60;
+                    }
+                    else if (Areax_Max >= 16.0)
+                    {
+                        Areax_Max_score = 0.2 * 70;
+                    }
+                    else if (Areax_Max >= 13.9)
+                    {
+                        Areax_Max_score = 0.2 * 80;
+                    }
+                    else if (Areax_Max >= 12.1)
+                    {
+                        Areax_Max_score = 0.2 * 90;
+                    }
+                    else
+                    {
+                        Areax_Max_score = 0.2 * 100;
+                    }
+                    double Areax_MaxInterval_score = 0;
+                    if (Areax_MaxInterval >= 8.1)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 60;
+                    }
+                    else if (Areax_MaxInterval >= 7.4)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 70;
+                    }
+                    else if (Areax_MaxInterval >= 6.7)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 80;
+                    }
+                    else if (Areax_MaxInterval >= 6.1)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 90;
+                    }
+                    else
+                    {
+                        Areax_MaxInterval_score = 0.3 * 100;
+                    }
+                    /// PEAK X 누적치
+                    double Areax_nugeock_score = 0;
+                    if (Areax_nugeock >= 8.7)
+                    {
+                        Areax_nugeock_score = 0.4 * 60;
+                    }
+                    else if (Areax_nugeock >= 7.3)
+                    {
+                        Areax_nugeock_score = 0.4 * 70;
+                    }
+                    else if (Areax_nugeock >= 6.1)
+                    {
+                        Areax_nugeock_score = 0.4 * 80;
+                    }
+                    else if (Areax_nugeock >= 6.1)
+                    {
+                        Areax_nugeock_score = 0.4 * 90;
+                    }
+                    else
+                    {
+                        Areax_nugeock_score = 0.4 * 100;
+                    }
+                    //PEAK X R/OUT
+                    double Areax_ROUT_score = 0.0;
+                    if (Areax_ROUT >= 26.7)
+                    {
+                        Areax_ROUT_score = 0.1 * 60;
+                    }
+                    else if (Areax_ROUT >= 24.3)
+                    {
+                        Areax_ROUT_score = 0.1 * 70;
+                    }
+                    else if (Areax_ROUT >= 22.1)
+                    {
+                        Areax_ROUT_score = 0.1 * 80;
+                    }
+                    else if (Areax_ROUT >= 20.1)
+                    {
+                        Areax_ROUT_score = 0.1 * 90;
+                    }
+                    else
+                    {
+                        Areax_ROUT_score = 0.1 * 100;
+                    }
+                    double Areax_FinalScore = Areax_Max_score + Areax_MaxInterval_score + Areax_nugeock_score + Areax_ROUT_score;
+                    string Areax_Grade;
+                    if (Areax_FinalScore >= 96)
+                    {
+                        Areax_Grade = "A";
+                    }
+                    else if (Areax_FinalScore >= 91)
+                    {
+                        Areax_Grade = "B";
+                    }
+                    else if (Areax_FinalScore >= 86)
+                    {
+                        Areax_Grade = "C";
+                    }
+                    else if (Areax_FinalScore >= 81)
+                    {
+                        Areax_Grade = "D";
+                    }
+                    else
+                    {
+                        Areax_Grade = "E";
+                    }
+
+
+
+
+
+                    //--------------------------------DC peakx의 스코어 계산!-------------------------------------------------
                     // peakx의 스코어 계산!
                     double peakx_Max_score = 0;
                     if (Peakx_Max >= 18.4)
@@ -1807,7 +2813,7 @@ namespace WIA_ViewerProgram
                     }
                     else
                     {
-                        Peakx_nugeock_score = 0.1 * 100;
+                        Peakx_nugeock_score = 0.4 * 100;
                     }
                     //PEAK X R/OUT
                     double Peakx_ROUT_score = 0.0;
@@ -1854,7 +2860,7 @@ namespace WIA_ViewerProgram
                         Peakx_Grade = "E";
                     }
 
-                    //--------------------------------peaky의 스코어 계산!-------------------------------------------------
+                    //--------------------------------DCpeaky의 스코어 계산!-------------------------------------------------
                     double peaky_Max_score = 0;
                     if (Peaky_Max >= 7.7)
                     {
@@ -2052,7 +3058,7 @@ namespace WIA_ViewerProgram
                     {
                         Width_ROUT_score = 0.1 * 100;
                     }
-                    double Width_FinalScore = peaky_Max_score + Width_MaxInterval_score + Width_nugeock_score + Width_ROUT_score;
+                    double Width_FinalScore = Width_Max_score + Width_MaxInterval_score + Width_nugeock_score + Width_ROUT_score;
                     string Width_Grade;
                     if (Width_FinalScore >= 96)
                     {
@@ -2162,7 +3168,7 @@ namespace WIA_ViewerProgram
                     {
                         Height_ROUT_score = 0.1 * 100;
                     }
-                    double Height_FinalScore = peaky_Max_score + Height_MaxInterval_score + Height_nugeock_score + Height_ROUT_score;
+                    double Height_FinalScore = Height_Max_score + Height_MaxInterval_score + Height_nugeock_score + Height_ROUT_score;
                     string Height_Grade;
                     if (Height_FinalScore >= 96)
                     {
@@ -2273,7 +3279,7 @@ namespace WIA_ViewerProgram
                     {
                         Area_ROUT_score = 0.1 * 100;
                     }
-                    double Area_FinalScore = peaky_Max_score + Area_MaxInterval_score + Area_nugeock_score + Area_ROUT_score;
+                    double Area_FinalScore = Area_Max_score + Area_MaxInterval_score + Area_nugeock_score + Area_ROUT_score;
                     string Area_Grade;
                     if (Area_FinalScore >= 96)
                     {
@@ -2295,75 +3301,151 @@ namespace WIA_ViewerProgram
                     {
                         Area_Grade = "E";
                     }
-                    // 가속쪽 최종 점수및 등급 계산
-                    // double AC_FinalScore;
-                    //int AC_FinalGrade
-                    AC_FinalScore = Peakx_FinalScore * 0.3 + Peaky_FinalScore * 0.3 + Width_FinalScore * 0.1 + Height_FinalScore * 0.2 + Area_FinalScore * 0.1;
-                    if (AC_FinalScore >= 96)
+                    // 감속 쪽
+                    // double DC_FinalScore;
+                    //int DC_FinalGrade
+                    DC_FinalScore = Peakx_FinalScore * 0.2 + Peaky_FinalScore * 0.15 + Areax_FinalScore * 0.2 + Areay_FinalScore * 0.15 + Width_FinalScore * 0.05 + Height_FinalScore * 0.1 + Area_FinalScore * 0.05+Distance_FinalScore*0.1;
+                    if (DC_FinalScore >= 96)
                     {
-                        AC_FinalGrade = 1;
+                        DC_FinalGrade = 1;
                     }
-                    else if (AC_FinalScore >= 91)
+                    else if (DC_FinalScore >= 91)
                     {
-                        AC_FinalGrade = 2;
+                        DC_FinalGrade = 2;
                     }
-                    else if (AC_FinalScore >= 86)
+                    else if (DC_FinalScore >= 86)
                     {
-                        AC_FinalGrade = 3;
+                        DC_FinalGrade = 3;
                     }
-                    else if (AC_FinalScore >= 81)
+                    else if (DC_FinalScore >= 81)
                     {
-                        AC_FinalGrade = 4;
+                        DC_FinalGrade = 4;
                     }
                     else
                     {
-                        AC_FinalGrade = 5;
+                        DC_FinalGrade = 5;
                     }
+
+                    //---------------- 등급표 저장-------------- 파일이름 ScoreGrade.csv
 
                     //---------------- 등급표 저장-------------- 파일이름 ScoreGrade.csv
                     string head = $"Acceleration,단일치,인접치,누적치,R/OUT,등급,점수";
                     string Peakx_value = $"Peakx_측정값,{Peakx_Max},{Peakx_MaxInterval},{Peakx_nugeock},{Peakx_ROUT},{Peakx_Grade},{Peakx_FinalScore}";
                     string Peakx_scroe = $"Peakx_가중치반영 점수,{peakx_Max_score},{Peakx_MaxInterval_score},{Peakx_nugeock_score},{Peakx_ROUT_score},{Peakx_Grade},{Peakx_FinalScore}";
+
                     string Peaky_value = $"Peaky_측정값,{Peaky_Max},{Peaky_MaxInterval},{Peaky_nugeock},{Peaky_ROUT},{Peaky_Grade},{Peaky_FinalScore}";
-                    string Peaky_scroe = $"Peaky_가중치반영 점수,{peakx_Max_score},{Peaky_MaxInterval_score},{Peaky_nugeock_score},{Peaky_ROUT_score},{Peaky_Grade},{Peaky_FinalScore}";
+                    string Peaky_scroe = $"Peaky_가중치반영 점수,{peaky_Max_score},{Peaky_MaxInterval_score},{Peaky_nugeock_score},{Peaky_ROUT_score},{Peaky_Grade},{Peaky_FinalScore}";
+
+                    string Areax_value = $"Areax_측정값,{Areax_Max},{Areax_MaxInterval},{Areax_nugeock},{Areax_ROUT},{Areax_Grade},{Areax_FinalScore}";
+                    string Areax_scroe = $"Areax_가중치반영 점수,{Areax_Max_score},{Areax_MaxInterval_score},{Areax_nugeock_score},{Areax_ROUT_score},{Areax_Grade},{Areax_FinalScore}";
+
+                    string Areay_value = $"Areay_측정값,{Areay_Max},{Areay_MaxInterval},{Areay_nugeock},{Areay_ROUT},{Areay_Grade},{Areay_FinalScore}";
+                    string Areay_scroe = $"Areay_가중치반영 점수,{Areay_Max_score},{Areay_MaxInterval_score},{Areay_nugeock_score},{Areay_ROUT_score},{Areay_Grade},{Areay_FinalScore}";
+
 
                     string Width_value = $"Width_측정값,{Width_Max},{Width_MaxInterval},{Width_nugeock},{Width_ROUT},{Width_Grade},{Width_FinalScore}";
-                    string Width_scroe = $"Width_가중치반영 점수,{peakx_Max_score},{Width_MaxInterval_score},{Width_nugeock_score},{Width_ROUT_score},{Width_Grade},{Width_FinalScore}";
+                    string Width_scroe = $"Width_가중치반영 점수,{Width_Max_score},{Width_MaxInterval_score},{Width_nugeock_score},{Width_ROUT_score},{Width_Grade},{Width_FinalScore}";
 
                     string Height_value = $"Height_측정값,{Height_Max},{Height_MaxInterval},{Height_nugeock},{Height_ROUT},{Height_Grade},{Height_FinalScore}";
-                    string Height_scroe = $"Height_가중치반영 점수,{peakx_Max_score},{Height_MaxInterval_score},{Height_nugeock_score},{Height_ROUT_score},{Height_Grade},{Height_FinalScore}";
+                    string Height_scroe = $"Height_가중치반영 점수,{Height_Max_score},{Height_MaxInterval_score},{Height_nugeock_score},{Height_ROUT_score},{Height_Grade},{Height_FinalScore}";
 
                     string Area_value = $"Area_측정값,{Area_Max},{Area_MaxInterval},{Area_nugeock},{Area_ROUT},{Area_Grade},{Area_FinalScore}";
-                    string Area_scroe = $"Area_가중치반영 점수,{peakx_Max_score},{Area_MaxInterval_score},{Area_nugeock_score},{Area_ROUT_score},{Area_Grade},{Area_FinalScore}";
+                    string Area_scroe = $"Area_가중치반영 점수,{Area_Max_score},{Area_MaxInterval_score},{Area_nugeock_score},{Area_ROUT_score},{Area_Grade},{Area_FinalScore}";
 
-                    string Total_score = $"Total_score ,{AC_FinalScore}";
-                    string Total_Grade = $"Total_Grade ,{AC_FinalGrade}";
-                    if (!File.Exists(Path.Combine(DC_CSVFullPath, "ScoreGrade.csv"))) 
-                    { 
-                         try
-                         {
-                             using (StreamWriter sw = new StreamWriter(Path.Combine(DC_CSVFullPath, "ScoreGrade.csv"), true, Encoding.UTF8))
-                             {
-                                 sw.WriteLine(head);
-                                 sw.WriteLine(Peakx_value);
-                                 sw.WriteLine(Peakx_scroe);
-                                 sw.WriteLine(Peaky_value);
-                                 sw.WriteLine(Peaky_scroe);
-                                 sw.WriteLine(Width_value);
-                                 sw.WriteLine(Width_scroe);
-                                 sw.WriteLine(Height_value);
-                                 sw.WriteLine(Height_scroe);
-                                 sw.WriteLine(Area_value);
-                                 sw.WriteLine(Area_scroe);
-                                 sw.WriteLine(Total_score);
-                                 sw.WriteLine(Total_Grade);
-                             }
-                             logger.LogInfo("CSV", $"DC - ScoreGrade.csv 파일 생성 완료.  \n파일 경로 :{DC_CSVFullPath + "\\ScoreGrade.csv"}");
-                         }
-                         catch (Exception ex)
-                         {
-                             logger.LogInfo("CSV", $"DC - ScoreGrade.csv 파일 생성 실패.  \n파일 경로 :{DC_CSVFullPath + "\\ScoreGrade.csv"}\n 오류내용 {ex.Message}");
-                         }
+                    string Distance_value = $"Distance_측정값,{Distance_Max},{Distance_MaxInterval},{Distance_nugeock},{Distance_ROUT},{Distance_Grade},{Distance_FinalScore}";
+                    string Distance_scroe = $"Distance_가중치반영 점수,{Distance_Max_score},{Distance_MaxInterval_score},{Distance_nugeock_score},{Distance_ROUT_score},{Distance_Grade},{Distance_FinalScore}";
+
+                    string Total_score = $"Total_score ,{DC_FinalScore}";
+                    string Total_Grade = $"Total_Grade ,{DC_FinalGrade}";
+                    if (Peakx_avg == 0.0)
+                    {
+                        Peakx_value = $"Peakx_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Peakx_scroe = $"Peakx_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+                    if (Peaky_avg == 0.0)
+                    {
+                        Peaky_value = $"Peaky_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Peaky_scroe = $"Peaky_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+                    if (Width_avg == 0.0)
+                    {
+                        Width_value = $"Width_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Width_scroe = $"Width_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+                    if (Height_avg == 0.0)
+                    {
+                        Height_value = $"Height_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Height_scroe = $"Height_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+                    if (Area_avg == 0.0)
+                    {
+                        Area_value = $"Area_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Area_scroe = $"Area_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+                    if (Areax_avg == 0.0)
+                    {
+                        Areax_value = $"Areax_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Areax_scroe = $"Areax_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+
+                    if (Areay_avg == 0.0)
+                    {
+                        Areay_value = $"Areay_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Areay_scroe = $"Areay_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+
+                    if (Distance_avg == 0.0)
+                    {
+                        Distance_value = $"Distance_측정값,{-1},{-1},{-1},{-1},{-1},{-1}";
+                        Distance_scroe = $"Distance_가중치반영 점수,{-1},{-1},{-1},{-1},{-1},{-1}";
+                    }
+
+
+                    if (Peakx_avg == 0.0 && Peaky_avg == 0.0 && Width_avg == 0.0 && Height_avg == 0.0 && Area_avg == 0.0)
+                    {
+                        Total_score = $"Total_score , -1";
+                        Total_Grade = $"Total_Grade , -1";
+                    }
+
+
+                    if (!File.Exists(Path.Combine(DC_CSVFullPath, "ScoreGrade.csv")))
+                    {
+                        try
+                        {
+                            using (StreamWriter sw = new StreamWriter(Path.Combine(DC_CSVFullPath, "ScoreGrade.csv"), true, Encoding.UTF8))
+                            {
+                                sw.WriteLine(head);
+                                sw.WriteLine(Peakx_value);
+                                sw.WriteLine(Peakx_scroe);
+                                sw.WriteLine(Peaky_value);
+                                sw.WriteLine(Peaky_scroe);
+                                sw.WriteLine(Areax_value);
+                                sw.WriteLine(Areax_scroe);
+                                sw.WriteLine(Areay_value);
+                                sw.WriteLine(Areay_scroe);
+                                sw.WriteLine(Width_value);
+                                sw.WriteLine(Width_scroe);
+                                sw.WriteLine(Height_value);
+                                sw.WriteLine(Height_scroe);
+                                sw.WriteLine(Area_value);
+                                sw.WriteLine(Area_scroe);
+                                sw.WriteLine(Distance_value);
+                                sw.WriteLine(Distance_scroe);
+                                sw.WriteLine(Total_score);
+                                sw.WriteLine(Total_Grade);
+                            }
+                            logger.LogInfo("CSV", $"DC - ScoreGrade.csv 파일 생성 완료.  \n파일 경로 :{DC_CSVFullPath + "\\ScoreGrade.csv"}");
+                        }
+                        catch (Exception ex)
+                        {
+                            logger.LogInfo("CSV", $"DC - ScoreGrade.csv 파일 생성 실패.  \n파일 경로 :{DC_CSVFullPath + "\\ScoreGrade.csv"}\n 오류내용 {ex.Message}");
+                        }
                     }
                     else
                     {
@@ -2373,7 +3455,7 @@ namespace WIA_ViewerProgram
             }
             else
             {
-                logger.LogError("CSV", $"DC - ResultOutput.csv 파일이 없습니다.  \n파일 경로 :{DC_CSVFullPath+ "\\ResultOutput.csv"}");
+                logger.LogError("CSV", $"DC - ResultOutput.csv 파일이 없습니다.  \n파일 경로 :{DC_CSVFullPath + "\\ResultOutput.csv"}");
             }
         }
 
@@ -2458,13 +3540,31 @@ namespace WIA_ViewerProgram
             string[] jpgFiles = Directory.GetFiles(DC_CSVFullPath, "*.jpg");
 
             int AC_DC_countsub = 0;
+            //--------------★기억 개수에 따른 수정이 필요 한 부분-------------------------
             int MaxCount = jpgFiles.Length;
-            if(MaxCount==43){
-                AC_DC_countsub = 20;// 이값들이 기어의 개수에따라 달라짐
-            }
-            else 
+            if (MaxCount == 43)
             {
-                logger.LogError("이미지 파일 오류",$"저장된 이미지 파일의 개수 \n오류 파일 개수{MaxCount} \n 이미지 경로 : {DC_CSVFullPath}","","");
+                AC_DC_countsub = 20;//211개차이
+            }
+            else if (MaxCount == 46)
+            {
+                AC_DC_countsub = 22;// 23개차이
+            }
+            else if(MaxCount == 41)
+            {
+                AC_DC_countsub = 100000;// 이값들이 기어의 개수에따라 달라짐
+            }
+            else if(MaxCount == 48)
+            {
+                AC_DC_countsub = 100000;// 이값들이 기어의 개수에따라 달라짐
+            }
+            else if(MaxCount == 50)
+            {
+                AC_DC_countsub = 100000;// 이값들이 기어의 개수에따라 달라짐
+            }
+            else
+            {
+                logger.LogError("이미지 파일 오류", $"저장된 이미지 파일의 개수 \n오류 파일 개수{MaxCount} \n 이미지 경로 : {DC_CSVFullPath}", "", "");
                 return;
             }
 
@@ -2488,7 +3588,7 @@ namespace WIA_ViewerProgram
                         if (!File.Exists(newFilePath)) // 같은 이름의 파일이 없을 때만
                         {
                             File.Move(filePath, newFilePath);
-                        }                       
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -2504,13 +3604,13 @@ namespace WIA_ViewerProgram
             {
                 // 2. 경로에서 순수 파일 이름만 추출 (예: "001.jpg" -> "001")
                 string fileNameWithoutExt = Path.GetFileNameWithoutExtension(filePath);
-                
+
                 // 3. 파일 이름이 순수 숫자로만 이루어져 있는지 확인
                 if (int.TryParse(fileNameWithoutExt, out int fileNumber))
                 {
 
                     //4.jpg파일 이름을 csv순서대로 맞추기
-                    fileNumber = (fileNumber + AC_DC_countsub) % MaxCount + 1;
+                    fileNumber = ((fileNumber + AC_DC_countsub) % MaxCount) + 1;
 
                     // 5. 숫자를 2자리 포맷(01, 02...)으로 변경하고 확장자 붙이기
                     string newFileName = fileNumber.ToString("D2") + ".jpg";
@@ -2523,7 +3623,7 @@ namespace WIA_ViewerProgram
                         // 6. 파일 이름 변경 실행
                         if (!File.Exists(newFilePath)) // 같은 이름의 파일이 없을 때만
                         {
-                            File.Move(filePath, newFilePath);                            
+                            File.Move(filePath, newFilePath);
                         }
                     }
                     catch (Exception ex)
@@ -2532,8 +3632,8 @@ namespace WIA_ViewerProgram
                     }
                 }
             }
-        
-        
+
+
         }
     }
 }

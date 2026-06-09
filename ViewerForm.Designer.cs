@@ -115,7 +115,7 @@
             Label WRJXICEeLSD8825TR4363;
             Label WRJXICEOPEN8835TR3909;
             Label label120;
-            Label label125;
+            Label Master_Jig;
             Label label139;
             Label label140;
             Label label141;
@@ -149,6 +149,7 @@
             Label WRJKICEOPEN8535TR3909;
             bindingSource1 = new BindingSource(components);
             NaviPanel = new Panel();
+            LockButton = new Label();
             NaviRecipeLabel = new Label();
             NaviCaldataLabel = new Label();
             NavlTCPIPLabel = new Label();
@@ -199,82 +200,552 @@
             label1 = new Label();
             KeyenceConnetingCheckbtr = new Button();
             RECIPEPanel = new Panel();
+            ListPanel = new Panel();
+            ComentSavBtr = new Button();
+            ComentTextBox = new TextBox();
+            SingleStaticButton = new Button();
+            PluralStaticButton = new Button();
+            SingleImgCheckButton = new Button();
+            ListDisplyPanel = new FlowLayoutPanel();
+            SingleStaticPanel = new Panel();
+            SingleStaticPanel_5 = new Panel();
+            label584 = new Label();
+            label585 = new Label();
+            label582 = new Label();
+            label583 = new Label();
+            label581 = new Label();
+            label580 = new Label();
+            label575 = new Label();
+            label353 = new Label();
+            SensingROUT = new ScottPlot.WinForms.FormsPlot();
+            SingleStaticPanel_2 = new Panel();
+            DCArea_ROUT = new Label();
+            DCArea_Sum = new Label();
+            label452 = new Label();
+            label453 = new Label();
+            label454 = new Label();
+            label455 = new Label();
+            DCArea_Grade = new Label();
+            DCArea_MaxInterval = new Label();
+            DCArea_MaxOne = new Label();
+            label358 = new Label();
+            label359 = new Label();
+            label360 = new Label();
+            label361 = new Label();
+            label362 = new Label();
+            label363 = new Label();
+            label364 = new Label();
+            DCHeigth_Grade = new Label();
+            DCHeigth_ROUT = new Label();
+            DCHeigth_Sum = new Label();
+            DCHeigth_MaxInterval = new Label();
+            DCHeigth_MaxOne = new Label();
+            label370 = new Label();
+            label371 = new Label();
+            label372 = new Label();
+            label373 = new Label();
+            label374 = new Label();
+            label375 = new Label();
+            label376 = new Label();
+            label377 = new Label();
+            label378 = new Label();
+            label379 = new Label();
+            label380 = new Label();
+            DecelerationarArea = new ScottPlot.WinForms.FormsPlot();
+            DecelerationHeight = new ScottPlot.WinForms.FormsPlot();
+            DecelerationWidth = new ScottPlot.WinForms.FormsPlot();
+            DCWidth_Grade = new Label();
+            DCWidth_ROUT = new Label();
+            DCWidth_Sum = new Label();
+            DCWidth_MaxInterval = new Label();
+            DCWidth_MaxOne = new Label();
+            label386 = new Label();
+            label440 = new Label();
+            label441 = new Label();
+            label442 = new Label();
+            label443 = new Label();
+            label444 = new Label();
+            label445 = new Label();
+            label446 = new Label();
+            label447 = new Label();
+            label448 = new Label();
+            label449 = new Label();
+            ACArea_Grade = new Label();
+            ACArea_ROUT = new Label();
+            ACArea_Sum = new Label();
+            ACArea_MaxInterval = new Label();
+            ACArea_MaxOne = new Label();
+            label429 = new Label();
+            label430 = new Label();
+            label431 = new Label();
+            label432 = new Label();
+            label433 = new Label();
+            label434 = new Label();
+            label435 = new Label();
+            label436 = new Label();
+            label437 = new Label();
+            label438 = new Label();
+            label439 = new Label();
+            ACHeigth_Grade = new Label();
+            ACHeigth_ROUT = new Label();
+            ACHeigth_Sum = new Label();
+            ACHeigth_MaxInterval = new Label();
+            ACHeigth_MaxOne = new Label();
+            label392 = new Label();
+            label393 = new Label();
+            label394 = new Label();
+            label395 = new Label();
+            label396 = new Label();
+            label397 = new Label();
+            label398 = new Label();
+            label399 = new Label();
+            label400 = new Label();
+            label401 = new Label();
+            label402 = new Label();
+            AccelerationArea = new ScottPlot.WinForms.FormsPlot();
+            AccelerationHeight = new ScottPlot.WinForms.FormsPlot();
+            AccelerationWidth = new ScottPlot.WinForms.FormsPlot();
+            ACWidth_Grade = new Label();
+            ACWidth_ROUT = new Label();
+            ACWidth_Sum = new Label();
+            ACWidth_MaxInterval = new Label();
+            ACWidth_MaxOne = new Label();
+            label408 = new Label();
+            label409 = new Label();
+            label410 = new Label();
+            label411 = new Label();
+            label412 = new Label();
+            label413 = new Label();
+            label414 = new Label();
+            label415 = new Label();
+            label416 = new Label();
+            label417 = new Label();
+            label418 = new Label();
+            label419 = new Label();
+            label420 = new Label();
+            SingleStaticSavebtr = new Button();
+            label564 = new Label();
+            SingleStaticPanel_4 = new Panel();
+            label561 = new Label();
+            label562 = new Label();
+            label563 = new Label();
+            label558 = new Label();
+            label559 = new Label();
+            label560 = new Label();
+            label555 = new Label();
+            label556 = new Label();
+            label557 = new Label();
+            label543 = new Label();
+            label544 = new Label();
+            label545 = new Label();
+            label546 = new Label();
+            label547 = new Label();
+            label548 = new Label();
+            label549 = new Label();
+            label550 = new Label();
+            label551 = new Label();
+            label552 = new Label();
+            label553 = new Label();
+            label554 = new Label();
+            label537 = new Label();
+            label538 = new Label();
+            label539 = new Label();
+            label540 = new Label();
+            label541 = new Label();
+            label542 = new Label();
+            label421 = new Label();
+            label422 = new Label();
+            label533 = new Label();
+            label534 = new Label();
+            label535 = new Label();
+            label536 = new Label();
+            label125 = new Label();
+            label335 = new Label();
+            label336 = new Label();
+            label338 = new Label();
+            label339 = new Label();
+            label340 = new Label();
+            label341 = new Label();
+            label342 = new Label();
+            label327 = new Label();
+            label328 = new Label();
+            label330 = new Label();
+            label331 = new Label();
+            label332 = new Label();
+            label333 = new Label();
+            label334 = new Label();
+            label326 = new Label();
+            label325 = new Label();
+            label323 = new Label();
+            label322 = new Label();
+            label321 = new Label();
+            label320 = new Label();
+            label319 = new Label();
+            label318 = new Label();
+            label317 = new Label();
+            label316 = new Label();
+            label296 = new Label();
+            label298 = new Label();
+            label300 = new Label();
+            label302 = new Label();
+            label303 = new Label();
+            label304 = new Label();
+            label305 = new Label();
+            label306 = new Label();
+            label309 = new Label();
+            label310 = new Label();
+            label311 = new Label();
+            label312 = new Label();
+            label313 = new Label();
+            label314 = new Label();
+            label315 = new Label();
+            label286 = new Label();
+            label288 = new Label();
+            label290 = new Label();
+            label292 = new Label();
+            label294 = new Label();
+            label276 = new Label();
+            label278 = new Label();
+            label280 = new Label();
+            label282 = new Label();
+            label284 = new Label();
+            label244 = new Label();
+            label268 = new Label();
+            label270 = new Label();
+            label272 = new Label();
+            label274 = new Label();
+            label212 = new Label();
+            label238 = new Label();
+            label240 = new Label();
+            label242 = new Label();
+            label210 = new Label();
+            label208 = new Label();
+            label206 = new Label();
+            label204 = new Label();
+            label180 = new Label();
+            label178 = new Label();
+            label176 = new Label();
+            label174 = new Label();
+            label172 = new Label();
+            label170 = new Label();
+            SingleStaticPanel_3 = new Panel();
+            AccelerationAreaX = new ScottPlot.WinForms.FormsPlot();
+            label351 = new Label();
+            label352 = new Label();
+            label385 = new Label();
+            label387 = new Label();
+            label388 = new Label();
+            label389 = new Label();
+            label390 = new Label();
+            label391 = new Label();
+            label403 = new Label();
+            label404 = new Label();
+            label405 = new Label();
+            label406 = new Label();
+            label407 = new Label();
+            label423 = new Label();
+            label424 = new Label();
+            label425 = new Label();
+            label426 = new Label();
+            label427 = new Label();
+            label428 = new Label();
+            label450 = new Label();
+            label451 = new Label();
+            label456 = new Label();
+            label457 = new Label();
+            label458 = new Label();
+            label459 = new Label();
+            label460 = new Label();
+            label461 = new Label();
+            label462 = new Label();
+            label463 = new Label();
+            label464 = new Label();
+            label465 = new Label();
+            label466 = new Label();
+            DecelerationDistance = new ScottPlot.WinForms.FormsPlot();
+            DecelerationAreaY = new ScottPlot.WinForms.FormsPlot();
+            DecelerationAreaX = new ScottPlot.WinForms.FormsPlot();
+            label467 = new Label();
+            label468 = new Label();
+            label469 = new Label();
+            label470 = new Label();
+            label471 = new Label();
+            label472 = new Label();
+            label473 = new Label();
+            label474 = new Label();
+            label475 = new Label();
+            label476 = new Label();
+            label477 = new Label();
+            label478 = new Label();
+            label479 = new Label();
+            label480 = new Label();
+            label481 = new Label();
+            label482 = new Label();
+            label483 = new Label();
+            label484 = new Label();
+            label485 = new Label();
+            label486 = new Label();
+            label487 = new Label();
+            label488 = new Label();
+            label489 = new Label();
+            label490 = new Label();
+            label491 = new Label();
+            label492 = new Label();
+            label493 = new Label();
+            label494 = new Label();
+            label495 = new Label();
+            label496 = new Label();
+            label497 = new Label();
+            label498 = new Label();
+            label499 = new Label();
+            label500 = new Label();
+            label501 = new Label();
+            label502 = new Label();
+            label503 = new Label();
+            label504 = new Label();
+            label505 = new Label();
+            label506 = new Label();
+            label507 = new Label();
+            label508 = new Label();
+            label509 = new Label();
+            label510 = new Label();
+            label511 = new Label();
+            label512 = new Label();
+            label513 = new Label();
+            label514 = new Label();
+            AccelerationDistance = new ScottPlot.WinForms.FormsPlot();
+            AccelerationAreaY = new ScottPlot.WinForms.FormsPlot();
+            label515 = new Label();
+            label516 = new Label();
+            label517 = new Label();
+            label518 = new Label();
+            label519 = new Label();
+            label520 = new Label();
+            label521 = new Label();
+            label522 = new Label();
+            label523 = new Label();
+            label524 = new Label();
+            label525 = new Label();
+            label526 = new Label();
+            label527 = new Label();
+            label528 = new Label();
+            label529 = new Label();
+            label530 = new Label();
+            label531 = new Label();
+            label532 = new Label();
+            DCFinalGradelabel = new Label();
+            ACFinalGradelabel = new Label();
+            SingleStaticPanel_1 = new Panel();
+            AccelerationPeakX = new ScottPlot.WinForms.FormsPlot();
+            DCPeakY_Grade = new Label();
+            DCPeakY_ROUT = new Label();
+            DCPeakY__nugeock = new Label();
+            DCPeakY_MaxInterval = new Label();
+            DCPeakY_MaxOne = new Label();
+            label246 = new Label();
+            label248 = new Label();
+            label250 = new Label();
+            label252 = new Label();
+            label254 = new Label();
+            label256 = new Label();
+            label258 = new Label();
+            label260 = new Label();
+            label262 = new Label();
+            label264 = new Label();
+            label266 = new Label();
+            DCPeakX_Grade = new Label();
+            DCPeakX_ROUT = new Label();
+            DCPeakX__nugeock = new Label();
+            DCPeakX_MaxInterval = new Label();
+            DCPeakX_MaxOne = new Label();
+            label214 = new Label();
+            label216 = new Label();
+            label218 = new Label();
+            label220 = new Label();
+            label222 = new Label();
+            label224 = new Label();
+            label226 = new Label();
+            label228 = new Label();
+            label230 = new Label();
+            label232 = new Label();
+            label234 = new Label();
+            ACPeakY_Grade = new Label();
+            ACPeakY_ROUT = new Label();
+            ACPeakY__nugeock = new Label();
+            ACPeakY_MaxInterval = new Label();
+            ACPeakY_MaxOne = new Label();
+            label182 = new Label();
+            label184 = new Label();
+            label186 = new Label();
+            label188 = new Label();
+            label190 = new Label();
+            label192 = new Label();
+            label194 = new Label();
+            label196 = new Label();
+            label198 = new Label();
+            label200 = new Label();
+            label202 = new Label();
+            ACPeakX_Grade = new Label();
+            ACPeakX_ROUT = new Label();
+            ACPeakX__nugeock = new Label();
+            ACPeakX_MaxInterval = new Label();
+            ACPeakX_MaxOne = new Label();
+            label128 = new Label();
+            label116 = new Label();
+            label112 = new Label();
+            label109 = new Label();
+            label100 = new Label();
+            label69 = new Label();
+            label64 = new Label();
+            label59 = new Label();
+            label58 = new Label();
+            label54 = new Label();
+            label47 = new Label();
+            SingleStaticPanel_1_imgcheckButton = new Button();
+            label46 = new Label();
+            label42 = new Label();
+            DecelerationPeakY = new ScottPlot.WinForms.FormsPlot();
+            DecelerationPeakX = new ScottPlot.WinForms.FormsPlot();
+            AccelerationPeakY = new ScottPlot.WinForms.FormsPlot();
+            TotalGradeScore = new Label();
+            SingleStaticPanelCountDownButton = new Button();
+            SingleStaticPanelCountUpButton = new Button();
+            SingletaticDisplayLabel = new Label();
+            RecipeSelectPanel = new Panel();
+            label162 = new Label();
+            label163 = new Label();
+            label164 = new Label();
+            label123 = new Label();
+            label124 = new Label();
+            label66 = new Label();
+            label67 = new Label();
+            SearchStratButton = new Button();
+            EnddateTimePicker = new DateTimePicker();
+            StartdateTimePicker = new DateTimePicker();
+            TodayDateLabel = new Label();
+            SelectedModeDisplaylLabel = new Label();
+            label138 = new Label();
+            label137 = new Label();
+            label136 = new Label();
+            label135 = new Label();
+            label96 = new Label();
+            label97 = new Label();
+            label134 = new Label();
+            label73 = new Label();
+            label72 = new Label();
+            WrapingGearLabel = new Label();
+            label34 = new Label();
+            label33 = new Label();
+            label32 = new Label();
+            label27 = new Label();
+            label26 = new Label();
+            label25 = new Label();
             PerulStaticPanel = new Panel();
-            PerulStaticPanel_7 = new Panel();
+            PlurStaticCSVSaveBtr = new Button();
+            PerulStaticPanel_11 = new Panel();
             FinalDCGradeCountPlot = new ScottPlot.WinForms.FormsPlot();
             FinalACGradeCountPlot = new ScottPlot.WinForms.FormsPlot();
             FinalGradeCountPlot = new ScottPlot.WinForms.FormsPlot();
-            PerulStaticPanel_5 = new Panel();
-            DCAreaScorePlot = new ScottPlot.WinForms.FormsPlot();
-            DCHeightScorePlot = new ScottPlot.WinForms.FormsPlot();
-            DCWidthScorePlot = new ScottPlot.WinForms.FormsPlot();
-            DCPeakYScorePlot = new ScottPlot.WinForms.FormsPlot();
-            DCPeakXScorePlot = new ScottPlot.WinForms.FormsPlot();
-            PerulStaticPanel_6 = new Panel();
+            PerulStaticPanel_10 = new Panel();
+            DCDistanceMADPlot = new ScottPlot.WinForms.FormsPlot();
             DCAreaMADPlot = new ScottPlot.WinForms.FormsPlot();
             DCHeightMADPlot = new ScottPlot.WinForms.FormsPlot();
             DCWidthMADPlot = new ScottPlot.WinForms.FormsPlot();
+            PerulStaticPanel_9 = new Panel();
+            DCAreaYMADPlot = new ScottPlot.WinForms.FormsPlot();
+            DCAreaXMADPlot = new ScottPlot.WinForms.FormsPlot();
             DCPeakYMADPlot = new ScottPlot.WinForms.FormsPlot();
             DCPeakXMADPlot = new ScottPlot.WinForms.FormsPlot();
-            PerulStaticPanel_4 = new Panel();
+            PerulStaticPanel_8 = new Panel();
+            DCDistanceScorePlot = new ScottPlot.WinForms.FormsPlot();
+            DCAreaScorePlot = new ScottPlot.WinForms.FormsPlot();
+            DCHeightScorePlot = new ScottPlot.WinForms.FormsPlot();
+            DCWidthScorePlot = new ScottPlot.WinForms.FormsPlot();
+            PerulStaticPanel_7 = new Panel();
+            DCAreaYScorePlot = new ScottPlot.WinForms.FormsPlot();
+            DCAreaXScorePlot = new ScottPlot.WinForms.FormsPlot();
+            DCPeakYScorePlot = new ScottPlot.WinForms.FormsPlot();
+            DCPeakXScorePlot = new ScottPlot.WinForms.FormsPlot();
+            PerulStaticPanel_6 = new Panel();
+            ACDistanceMADPlot = new ScottPlot.WinForms.FormsPlot();
             ACAreaMADPlot = new ScottPlot.WinForms.FormsPlot();
             ACHeightMADPlot = new ScottPlot.WinForms.FormsPlot();
             ACWidthMADPlot = new ScottPlot.WinForms.FormsPlot();
+            PerulStaticPanel_5 = new Panel();
+            ACAreaYMADPlot = new ScottPlot.WinForms.FormsPlot();
+            ACAreaXMADPlot = new ScottPlot.WinForms.FormsPlot();
             ACPeakYMADPlot = new ScottPlot.WinForms.FormsPlot();
             ACPeakXMADPlot = new ScottPlot.WinForms.FormsPlot();
-            PerulStaticPanel_3 = new Panel();
+            PerulStaticPanel_4 = new Panel();
+            ACDistanceScorePlot = new ScottPlot.WinForms.FormsPlot();
             ACAreaScorePlot = new ScottPlot.WinForms.FormsPlot();
             ACHeightScorePlot = new ScottPlot.WinForms.FormsPlot();
             ACWidthScorePlot = new ScottPlot.WinForms.FormsPlot();
+            PerulStaticPanel_3 = new Panel();
+            ACAreaYScorePlot = new ScottPlot.WinForms.FormsPlot();
+            ACAreaXScorePlot = new ScottPlot.WinForms.FormsPlot();
             ACPeakYScorePlot = new ScottPlot.WinForms.FormsPlot();
             ACPeakXScorePlot = new ScottPlot.WinForms.FormsPlot();
-            PluerPageUpbtr = new Button();
-            PluerPageDownbtr = new Button();
             PerulStaticPanel_2 = new Panel();
-            label384 = new Label();
             label344 = new Label();
-            label345 = new Label();
-            label346 = new Label();
-            label347 = new Label();
-            label348 = new Label();
-            label349 = new Label();
-            label350 = new Label();
-            label353 = new Label();
-            label354 = new Label();
-            label355 = new Label();
-            label357 = new Label();
-            label365 = new Label();
-            label366 = new Label();
-            label367 = new Label();
-            label368 = new Label();
-            label369 = new Label();
-            label381 = new Label();
-            label382 = new Label();
-            label383 = new Label();
             PlurerFlowPanel2 = new FlowLayoutPanel();
+            label345 = new Label();
+            label381 = new Label();
+            label346 = new Label();
+            label579 = new Label();
+            label347 = new Label();
+            label578 = new Label();
+            label348 = new Label();
+            label577 = new Label();
+            label349 = new Label();
+            label576 = new Label();
+            label350 = new Label();
+            label574 = new Label();
+            label354 = new Label();
+            label573 = new Label();
+            label355 = new Label();
+            label572 = new Label();
+            label357 = new Label();
+            label384 = new Label();
+            label365 = new Label();
+            label383 = new Label();
+            label366 = new Label();
+            label382 = new Label();
+            label367 = new Label();
+            label369 = new Label();
+            label368 = new Label();
             PerulStaticPanel_1 = new Panel();
-            label15 = new Label();
+            label19 = new Label();
+            label37 = new Label();
+            label38 = new Label();
+            label133 = new Label();
+            label160 = new Label();
+            label166 = new Label();
+            label168 = new Label();
             label337 = new Label();
-            PlurerFlowPanel1 = new FlowLayoutPanel();
             label343 = new Label();
+            label569 = new Label();
+            label570 = new Label();
+            label571 = new Label();
+            label568 = new Label();
+            label566 = new Label();
+            label567 = new Label();
+            label565 = new Label();
+            label15 = new Label();
+            PlurerFlowPanel1 = new FlowLayoutPanel();
             label16 = new Label();
             label329 = new Label();
             label17 = new Label();
             label324 = new Label();
             label18 = new Label();
-            label19 = new Label();
-            label168 = new Label();
             label20 = new Label();
             label236 = new Label();
             label21 = new Label();
-            label37 = new Label();
             label22 = new Label();
-            label38 = new Label();
             label23 = new Label();
-            label133 = new Label();
             label24 = new Label();
-            label160 = new Label();
-            label166 = new Label();
+            PluerPageUpbtr = new Button();
+            PluerPageDownbtr = new Button();
             PerulStaticDisplayLabel = new Label();
             SicngleImgCheckPanel = new Panel();
             RearDisplayPanel = new Panel();
@@ -474,305 +945,11 @@
             Img6to10Label = new Label();
             Img1to5Label = new Label();
             SicngleImgCheckPanelExitButton = new Button();
-            ListPanel = new Panel();
-            SingleStaticButton = new Button();
-            PluralStaticButton = new Button();
-            SingleImgCheckButton = new Button();
-            ListDisplyPanel = new FlowLayoutPanel();
             FTPSettingButton = new Button();
-            RecipeSelectPanel = new Panel();
-            label162 = new Label();
-            label163 = new Label();
-            label164 = new Label();
-            label123 = new Label();
-            label124 = new Label();
-            label66 = new Label();
-            label67 = new Label();
-            SearchStratButton = new Button();
-            EnddateTimePicker = new DateTimePicker();
-            StartdateTimePicker = new DateTimePicker();
-            TodayDateLabel = new Label();
-            SelectedModeDisplaylLabel = new Label();
-            label138 = new Label();
-            label137 = new Label();
-            label136 = new Label();
-            label135 = new Label();
-            label96 = new Label();
-            label97 = new Label();
-            label134 = new Label();
-            label73 = new Label();
-            label72 = new Label();
-            WrapingGearLabel = new Label();
-            label34 = new Label();
-            label33 = new Label();
-            label32 = new Label();
-            label27 = new Label();
-            label26 = new Label();
-            label25 = new Label();
             PluralStaticLabel = new Label();
             SingleStaticLabel = new Label();
             ListLabel = new Label();
             RecipeSelectLabel = new Label();
-            SingleStaticPanel = new Panel();
-            SingleStaticPanel_4 = new Panel();
-            label335 = new Label();
-            label336 = new Label();
-            label338 = new Label();
-            label339 = new Label();
-            label340 = new Label();
-            label341 = new Label();
-            label342 = new Label();
-            label327 = new Label();
-            label328 = new Label();
-            label330 = new Label();
-            label331 = new Label();
-            label332 = new Label();
-            label333 = new Label();
-            label334 = new Label();
-            label326 = new Label();
-            label325 = new Label();
-            label323 = new Label();
-            label322 = new Label();
-            label321 = new Label();
-            label320 = new Label();
-            label319 = new Label();
-            label318 = new Label();
-            label317 = new Label();
-            label316 = new Label();
-            label296 = new Label();
-            label298 = new Label();
-            label300 = new Label();
-            label302 = new Label();
-            label303 = new Label();
-            label304 = new Label();
-            label305 = new Label();
-            label306 = new Label();
-            label309 = new Label();
-            label310 = new Label();
-            label311 = new Label();
-            label312 = new Label();
-            label313 = new Label();
-            label314 = new Label();
-            label315 = new Label();
-            label286 = new Label();
-            label288 = new Label();
-            label290 = new Label();
-            label292 = new Label();
-            label294 = new Label();
-            label276 = new Label();
-            label278 = new Label();
-            label280 = new Label();
-            label282 = new Label();
-            label284 = new Label();
-            label244 = new Label();
-            label268 = new Label();
-            label270 = new Label();
-            label272 = new Label();
-            label274 = new Label();
-            label212 = new Label();
-            label238 = new Label();
-            label240 = new Label();
-            label242 = new Label();
-            label210 = new Label();
-            label208 = new Label();
-            label206 = new Label();
-            label204 = new Label();
-            label180 = new Label();
-            label178 = new Label();
-            label176 = new Label();
-            label174 = new Label();
-            label172 = new Label();
-            label170 = new Label();
-            DCFinalGradelabel = new Label();
-            ACFinalGradelabel = new Label();
-            SingleStaticPanel_1 = new Panel();
-            AccelerationPeakX = new ScottPlot.WinForms.FormsPlot();
-            DCPeakY_Grade = new Label();
-            DCPeakY_ROUT = new Label();
-            DCPeakY__nugeock = new Label();
-            DCPeakY_MaxInterval = new Label();
-            DCPeakY_MaxOne = new Label();
-            label246 = new Label();
-            label248 = new Label();
-            label250 = new Label();
-            label252 = new Label();
-            label254 = new Label();
-            label256 = new Label();
-            label258 = new Label();
-            label260 = new Label();
-            label262 = new Label();
-            label264 = new Label();
-            label266 = new Label();
-            DCPeakX_Grade = new Label();
-            DCPeakX_ROUT = new Label();
-            DCPeakX__nugeock = new Label();
-            DCPeakX_MaxInterval = new Label();
-            DCPeakX_MaxOne = new Label();
-            label214 = new Label();
-            label216 = new Label();
-            label218 = new Label();
-            label220 = new Label();
-            label222 = new Label();
-            label224 = new Label();
-            label226 = new Label();
-            label228 = new Label();
-            label230 = new Label();
-            label232 = new Label();
-            label234 = new Label();
-            ACPeakY_Grade = new Label();
-            ACPeakY_ROUT = new Label();
-            ACPeakY__nugeock = new Label();
-            ACPeakY_MaxInterval = new Label();
-            ACPeakY_MaxOne = new Label();
-            label182 = new Label();
-            label184 = new Label();
-            label186 = new Label();
-            label188 = new Label();
-            label190 = new Label();
-            label192 = new Label();
-            label194 = new Label();
-            label196 = new Label();
-            label198 = new Label();
-            label200 = new Label();
-            label202 = new Label();
-            ACPeakX_Grade = new Label();
-            ACPeakX_ROUT = new Label();
-            ACPeakX__nugeock = new Label();
-            ACPeakX_MaxInterval = new Label();
-            ACPeakX_MaxOne = new Label();
-            label128 = new Label();
-            label116 = new Label();
-            label112 = new Label();
-            label109 = new Label();
-            label100 = new Label();
-            label69 = new Label();
-            label64 = new Label();
-            label59 = new Label();
-            label58 = new Label();
-            label54 = new Label();
-            label47 = new Label();
-            SingleStaticPanel_1_imgcheckButton = new Button();
-            label46 = new Label();
-            label42 = new Label();
-            DecelerationPeakY = new ScottPlot.WinForms.FormsPlot();
-            DecelerationPeakX = new ScottPlot.WinForms.FormsPlot();
-            AccelerationPeakY = new ScottPlot.WinForms.FormsPlot();
-            SingleStaticPanel_2 = new Panel();
-            DCArea_ROUT = new Label();
-            DCArea_Sum = new Label();
-            label452 = new Label();
-            label453 = new Label();
-            label454 = new Label();
-            label455 = new Label();
-            DCArea_Grade = new Label();
-            DCArea_MaxInterval = new Label();
-            DCArea_MaxOne = new Label();
-            label358 = new Label();
-            label359 = new Label();
-            label360 = new Label();
-            label361 = new Label();
-            label362 = new Label();
-            label363 = new Label();
-            label364 = new Label();
-            DCHeigth_Grade = new Label();
-            DCHeigth_ROUT = new Label();
-            DCHeigth_Sum = new Label();
-            DCHeigth_MaxInterval = new Label();
-            DCHeigth_MaxOne = new Label();
-            label370 = new Label();
-            label371 = new Label();
-            label372 = new Label();
-            label373 = new Label();
-            label374 = new Label();
-            label375 = new Label();
-            label376 = new Label();
-            label377 = new Label();
-            label378 = new Label();
-            label379 = new Label();
-            label380 = new Label();
-            DecelerationarArea = new ScottPlot.WinForms.FormsPlot();
-            DecelerationHeight = new ScottPlot.WinForms.FormsPlot();
-            DecelerationWidth = new ScottPlot.WinForms.FormsPlot();
-            DCWidth_Grade = new Label();
-            DCWidth_ROUT = new Label();
-            DCWidth_Sum = new Label();
-            DCWidth_MaxInterval = new Label();
-            DCWidth_MaxOne = new Label();
-            label386 = new Label();
-            label440 = new Label();
-            label441 = new Label();
-            label442 = new Label();
-            label443 = new Label();
-            label444 = new Label();
-            label445 = new Label();
-            label446 = new Label();
-            label447 = new Label();
-            label448 = new Label();
-            label449 = new Label();
-            ACArea_Grade = new Label();
-            ACArea_ROUT = new Label();
-            ACArea_Sum = new Label();
-            ACArea_MaxInterval = new Label();
-            ACArea_MaxOne = new Label();
-            label429 = new Label();
-            label430 = new Label();
-            label431 = new Label();
-            label432 = new Label();
-            label433 = new Label();
-            label434 = new Label();
-            label435 = new Label();
-            label436 = new Label();
-            label437 = new Label();
-            label438 = new Label();
-            label439 = new Label();
-            ACHeigth_Grade = new Label();
-            ACHeigth_ROUT = new Label();
-            ACHeigth_Sum = new Label();
-            ACHeigth_MaxInterval = new Label();
-            ACHeigth_MaxOne = new Label();
-            label392 = new Label();
-            label393 = new Label();
-            label394 = new Label();
-            label395 = new Label();
-            label396 = new Label();
-            label397 = new Label();
-            label398 = new Label();
-            label399 = new Label();
-            label400 = new Label();
-            label401 = new Label();
-            label402 = new Label();
-            AccelerationArea = new ScottPlot.WinForms.FormsPlot();
-            AccelerationHeight = new ScottPlot.WinForms.FormsPlot();
-            AccelerationWidth = new ScottPlot.WinForms.FormsPlot();
-            ACWidth_Grade = new Label();
-            ACWidth_ROUT = new Label();
-            ACWidth_Sum = new Label();
-            ACWidth_MaxInterval = new Label();
-            ACWidth_MaxOne = new Label();
-            label408 = new Label();
-            label409 = new Label();
-            label410 = new Label();
-            label411 = new Label();
-            label412 = new Label();
-            label413 = new Label();
-            label414 = new Label();
-            label415 = new Label();
-            label416 = new Label();
-            label417 = new Label();
-            label418 = new Label();
-            label419 = new Label();
-            label420 = new Label();
-            TotalGradeScore = new Label();
-            SingleStaticPanel_3 = new Panel();
-            label351 = new Label();
-            label352 = new Label();
-            DecelerationPatternY = new ScottPlot.WinForms.FormsPlot();
-            DecelerationPatternX = new ScottPlot.WinForms.FormsPlot();
-            AccelerationPatternY = new ScottPlot.WinForms.FormsPlot();
-            AccelerationPatternX = new ScottPlot.WinForms.FormsPlot();
-            SingleStaticPanelCountDownButton = new Button();
-            SingleStaticPanelCountUpButton = new Button();
-            SingletaticDisplayLabel = new Label();
             CaldataPanel = new Panel();
             label693 = new Label();
             label2 = new Label();
@@ -793,6 +970,12 @@
             FrontCalResult = new PictureBox();
             RearCalResult = new PictureBox();
             openFileDialog1 = new OpenFileDialog();
+            LockPanel = new Panel();
+            CurrentUserLabel = new Label();
+            button1 = new Button();
+            UnlockPasswordtb = new TextBox();
+            label356 = new Label();
+            ProgramExitbtr = new Button();
             label102 = new Label();
             label103 = new Label();
             label108 = new Label();
@@ -879,7 +1062,7 @@
             WRJXICEeLSD8825TR4363 = new Label();
             WRJXICEOPEN8835TR3909 = new Label();
             label120 = new Label();
-            label125 = new Label();
+            Master_Jig = new Label();
             label139 = new Label();
             label140 = new Label();
             label141 = new Label();
@@ -919,10 +1102,22 @@
             IDPWChangePanel.SuspendLayout();
             TCPIPPanel.SuspendLayout();
             RECIPEPanel.SuspendLayout();
+            ListPanel.SuspendLayout();
+            SingleStaticPanel.SuspendLayout();
+            SingleStaticPanel_5.SuspendLayout();
+            SingleStaticPanel_2.SuspendLayout();
+            SingleStaticPanel_4.SuspendLayout();
+            SingleStaticPanel_3.SuspendLayout();
+            SingleStaticPanel_1.SuspendLayout();
+            RecipeSelectPanel.SuspendLayout();
             PerulStaticPanel.SuspendLayout();
+            PerulStaticPanel_11.SuspendLayout();
+            PerulStaticPanel_10.SuspendLayout();
+            PerulStaticPanel_9.SuspendLayout();
+            PerulStaticPanel_8.SuspendLayout();
             PerulStaticPanel_7.SuspendLayout();
-            PerulStaticPanel_5.SuspendLayout();
             PerulStaticPanel_6.SuspendLayout();
+            PerulStaticPanel_5.SuspendLayout();
             PerulStaticPanel_4.SuspendLayout();
             PerulStaticPanel_3.SuspendLayout();
             PerulStaticPanel_2.SuspendLayout();
@@ -940,13 +1135,6 @@
             ((System.ComponentModel.ISupportInitialize)F3picturebox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)F4picturebox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)F5picturebox).BeginInit();
-            ListPanel.SuspendLayout();
-            RecipeSelectPanel.SuspendLayout();
-            SingleStaticPanel.SuspendLayout();
-            SingleStaticPanel_4.SuspendLayout();
-            SingleStaticPanel_1.SuspendLayout();
-            SingleStaticPanel_2.SuspendLayout();
-            SingleStaticPanel_3.SuspendLayout();
             CaldataPanel.SuspendLayout();
             panel7.SuspendLayout();
             panel5.SuspendLayout();
@@ -954,6 +1142,7 @@
             ((System.ComponentModel.ISupportInitialize)RearOriginPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)FrontCalResult).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RearCalResult).BeginInit();
+            LockPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label102
@@ -965,7 +1154,7 @@
             label102.Name = "label102";
             label102.Size = new Size(67, 52);
             label102.TabIndex = 95;
-            label102.Text = "-";
+            label102.Text = "(90)";
             label102.TextAlign = ContentAlignment.MiddleCenter;
             label102.Click += (this.Model_Click);
             // 
@@ -978,7 +1167,7 @@
             label103.Name = "label103";
             label103.Size = new Size(67, 57);
             label103.TabIndex = 94;
-            label103.Text = "-";
+            label103.Text = "-\r\n(89)";
             label103.TextAlign = ContentAlignment.MiddleCenter;
             label103.Click += (this.Model_Click);
             // 
@@ -991,7 +1180,7 @@
             label108.Name = "label108";
             label108.Size = new Size(143, 52);
             label108.TabIndex = 89;
-            label108.Text = "-";
+            label108.Text = "-\r\n(82)";
             label108.TextAlign = ContentAlignment.MiddleCenter;
             label108.Click += (this.Model_Click);
             // 
@@ -1004,7 +1193,7 @@
             WDRG3HEVOPEN8525TR3307.Name = "WDRG3HEVOPEN8525TR3307";
             WDRG3HEVOPEN8525TR3307.Size = new Size(143, 57);
             WDRG3HEVOPEN8525TR3307.TabIndex = 88;
-            WDRG3HEVOPEN8525TR3307.Text = "R 3.307";
+            WDRG3HEVOPEN8525TR3307.Text = "R 3.307\r\n(81)";
             WDRG3HEVOPEN8525TR3307.TextAlign = ContentAlignment.MiddleCenter;
             WDRG3HEVOPEN8525TR3307.Click += (this.Model_Click);
             // 
@@ -1017,7 +1206,7 @@
             label126.Name = "label126";
             label126.Size = new Size(67, 52);
             label126.TabIndex = 71;
-            label126.Text = "-";
+            label126.Text = "-\r\n(74)";
             label126.TextAlign = ContentAlignment.MiddleCenter;
             label126.Click += (this.Model_Click);
             // 
@@ -1030,7 +1219,7 @@
             label127.Name = "label127";
             label127.Size = new Size(67, 52);
             label127.TabIndex = 70;
-            label127.Text = "-";
+            label127.Text = "-\r\n(66)";
             label127.TextAlign = ContentAlignment.MiddleCenter;
             label127.Click += (this.Model_Click);
             // 
@@ -1043,7 +1232,7 @@
             WDRG3ICEeLSD8535TR3538.Name = "WDRG3ICEeLSD8535TR3538";
             WDRG3ICEeLSD8535TR3538.Size = new Size(67, 52);
             WDRG3ICEeLSD8535TR3538.TabIndex = 69;
-            WDRG3ICEeLSD8535TR3538.Text = "R 3.538";
+            WDRG3ICEeLSD8535TR3538.Text = "R 3.538\r\n(58)";
             WDRG3ICEeLSD8535TR3538.TextAlign = ContentAlignment.MiddleCenter;
             WDRG3ICEeLSD8535TR3538.Click += (this.Model_Click);
             // 
@@ -1056,7 +1245,7 @@
             label129.Name = "label129";
             label129.Size = new Size(67, 52);
             label129.TabIndex = 68;
-            label129.Text = "-";
+            label129.Text = "-\r\n(50)";
             label129.TextAlign = ContentAlignment.MiddleCenter;
             label129.Click += (this.Model_Click);
             // 
@@ -1069,7 +1258,7 @@
             label130.Name = "label130";
             label130.Size = new Size(67, 57);
             label130.TabIndex = 67;
-            label130.Text = "-";
+            label130.Text = "-\r\n(73)";
             label130.TextAlign = ContentAlignment.MiddleCenter;
             label130.Click += (this.Model_Click);
             // 
@@ -1082,7 +1271,7 @@
             label131.Name = "label131";
             label131.Size = new Size(67, 57);
             label131.TabIndex = 66;
-            label131.Text = "-";
+            label131.Text = "-\r\n(65)";
             label131.TextAlign = ContentAlignment.MiddleCenter;
             label131.Click += (this.Model_Click);
             // 
@@ -1095,7 +1284,7 @@
             WDRG3ICEOPEN8535TR3538.Name = "WDRG3ICEOPEN8535TR3538";
             WDRG3ICEOPEN8535TR3538.Size = new Size(67, 57);
             WDRG3ICEOPEN8535TR3538.TabIndex = 65;
-            WDRG3ICEOPEN8535TR3538.Text = "R 3.538";
+            WDRG3ICEOPEN8535TR3538.Text = "R 3.538\r\n(57)";
             WDRG3ICEOPEN8535TR3538.TextAlign = ContentAlignment.MiddleCenter;
             WDRG3ICEOPEN8535TR3538.Click += (this.Model_Click);
             // 
@@ -1108,7 +1297,7 @@
             WDRG3ICEOPEN8025TR3909.Name = "WDRG3ICEOPEN8025TR3909";
             WDRG3ICEOPEN8025TR3909.Size = new Size(67, 57);
             WDRG3ICEOPEN8025TR3909.TabIndex = 64;
-            WDRG3ICEOPEN8025TR3909.Text = "R 3.909";
+            WDRG3ICEOPEN8025TR3909.Text = "R 3.909\r\n(49)";
             WDRG3ICEOPEN8025TR3909.TextAlign = ContentAlignment.MiddleCenter;
             WDRG3ICEOPEN8025TR3909.Click += (this.Model_Click);
             // 
@@ -1254,7 +1443,7 @@
             label70.Name = "label70";
             label70.Size = new Size(67, 52);
             label70.TabIndex = 43;
-            label70.Text = "-";
+            label70.Text = "-\r\n(42)";
             label70.TextAlign = ContentAlignment.MiddleCenter;
             label70.Click += (this.Model_Click);
             // 
@@ -1267,7 +1456,7 @@
             label71.Name = "label71";
             label71.Size = new Size(67, 57);
             label71.TabIndex = 42;
-            label71.Text = "-";
+            label71.Text = "-\r\n(41)";
             label71.TextAlign = ContentAlignment.MiddleCenter;
             label71.Click += (this.Model_Click);
             // 
@@ -1280,7 +1469,7 @@
             label61.Name = "label61";
             label61.Size = new Size(143, 52);
             label61.TabIndex = 37;
-            label61.Text = "-";
+            label61.Text = "-\r\n(34)";
             label61.TextAlign = ContentAlignment.MiddleCenter;
             label61.Click += (this.Model_Click);
             // 
@@ -1293,7 +1482,7 @@
             WRRG3HEVOPEN8525TR3307.Name = "WRRG3HEVOPEN8525TR3307";
             WRRG3HEVOPEN8525TR3307.Size = new Size(143, 57);
             WRRG3HEVOPEN8525TR3307.TabIndex = 36;
-            WRRG3HEVOPEN8525TR3307.Text = "R 3.307";
+            WRRG3HEVOPEN8525TR3307.Text = "R 3.307\r\n(33)";
             WRRG3HEVOPEN8525TR3307.TextAlign = ContentAlignment.MiddleCenter;
             WRRG3HEVOPEN8525TR3307.Click += (this.Model_Click);
             // 
@@ -1306,7 +1495,7 @@
             label36.Name = "label36";
             label36.Size = new Size(67, 52);
             label36.TabIndex = 19;
-            label36.Text = "-";
+            label36.Text = "-\r\n(26)\r\n";
             label36.TextAlign = ContentAlignment.MiddleCenter;
             label36.Click += (this.Model_Click);
             // 
@@ -1319,7 +1508,7 @@
             label41.Name = "label41";
             label41.Size = new Size(67, 52);
             label41.TabIndex = 18;
-            label41.Text = "-";
+            label41.Text = "-\r\n(18)";
             label41.TextAlign = ContentAlignment.MiddleCenter;
             label41.Click += (this.Model_Click);
             // 
@@ -1332,7 +1521,7 @@
             WRRG3ICEeLSD8535TR3538.Name = "WRRG3ICEeLSD8535TR3538";
             WRRG3ICEeLSD8535TR3538.Size = new Size(67, 52);
             WRRG3ICEeLSD8535TR3538.TabIndex = 17;
-            WRRG3ICEeLSD8535TR3538.Text = "R 3.538";
+            WRRG3ICEeLSD8535TR3538.Text = "R 3.538\r\n(10)";
             WRRG3ICEeLSD8535TR3538.TextAlign = ContentAlignment.MiddleCenter;
             WRRG3ICEeLSD8535TR3538.Click += (this.Model_Click);
             // 
@@ -1345,7 +1534,7 @@
             label40.Name = "label40";
             label40.Size = new Size(67, 57);
             label40.TabIndex = 15;
-            label40.Text = "-";
+            label40.Text = "-\r\n(25)";
             label40.TextAlign = ContentAlignment.MiddleCenter;
             label40.Click += (this.Model_Click);
             // 
@@ -1358,7 +1547,7 @@
             label39.Name = "label39";
             label39.Size = new Size(67, 57);
             label39.TabIndex = 14;
-            label39.Text = "-";
+            label39.Text = "-\r\n(17)";
             label39.TextAlign = ContentAlignment.MiddleCenter;
             label39.Click += (this.Model_Click);
             // 
@@ -1371,7 +1560,7 @@
             WRRG3ICEOPEN8035TR3538.Name = "WRRG3ICEOPEN8035TR3538";
             WRRG3ICEOPEN8035TR3538.Size = new Size(67, 57);
             WRRG3ICEOPEN8035TR3538.TabIndex = 13;
-            WRRG3ICEOPEN8035TR3538.Text = "R 3.538";
+            WRRG3ICEOPEN8035TR3538.Text = "R 3.538\r\n(9)";
             WRRG3ICEOPEN8035TR3538.TextAlign = ContentAlignment.MiddleCenter;
             WRRG3ICEOPEN8035TR3538.Click += (this.Model_Click);
             // 
@@ -1384,7 +1573,7 @@
             WRRG3ICEOPEN8025TR3909.Name = "WRRG3ICEOPEN8025TR3909";
             WRRG3ICEOPEN8025TR3909.Size = new Size(67, 57);
             WRRG3ICEOPEN8025TR3909.TabIndex = 12;
-            WRRG3ICEOPEN8025TR3909.Text = "R 3.909";
+            WRRG3ICEOPEN8025TR3909.Text = "R 3.909\r\n(1)";
             WRRG3ICEOPEN8025TR3909.TextAlign = ContentAlignment.MiddleCenter;
             WRRG3ICEOPEN8025TR3909.Click += (this.Model_Click);
             // 
@@ -1530,7 +1719,7 @@
             label28.Name = "label28";
             label28.Size = new Size(67, 52);
             label28.TabIndex = 158;
-            label28.Text = "-";
+            label28.Text = "-\r\n(92)";
             label28.TextAlign = ContentAlignment.MiddleCenter;
             label28.Click += (this.Model_Click);
             // 
@@ -1543,7 +1732,7 @@
             label29.Name = "label29";
             label29.Size = new Size(67, 57);
             label29.TabIndex = 157;
-            label29.Text = "-";
+            label29.Text = "-\r\n(91)";
             label29.TextAlign = ContentAlignment.MiddleCenter;
             label29.Click += (this.Model_Click);
             // 
@@ -1556,7 +1745,7 @@
             WDJKHEVeLSD8525TR3538.Name = "WDJKHEVeLSD8525TR3538";
             WDJKHEVeLSD8525TR3538.Size = new Size(143, 52);
             WDJKHEVeLSD8525TR3538.TabIndex = 156;
-            WDJKHEVeLSD8525TR3538.Text = "R 3.538";
+            WDJKHEVeLSD8525TR3538.Text = "R 3.538\r\n(84)";
             WDJKHEVeLSD8525TR3538.TextAlign = ContentAlignment.MiddleCenter;
             WDJKHEVeLSD8525TR3538.Click += (this.Model_Click);
             // 
@@ -1570,7 +1759,7 @@
             WDJKOPENHEV8525TR3538.Name = "WDJKOPENHEV8525TR3538";
             WDJKOPENHEV8525TR3538.Size = new Size(143, 57);
             WDJKOPENHEV8525TR3538.TabIndex = 155;
-            WDJKOPENHEV8525TR3538.Text = "R 3.538";
+            WDJKOPENHEV8525TR3538.Text = "R 3.538\r\n(83)";
             WDJKOPENHEV8525TR3538.TextAlign = ContentAlignment.MiddleCenter;
             WDJKOPENHEV8525TR3538.Click += (this.Model_Click);
             // 
@@ -1583,7 +1772,7 @@
             label44.Name = "label44";
             label44.Size = new Size(67, 52);
             label44.TabIndex = 154;
-            label44.Text = "-";
+            label44.Text = "-\r\n(76)";
             label44.TextAlign = ContentAlignment.MiddleCenter;
             label44.Click += (this.Model_Click);
             // 
@@ -1596,7 +1785,7 @@
             label45.Name = "label45";
             label45.Size = new Size(67, 52);
             label45.TabIndex = 153;
-            label45.Text = "-";
+            label45.Text = "-\r\n(68)";
             label45.TextAlign = ContentAlignment.MiddleCenter;
             label45.Click += (this.Model_Click);
             // 
@@ -1609,7 +1798,7 @@
             WDJKICEeLSD8535TR3909.Name = "WDJKICEeLSD8535TR3909";
             WDJKICEeLSD8535TR3909.Size = new Size(67, 52);
             WDJKICEeLSD8535TR3909.TabIndex = 152;
-            WDJKICEeLSD8535TR3909.Text = "R 3.909";
+            WDJKICEeLSD8535TR3909.Text = "R 3.909\r\n(60)";
             WDJKICEeLSD8535TR3909.TextAlign = ContentAlignment.MiddleCenter;
             WDJKICEeLSD8535TR3909.Click += (this.Model_Click);
             // 
@@ -1622,7 +1811,7 @@
             WDJKICEeLSD8025TR4181.Name = "WDJKICEeLSD8025TR4181";
             WDJKICEeLSD8025TR4181.Size = new Size(67, 52);
             WDJKICEeLSD8025TR4181.TabIndex = 151;
-            WDJKICEeLSD8025TR4181.Text = "R 4.181";
+            WDJKICEeLSD8025TR4181.Text = "R 4.181\r\n(52)";
             WDJKICEeLSD8025TR4181.TextAlign = ContentAlignment.MiddleCenter;
             WDJKICEeLSD8025TR4181.Click += (this.Model_Click);
             // 
@@ -1635,7 +1824,7 @@
             label48.Name = "label48";
             label48.Size = new Size(67, 57);
             label48.TabIndex = 150;
-            label48.Text = "-";
+            label48.Text = "-\r\n(75)";
             label48.TextAlign = ContentAlignment.MiddleCenter;
             label48.Click += (this.Model_Click);
             // 
@@ -1648,7 +1837,7 @@
             label49.Name = "label49";
             label49.Size = new Size(67, 57);
             label49.TabIndex = 149;
-            label49.Text = "-";
+            label49.Text = "-\r\n(67)";
             label49.TextAlign = ContentAlignment.MiddleCenter;
             label49.Click += (this.Model_Click);
             // 
@@ -1661,7 +1850,7 @@
             WDJKICEOPEN8535TR3909.Name = "WDJKICEOPEN8535TR3909";
             WDJKICEOPEN8535TR3909.Size = new Size(67, 57);
             WDJKICEOPEN8535TR3909.TabIndex = 148;
-            WDJKICEOPEN8535TR3909.Text = "R 3.909";
+            WDJKICEOPEN8535TR3909.Text = "R 3.909\r\n(59)";
             WDJKICEOPEN8535TR3909.TextAlign = ContentAlignment.MiddleCenter;
             WDJKICEOPEN8535TR3909.Click += (this.Model_Click);
             // 
@@ -1674,7 +1863,7 @@
             label51.Name = "label51";
             label51.Size = new Size(67, 57);
             label51.TabIndex = 147;
-            label51.Text = "-";
+            label51.Text = "-\r\n(51)";
             label51.TextAlign = ContentAlignment.MiddleCenter;
             label51.Click += (this.Model_Click);
             // 
@@ -1687,7 +1876,7 @@
             label52.Name = "label52";
             label52.Size = new Size(67, 52);
             label52.TabIndex = 146;
-            label52.Text = "-";
+            label52.Text = "-\r\n(44)";
             label52.TextAlign = ContentAlignment.MiddleCenter;
             label52.Click += (this.Model_Click);
             // 
@@ -1700,7 +1889,7 @@
             label53.Name = "label53";
             label53.Size = new Size(67, 57);
             label53.TabIndex = 145;
-            label53.Text = "-";
+            label53.Text = "-\r\n(43)";
             label53.TextAlign = ContentAlignment.MiddleCenter;
             label53.Click += (this.Model_Click);
             // 
@@ -1713,7 +1902,7 @@
             WRJKHEVeLSD8525TR3538.Name = "WRJKHEVeLSD8525TR3538";
             WRJKHEVeLSD8525TR3538.Size = new Size(143, 52);
             WRJKHEVeLSD8525TR3538.TabIndex = 144;
-            WRJKHEVeLSD8525TR3538.Text = "R 3.538";
+            WRJKHEVeLSD8525TR3538.Text = "R 3.538\r\n(36)";
             WRJKHEVeLSD8525TR3538.TextAlign = ContentAlignment.MiddleCenter;
             WRJKHEVeLSD8525TR3538.Click += (this.Model_Click);
             // 
@@ -1726,7 +1915,7 @@
             WRJKOPENHEV8525TR3538.Name = "WRJKOPENHEV8525TR3538";
             WRJKOPENHEV8525TR3538.Size = new Size(143, 57);
             WRJKOPENHEV8525TR3538.TabIndex = 143;
-            WRJKOPENHEV8525TR3538.Text = "R 3.538";
+            WRJKOPENHEV8525TR3538.Text = "R 3.538\r\n(35)";
             WRJKOPENHEV8525TR3538.TextAlign = ContentAlignment.MiddleCenter;
             WRJKOPENHEV8525TR3538.Click += (this.Model_Click);
             // 
@@ -1739,7 +1928,7 @@
             label56.Name = "label56";
             label56.Size = new Size(67, 52);
             label56.TabIndex = 142;
-            label56.Text = "-";
+            label56.Text = "-\r\n(28)";
             label56.TextAlign = ContentAlignment.MiddleCenter;
             label56.Click += (this.Model_Click);
             // 
@@ -1752,7 +1941,7 @@
             label57.Name = "label57";
             label57.Size = new Size(67, 52);
             label57.TabIndex = 141;
-            label57.Text = "-";
+            label57.Text = "-\r\n(20)";
             label57.TextAlign = ContentAlignment.MiddleCenter;
             label57.Click += (this.Model_Click);
             // 
@@ -1765,7 +1954,7 @@
             WRJKICEeLSD8025TR4181.Name = "WRJKICEeLSD8025TR4181";
             WRJKICEeLSD8025TR4181.Size = new Size(67, 52);
             WRJKICEeLSD8025TR4181.TabIndex = 139;
-            WRJKICEeLSD8025TR4181.Text = "R 4.181";
+            WRJKICEeLSD8025TR4181.Text = "R 4.181\r\n(4)";
             WRJKICEeLSD8025TR4181.TextAlign = ContentAlignment.MiddleCenter;
             WRJKICEeLSD8025TR4181.Click += (this.Model_Click);
             // 
@@ -1778,7 +1967,7 @@
             label62.Name = "label62";
             label62.Size = new Size(67, 57);
             label62.TabIndex = 138;
-            label62.Text = "-";
+            label62.Text = "-\r\n(27)";
             label62.TextAlign = ContentAlignment.MiddleCenter;
             label62.Click += (this.Model_Click);
             // 
@@ -1791,7 +1980,7 @@
             label63.Name = "label63";
             label63.Size = new Size(67, 57);
             label63.TabIndex = 137;
-            label63.Text = "-";
+            label63.Text = "-\r\n(19)";
             label63.TextAlign = ContentAlignment.MiddleCenter;
             label63.Click += (this.Model_Click);
             // 
@@ -1804,7 +1993,7 @@
             WDJXHEVeLSD8835TR3846.Name = "WDJXHEVeLSD8835TR3846";
             WDJXHEVeLSD8835TR3846.Size = new Size(67, 52);
             WDJXHEVeLSD8835TR3846.TabIndex = 184;
-            WDJXHEVeLSD8835TR3846.Text = "R 3.846";
+            WDJXHEVeLSD8835TR3846.Text = "R 3.846\r\n(94)";
             WDJXHEVeLSD8835TR3846.TextAlign = ContentAlignment.MiddleCenter;
             WDJXHEVeLSD8835TR3846.Click += (this.Model_Click);
             // 
@@ -1817,7 +2006,7 @@
             WDJXHEVOPEN8835TR3846.Name = "WDJXHEVOPEN8835TR3846";
             WDJXHEVOPEN8835TR3846.Size = new Size(67, 57);
             WDJXHEVOPEN8835TR3846.TabIndex = 183;
-            WDJXHEVOPEN8835TR3846.Text = "R 3.846";
+            WDJXHEVOPEN8835TR3846.Text = "R 3.846\r\n(93)";
             WDJXHEVOPEN8835TR3846.TextAlign = ContentAlignment.MiddleCenter;
             WDJXHEVOPEN8835TR3846.Click += (this.Model_Click);
             // 
@@ -1830,7 +2019,7 @@
             label95.Name = "label95";
             label95.Size = new Size(143, 52);
             label95.TabIndex = 182;
-            label95.Text = "-";
+            label95.Text = "-\r\n(86)";
             label95.TextAlign = ContentAlignment.MiddleCenter;
             label95.Click += (this.Model_Click);
             // 
@@ -1843,7 +2032,7 @@
             label98.Name = "label98";
             label98.Size = new Size(143, 57);
             label98.TabIndex = 181;
-            label98.Text = "-";
+            label98.Text = "-\r\n(85)";
             label98.TextAlign = ContentAlignment.MiddleCenter;
             label98.Click += (this.Model_Click);
             // 
@@ -1856,7 +2045,7 @@
             WDJXICEeLSD8835TR3909.Name = "WDJXICEeLSD8835TR3909";
             WDJXICEeLSD8835TR3909.Size = new Size(67, 52);
             WDJXICEeLSD8835TR3909.TabIndex = 180;
-            WDJXICEeLSD8835TR3909.Text = "R 3.909";
+            WDJXICEeLSD8835TR3909.Text = "R 3.909\r\n(78)";
             WDJXICEeLSD8835TR3909.TextAlign = ContentAlignment.MiddleCenter;
             WDJXICEeLSD8835TR3909.Click += (this.Model_Click);
             // 
@@ -1869,7 +2058,7 @@
             WDJXICEeLSD8825TR4363.Name = "WDJXICEeLSD8825TR4363";
             WDJXICEeLSD8825TR4363.Size = new Size(67, 52);
             WDJXICEeLSD8825TR4363.TabIndex = 179;
-            WDJXICEeLSD8825TR4363.Text = "R 4.363";
+            WDJXICEeLSD8825TR4363.Text = "R 4.363\r\n(70)";
             WDJXICEeLSD8825TR4363.TextAlign = ContentAlignment.MiddleCenter;
             WDJXICEeLSD8825TR4363.Click += (this.Model_Click);
             // 
@@ -1882,7 +2071,7 @@
             label101.Name = "label101";
             label101.Size = new Size(67, 52);
             label101.TabIndex = 178;
-            label101.Text = "-";
+            label101.Text = "-\r\n(62)";
             label101.TextAlign = ContentAlignment.MiddleCenter;
             label101.Click += (this.Model_Click);
             // 
@@ -1895,7 +2084,7 @@
             label104.Name = "label104";
             label104.Size = new Size(67, 52);
             label104.TabIndex = 177;
-            label104.Text = "-";
+            label104.Text = "-\r\n(54)";
             label104.TextAlign = ContentAlignment.MiddleCenter;
             label104.Click += (this.Model_Click);
             // 
@@ -1908,7 +2097,7 @@
             WDJXICEOPEN8835TR3909.Name = "WDJXICEOPEN8835TR3909";
             WDJXICEOPEN8835TR3909.Size = new Size(67, 57);
             WDJXICEOPEN8835TR3909.TabIndex = 176;
-            WDJXICEOPEN8835TR3909.Text = "R 3.909";
+            WDJXICEOPEN8835TR3909.Text = "R 3.909\r\n(77)";
             WDJXICEOPEN8835TR3909.TextAlign = ContentAlignment.MiddleCenter;
             WDJXICEOPEN8835TR3909.Click += (this.Model_Click);
             // 
@@ -1921,7 +2110,7 @@
             label106.Name = "label106";
             label106.Size = new Size(67, 57);
             label106.TabIndex = 175;
-            label106.Text = "-";
+            label106.Text = "-\r\n(69)";
             label106.TextAlign = ContentAlignment.MiddleCenter;
             label106.Click += (this.Model_Click);
             // 
@@ -1934,7 +2123,7 @@
             label107.Name = "label107";
             label107.Size = new Size(67, 57);
             label107.TabIndex = 174;
-            label107.Text = "-";
+            label107.Text = "-\r\n(61)";
             label107.TextAlign = ContentAlignment.MiddleCenter;
             label107.Click += (this.Model_Click);
             // 
@@ -1947,7 +2136,7 @@
             label110.Name = "label110";
             label110.Size = new Size(67, 57);
             label110.TabIndex = 173;
-            label110.Text = "-";
+            label110.Text = "-\r\n(53)";
             label110.TextAlign = ContentAlignment.MiddleCenter;
             label110.Click += (this.Model_Click);
             // 
@@ -1960,7 +2149,7 @@
             WRJXHEVeLSD8835TR3846.Name = "WRJXHEVeLSD8835TR3846";
             WRJXHEVeLSD8835TR3846.Size = new Size(67, 52);
             WRJXHEVeLSD8835TR3846.TabIndex = 172;
-            WRJXHEVeLSD8835TR3846.Text = "R 3.846";
+            WRJXHEVeLSD8835TR3846.Text = "R 3.846\r\n(46)";
             WRJXHEVeLSD8835TR3846.TextAlign = ContentAlignment.MiddleCenter;
             WRJXHEVeLSD8835TR3846.Click += (this.Model_Click);
             // 
@@ -1973,7 +2162,7 @@
             WRJXHEVOPEN8835TR3846.Name = "WRJXHEVOPEN8835TR3846";
             WRJXHEVOPEN8835TR3846.Size = new Size(67, 57);
             WRJXHEVOPEN8835TR3846.TabIndex = 171;
-            WRJXHEVOPEN8835TR3846.Text = "R 3.846";
+            WRJXHEVOPEN8835TR3846.Text = "R 3.846\r\n(45)";
             WRJXHEVOPEN8835TR3846.TextAlign = ContentAlignment.MiddleCenter;
             WRJXHEVOPEN8835TR3846.Click += (this.Model_Click);
             // 
@@ -1986,7 +2175,7 @@
             label113.Name = "label113";
             label113.Size = new Size(143, 52);
             label113.TabIndex = 170;
-            label113.Text = "-";
+            label113.Text = "-\r\n(38)";
             label113.TextAlign = ContentAlignment.MiddleCenter;
             label113.Click += (this.Model_Click);
             // 
@@ -1999,7 +2188,7 @@
             label114.Name = "label114";
             label114.Size = new Size(143, 57);
             label114.TabIndex = 169;
-            label114.Text = "-";
+            label114.Text = "-\r\n(37)";
             label114.TextAlign = ContentAlignment.MiddleCenter;
             label114.Click += (this.Model_Click);
             // 
@@ -2012,7 +2201,7 @@
             WRJXICEeLSD8835TR3909.Name = "WRJXICEeLSD8835TR3909";
             WRJXICEeLSD8835TR3909.Size = new Size(67, 52);
             WRJXICEeLSD8835TR3909.TabIndex = 168;
-            WRJXICEeLSD8835TR3909.Text = "R 3.909";
+            WRJXICEeLSD8835TR3909.Text = "R 3.909\r\n(30)";
             WRJXICEeLSD8835TR3909.TextAlign = ContentAlignment.MiddleCenter;
             WRJXICEeLSD8835TR3909.Click += (this.Model_Click);
             // 
@@ -2025,7 +2214,7 @@
             WRJXICEeLSD8825TR4363.Name = "WRJXICEeLSD8825TR4363";
             WRJXICEeLSD8825TR4363.Size = new Size(67, 52);
             WRJXICEeLSD8825TR4363.TabIndex = 167;
-            WRJXICEeLSD8825TR4363.Text = "R 4.363";
+            WRJXICEeLSD8825TR4363.Text = "R 4.363\r\n(22)";
             WRJXICEeLSD8825TR4363.TextAlign = ContentAlignment.MiddleCenter;
             WRJXICEeLSD8825TR4363.Click += (this.Model_Click);
             // 
@@ -2038,7 +2227,7 @@
             WRJXICEOPEN8835TR3909.Name = "WRJXICEOPEN8835TR3909";
             WRJXICEOPEN8835TR3909.Size = new Size(67, 57);
             WRJXICEOPEN8835TR3909.TabIndex = 164;
-            WRJXICEOPEN8835TR3909.Text = "R 3.909";
+            WRJXICEOPEN8835TR3909.Text = "R 3.909\r\n(29)";
             WRJXICEOPEN8835TR3909.TextAlign = ContentAlignment.MiddleCenter;
             WRJXICEOPEN8835TR3909.Click += (this.Model_Click);
             // 
@@ -2051,22 +2240,22 @@
             label120.Name = "label120";
             label120.Size = new Size(67, 57);
             label120.TabIndex = 163;
-            label120.Text = "-";
+            label120.Text = "-\r\n(21)";
             label120.TextAlign = ContentAlignment.MiddleCenter;
             label120.Click += (this.Model_Click);
             // 
-            // label125
+            // Master_Jig
             // 
-            label125.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label125.Font = new Font("맑은 고딕", 11F, FontStyle.Bold);
-            label125.Location = new Point(1135, 664);
-            label125.Margin = new Padding(3);
-            label125.Name = "label125";
-            label125.Size = new Size(67, 52);
-            label125.TabIndex = 211;
-            label125.Text = "-";
-            label125.TextAlign = ContentAlignment.MiddleCenter;
-            label125.Click += (this.Model_Click);
+            Master_Jig.BackColor = Color.FromArgb((int)(byte)255, (int)(byte)128, (int)(byte)128);
+            Master_Jig.Font = new Font("맑은 고딕", 11F, FontStyle.Bold);
+            Master_Jig.Location = new Point(621, 663);
+            Master_Jig.Margin = new Padding(3);
+            Master_Jig.Name = "Master_Jig";
+            Master_Jig.Size = new Size(67, 52);
+            Master_Jig.TabIndex = 211;
+            Master_Jig.Text = "Master\r\n(48)";
+            Master_Jig.TextAlign = ContentAlignment.MiddleCenter;
+            Master_Jig.Click += (this.Model_Click);
             // 
             // label139
             // 
@@ -2077,7 +2266,7 @@
             label139.Name = "label139";
             label139.Size = new Size(67, 57);
             label139.TabIndex = 210;
-            label139.Text = "-";
+            label139.Text = "-\r\n(95)";
             label139.TextAlign = ContentAlignment.MiddleCenter;
             label139.Click += (this.Model_Click);
             // 
@@ -2090,7 +2279,7 @@
             label140.Name = "label140";
             label140.Size = new Size(143, 52);
             label140.TabIndex = 209;
-            label140.Text = "-";
+            label140.Text = "-\r\n(88)";
             label140.TextAlign = ContentAlignment.MiddleCenter;
             label140.Click += (this.Model_Click);
             // 
@@ -2103,7 +2292,7 @@
             label141.Name = "label141";
             label141.Size = new Size(143, 57);
             label141.TabIndex = 208;
-            label141.Text = "-";
+            label141.Text = "-\r\n(87)\r\n";
             label141.TextAlign = ContentAlignment.MiddleCenter;
             label141.Click += (this.Model_Click);
             // 
@@ -2116,7 +2305,7 @@
             label142.Name = "label142";
             label142.Size = new Size(67, 52);
             label142.TabIndex = 207;
-            label142.Text = "-";
+            label142.Text = "-\r\n(80)";
             label142.TextAlign = ContentAlignment.MiddleCenter;
             label142.Click += (this.Model_Click);
             // 
@@ -2129,7 +2318,7 @@
             label143.Name = "label143";
             label143.Size = new Size(67, 52);
             label143.TabIndex = 206;
-            label143.Text = "-";
+            label143.Text = "-\r\n(72)";
             label143.TextAlign = ContentAlignment.MiddleCenter;
             label143.Click += (this.Model_Click);
             // 
@@ -2142,7 +2331,7 @@
             label144.Name = "label144";
             label144.Size = new Size(67, 52);
             label144.TabIndex = 205;
-            label144.Text = "-";
+            label144.Text = "-\r\n(64)";
             label144.TextAlign = ContentAlignment.MiddleCenter;
             label144.Click += (this.Model_Click);
             // 
@@ -2155,7 +2344,7 @@
             label145.Name = "label145";
             label145.Size = new Size(67, 52);
             label145.TabIndex = 204;
-            label145.Text = "-";
+            label145.Text = "-\r\n(56)";
             label145.TextAlign = ContentAlignment.MiddleCenter;
             label145.Click += (this.Model_Click);
             // 
@@ -2168,7 +2357,7 @@
             label146.Name = "label146";
             label146.Size = new Size(67, 57);
             label146.TabIndex = 203;
-            label146.Text = "-";
+            label146.Text = "-\r\n(79)";
             label146.TextAlign = ContentAlignment.MiddleCenter;
             label146.Click += (this.Model_Click);
             // 
@@ -2181,7 +2370,7 @@
             label147.Name = "label147";
             label147.Size = new Size(67, 57);
             label147.TabIndex = 202;
-            label147.Text = "-";
+            label147.Text = "-\r\n(71)";
             label147.TextAlign = ContentAlignment.MiddleCenter;
             label147.Click += (this.Model_Click);
             // 
@@ -2194,7 +2383,7 @@
             WDRS4OPENICE8535TR3727.Name = "WDRS4OPENICE8535TR3727";
             WDRS4OPENICE8535TR3727.Size = new Size(67, 57);
             WDRS4OPENICE8535TR3727.TabIndex = 201;
-            WDRS4OPENICE8535TR3727.Text = "R 3.727";
+            WDRS4OPENICE8535TR3727.Text = "R 3.727\r\n(63)";
             WDRS4OPENICE8535TR3727.TextAlign = ContentAlignment.MiddleCenter;
             WDRS4OPENICE8535TR3727.Click += (this.Model_Click);
             // 
@@ -2207,7 +2396,7 @@
             label149.Name = "label149";
             label149.Size = new Size(67, 57);
             label149.TabIndex = 200;
-            label149.Text = "-";
+            label149.Text = "-\r\n(55)";
             label149.TextAlign = ContentAlignment.MiddleCenter;
             label149.Click += (this.Model_Click);
             // 
@@ -2215,12 +2404,12 @@
             // 
             label150.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
             label150.Font = new Font("맑은 고딕", 11F, FontStyle.Bold);
-            label150.Location = new Point(621, 664);
+            label150.Location = new Point(1135, 665);
             label150.Margin = new Padding(3);
             label150.Name = "label150";
             label150.Size = new Size(67, 52);
             label150.TabIndex = 199;
-            label150.Text = "-";
+            label150.Text = "-\r\n(96)";
             label150.TextAlign = ContentAlignment.MiddleCenter;
             label150.Click += (this.Model_Click);
             // 
@@ -2233,7 +2422,7 @@
             label151.Name = "label151";
             label151.Size = new Size(67, 57);
             label151.TabIndex = 198;
-            label151.Text = "-";
+            label151.Text = "-\r\n(47)";
             label151.TextAlign = ContentAlignment.MiddleCenter;
             label151.Click += (this.Model_Click);
             // 
@@ -2246,7 +2435,7 @@
             label152.Name = "label152";
             label152.Size = new Size(143, 52);
             label152.TabIndex = 197;
-            label152.Text = "-";
+            label152.Text = "-\r\n(40)";
             label152.TextAlign = ContentAlignment.MiddleCenter;
             label152.Click += (this.Model_Click);
             // 
@@ -2259,7 +2448,7 @@
             label153.Name = "label153";
             label153.Size = new Size(143, 57);
             label153.TabIndex = 196;
-            label153.Text = "-";
+            label153.Text = "-\r\n(39)";
             label153.TextAlign = ContentAlignment.MiddleCenter;
             label153.Click += (this.Model_Click);
             // 
@@ -2272,7 +2461,7 @@
             label154.Name = "label154";
             label154.Size = new Size(67, 52);
             label154.TabIndex = 195;
-            label154.Text = "-";
+            label154.Text = "-\r\n(32)";
             label154.TextAlign = ContentAlignment.MiddleCenter;
             label154.Click += (this.Model_Click);
             // 
@@ -2285,7 +2474,7 @@
             label155.Name = "label155";
             label155.Size = new Size(67, 52);
             label155.TabIndex = 194;
-            label155.Text = "-";
+            label155.Text = "-\r\n(24)";
             label155.TextAlign = ContentAlignment.MiddleCenter;
             label155.Click += (this.Model_Click);
             // 
@@ -2298,7 +2487,7 @@
             label156.Name = "label156";
             label156.Size = new Size(67, 52);
             label156.TabIndex = 193;
-            label156.Text = "-";
+            label156.Text = "-\r\n(16)";
             label156.TextAlign = ContentAlignment.MiddleCenter;
             label156.Click += (this.Model_Click);
             // 
@@ -2311,7 +2500,7 @@
             label158.Name = "label158";
             label158.Size = new Size(67, 57);
             label158.TabIndex = 191;
-            label158.Text = "-";
+            label158.Text = "-\r\n(31)";
             label158.TextAlign = ContentAlignment.MiddleCenter;
             label158.Click += (this.Model_Click);
             // 
@@ -2324,7 +2513,7 @@
             label159.Name = "label159";
             label159.Size = new Size(67, 57);
             label159.TabIndex = 190;
-            label159.Text = "-";
+            label159.Text = "-\r\n(23)";
             label159.TextAlign = ContentAlignment.MiddleCenter;
             label159.Click += (this.Model_Click);
             // 
@@ -2337,7 +2526,7 @@
             WRRS4OPENICE8535TR3727.Name = "WRRS4OPENICE8535TR3727";
             WRRS4OPENICE8535TR3727.Size = new Size(67, 57);
             WRRS4OPENICE8535TR3727.TabIndex = 189;
-            WRRS4OPENICE8535TR3727.Text = "R 3.727";
+            WRRS4OPENICE8535TR3727.Text = "R 3.727\r\n(15)";
             WRRS4OPENICE8535TR3727.TextAlign = ContentAlignment.MiddleCenter;
             WRRS4OPENICE8535TR3727.Click += (this.Model_Click);
             // 
@@ -2350,7 +2539,7 @@
             label117.Name = "label117";
             label117.Size = new Size(67, 52);
             label117.TabIndex = 166;
-            label117.Text = "-";
+            label117.Text = "-\r\n(14)";
             label117.TextAlign = ContentAlignment.MiddleCenter;
             label117.Click += (this.Model_Click);
             // 
@@ -2363,7 +2552,7 @@
             label121.Name = "label121";
             label121.Size = new Size(67, 57);
             label121.TabIndex = 162;
-            label121.Text = "-";
+            label121.Text = "-\r\n(13)";
             label121.TextAlign = ContentAlignment.MiddleCenter;
             label121.Click += (this.Model_Click);
             // 
@@ -2376,7 +2565,7 @@
             label122.Name = "label122";
             label122.Size = new Size(67, 57);
             label122.TabIndex = 161;
-            label122.Text = "-";
+            label122.Text = "-\r\n(5)";
             label122.TextAlign = ContentAlignment.MiddleCenter;
             label122.Click += (this.Model_Click);
             // 
@@ -2389,7 +2578,7 @@
             label118.Name = "label118";
             label118.Size = new Size(67, 52);
             label118.TabIndex = 165;
-            label118.Text = "-";
+            label118.Text = "-\r\n(6)";
             label118.TextAlign = ContentAlignment.MiddleCenter;
             label118.Click += (this.Model_Click);
             // 
@@ -2402,7 +2591,7 @@
             label161.Name = "label161";
             label161.Size = new Size(67, 57);
             label161.TabIndex = 188;
-            label161.Text = "-";
+            label161.Text = "-\r\n(7)";
             label161.TextAlign = ContentAlignment.MiddleCenter;
             label161.Click += (this.Model_Click);
             // 
@@ -2415,7 +2604,7 @@
             label157.Name = "label157";
             label157.Size = new Size(67, 52);
             label157.TabIndex = 192;
-            label157.Text = "-";
+            label157.Text = "-\r\n(8)";
             label157.TextAlign = ContentAlignment.MiddleCenter;
             label157.Click += (this.Model_Click);
             // 
@@ -2428,7 +2617,7 @@
             label65.Name = "label65";
             label65.Size = new Size(67, 57);
             label65.TabIndex = 135;
-            label65.Text = "-";
+            label65.Text = "-\r\n(3)";
             label65.TextAlign = ContentAlignment.MiddleCenter;
             label65.Click += (this.Model_Click);
             // 
@@ -2441,7 +2630,7 @@
             label43.Name = "label43";
             label43.Size = new Size(67, 52);
             label43.TabIndex = 16;
-            label43.Text = "-";
+            label43.Text = "-\r\n(2)";
             label43.TextAlign = ContentAlignment.MiddleCenter;
             label43.Click += (this.Model_Click);
             // 
@@ -2454,7 +2643,7 @@
             WRJKICEeLSD8535TR3909.Name = "WRJKICEeLSD8535TR3909";
             WRJKICEeLSD8535TR3909.Size = new Size(67, 52);
             WRJKICEeLSD8535TR3909.TabIndex = 140;
-            WRJKICEeLSD8535TR3909.Text = "R 3.909";
+            WRJKICEeLSD8535TR3909.Text = "R 3.909\r\n(12)";
             WRJKICEeLSD8535TR3909.TextAlign = ContentAlignment.MiddleCenter;
             WRJKICEeLSD8535TR3909.Click += (this.Model_Click);
             // 
@@ -2467,13 +2656,14 @@
             WRJKICEOPEN8535TR3909.Name = "WRJKICEOPEN8535TR3909";
             WRJKICEOPEN8535TR3909.Size = new Size(67, 57);
             WRJKICEOPEN8535TR3909.TabIndex = 136;
-            WRJKICEOPEN8535TR3909.Text = "R 3.909";
+            WRJKICEOPEN8535TR3909.Text = "R 3.909\r\n(11)";
             WRJKICEOPEN8535TR3909.TextAlign = ContentAlignment.MiddleCenter;
             WRJKICEOPEN8535TR3909.Click += (this.Model_Click);
             // 
             // NaviPanel
             // 
             NaviPanel.BackColor = Color.White;
+            NaviPanel.Controls.Add(LockButton);
             NaviPanel.Controls.Add(NaviRecipeLabel);
             NaviPanel.Controls.Add(NaviCaldataLabel);
             NaviPanel.Controls.Add(NavlTCPIPLabel);
@@ -2484,6 +2674,19 @@
             NaviPanel.Name = "NaviPanel";
             NaviPanel.Size = new Size(210, 920);
             NaviPanel.TabIndex = 0;
+            // 
+            // LockButton
+            // 
+            LockButton.BackColor = Color.White;
+            LockButton.Font = new Font("Yu Gothic UI", 15F, FontStyle.Bold);
+            LockButton.Location = new Point(0, 800);
+            LockButton.Margin = new Padding(0);
+            LockButton.Name = "LockButton";
+            LockButton.Size = new Size(210, 40);
+            LockButton.TabIndex = 12;
+            LockButton.Text = "LOCK >";
+            LockButton.TextAlign = ContentAlignment.MiddleLeft;
+            LockButton.Click += (this.LockButton_Click);
             // 
             // NaviRecipeLabel
             // 
@@ -2637,10 +2840,10 @@
             LoginPanel.Controls.Add(LoginMasterLabel);
             LoginPanel.Controls.Add(LoginAdminLabel);
             LoginPanel.Controls.Add(LoginOperatorLabel);
-            LoginPanel.Location = new Point(1862, 1030);
+            LoginPanel.Location = new Point(286, 388);
             LoginPanel.Margin = new Padding(0);
             LoginPanel.Name = "LoginPanel";
-            LoginPanel.Size = new Size(49, 41);
+            LoginPanel.Size = new Size(209, 63);
             LoginPanel.TabIndex = 10;
             // 
             // IDPWChangePanel
@@ -2653,7 +2856,7 @@
             IDPWChangePanel.Controls.Add(ChangeOperator);
             IDPWChangePanel.Controls.Add(CANCELButton);
             IDPWChangePanel.Controls.Add(OKButton);
-            IDPWChangePanel.Location = new Point(393, 208);
+            IDPWChangePanel.Location = new Point(359, 188);
             IDPWChangePanel.Name = "IDPWChangePanel";
             IDPWChangePanel.Size = new Size(903, 416);
             IDPWChangePanel.TabIndex = 7;
@@ -2667,6 +2870,7 @@
             ChangePWTextbox.Location = new Point(111, 242);
             ChangePWTextbox.Margin = new Padding(0);
             ChangePWTextbox.Name = "ChangePWTextbox";
+            ChangePWTextbox.PasswordChar = '*';
             ChangePWTextbox.PlaceholderText = "PW";
             ChangePWTextbox.Size = new Size(681, 43);
             ChangePWTextbox.TabIndex = 11;
@@ -2806,7 +3010,7 @@
             LoginMasterLabel.BackColor = Color.Silver;
             LoginMasterLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
             LoginMasterLabel.ForeColor = Color.Black;
-            LoginMasterLabel.Location = new Point(142, -221);
+            LoginMasterLabel.Location = new Point(222, -210);
             LoginMasterLabel.Margin = new Padding(0);
             LoginMasterLabel.Name = "LoginMasterLabel";
             LoginMasterLabel.Size = new Size(218, 69);
@@ -2821,7 +3025,7 @@
             LoginAdminLabel.BackColor = Color.Silver;
             LoginAdminLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
             LoginAdminLabel.ForeColor = Color.Black;
-            LoginAdminLabel.Location = new Point(-90, -221);
+            LoginAdminLabel.Location = new Point(-10, -210);
             LoginAdminLabel.Margin = new Padding(0);
             LoginAdminLabel.Name = "LoginAdminLabel";
             LoginAdminLabel.Size = new Size(218, 69);
@@ -2836,7 +3040,7 @@
             LoginOperatorLabel.BackColor = Color.Silver;
             LoginOperatorLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
             LoginOperatorLabel.ForeColor = Color.Black;
-            LoginOperatorLabel.Location = new Point(-321, -221);
+            LoginOperatorLabel.Location = new Point(-241, -210);
             LoginOperatorLabel.Margin = new Padding(0);
             LoginOperatorLabel.Name = "LoginOperatorLabel";
             LoginOperatorLabel.Size = new Size(218, 69);
@@ -3126,3084 +3330,55 @@
             // 
             // RECIPEPanel
             // 
+            RECIPEPanel.Controls.Add(ListPanel);
+            RECIPEPanel.Controls.Add(SingleStaticPanel);
+            RECIPEPanel.Controls.Add(RecipeSelectPanel);
             RECIPEPanel.Controls.Add(PerulStaticPanel);
             RECIPEPanel.Controls.Add(SicngleImgCheckPanel);
-            RECIPEPanel.Controls.Add(ListPanel);
             RECIPEPanel.Controls.Add(FTPSettingButton);
-            RECIPEPanel.Controls.Add(RecipeSelectPanel);
             RECIPEPanel.Controls.Add(PluralStaticLabel);
             RECIPEPanel.Controls.Add(SingleStaticLabel);
             RECIPEPanel.Controls.Add(ListLabel);
             RECIPEPanel.Controls.Add(RecipeSelectLabel);
-            RECIPEPanel.Controls.Add(SingleStaticPanel);
-            RECIPEPanel.Location = new Point(219, 168);
+            RECIPEPanel.Location = new Point(237, 187);
             RECIPEPanel.Name = "RECIPEPanel";
-            RECIPEPanel.Size = new Size(1689, 912);
+            RECIPEPanel.Size = new Size(1683, 893);
             RECIPEPanel.TabIndex = 12;
-            // 
-            // PerulStaticPanel
-            // 
-            PerulStaticPanel.Controls.Add(PerulStaticPanel_7);
-            PerulStaticPanel.Controls.Add(PerulStaticPanel_5);
-            PerulStaticPanel.Controls.Add(PerulStaticPanel_6);
-            PerulStaticPanel.Controls.Add(PerulStaticPanel_4);
-            PerulStaticPanel.Controls.Add(PerulStaticPanel_3);
-            PerulStaticPanel.Controls.Add(PluerPageUpbtr);
-            PerulStaticPanel.Controls.Add(PluerPageDownbtr);
-            PerulStaticPanel.Controls.Add(PerulStaticPanel_2);
-            PerulStaticPanel.Controls.Add(PerulStaticPanel_1);
-            PerulStaticPanel.Controls.Add(PerulStaticDisplayLabel);
-            PerulStaticPanel.Location = new Point(10, 101);
-            PerulStaticPanel.Name = "PerulStaticPanel";
-            PerulStaticPanel.Size = new Size(1682, 811);
-            PerulStaticPanel.TabIndex = 15;
-            PerulStaticPanel.Visible = false;
-            // 
-            // PerulStaticPanel_7
-            // 
-            PerulStaticPanel_7.Controls.Add(FinalDCGradeCountPlot);
-            PerulStaticPanel_7.Controls.Add(FinalACGradeCountPlot);
-            PerulStaticPanel_7.Controls.Add(FinalGradeCountPlot);
-            PerulStaticPanel_7.Location = new Point(8, 97);
-            PerulStaticPanel_7.Name = "PerulStaticPanel_7";
-            PerulStaticPanel_7.Size = new Size(1622, 711);
-            PerulStaticPanel_7.TabIndex = 31;
-            // 
-            // FinalDCGradeCountPlot
-            // 
-            FinalDCGradeCountPlot.Location = new Point(1091, 36);
-            FinalDCGradeCountPlot.Name = "FinalDCGradeCountPlot";
-            FinalDCGradeCountPlot.Size = new Size(496, 633);
-            FinalDCGradeCountPlot.TabIndex = 5;
-            // 
-            // FinalACGradeCountPlot
-            // 
-            FinalACGradeCountPlot.Location = new Point(550, 39);
-            FinalACGradeCountPlot.Name = "FinalACGradeCountPlot";
-            FinalACGradeCountPlot.Size = new Size(496, 633);
-            FinalACGradeCountPlot.TabIndex = 4;
-            // 
-            // FinalGradeCountPlot
-            // 
-            FinalGradeCountPlot.Location = new Point(16, 39);
-            FinalGradeCountPlot.Name = "FinalGradeCountPlot";
-            FinalGradeCountPlot.Size = new Size(496, 633);
-            FinalGradeCountPlot.TabIndex = 3;
-            // 
-            // PerulStaticPanel_5
-            // 
-            PerulStaticPanel_5.Controls.Add(DCAreaScorePlot);
-            PerulStaticPanel_5.Controls.Add(DCHeightScorePlot);
-            PerulStaticPanel_5.Controls.Add(DCWidthScorePlot);
-            PerulStaticPanel_5.Controls.Add(DCPeakYScorePlot);
-            PerulStaticPanel_5.Controls.Add(DCPeakXScorePlot);
-            PerulStaticPanel_5.Location = new Point(864, 49);
-            PerulStaticPanel_5.Name = "PerulStaticPanel_5";
-            PerulStaticPanel_5.Size = new Size(78, 43);
-            PerulStaticPanel_5.TabIndex = 29;
-            // 
-            // DCAreaScorePlot
-            // 
-            DCAreaScorePlot.Location = new Point(1114, 392);
-            DCAreaScorePlot.Name = "DCAreaScorePlot";
-            DCAreaScorePlot.Size = new Size(548, 331);
-            DCAreaScorePlot.TabIndex = 4;
-            // 
-            // DCHeightScorePlot
-            // 
-            DCHeightScorePlot.Location = new Point(558, 392);
-            DCHeightScorePlot.Name = "DCHeightScorePlot";
-            DCHeightScorePlot.Size = new Size(550, 331);
-            DCHeightScorePlot.TabIndex = 3;
-            // 
-            // DCWidthScorePlot
-            // 
-            DCWidthScorePlot.Location = new Point(5, 392);
-            DCWidthScorePlot.Name = "DCWidthScorePlot";
-            DCWidthScorePlot.Size = new Size(548, 331);
-            DCWidthScorePlot.TabIndex = 2;
-            // 
-            // DCPeakYScorePlot
-            // 
-            DCPeakYScorePlot.Location = new Point(808, 42);
-            DCPeakYScorePlot.Name = "DCPeakYScorePlot";
-            DCPeakYScorePlot.Size = new Size(854, 331);
-            DCPeakYScorePlot.TabIndex = 1;
-            // 
-            // DCPeakXScorePlot
-            // 
-            DCPeakXScorePlot.Location = new Point(5, 42);
-            DCPeakXScorePlot.Name = "DCPeakXScorePlot";
-            DCPeakXScorePlot.Size = new Size(797, 331);
-            DCPeakXScorePlot.TabIndex = 0;
-            // 
-            // PerulStaticPanel_6
-            // 
-            PerulStaticPanel_6.Controls.Add(DCAreaMADPlot);
-            PerulStaticPanel_6.Controls.Add(DCHeightMADPlot);
-            PerulStaticPanel_6.Controls.Add(DCWidthMADPlot);
-            PerulStaticPanel_6.Controls.Add(DCPeakYMADPlot);
-            PerulStaticPanel_6.Controls.Add(DCPeakXMADPlot);
-            PerulStaticPanel_6.Location = new Point(999, 47);
-            PerulStaticPanel_6.Name = "PerulStaticPanel_6";
-            PerulStaticPanel_6.Size = new Size(137, 45);
-            PerulStaticPanel_6.TabIndex = 30;
-            // 
-            // DCAreaMADPlot
-            // 
-            DCAreaMADPlot.Location = new Point(1114, 392);
-            DCAreaMADPlot.Name = "DCAreaMADPlot";
-            DCAreaMADPlot.Size = new Size(548, 331);
-            DCAreaMADPlot.TabIndex = 4;
-            // 
-            // DCHeightMADPlot
-            // 
-            DCHeightMADPlot.Location = new Point(558, 392);
-            DCHeightMADPlot.Name = "DCHeightMADPlot";
-            DCHeightMADPlot.Size = new Size(550, 331);
-            DCHeightMADPlot.TabIndex = 3;
-            // 
-            // DCWidthMADPlot
-            // 
-            DCWidthMADPlot.Location = new Point(5, 392);
-            DCWidthMADPlot.Name = "DCWidthMADPlot";
-            DCWidthMADPlot.Size = new Size(548, 331);
-            DCWidthMADPlot.TabIndex = 2;
-            // 
-            // DCPeakYMADPlot
-            // 
-            DCPeakYMADPlot.Location = new Point(808, 42);
-            DCPeakYMADPlot.Name = "DCPeakYMADPlot";
-            DCPeakYMADPlot.Size = new Size(854, 331);
-            DCPeakYMADPlot.TabIndex = 1;
-            // 
-            // DCPeakXMADPlot
-            // 
-            DCPeakXMADPlot.Location = new Point(5, 42);
-            DCPeakXMADPlot.Name = "DCPeakXMADPlot";
-            DCPeakXMADPlot.Size = new Size(797, 331);
-            DCPeakXMADPlot.TabIndex = 0;
-            // 
-            // PerulStaticPanel_4
-            // 
-            PerulStaticPanel_4.Controls.Add(ACAreaMADPlot);
-            PerulStaticPanel_4.Controls.Add(ACHeightMADPlot);
-            PerulStaticPanel_4.Controls.Add(ACWidthMADPlot);
-            PerulStaticPanel_4.Controls.Add(ACPeakYMADPlot);
-            PerulStaticPanel_4.Controls.Add(ACPeakXMADPlot);
-            PerulStaticPanel_4.Location = new Point(574, 34);
-            PerulStaticPanel_4.Name = "PerulStaticPanel_4";
-            PerulStaticPanel_4.Size = new Size(114, 48);
-            PerulStaticPanel_4.TabIndex = 28;
-            // 
-            // ACAreaMADPlot
-            // 
-            ACAreaMADPlot.Location = new Point(1114, 392);
-            ACAreaMADPlot.Name = "ACAreaMADPlot";
-            ACAreaMADPlot.Size = new Size(548, 331);
-            ACAreaMADPlot.TabIndex = 4;
-            // 
-            // ACHeightMADPlot
-            // 
-            ACHeightMADPlot.Location = new Point(558, 392);
-            ACHeightMADPlot.Name = "ACHeightMADPlot";
-            ACHeightMADPlot.Size = new Size(550, 331);
-            ACHeightMADPlot.TabIndex = 3;
-            // 
-            // ACWidthMADPlot
-            // 
-            ACWidthMADPlot.Location = new Point(5, 392);
-            ACWidthMADPlot.Name = "ACWidthMADPlot";
-            ACWidthMADPlot.Size = new Size(548, 331);
-            ACWidthMADPlot.TabIndex = 2;
-            // 
-            // ACPeakYMADPlot
-            // 
-            ACPeakYMADPlot.Location = new Point(808, 42);
-            ACPeakYMADPlot.Name = "ACPeakYMADPlot";
-            ACPeakYMADPlot.Size = new Size(854, 331);
-            ACPeakYMADPlot.TabIndex = 1;
-            // 
-            // ACPeakXMADPlot
-            // 
-            ACPeakXMADPlot.Location = new Point(5, 42);
-            ACPeakXMADPlot.Name = "ACPeakXMADPlot";
-            ACPeakXMADPlot.Size = new Size(797, 331);
-            ACPeakXMADPlot.TabIndex = 0;
-            // 
-            // PerulStaticPanel_3
-            // 
-            PerulStaticPanel_3.Controls.Add(ACAreaScorePlot);
-            PerulStaticPanel_3.Controls.Add(ACHeightScorePlot);
-            PerulStaticPanel_3.Controls.Add(ACWidthScorePlot);
-            PerulStaticPanel_3.Controls.Add(ACPeakYScorePlot);
-            PerulStaticPanel_3.Controls.Add(ACPeakXScorePlot);
-            PerulStaticPanel_3.Location = new Point(358, 21);
-            PerulStaticPanel_3.Name = "PerulStaticPanel_3";
-            PerulStaticPanel_3.Size = new Size(199, 61);
-            PerulStaticPanel_3.TabIndex = 27;
-            // 
-            // ACAreaScorePlot
-            // 
-            ACAreaScorePlot.Location = new Point(1114, 392);
-            ACAreaScorePlot.Name = "ACAreaScorePlot";
-            ACAreaScorePlot.Size = new Size(548, 331);
-            ACAreaScorePlot.TabIndex = 4;
-            // 
-            // ACHeightScorePlot
-            // 
-            ACHeightScorePlot.Location = new Point(558, 392);
-            ACHeightScorePlot.Name = "ACHeightScorePlot";
-            ACHeightScorePlot.Size = new Size(550, 331);
-            ACHeightScorePlot.TabIndex = 3;
-            // 
-            // ACWidthScorePlot
-            // 
-            ACWidthScorePlot.Location = new Point(5, 392);
-            ACWidthScorePlot.Name = "ACWidthScorePlot";
-            ACWidthScorePlot.Size = new Size(548, 331);
-            ACWidthScorePlot.TabIndex = 2;
-            // 
-            // ACPeakYScorePlot
-            // 
-            ACPeakYScorePlot.Location = new Point(808, 42);
-            ACPeakYScorePlot.Name = "ACPeakYScorePlot";
-            ACPeakYScorePlot.Size = new Size(854, 331);
-            ACPeakYScorePlot.TabIndex = 1;
-            // 
-            // ACPeakXScorePlot
-            // 
-            ACPeakXScorePlot.Location = new Point(5, 42);
-            ACPeakXScorePlot.Name = "ACPeakXScorePlot";
-            ACPeakXScorePlot.Size = new Size(797, 331);
-            ACPeakXScorePlot.TabIndex = 0;
-            // 
-            // PluerPageUpbtr
-            // 
-            PluerPageUpbtr.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold);
-            PluerPageUpbtr.Location = new Point(1619, 12);
-            PluerPageUpbtr.Name = "PluerPageUpbtr";
-            PluerPageUpbtr.Size = new Size(45, 47);
-            PluerPageUpbtr.TabIndex = 26;
-            PluerPageUpbtr.Text = ">";
-            PluerPageUpbtr.UseVisualStyleBackColor = true;
-            PluerPageUpbtr.Click += (this.PluerPageUpbtr_Click);
-            // 
-            // PluerPageDownbtr
-            // 
-            PluerPageDownbtr.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold);
-            PluerPageDownbtr.Location = new Point(1565, 11);
-            PluerPageDownbtr.Name = "PluerPageDownbtr";
-            PluerPageDownbtr.Size = new Size(48, 49);
-            PluerPageDownbtr.TabIndex = 25;
-            PluerPageDownbtr.Text = "<";
-            PluerPageDownbtr.UseVisualStyleBackColor = true;
-            PluerPageDownbtr.Click += (this.PluerPageDownbtr_Click);
-            // 
-            // PerulStaticPanel_2
-            // 
-            PerulStaticPanel_2.Controls.Add(label384);
-            PerulStaticPanel_2.Controls.Add(label344);
-            PerulStaticPanel_2.Controls.Add(label345);
-            PerulStaticPanel_2.Controls.Add(label346);
-            PerulStaticPanel_2.Controls.Add(label347);
-            PerulStaticPanel_2.Controls.Add(label348);
-            PerulStaticPanel_2.Controls.Add(label349);
-            PerulStaticPanel_2.Controls.Add(label350);
-            PerulStaticPanel_2.Controls.Add(label353);
-            PerulStaticPanel_2.Controls.Add(label354);
-            PerulStaticPanel_2.Controls.Add(label355);
-            PerulStaticPanel_2.Controls.Add(label357);
-            PerulStaticPanel_2.Controls.Add(label365);
-            PerulStaticPanel_2.Controls.Add(label366);
-            PerulStaticPanel_2.Controls.Add(label367);
-            PerulStaticPanel_2.Controls.Add(label368);
-            PerulStaticPanel_2.Controls.Add(label369);
-            PerulStaticPanel_2.Controls.Add(label381);
-            PerulStaticPanel_2.Controls.Add(label382);
-            PerulStaticPanel_2.Controls.Add(label383);
-            PerulStaticPanel_2.Controls.Add(PlurerFlowPanel2);
-            PerulStaticPanel_2.Location = new Point(723, 34);
-            PerulStaticPanel_2.Name = "PerulStaticPanel_2";
-            PerulStaticPanel_2.Size = new Size(103, 42);
-            PerulStaticPanel_2.TabIndex = 24;
-            PerulStaticPanel_2.Visible = false;
-            // 
-            // label384
-            // 
-            label384.BackColor = Color.DimGray;
-            label384.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label384.ForeColor = Color.White;
-            label384.Location = new Point(8, 51);
-            label384.Name = "label384";
-            label384.Size = new Size(74, 45);
-            label384.TabIndex = 44;
-            label384.Text = "No";
-            label384.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label344
-            // 
-            label344.BackColor = Color.DimGray;
-            label344.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label344.ForeColor = Color.White;
-            label344.Location = new Point(8, 9);
-            label344.Name = "label344";
-            label344.Size = new Size(211, 38);
-            label344.TabIndex = 24;
-            label344.Text = "구분";
-            label344.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label345
-            // 
-            label345.BackColor = Color.DimGray;
-            label345.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label345.ForeColor = Color.White;
-            label345.Location = new Point(1472, 51);
-            label345.Name = "label345";
-            label345.Size = new Size(90, 45);
-            label345.TabIndex = 43;
-            label345.Text = "이상치\r\n비율(%)";
-            label345.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label346
-            // 
-            label346.BackColor = Color.DimGray;
-            label346.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label346.ForeColor = Color.White;
-            label346.Location = new Point(1376, 51);
-            label346.Name = "label346";
-            label346.Size = new Size(90, 45);
-            label346.TabIndex = 42;
-            label346.Text = "최종\r\n등급";
-            label346.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label347
-            // 
-            label347.BackColor = Color.DimGray;
-            label347.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label347.ForeColor = Color.White;
-            label347.Location = new Point(801, 51);
-            label347.Name = "label347";
-            label347.Size = new Size(90, 45);
-            label347.TabIndex = 41;
-            label347.Text = "이상치\r\n비율(%)";
-            label347.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label348
-            // 
-            label348.BackColor = Color.DimGray;
-            label348.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label348.ForeColor = Color.White;
-            label348.Location = new Point(88, 51);
-            label348.Name = "label348";
-            label348.Size = new Size(131, 45);
-            label348.TabIndex = 25;
-            label348.Text = "S/No.";
-            label348.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label349
-            // 
-            label349.BackColor = Color.DimGray;
-            label349.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label349.ForeColor = Color.White;
-            label349.Location = new Point(705, 51);
-            label349.Name = "label349";
-            label349.Size = new Size(90, 45);
-            label349.TabIndex = 40;
-            label349.Text = "최종\r\n등급";
-            label349.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label350
-            // 
-            label350.BackColor = Color.DimGray;
-            label350.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label350.ForeColor = Color.White;
-            label350.Location = new Point(225, 9);
-            label350.Name = "label350";
-            label350.Size = new Size(666, 38);
-            label350.TabIndex = 26;
-            label350.Text = "가속";
-            label350.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label353
-            // 
-            label353.BackColor = Color.DimGray;
-            label353.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label353.ForeColor = Color.White;
-            label353.Location = new Point(896, 9);
-            label353.Name = "label353";
-            label353.Size = new Size(666, 38);
-            label353.TabIndex = 27;
-            label353.Text = "감속";
-            label353.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label354
-            // 
-            label354.BackColor = Color.DimGray;
-            label354.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label354.ForeColor = Color.White;
-            label354.Location = new Point(1398, 51);
-            label354.Name = "label354";
-            label354.Size = new Size(0, 0);
-            label354.TabIndex = 39;
-            label354.Text = "합";
-            label354.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label355
-            // 
-            label355.BackColor = Color.DimGray;
-            label355.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label355.ForeColor = Color.White;
-            label355.Location = new Point(225, 51);
-            label355.Name = "label355";
-            label355.Size = new Size(90, 45);
-            label355.TabIndex = 28;
-            label355.Text = "PeakX";
-            label355.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label357
-            // 
-            label357.BackColor = Color.DimGray;
-            label357.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label357.ForeColor = Color.White;
-            label357.Location = new Point(321, 51);
-            label357.Name = "label357";
-            label357.Size = new Size(90, 45);
-            label357.TabIndex = 29;
-            label357.Text = "PeakY";
-            label357.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label365
-            // 
-            label365.BackColor = Color.DimGray;
-            label365.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label365.ForeColor = Color.White;
-            label365.Location = new Point(1280, 51);
-            label365.Name = "label365";
-            label365.Size = new Size(90, 45);
-            label365.TabIndex = 37;
-            label365.Text = "면적";
-            label365.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label366
-            // 
-            label366.BackColor = Color.DimGray;
-            label366.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label366.ForeColor = Color.White;
-            label366.Location = new Point(417, 51);
-            label366.Name = "label366";
-            label366.Size = new Size(90, 45);
-            label366.TabIndex = 30;
-            label366.Text = "길이";
-            label366.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label367
-            // 
-            label367.BackColor = Color.DimGray;
-            label367.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label367.ForeColor = Color.White;
-            label367.Location = new Point(1184, 51);
-            label367.Name = "label367";
-            label367.Size = new Size(90, 45);
-            label367.TabIndex = 36;
-            label367.Text = "높이";
-            label367.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label368
-            // 
-            label368.BackColor = Color.DimGray;
-            label368.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label368.ForeColor = Color.White;
-            label368.Location = new Point(513, 51);
-            label368.Name = "label368";
-            label368.Size = new Size(90, 45);
-            label368.TabIndex = 31;
-            label368.Text = "높이";
-            label368.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label369
-            // 
-            label369.BackColor = Color.DimGray;
-            label369.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label369.ForeColor = Color.White;
-            label369.Location = new Point(1088, 51);
-            label369.Name = "label369";
-            label369.Size = new Size(90, 45);
-            label369.TabIndex = 35;
-            label369.Text = "길이";
-            label369.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label381
-            // 
-            label381.BackColor = Color.DimGray;
-            label381.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label381.ForeColor = Color.White;
-            label381.Location = new Point(609, 51);
-            label381.Name = "label381";
-            label381.Size = new Size(90, 45);
-            label381.TabIndex = 32;
-            label381.Text = "면적";
-            label381.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label382
-            // 
-            label382.BackColor = Color.DimGray;
-            label382.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label382.ForeColor = Color.White;
-            label382.Location = new Point(992, 51);
-            label382.Name = "label382";
-            label382.Size = new Size(90, 45);
-            label382.TabIndex = 34;
-            label382.Text = "PeakY";
-            label382.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label383
-            // 
-            label383.BackColor = Color.DimGray;
-            label383.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label383.ForeColor = Color.White;
-            label383.Location = new Point(896, 51);
-            label383.Name = "label383";
-            label383.Size = new Size(90, 45);
-            label383.TabIndex = 33;
-            label383.Text = "PeakX";
-            label383.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // PlurerFlowPanel2
-            // 
-            PlurerFlowPanel2.AutoScroll = true;
-            PlurerFlowPanel2.BackColor = Color.Transparent;
-            PlurerFlowPanel2.Location = new Point(4, 99);
-            PlurerFlowPanel2.Name = "PlurerFlowPanel2";
-            PlurerFlowPanel2.Size = new Size(1564, 631);
-            PlurerFlowPanel2.TabIndex = 23;
-            // 
-            // PerulStaticPanel_1
-            // 
-            PerulStaticPanel_1.BackColor = Color.Transparent;
-            PerulStaticPanel_1.Controls.Add(label15);
-            PerulStaticPanel_1.Controls.Add(label337);
-            PerulStaticPanel_1.Controls.Add(PlurerFlowPanel1);
-            PerulStaticPanel_1.Controls.Add(label343);
-            PerulStaticPanel_1.Controls.Add(label16);
-            PerulStaticPanel_1.Controls.Add(label329);
-            PerulStaticPanel_1.Controls.Add(label17);
-            PerulStaticPanel_1.Controls.Add(label324);
-            PerulStaticPanel_1.Controls.Add(label18);
-            PerulStaticPanel_1.Controls.Add(label19);
-            PerulStaticPanel_1.Controls.Add(label168);
-            PerulStaticPanel_1.Controls.Add(label20);
-            PerulStaticPanel_1.Controls.Add(label236);
-            PerulStaticPanel_1.Controls.Add(label21);
-            PerulStaticPanel_1.Controls.Add(label37);
-            PerulStaticPanel_1.Controls.Add(label22);
-            PerulStaticPanel_1.Controls.Add(label38);
-            PerulStaticPanel_1.Controls.Add(label23);
-            PerulStaticPanel_1.Controls.Add(label133);
-            PerulStaticPanel_1.Controls.Add(label24);
-            PerulStaticPanel_1.Controls.Add(label160);
-            PerulStaticPanel_1.Controls.Add(label166);
-            PerulStaticPanel_1.Location = new Point(1292, 45);
-            PerulStaticPanel_1.Name = "PerulStaticPanel_1";
-            PerulStaticPanel_1.Size = new Size(130, 103);
-            PerulStaticPanel_1.TabIndex = 23;
-            PerulStaticPanel_1.Visible = false;
-            // 
-            // label15
-            // 
-            label15.BackColor = Color.DimGray;
-            label15.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label15.ForeColor = Color.White;
-            label15.Location = new Point(12, 9);
-            label15.Name = "label15";
-            label15.Size = new Size(211, 38);
-            label15.TabIndex = 2;
-            label15.Text = "구분";
-            label15.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label337
-            // 
-            label337.BackColor = Color.DimGray;
-            label337.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label337.ForeColor = Color.White;
-            label337.Location = new Point(1577, 51);
-            label337.Name = "label337";
-            label337.Size = new Size(76, 45);
-            label337.TabIndex = 22;
-            label337.Text = "이상치\r\n비율(%)";
-            label337.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // PlurerFlowPanel1
-            // 
-            PlurerFlowPanel1.AutoScroll = true;
-            PlurerFlowPanel1.BackColor = Color.Black;
-            PlurerFlowPanel1.Location = new Point(8, 99);
-            PlurerFlowPanel1.Name = "PlurerFlowPanel1";
-            PlurerFlowPanel1.Size = new Size(1646, 648);
-            PlurerFlowPanel1.TabIndex = 1;
-            // 
-            // label343
-            // 
-            label343.BackColor = Color.DimGray;
-            label343.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label343.ForeColor = Color.White;
-            label343.Location = new Point(1495, 51);
-            label343.Name = "label343";
-            label343.Size = new Size(76, 45);
-            label343.TabIndex = 21;
-            label343.Text = "최종\r\n등급";
-            label343.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label16
-            // 
-            label16.BackColor = Color.DimGray;
-            label16.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label16.ForeColor = Color.White;
-            label16.Location = new Point(11, 51);
-            label16.Name = "label16";
-            label16.Size = new Size(75, 45);
-            label16.TabIndex = 3;
-            label16.Text = "No.";
-            label16.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label329
-            // 
-            label329.BackColor = Color.DimGray;
-            label329.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label329.ForeColor = Color.White;
-            label329.Location = new Point(840, 51);
-            label329.Name = "label329";
-            label329.Size = new Size(76, 45);
-            label329.TabIndex = 20;
-            label329.Text = "이상치\r\n비율(%)";
-            label329.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label17
-            // 
-            label17.BackColor = Color.DimGray;
-            label17.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label17.ForeColor = Color.White;
-            label17.Location = new Point(92, 51);
-            label17.Name = "label17";
-            label17.Size = new Size(131, 45);
-            label17.TabIndex = 4;
-            label17.Text = "S/No.";
-            label17.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label324
-            // 
-            label324.BackColor = Color.DimGray;
-            label324.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label324.ForeColor = Color.White;
-            label324.Location = new Point(758, 51);
-            label324.Name = "label324";
-            label324.Size = new Size(76, 45);
-            label324.TabIndex = 19;
-            label324.Text = "최종\r\n등급";
-            label324.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            label18.BackColor = Color.DimGray;
-            label18.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label18.ForeColor = Color.White;
-            label18.Location = new Point(229, 9);
-            label18.Name = "label18";
-            label18.Size = new Size(687, 38);
-            label18.TabIndex = 5;
-            label18.Text = "가속";
-            label18.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label19
-            // 
-            label19.BackColor = Color.DimGray;
-            label19.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label19.ForeColor = Color.White;
-            label19.Location = new Point(922, 9);
-            label19.Name = "label19";
-            label19.Size = new Size(732, 38);
-            label19.TabIndex = 6;
-            label19.Text = "감속";
-            label19.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label168
-            // 
-            label168.BackColor = Color.DimGray;
-            label168.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label168.ForeColor = Color.White;
-            label168.Location = new Point(1403, 51);
-            label168.Name = "label168";
-            label168.Size = new Size(87, 45);
-            label168.TabIndex = 18;
-            label168.Text = "합";
-            label168.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label20
-            // 
-            label20.BackColor = Color.DimGray;
-            label20.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label20.ForeColor = Color.White;
-            label20.Location = new Point(229, 51);
-            label20.Name = "label20";
-            label20.Size = new Size(79, 45);
-            label20.TabIndex = 7;
-            label20.Text = "PeakX";
-            label20.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label236
-            // 
-            label236.BackColor = Color.DimGray;
-            label236.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label236.ForeColor = Color.White;
-            label236.Location = new Point(676, 51);
-            label236.Name = "label236";
-            label236.Size = new Size(76, 45);
-            label236.TabIndex = 17;
-            label236.Text = "합";
-            label236.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label21
-            // 
-            label21.BackColor = Color.DimGray;
-            label21.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label21.ForeColor = Color.White;
-            label21.Location = new Point(314, 51);
-            label21.Name = "label21";
-            label21.Size = new Size(74, 45);
-            label21.TabIndex = 8;
-            label21.Text = "PeakY";
-            label21.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label37
-            // 
-            label37.BackColor = Color.DimGray;
-            label37.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label37.ForeColor = Color.White;
-            label37.Location = new Point(1301, 51);
-            label37.Name = "label37";
-            label37.Size = new Size(97, 45);
-            label37.TabIndex = 16;
-            label37.Text = "면적";
-            label37.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label22
-            // 
-            label22.BackColor = Color.DimGray;
-            label22.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label22.ForeColor = Color.White;
-            label22.Location = new Point(394, 51);
-            label22.Name = "label22";
-            label22.Size = new Size(89, 45);
-            label22.TabIndex = 9;
-            label22.Text = "길이";
-            label22.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label38
-            // 
-            label38.BackColor = Color.DimGray;
-            label38.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label38.ForeColor = Color.White;
-            label38.Location = new Point(1201, 51);
-            label38.Name = "label38";
-            label38.Size = new Size(95, 45);
-            label38.TabIndex = 15;
-            label38.Text = "높이";
-            label38.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label23
-            // 
-            label23.BackColor = Color.DimGray;
-            label23.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label23.ForeColor = Color.White;
-            label23.Location = new Point(489, 51);
-            label23.Name = "label23";
-            label23.Size = new Size(92, 45);
-            label23.TabIndex = 10;
-            label23.Text = "높이";
-            label23.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label133
-            // 
-            label133.BackColor = Color.DimGray;
-            label133.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label133.ForeColor = Color.White;
-            label133.Location = new Point(1105, 51);
-            label133.Name = "label133";
-            label133.Size = new Size(92, 45);
-            label133.TabIndex = 14;
-            label133.Text = "길이";
-            label133.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label24
-            // 
-            label24.BackColor = Color.DimGray;
-            label24.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label24.ForeColor = Color.White;
-            label24.Location = new Point(587, 51);
-            label24.Name = "label24";
-            label24.Size = new Size(83, 45);
-            label24.TabIndex = 11;
-            label24.Text = "면적";
-            label24.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label160
-            // 
-            label160.BackColor = Color.DimGray;
-            label160.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label160.ForeColor = Color.White;
-            label160.Location = new Point(1009, 51);
-            label160.Name = "label160";
-            label160.Size = new Size(91, 45);
-            label160.TabIndex = 13;
-            label160.Text = "PeakY";
-            label160.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label166
-            // 
-            label166.BackColor = Color.DimGray;
-            label166.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label166.ForeColor = Color.White;
-            label166.Location = new Point(922, 51);
-            label166.Name = "label166";
-            label166.Size = new Size(83, 45);
-            label166.TabIndex = 12;
-            label166.Text = "PeakX";
-            label166.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // PerulStaticDisplayLabel
-            // 
-            PerulStaticDisplayLabel.AutoSize = true;
-            PerulStaticDisplayLabel.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            PerulStaticDisplayLabel.ForeColor = Color.White;
-            PerulStaticDisplayLabel.Location = new Point(24, 21);
-            PerulStaticDisplayLabel.Name = "PerulStaticDisplayLabel";
-            PerulStaticDisplayLabel.Size = new Size(134, 37);
-            PerulStaticDisplayLabel.TabIndex = 0;
-            PerulStaticDisplayLabel.Text = "복수 통계";
-            // 
-            // SicngleImgCheckPanel
-            // 
-            SicngleImgCheckPanel.Controls.Add(RearDisplayPanel);
-            SicngleImgCheckPanel.Controls.Add(FrontDisplayPanel);
-            SicngleImgCheckPanel.Controls.Add(Img46to50Label);
-            SicngleImgCheckPanel.Controls.Add(Img41to45Label);
-            SicngleImgCheckPanel.Controls.Add(Img36to40Label);
-            SicngleImgCheckPanel.Controls.Add(Img31to35Label);
-            SicngleImgCheckPanel.Controls.Add(Img26to30Label);
-            SicngleImgCheckPanel.Controls.Add(Img21to25Label);
-            SicngleImgCheckPanel.Controls.Add(Img16to20Label);
-            SicngleImgCheckPanel.Controls.Add(Img11to15Label);
-            SicngleImgCheckPanel.Controls.Add(Img6to10Label);
-            SicngleImgCheckPanel.Controls.Add(Img1to5Label);
-            SicngleImgCheckPanel.Controls.Add(SicngleImgCheckPanelExitButton);
-            SicngleImgCheckPanel.Location = new Point(1189, 431);
-            SicngleImgCheckPanel.Name = "SicngleImgCheckPanel";
-            SicngleImgCheckPanel.Size = new Size(497, 291);
-            SicngleImgCheckPanel.TabIndex = 13;
-            SicngleImgCheckPanel.Visible = false;
-            // 
-            // RearDisplayPanel
-            // 
-            RearDisplayPanel.BorderStyle = BorderStyle.FixedSingle;
-            RearDisplayPanel.Controls.Add(label307);
-            RearDisplayPanel.Controls.Add(R5Angle);
-            RearDisplayPanel.Controls.Add(label223);
-            RearDisplayPanel.Controls.Add(R5PeakY);
-            RearDisplayPanel.Controls.Add(label225);
-            RearDisplayPanel.Controls.Add(R5Area);
-            RearDisplayPanel.Controls.Add(label227);
-            RearDisplayPanel.Controls.Add(R5PeakX);
-            RearDisplayPanel.Controls.Add(label229);
-            RearDisplayPanel.Controls.Add(R5Height);
-            RearDisplayPanel.Controls.Add(label231);
-            RearDisplayPanel.Controls.Add(R5AreaY);
-            RearDisplayPanel.Controls.Add(label233);
-            RearDisplayPanel.Controls.Add(R5Width);
-            RearDisplayPanel.Controls.Add(label235);
-            RearDisplayPanel.Controls.Add(R5AreaX);
-            RearDisplayPanel.Controls.Add(label237);
-            RearDisplayPanel.Controls.Add(R4Angle);
-            RearDisplayPanel.Controls.Add(label239);
-            RearDisplayPanel.Controls.Add(R4PeakY);
-            RearDisplayPanel.Controls.Add(label241);
-            RearDisplayPanel.Controls.Add(R4Area);
-            RearDisplayPanel.Controls.Add(label243);
-            RearDisplayPanel.Controls.Add(R4PeakX);
-            RearDisplayPanel.Controls.Add(label245);
-            RearDisplayPanel.Controls.Add(R4Height);
-            RearDisplayPanel.Controls.Add(label247);
-            RearDisplayPanel.Controls.Add(R4AreaY);
-            RearDisplayPanel.Controls.Add(label249);
-            RearDisplayPanel.Controls.Add(R4Width);
-            RearDisplayPanel.Controls.Add(label251);
-            RearDisplayPanel.Controls.Add(R4AreaX);
-            RearDisplayPanel.Controls.Add(label253);
-            RearDisplayPanel.Controls.Add(R3Angle);
-            RearDisplayPanel.Controls.Add(label255);
-            RearDisplayPanel.Controls.Add(R3PeakY);
-            RearDisplayPanel.Controls.Add(label257);
-            RearDisplayPanel.Controls.Add(R3Area);
-            RearDisplayPanel.Controls.Add(label259);
-            RearDisplayPanel.Controls.Add(R3PeakX);
-            RearDisplayPanel.Controls.Add(label261);
-            RearDisplayPanel.Controls.Add(R3Height);
-            RearDisplayPanel.Controls.Add(label263);
-            RearDisplayPanel.Controls.Add(R3AreaY);
-            RearDisplayPanel.Controls.Add(label265);
-            RearDisplayPanel.Controls.Add(R3Width);
-            RearDisplayPanel.Controls.Add(label267);
-            RearDisplayPanel.Controls.Add(R3AreaX);
-            RearDisplayPanel.Controls.Add(label269);
-            RearDisplayPanel.Controls.Add(R2Angle);
-            RearDisplayPanel.Controls.Add(label271);
-            RearDisplayPanel.Controls.Add(R2PeakY);
-            RearDisplayPanel.Controls.Add(label273);
-            RearDisplayPanel.Controls.Add(R2Area);
-            RearDisplayPanel.Controls.Add(label275);
-            RearDisplayPanel.Controls.Add(R2PeakX);
-            RearDisplayPanel.Controls.Add(label277);
-            RearDisplayPanel.Controls.Add(R2Height);
-            RearDisplayPanel.Controls.Add(label279);
-            RearDisplayPanel.Controls.Add(R2AreaY);
-            RearDisplayPanel.Controls.Add(label281);
-            RearDisplayPanel.Controls.Add(R2Width);
-            RearDisplayPanel.Controls.Add(label283);
-            RearDisplayPanel.Controls.Add(R2AreaX);
-            RearDisplayPanel.Controls.Add(label285);
-            RearDisplayPanel.Controls.Add(R1Angle);
-            RearDisplayPanel.Controls.Add(label287);
-            RearDisplayPanel.Controls.Add(R1PeakY);
-            RearDisplayPanel.Controls.Add(label289);
-            RearDisplayPanel.Controls.Add(R1Area);
-            RearDisplayPanel.Controls.Add(label291);
-            RearDisplayPanel.Controls.Add(R1PeakX);
-            RearDisplayPanel.Controls.Add(label293);
-            RearDisplayPanel.Controls.Add(R1Height);
-            RearDisplayPanel.Controls.Add(label295);
-            RearDisplayPanel.Controls.Add(R1AreaY);
-            RearDisplayPanel.Controls.Add(label297);
-            RearDisplayPanel.Controls.Add(R1Width);
-            RearDisplayPanel.Controls.Add(label299);
-            RearDisplayPanel.Controls.Add(R1AreaX);
-            RearDisplayPanel.Controls.Add(label301);
-            RearDisplayPanel.Controls.Add(R1picturebox);
-            RearDisplayPanel.Controls.Add(R5);
-            RearDisplayPanel.Controls.Add(R4);
-            RearDisplayPanel.Controls.Add(R3);
-            RearDisplayPanel.Controls.Add(R2);
-            RearDisplayPanel.Controls.Add(R1);
-            RearDisplayPanel.Controls.Add(label308);
-            RearDisplayPanel.Controls.Add(R2picturebox);
-            RearDisplayPanel.Controls.Add(R3picturebox);
-            RearDisplayPanel.Controls.Add(R4picturebox);
-            RearDisplayPanel.Controls.Add(R5picturebox);
-            RearDisplayPanel.Location = new Point(862, 79);
-            RearDisplayPanel.Name = "RearDisplayPanel";
-            RearDisplayPanel.Size = new Size(799, 821);
-            RearDisplayPanel.TabIndex = 92;
-            RearDisplayPanel.Visible = false;
-            // 
-            // label307
-            // 
-            label307.BorderStyle = BorderStyle.FixedSingle;
-            label307.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label307.ForeColor = Color.White;
-            label307.Location = new Point(73, 4);
-            label307.Name = "label307";
-            label307.Size = new Size(721, 64);
-            label307.TabIndex = 1;
-            label307.Text = "Decelearation";
-            label307.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R5Angle
-            // 
-            R5Angle.BackColor = Color.Gray;
-            R5Angle.Location = new Point(707, 776);
-            R5Angle.Name = "R5Angle";
-            R5Angle.Size = new Size(85, 37);
-            R5Angle.TabIndex = 91;
-            R5Angle.Text = "label222";
-            R5Angle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label223
-            // 
-            label223.BackColor = Color.LightGray;
-            label223.Location = new Point(707, 739);
-            label223.Name = "label223";
-            label223.Size = new Size(85, 37);
-            label223.TabIndex = 90;
-            label223.Text = "PatternY";
-            label223.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R5PeakY
-            // 
-            R5PeakY.BackColor = Color.Gray;
-            R5PeakY.Location = new Point(707, 704);
-            R5PeakY.Name = "R5PeakY";
-            R5PeakY.Size = new Size(85, 35);
-            R5PeakY.TabIndex = 89;
-            R5PeakY.Text = "label224";
-            R5PeakY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label225
-            // 
-            label225.BackColor = Color.LightGray;
-            label225.Location = new Point(707, 669);
-            label225.Name = "label225";
-            label225.Size = new Size(85, 35);
-            label225.TabIndex = 88;
-            label225.Text = "Width";
-            label225.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R5Area
-            // 
-            R5Area.BackColor = Color.Gray;
-            R5Area.Location = new Point(616, 776);
-            R5Area.Name = "R5Area";
-            R5Area.Size = new Size(85, 37);
-            R5Area.TabIndex = 87;
-            R5Area.Text = "label226";
-            R5Area.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label227
-            // 
-            label227.BackColor = Color.LightGray;
-            label227.Location = new Point(616, 739);
-            label227.Name = "label227";
-            label227.Size = new Size(85, 37);
-            label227.TabIndex = 86;
-            label227.Text = "PatternX";
-            label227.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R5PeakX
-            // 
-            R5PeakX.BackColor = Color.Gray;
-            R5PeakX.Location = new Point(616, 704);
-            R5PeakX.Name = "R5PeakX";
-            R5PeakX.Size = new Size(85, 35);
-            R5PeakX.TabIndex = 85;
-            R5PeakX.Text = "label228";
-            R5PeakX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label229
-            // 
-            label229.BackColor = Color.LightGray;
-            label229.Location = new Point(616, 669);
-            label229.Name = "label229";
-            label229.Size = new Size(85, 35);
-            label229.TabIndex = 84;
-            label229.Text = "Peak Y";
-            label229.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R5Height
-            // 
-            R5Height.BackColor = Color.Gray;
-            R5Height.Location = new Point(525, 776);
-            R5Height.Name = "R5Height";
-            R5Height.Size = new Size(85, 37);
-            R5Height.TabIndex = 83;
-            R5Height.Text = "label230";
-            R5Height.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label231
-            // 
-            label231.BackColor = Color.LightGray;
-            label231.Location = new Point(525, 739);
-            label231.Name = "label231";
-            label231.Size = new Size(85, 37);
-            label231.TabIndex = 82;
-            label231.Text = "Area";
-            label231.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R5AreaY
-            // 
-            R5AreaY.BackColor = Color.Gray;
-            R5AreaY.Location = new Point(525, 704);
-            R5AreaY.Name = "R5AreaY";
-            R5AreaY.Size = new Size(85, 35);
-            R5AreaY.TabIndex = 81;
-            R5AreaY.Text = "label232";
-            R5AreaY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label233
-            // 
-            label233.BackColor = Color.LightGray;
-            label233.Location = new Point(525, 669);
-            label233.Name = "label233";
-            label233.Size = new Size(85, 35);
-            label233.TabIndex = 80;
-            label233.Text = "Peak X";
-            label233.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R5Width
-            // 
-            R5Width.BackColor = Color.Gray;
-            R5Width.Location = new Point(434, 776);
-            R5Width.Name = "R5Width";
-            R5Width.Size = new Size(85, 37);
-            R5Width.TabIndex = 79;
-            R5Width.Text = "label234";
-            R5Width.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label235
-            // 
-            label235.BackColor = Color.LightGray;
-            label235.Location = new Point(434, 739);
-            label235.Name = "label235";
-            label235.Size = new Size(85, 37);
-            label235.TabIndex = 78;
-            label235.Text = "Height";
-            label235.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R5AreaX
-            // 
-            R5AreaX.BackColor = Color.Gray;
-            R5AreaX.Location = new Point(434, 704);
-            R5AreaX.Name = "R5AreaX";
-            R5AreaX.Size = new Size(85, 35);
-            R5AreaX.TabIndex = 77;
-            R5AreaX.Text = "label236";
-            R5AreaX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label237
-            // 
-            label237.BackColor = Color.LightGray;
-            label237.Location = new Point(434, 669);
-            label237.Name = "label237";
-            label237.Size = new Size(85, 35);
-            label237.TabIndex = 76;
-            label237.Text = "홈 번호";
-            label237.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R4Angle
-            // 
-            R4Angle.BackColor = Color.Gray;
-            R4Angle.Location = new Point(707, 626);
-            R4Angle.Name = "R4Angle";
-            R4Angle.Size = new Size(85, 37);
-            R4Angle.TabIndex = 75;
-            R4Angle.Text = "label238";
-            R4Angle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label239
-            // 
-            label239.BackColor = Color.LightGray;
-            label239.Location = new Point(707, 589);
-            label239.Name = "label239";
-            label239.Size = new Size(85, 37);
-            label239.TabIndex = 74;
-            label239.Text = "PatternY";
-            label239.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R4PeakY
-            // 
-            R4PeakY.BackColor = Color.Gray;
-            R4PeakY.Location = new Point(707, 554);
-            R4PeakY.Name = "R4PeakY";
-            R4PeakY.Size = new Size(85, 35);
-            R4PeakY.TabIndex = 73;
-            R4PeakY.Text = "label240";
-            R4PeakY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label241
-            // 
-            label241.BackColor = Color.LightGray;
-            label241.Location = new Point(707, 519);
-            label241.Name = "label241";
-            label241.Size = new Size(85, 35);
-            label241.TabIndex = 72;
-            label241.Text = "Width";
-            label241.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R4Area
-            // 
-            R4Area.BackColor = Color.Gray;
-            R4Area.Location = new Point(616, 626);
-            R4Area.Name = "R4Area";
-            R4Area.Size = new Size(85, 37);
-            R4Area.TabIndex = 71;
-            R4Area.Text = "label242";
-            R4Area.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label243
-            // 
-            label243.BackColor = Color.LightGray;
-            label243.Location = new Point(616, 589);
-            label243.Name = "label243";
-            label243.Size = new Size(85, 37);
-            label243.TabIndex = 70;
-            label243.Text = "PatternX";
-            label243.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R4PeakX
-            // 
-            R4PeakX.BackColor = Color.Gray;
-            R4PeakX.Location = new Point(616, 554);
-            R4PeakX.Name = "R4PeakX";
-            R4PeakX.Size = new Size(85, 35);
-            R4PeakX.TabIndex = 69;
-            R4PeakX.Text = "label244";
-            R4PeakX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label245
-            // 
-            label245.BackColor = Color.LightGray;
-            label245.Location = new Point(616, 519);
-            label245.Name = "label245";
-            label245.Size = new Size(85, 35);
-            label245.TabIndex = 68;
-            label245.Text = "Peak Y";
-            label245.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R4Height
-            // 
-            R4Height.BackColor = Color.Gray;
-            R4Height.Location = new Point(525, 626);
-            R4Height.Name = "R4Height";
-            R4Height.Size = new Size(85, 37);
-            R4Height.TabIndex = 67;
-            R4Height.Text = "label246";
-            R4Height.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label247
-            // 
-            label247.BackColor = Color.LightGray;
-            label247.Location = new Point(525, 589);
-            label247.Name = "label247";
-            label247.Size = new Size(85, 37);
-            label247.TabIndex = 66;
-            label247.Text = "Area";
-            label247.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R4AreaY
-            // 
-            R4AreaY.BackColor = Color.Gray;
-            R4AreaY.Location = new Point(525, 554);
-            R4AreaY.Name = "R4AreaY";
-            R4AreaY.Size = new Size(85, 35);
-            R4AreaY.TabIndex = 65;
-            R4AreaY.Text = "label248";
-            R4AreaY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label249
-            // 
-            label249.BackColor = Color.LightGray;
-            label249.Location = new Point(525, 519);
-            label249.Name = "label249";
-            label249.Size = new Size(85, 35);
-            label249.TabIndex = 64;
-            label249.Text = "Peak X";
-            label249.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R4Width
-            // 
-            R4Width.BackColor = Color.Gray;
-            R4Width.Location = new Point(434, 626);
-            R4Width.Name = "R4Width";
-            R4Width.Size = new Size(85, 37);
-            R4Width.TabIndex = 63;
-            R4Width.Text = "label250";
-            R4Width.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label251
-            // 
-            label251.BackColor = Color.LightGray;
-            label251.Location = new Point(434, 589);
-            label251.Name = "label251";
-            label251.Size = new Size(85, 37);
-            label251.TabIndex = 62;
-            label251.Text = "Height";
-            label251.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R4AreaX
-            // 
-            R4AreaX.BackColor = Color.Gray;
-            R4AreaX.Location = new Point(434, 554);
-            R4AreaX.Name = "R4AreaX";
-            R4AreaX.Size = new Size(85, 35);
-            R4AreaX.TabIndex = 61;
-            R4AreaX.Text = "label252";
-            R4AreaX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label253
-            // 
-            label253.BackColor = Color.LightGray;
-            label253.Location = new Point(434, 519);
-            label253.Name = "label253";
-            label253.Size = new Size(85, 35);
-            label253.TabIndex = 60;
-            label253.Text = "홈 번호";
-            label253.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R3Angle
-            // 
-            R3Angle.BackColor = Color.Gray;
-            R3Angle.Location = new Point(707, 477);
-            R3Angle.Name = "R3Angle";
-            R3Angle.Size = new Size(85, 37);
-            R3Angle.TabIndex = 59;
-            R3Angle.Text = "label254";
-            R3Angle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label255
-            // 
-            label255.BackColor = Color.LightGray;
-            label255.Location = new Point(707, 440);
-            label255.Name = "label255";
-            label255.Size = new Size(85, 37);
-            label255.TabIndex = 58;
-            label255.Text = "PatternY";
-            label255.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R3PeakY
-            // 
-            R3PeakY.BackColor = Color.Gray;
-            R3PeakY.Location = new Point(707, 405);
-            R3PeakY.Name = "R3PeakY";
-            R3PeakY.Size = new Size(85, 35);
-            R3PeakY.TabIndex = 57;
-            R3PeakY.Text = "label256";
-            R3PeakY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label257
-            // 
-            label257.BackColor = Color.LightGray;
-            label257.Location = new Point(707, 370);
-            label257.Name = "label257";
-            label257.Size = new Size(85, 35);
-            label257.TabIndex = 56;
-            label257.Text = "Width";
-            label257.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R3Area
-            // 
-            R3Area.BackColor = Color.Gray;
-            R3Area.Location = new Point(616, 477);
-            R3Area.Name = "R3Area";
-            R3Area.Size = new Size(85, 37);
-            R3Area.TabIndex = 55;
-            R3Area.Text = "label258";
-            R3Area.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label259
-            // 
-            label259.BackColor = Color.LightGray;
-            label259.Location = new Point(616, 440);
-            label259.Name = "label259";
-            label259.Size = new Size(85, 37);
-            label259.TabIndex = 54;
-            label259.Text = "PatternX";
-            label259.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R3PeakX
-            // 
-            R3PeakX.BackColor = Color.Gray;
-            R3PeakX.Location = new Point(616, 405);
-            R3PeakX.Name = "R3PeakX";
-            R3PeakX.Size = new Size(85, 35);
-            R3PeakX.TabIndex = 53;
-            R3PeakX.Text = "label260";
-            R3PeakX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label261
-            // 
-            label261.BackColor = Color.LightGray;
-            label261.Location = new Point(616, 370);
-            label261.Name = "label261";
-            label261.Size = new Size(85, 35);
-            label261.TabIndex = 52;
-            label261.Text = "Peak Y";
-            label261.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R3Height
-            // 
-            R3Height.BackColor = Color.Gray;
-            R3Height.Location = new Point(525, 477);
-            R3Height.Name = "R3Height";
-            R3Height.Size = new Size(85, 37);
-            R3Height.TabIndex = 51;
-            R3Height.Text = "label262";
-            R3Height.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label263
-            // 
-            label263.BackColor = Color.LightGray;
-            label263.Location = new Point(525, 440);
-            label263.Name = "label263";
-            label263.Size = new Size(85, 37);
-            label263.TabIndex = 50;
-            label263.Text = "Area";
-            label263.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R3AreaY
-            // 
-            R3AreaY.BackColor = Color.Gray;
-            R3AreaY.Location = new Point(525, 405);
-            R3AreaY.Name = "R3AreaY";
-            R3AreaY.Size = new Size(85, 35);
-            R3AreaY.TabIndex = 49;
-            R3AreaY.Text = "label264";
-            R3AreaY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label265
-            // 
-            label265.BackColor = Color.LightGray;
-            label265.Location = new Point(525, 370);
-            label265.Name = "label265";
-            label265.Size = new Size(85, 35);
-            label265.TabIndex = 48;
-            label265.Text = "Peak X";
-            label265.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R3Width
-            // 
-            R3Width.BackColor = Color.Gray;
-            R3Width.Location = new Point(434, 477);
-            R3Width.Name = "R3Width";
-            R3Width.Size = new Size(85, 37);
-            R3Width.TabIndex = 47;
-            R3Width.Text = "label266";
-            R3Width.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label267
-            // 
-            label267.BackColor = Color.LightGray;
-            label267.Location = new Point(434, 440);
-            label267.Name = "label267";
-            label267.Size = new Size(85, 37);
-            label267.TabIndex = 46;
-            label267.Text = "Height";
-            label267.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R3AreaX
-            // 
-            R3AreaX.BackColor = Color.Gray;
-            R3AreaX.Location = new Point(434, 405);
-            R3AreaX.Name = "R3AreaX";
-            R3AreaX.Size = new Size(85, 35);
-            R3AreaX.TabIndex = 45;
-            R3AreaX.Text = "label268";
-            R3AreaX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label269
-            // 
-            label269.BackColor = Color.LightGray;
-            label269.Location = new Point(434, 370);
-            label269.Name = "label269";
-            label269.Size = new Size(85, 35);
-            label269.TabIndex = 44;
-            label269.Text = "홈 번호";
-            label269.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R2Angle
-            // 
-            R2Angle.BackColor = Color.Gray;
-            R2Angle.Location = new Point(707, 328);
-            R2Angle.Name = "R2Angle";
-            R2Angle.Size = new Size(85, 37);
-            R2Angle.TabIndex = 43;
-            R2Angle.Text = "label270";
-            R2Angle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label271
-            // 
-            label271.BackColor = Color.LightGray;
-            label271.Location = new Point(707, 291);
-            label271.Name = "label271";
-            label271.Size = new Size(85, 37);
-            label271.TabIndex = 42;
-            label271.Text = "PatternY";
-            label271.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R2PeakY
-            // 
-            R2PeakY.BackColor = Color.Gray;
-            R2PeakY.Location = new Point(707, 256);
-            R2PeakY.Name = "R2PeakY";
-            R2PeakY.Size = new Size(85, 35);
-            R2PeakY.TabIndex = 41;
-            R2PeakY.Text = "label272";
-            R2PeakY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label273
-            // 
-            label273.BackColor = Color.LightGray;
-            label273.Location = new Point(707, 221);
-            label273.Name = "label273";
-            label273.Size = new Size(85, 35);
-            label273.TabIndex = 40;
-            label273.Text = "Width";
-            label273.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R2Area
-            // 
-            R2Area.BackColor = Color.Gray;
-            R2Area.Location = new Point(616, 328);
-            R2Area.Name = "R2Area";
-            R2Area.Size = new Size(85, 37);
-            R2Area.TabIndex = 39;
-            R2Area.Text = "label274";
-            R2Area.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label275
-            // 
-            label275.BackColor = Color.LightGray;
-            label275.Location = new Point(616, 291);
-            label275.Name = "label275";
-            label275.Size = new Size(85, 37);
-            label275.TabIndex = 38;
-            label275.Text = "PatternX";
-            label275.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R2PeakX
-            // 
-            R2PeakX.BackColor = Color.Gray;
-            R2PeakX.Location = new Point(616, 256);
-            R2PeakX.Name = "R2PeakX";
-            R2PeakX.Size = new Size(85, 35);
-            R2PeakX.TabIndex = 37;
-            R2PeakX.Text = "label276";
-            R2PeakX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label277
-            // 
-            label277.BackColor = Color.LightGray;
-            label277.Location = new Point(616, 221);
-            label277.Name = "label277";
-            label277.Size = new Size(85, 35);
-            label277.TabIndex = 36;
-            label277.Text = "Peak Y";
-            label277.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R2Height
-            // 
-            R2Height.BackColor = Color.Gray;
-            R2Height.Location = new Point(525, 328);
-            R2Height.Name = "R2Height";
-            R2Height.Size = new Size(85, 37);
-            R2Height.TabIndex = 35;
-            R2Height.Text = "label278";
-            R2Height.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label279
-            // 
-            label279.BackColor = Color.LightGray;
-            label279.Location = new Point(525, 291);
-            label279.Name = "label279";
-            label279.Size = new Size(85, 37);
-            label279.TabIndex = 34;
-            label279.Text = "Area";
-            label279.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R2AreaY
-            // 
-            R2AreaY.BackColor = Color.Gray;
-            R2AreaY.Location = new Point(525, 256);
-            R2AreaY.Name = "R2AreaY";
-            R2AreaY.Size = new Size(85, 35);
-            R2AreaY.TabIndex = 33;
-            R2AreaY.Text = "label280";
-            R2AreaY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label281
-            // 
-            label281.BackColor = Color.LightGray;
-            label281.Location = new Point(525, 221);
-            label281.Name = "label281";
-            label281.Size = new Size(85, 35);
-            label281.TabIndex = 32;
-            label281.Text = "Peak X";
-            label281.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R2Width
-            // 
-            R2Width.BackColor = Color.Gray;
-            R2Width.Location = new Point(434, 328);
-            R2Width.Name = "R2Width";
-            R2Width.Size = new Size(85, 37);
-            R2Width.TabIndex = 31;
-            R2Width.Text = "label282";
-            R2Width.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label283
-            // 
-            label283.BackColor = Color.LightGray;
-            label283.Location = new Point(434, 291);
-            label283.Name = "label283";
-            label283.Size = new Size(85, 37);
-            label283.TabIndex = 30;
-            label283.Text = "Height";
-            label283.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R2AreaX
-            // 
-            R2AreaX.BackColor = Color.Gray;
-            R2AreaX.Location = new Point(434, 256);
-            R2AreaX.Name = "R2AreaX";
-            R2AreaX.Size = new Size(85, 35);
-            R2AreaX.TabIndex = 29;
-            R2AreaX.Text = "label284";
-            R2AreaX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label285
-            // 
-            label285.BackColor = Color.LightGray;
-            label285.Location = new Point(434, 221);
-            label285.Name = "label285";
-            label285.Size = new Size(85, 35);
-            label285.TabIndex = 28;
-            label285.Text = "홈 번호";
-            label285.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R1Angle
-            // 
-            R1Angle.BackColor = Color.Gray;
-            R1Angle.Location = new Point(707, 179);
-            R1Angle.Name = "R1Angle";
-            R1Angle.Size = new Size(85, 37);
-            R1Angle.TabIndex = 27;
-            R1Angle.Text = "label286";
-            R1Angle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label287
-            // 
-            label287.BackColor = Color.LightGray;
-            label287.Location = new Point(707, 142);
-            label287.Name = "label287";
-            label287.Size = new Size(85, 37);
-            label287.TabIndex = 26;
-            label287.Text = "PatternY";
-            label287.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R1PeakY
-            // 
-            R1PeakY.BackColor = Color.Gray;
-            R1PeakY.Location = new Point(707, 107);
-            R1PeakY.Name = "R1PeakY";
-            R1PeakY.Size = new Size(85, 35);
-            R1PeakY.TabIndex = 25;
-            R1PeakY.Text = "label288";
-            R1PeakY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label289
-            // 
-            label289.BackColor = Color.LightGray;
-            label289.Location = new Point(707, 72);
-            label289.Name = "label289";
-            label289.Size = new Size(85, 35);
-            label289.TabIndex = 24;
-            label289.Text = "Width";
-            label289.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R1Area
-            // 
-            R1Area.BackColor = Color.Gray;
-            R1Area.Location = new Point(616, 179);
-            R1Area.Name = "R1Area";
-            R1Area.Size = new Size(85, 37);
-            R1Area.TabIndex = 23;
-            R1Area.Text = "label290";
-            R1Area.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label291
-            // 
-            label291.BackColor = Color.LightGray;
-            label291.Location = new Point(616, 142);
-            label291.Name = "label291";
-            label291.Size = new Size(85, 37);
-            label291.TabIndex = 22;
-            label291.Text = "PatternX";
-            label291.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R1PeakX
-            // 
-            R1PeakX.BackColor = Color.Gray;
-            R1PeakX.Location = new Point(616, 107);
-            R1PeakX.Name = "R1PeakX";
-            R1PeakX.Size = new Size(85, 35);
-            R1PeakX.TabIndex = 21;
-            R1PeakX.Text = "label292";
-            R1PeakX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label293
-            // 
-            label293.BackColor = Color.LightGray;
-            label293.Location = new Point(616, 72);
-            label293.Name = "label293";
-            label293.Size = new Size(85, 35);
-            label293.TabIndex = 20;
-            label293.Text = "Peak Y";
-            label293.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R1Height
-            // 
-            R1Height.BackColor = Color.Gray;
-            R1Height.Location = new Point(525, 179);
-            R1Height.Name = "R1Height";
-            R1Height.Size = new Size(85, 37);
-            R1Height.TabIndex = 19;
-            R1Height.Text = "label294";
-            R1Height.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label295
-            // 
-            label295.BackColor = Color.LightGray;
-            label295.Location = new Point(525, 142);
-            label295.Name = "label295";
-            label295.Size = new Size(85, 37);
-            label295.TabIndex = 18;
-            label295.Text = "Area";
-            label295.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R1AreaY
-            // 
-            R1AreaY.BackColor = Color.Gray;
-            R1AreaY.Location = new Point(525, 107);
-            R1AreaY.Name = "R1AreaY";
-            R1AreaY.Size = new Size(85, 35);
-            R1AreaY.TabIndex = 17;
-            R1AreaY.Text = "label296";
-            R1AreaY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label297
-            // 
-            label297.BackColor = Color.LightGray;
-            label297.Location = new Point(525, 72);
-            label297.Name = "label297";
-            label297.Size = new Size(85, 35);
-            label297.TabIndex = 16;
-            label297.Text = "Peak X";
-            label297.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R1Width
-            // 
-            R1Width.BackColor = Color.Gray;
-            R1Width.Location = new Point(434, 179);
-            R1Width.Name = "R1Width";
-            R1Width.Size = new Size(85, 37);
-            R1Width.TabIndex = 15;
-            R1Width.Text = "label298";
-            R1Width.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label299
-            // 
-            label299.BackColor = Color.LightGray;
-            label299.Location = new Point(434, 142);
-            label299.Name = "label299";
-            label299.Size = new Size(85, 37);
-            label299.TabIndex = 14;
-            label299.Text = "Height";
-            label299.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R1AreaX
-            // 
-            R1AreaX.BackColor = Color.Gray;
-            R1AreaX.Location = new Point(434, 107);
-            R1AreaX.Name = "R1AreaX";
-            R1AreaX.Size = new Size(85, 35);
-            R1AreaX.TabIndex = 13;
-            R1AreaX.Text = "label300";
-            R1AreaX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label301
-            // 
-            label301.BackColor = Color.LightGray;
-            label301.Location = new Point(434, 72);
-            label301.Name = "label301";
-            label301.Size = new Size(85, 35);
-            label301.TabIndex = 12;
-            label301.Text = "홈 번호";
-            label301.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R1picturebox
-            // 
-            R1picturebox.BackColor = Color.White;
-            R1picturebox.Location = new Point(155, 25);
-            R1picturebox.Name = "R1picturebox";
-            R1picturebox.Size = new Size(211, 194);
-            R1picturebox.TabIndex = 7;
-            R1picturebox.TabStop = false;
-            // 
-            // R5
-            // 
-            R5.BorderStyle = BorderStyle.FixedSingle;
-            R5.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            R5.ForeColor = Color.White;
-            R5.Location = new Point(1, 669);
-            R5.Name = "R5";
-            R5.Size = new Size(70, 143);
-            R5.TabIndex = 6;
-            R5.Text = "5";
-            R5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R4
-            // 
-            R4.BorderStyle = BorderStyle.FixedSingle;
-            R4.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            R4.ForeColor = Color.White;
-            R4.Location = new Point(1, 519);
-            R4.Name = "R4";
-            R4.Size = new Size(70, 143);
-            R4.TabIndex = 5;
-            R4.Text = "4";
-            R4.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R3
-            // 
-            R3.BorderStyle = BorderStyle.FixedSingle;
-            R3.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            R3.ForeColor = Color.White;
-            R3.Location = new Point(1, 369);
-            R3.Name = "R3";
-            R3.Size = new Size(70, 143);
-            R3.TabIndex = 4;
-            R3.Text = "3";
-            R3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R2
-            // 
-            R2.BorderStyle = BorderStyle.FixedSingle;
-            R2.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            R2.ForeColor = Color.White;
-            R2.Location = new Point(1, 220);
-            R2.Name = "R2";
-            R2.Size = new Size(70, 143);
-            R2.TabIndex = 3;
-            R2.Text = "2";
-            R2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R1
-            // 
-            R1.BorderStyle = BorderStyle.FixedSingle;
-            R1.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            R1.ForeColor = Color.White;
-            R1.Location = new Point(1, 72);
-            R1.Name = "R1";
-            R1.Size = new Size(70, 143);
-            R1.TabIndex = 2;
-            R1.Text = "1";
-            R1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label308
-            // 
-            label308.BorderStyle = BorderStyle.FixedSingle;
-            label308.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label308.ForeColor = Color.White;
-            label308.Location = new Point(1, 4);
-            label308.Name = "label308";
-            label308.Size = new Size(70, 64);
-            label308.TabIndex = 0;
-            label308.Text = "NO";
-            label308.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // R2picturebox
-            // 
-            R2picturebox.BackColor = Color.White;
-            R2picturebox.Location = new Point(155, 174);
-            R2picturebox.Name = "R2picturebox";
-            R2picturebox.Size = new Size(211, 194);
-            R2picturebox.TabIndex = 8;
-            R2picturebox.TabStop = false;
-            // 
-            // R3picturebox
-            // 
-            R3picturebox.BackColor = Color.White;
-            R3picturebox.Location = new Point(155, 323);
-            R3picturebox.Name = "R3picturebox";
-            R3picturebox.Size = new Size(211, 194);
-            R3picturebox.TabIndex = 9;
-            R3picturebox.TabStop = false;
-            // 
-            // R4picturebox
-            // 
-            R4picturebox.BackColor = Color.White;
-            R4picturebox.Location = new Point(155, 472);
-            R4picturebox.Name = "R4picturebox";
-            R4picturebox.Size = new Size(211, 194);
-            R4picturebox.TabIndex = 10;
-            R4picturebox.TabStop = false;
-            // 
-            // R5picturebox
-            // 
-            R5picturebox.BackColor = Color.White;
-            R5picturebox.Location = new Point(155, 622);
-            R5picturebox.Name = "R5picturebox";
-            R5picturebox.Size = new Size(211, 194);
-            R5picturebox.TabIndex = 11;
-            R5picturebox.TabStop = false;
-            // 
-            // FrontDisplayPanel
-            // 
-            FrontDisplayPanel.BorderStyle = BorderStyle.FixedSingle;
-            FrontDisplayPanel.Controls.Add(label31);
-            FrontDisplayPanel.Controls.Add(F5Angle);
-            FrontDisplayPanel.Controls.Add(label207);
-            FrontDisplayPanel.Controls.Add(F5PeakY);
-            FrontDisplayPanel.Controls.Add(label209);
-            FrontDisplayPanel.Controls.Add(F5Area);
-            FrontDisplayPanel.Controls.Add(label211);
-            FrontDisplayPanel.Controls.Add(F5PeakX);
-            FrontDisplayPanel.Controls.Add(label213);
-            FrontDisplayPanel.Controls.Add(F5Height);
-            FrontDisplayPanel.Controls.Add(label215);
-            FrontDisplayPanel.Controls.Add(F5AreaY);
-            FrontDisplayPanel.Controls.Add(label217);
-            FrontDisplayPanel.Controls.Add(F5Width);
-            FrontDisplayPanel.Controls.Add(label219);
-            FrontDisplayPanel.Controls.Add(F5AreaX);
-            FrontDisplayPanel.Controls.Add(label221);
-            FrontDisplayPanel.Controls.Add(F4Angle);
-            FrontDisplayPanel.Controls.Add(label191);
-            FrontDisplayPanel.Controls.Add(F4PeakY);
-            FrontDisplayPanel.Controls.Add(label193);
-            FrontDisplayPanel.Controls.Add(F4Area);
-            FrontDisplayPanel.Controls.Add(label195);
-            FrontDisplayPanel.Controls.Add(F4PeakX);
-            FrontDisplayPanel.Controls.Add(label197);
-            FrontDisplayPanel.Controls.Add(F4Height);
-            FrontDisplayPanel.Controls.Add(label199);
-            FrontDisplayPanel.Controls.Add(F4AreaY);
-            FrontDisplayPanel.Controls.Add(label201);
-            FrontDisplayPanel.Controls.Add(F4Width);
-            FrontDisplayPanel.Controls.Add(label203);
-            FrontDisplayPanel.Controls.Add(F4AreaX);
-            FrontDisplayPanel.Controls.Add(label205);
-            FrontDisplayPanel.Controls.Add(F3Angle);
-            FrontDisplayPanel.Controls.Add(label175);
-            FrontDisplayPanel.Controls.Add(F3PeakY);
-            FrontDisplayPanel.Controls.Add(label177);
-            FrontDisplayPanel.Controls.Add(F3Area);
-            FrontDisplayPanel.Controls.Add(label179);
-            FrontDisplayPanel.Controls.Add(F3PeakX);
-            FrontDisplayPanel.Controls.Add(label181);
-            FrontDisplayPanel.Controls.Add(F3Height);
-            FrontDisplayPanel.Controls.Add(label183);
-            FrontDisplayPanel.Controls.Add(F3AreaY);
-            FrontDisplayPanel.Controls.Add(label185);
-            FrontDisplayPanel.Controls.Add(F3Width);
-            FrontDisplayPanel.Controls.Add(label187);
-            FrontDisplayPanel.Controls.Add(F3AreaX);
-            FrontDisplayPanel.Controls.Add(label189);
-            FrontDisplayPanel.Controls.Add(F2Angle);
-            FrontDisplayPanel.Controls.Add(label119);
-            FrontDisplayPanel.Controls.Add(F2PeakY);
-            FrontDisplayPanel.Controls.Add(label132);
-            FrontDisplayPanel.Controls.Add(F2Area);
-            FrontDisplayPanel.Controls.Add(label148);
-            FrontDisplayPanel.Controls.Add(F2PeakX);
-            FrontDisplayPanel.Controls.Add(label165);
-            FrontDisplayPanel.Controls.Add(F2Height);
-            FrontDisplayPanel.Controls.Add(label167);
-            FrontDisplayPanel.Controls.Add(F2AreaY);
-            FrontDisplayPanel.Controls.Add(label169);
-            FrontDisplayPanel.Controls.Add(F2Width);
-            FrontDisplayPanel.Controls.Add(label171);
-            FrontDisplayPanel.Controls.Add(F2AreaX);
-            FrontDisplayPanel.Controls.Add(label173);
-            FrontDisplayPanel.Controls.Add(F1Angle);
-            FrontDisplayPanel.Controls.Add(label111);
-            FrontDisplayPanel.Controls.Add(F1PeakY);
-            FrontDisplayPanel.Controls.Add(label115);
-            FrontDisplayPanel.Controls.Add(F1Area);
-            FrontDisplayPanel.Controls.Add(label99);
-            FrontDisplayPanel.Controls.Add(F1PeakX);
-            FrontDisplayPanel.Controls.Add(label105);
-            FrontDisplayPanel.Controls.Add(F1Height);
-            FrontDisplayPanel.Controls.Add(label60);
-            FrontDisplayPanel.Controls.Add(F1AreaY);
-            FrontDisplayPanel.Controls.Add(label68);
-            FrontDisplayPanel.Controls.Add(F1Width);
-            FrontDisplayPanel.Controls.Add(label55);
-            FrontDisplayPanel.Controls.Add(F1AreaX);
-            FrontDisplayPanel.Controls.Add(label50);
-            FrontDisplayPanel.Controls.Add(F1picturebox);
-            FrontDisplayPanel.Controls.Add(F5);
-            FrontDisplayPanel.Controls.Add(F4);
-            FrontDisplayPanel.Controls.Add(F3);
-            FrontDisplayPanel.Controls.Add(F2);
-            FrontDisplayPanel.Controls.Add(F1);
-            FrontDisplayPanel.Controls.Add(label30);
-            FrontDisplayPanel.Controls.Add(F2picturebox);
-            FrontDisplayPanel.Controls.Add(F3picturebox);
-            FrontDisplayPanel.Controls.Add(F4picturebox);
-            FrontDisplayPanel.Controls.Add(F5picturebox);
-            FrontDisplayPanel.Location = new Point(21, 79);
-            FrontDisplayPanel.Name = "FrontDisplayPanel";
-            FrontDisplayPanel.Size = new Size(799, 821);
-            FrontDisplayPanel.TabIndex = 11;
-            FrontDisplayPanel.Visible = false;
-            // 
-            // label31
-            // 
-            label31.BorderStyle = BorderStyle.FixedSingle;
-            label31.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label31.ForeColor = Color.White;
-            label31.Location = new Point(73, 4);
-            label31.Name = "label31";
-            label31.Size = new Size(721, 64);
-            label31.TabIndex = 1;
-            label31.Text = "Acceleration";
-            label31.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F5Angle
-            // 
-            F5Angle.BackColor = Color.Gray;
-            F5Angle.Location = new Point(706, 776);
-            F5Angle.Name = "F5Angle";
-            F5Angle.Size = new Size(85, 37);
-            F5Angle.TabIndex = 91;
-            F5Angle.Text = "label206";
-            F5Angle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label207
-            // 
-            label207.BackColor = Color.LightGray;
-            label207.Location = new Point(706, 739);
-            label207.Name = "label207";
-            label207.Size = new Size(85, 37);
-            label207.TabIndex = 90;
-            label207.Text = "PatternY";
-            label207.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F5PeakY
-            // 
-            F5PeakY.BackColor = Color.Gray;
-            F5PeakY.Location = new Point(706, 704);
-            F5PeakY.Name = "F5PeakY";
-            F5PeakY.Size = new Size(85, 35);
-            F5PeakY.TabIndex = 89;
-            F5PeakY.Text = "label208";
-            F5PeakY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label209
-            // 
-            label209.BackColor = Color.LightGray;
-            label209.Location = new Point(706, 669);
-            label209.Name = "label209";
-            label209.Size = new Size(85, 35);
-            label209.TabIndex = 88;
-            label209.Text = "Width";
-            label209.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F5Area
-            // 
-            F5Area.BackColor = Color.Gray;
-            F5Area.Location = new Point(615, 776);
-            F5Area.Name = "F5Area";
-            F5Area.Size = new Size(85, 37);
-            F5Area.TabIndex = 87;
-            F5Area.Text = "label210";
-            F5Area.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label211
-            // 
-            label211.BackColor = Color.LightGray;
-            label211.Location = new Point(615, 739);
-            label211.Name = "label211";
-            label211.Size = new Size(85, 37);
-            label211.TabIndex = 86;
-            label211.Text = "PatternX";
-            label211.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F5PeakX
-            // 
-            F5PeakX.BackColor = Color.Gray;
-            F5PeakX.Location = new Point(615, 704);
-            F5PeakX.Name = "F5PeakX";
-            F5PeakX.Size = new Size(85, 35);
-            F5PeakX.TabIndex = 85;
-            F5PeakX.Text = "label212";
-            F5PeakX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label213
-            // 
-            label213.BackColor = Color.LightGray;
-            label213.Location = new Point(615, 669);
-            label213.Name = "label213";
-            label213.Size = new Size(85, 35);
-            label213.TabIndex = 84;
-            label213.Text = "Peak Y";
-            label213.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F5Height
-            // 
-            F5Height.BackColor = Color.Gray;
-            F5Height.Location = new Point(524, 776);
-            F5Height.Name = "F5Height";
-            F5Height.Size = new Size(85, 37);
-            F5Height.TabIndex = 83;
-            F5Height.Text = "label214";
-            F5Height.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label215
-            // 
-            label215.BackColor = Color.LightGray;
-            label215.Location = new Point(524, 739);
-            label215.Name = "label215";
-            label215.Size = new Size(85, 37);
-            label215.TabIndex = 82;
-            label215.Text = "Area";
-            label215.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F5AreaY
-            // 
-            F5AreaY.BackColor = Color.Gray;
-            F5AreaY.Location = new Point(524, 704);
-            F5AreaY.Name = "F5AreaY";
-            F5AreaY.Size = new Size(85, 35);
-            F5AreaY.TabIndex = 81;
-            F5AreaY.Text = "label216";
-            F5AreaY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label217
-            // 
-            label217.BackColor = Color.LightGray;
-            label217.Location = new Point(524, 669);
-            label217.Name = "label217";
-            label217.Size = new Size(85, 35);
-            label217.TabIndex = 80;
-            label217.Text = "Peak X";
-            label217.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F5Width
-            // 
-            F5Width.BackColor = Color.Gray;
-            F5Width.Location = new Point(433, 776);
-            F5Width.Name = "F5Width";
-            F5Width.Size = new Size(85, 37);
-            F5Width.TabIndex = 79;
-            F5Width.Text = "label218";
-            F5Width.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label219
-            // 
-            label219.BackColor = Color.LightGray;
-            label219.Location = new Point(433, 739);
-            label219.Name = "label219";
-            label219.Size = new Size(85, 37);
-            label219.TabIndex = 78;
-            label219.Text = "Height";
-            label219.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F5AreaX
-            // 
-            F5AreaX.BackColor = Color.Gray;
-            F5AreaX.Location = new Point(433, 704);
-            F5AreaX.Name = "F5AreaX";
-            F5AreaX.Size = new Size(85, 35);
-            F5AreaX.TabIndex = 77;
-            F5AreaX.Text = "label220";
-            F5AreaX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label221
-            // 
-            label221.BackColor = Color.LightGray;
-            label221.Location = new Point(433, 669);
-            label221.Name = "label221";
-            label221.Size = new Size(85, 35);
-            label221.TabIndex = 76;
-            label221.Text = "홈 번호";
-            label221.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F4Angle
-            // 
-            F4Angle.BackColor = Color.Gray;
-            F4Angle.Location = new Point(706, 626);
-            F4Angle.Name = "F4Angle";
-            F4Angle.Size = new Size(85, 37);
-            F4Angle.TabIndex = 75;
-            F4Angle.Text = "label190";
-            F4Angle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label191
-            // 
-            label191.BackColor = Color.LightGray;
-            label191.Location = new Point(706, 589);
-            label191.Name = "label191";
-            label191.Size = new Size(85, 37);
-            label191.TabIndex = 74;
-            label191.Text = "PatternY";
-            label191.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F4PeakY
-            // 
-            F4PeakY.BackColor = Color.Gray;
-            F4PeakY.Location = new Point(706, 554);
-            F4PeakY.Name = "F4PeakY";
-            F4PeakY.Size = new Size(85, 35);
-            F4PeakY.TabIndex = 73;
-            F4PeakY.Text = "label192";
-            F4PeakY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label193
-            // 
-            label193.BackColor = Color.LightGray;
-            label193.Location = new Point(706, 519);
-            label193.Name = "label193";
-            label193.Size = new Size(85, 35);
-            label193.TabIndex = 72;
-            label193.Text = "Width";
-            label193.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F4Area
-            // 
-            F4Area.BackColor = Color.Gray;
-            F4Area.Location = new Point(615, 626);
-            F4Area.Name = "F4Area";
-            F4Area.Size = new Size(85, 37);
-            F4Area.TabIndex = 71;
-            F4Area.Text = "label194";
-            F4Area.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label195
-            // 
-            label195.BackColor = Color.LightGray;
-            label195.Location = new Point(615, 589);
-            label195.Name = "label195";
-            label195.Size = new Size(85, 37);
-            label195.TabIndex = 70;
-            label195.Text = "PatternX";
-            label195.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F4PeakX
-            // 
-            F4PeakX.BackColor = Color.Gray;
-            F4PeakX.Location = new Point(615, 554);
-            F4PeakX.Name = "F4PeakX";
-            F4PeakX.Size = new Size(85, 35);
-            F4PeakX.TabIndex = 69;
-            F4PeakX.Text = "label196";
-            F4PeakX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label197
-            // 
-            label197.BackColor = Color.LightGray;
-            label197.Location = new Point(615, 519);
-            label197.Name = "label197";
-            label197.Size = new Size(85, 35);
-            label197.TabIndex = 68;
-            label197.Text = "Peak Y";
-            label197.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F4Height
-            // 
-            F4Height.BackColor = Color.Gray;
-            F4Height.Location = new Point(524, 626);
-            F4Height.Name = "F4Height";
-            F4Height.Size = new Size(85, 37);
-            F4Height.TabIndex = 67;
-            F4Height.Text = "label198";
-            F4Height.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label199
-            // 
-            label199.BackColor = Color.LightGray;
-            label199.Location = new Point(524, 589);
-            label199.Name = "label199";
-            label199.Size = new Size(85, 37);
-            label199.TabIndex = 66;
-            label199.Text = "Area";
-            label199.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F4AreaY
-            // 
-            F4AreaY.BackColor = Color.Gray;
-            F4AreaY.Location = new Point(524, 554);
-            F4AreaY.Name = "F4AreaY";
-            F4AreaY.Size = new Size(85, 35);
-            F4AreaY.TabIndex = 65;
-            F4AreaY.Text = "label200";
-            F4AreaY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label201
-            // 
-            label201.BackColor = Color.LightGray;
-            label201.Location = new Point(524, 519);
-            label201.Name = "label201";
-            label201.Size = new Size(85, 35);
-            label201.TabIndex = 64;
-            label201.Text = "Peak X";
-            label201.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F4Width
-            // 
-            F4Width.BackColor = Color.Gray;
-            F4Width.Location = new Point(433, 626);
-            F4Width.Name = "F4Width";
-            F4Width.Size = new Size(85, 37);
-            F4Width.TabIndex = 63;
-            F4Width.Text = "label202";
-            F4Width.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label203
-            // 
-            label203.BackColor = Color.LightGray;
-            label203.Location = new Point(433, 589);
-            label203.Name = "label203";
-            label203.Size = new Size(85, 37);
-            label203.TabIndex = 62;
-            label203.Text = "Height";
-            label203.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F4AreaX
-            // 
-            F4AreaX.BackColor = Color.Gray;
-            F4AreaX.Location = new Point(433, 554);
-            F4AreaX.Name = "F4AreaX";
-            F4AreaX.Size = new Size(85, 35);
-            F4AreaX.TabIndex = 61;
-            F4AreaX.Text = "label204";
-            F4AreaX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label205
-            // 
-            label205.BackColor = Color.LightGray;
-            label205.Location = new Point(433, 519);
-            label205.Name = "label205";
-            label205.Size = new Size(85, 35);
-            label205.TabIndex = 60;
-            label205.Text = "홈 번호";
-            label205.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F3Angle
-            // 
-            F3Angle.BackColor = Color.Gray;
-            F3Angle.Location = new Point(706, 477);
-            F3Angle.Name = "F3Angle";
-            F3Angle.Size = new Size(85, 37);
-            F3Angle.TabIndex = 59;
-            F3Angle.Text = "label174";
-            F3Angle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label175
-            // 
-            label175.BackColor = Color.LightGray;
-            label175.Location = new Point(706, 440);
-            label175.Name = "label175";
-            label175.Size = new Size(85, 37);
-            label175.TabIndex = 58;
-            label175.Text = "PatternY";
-            label175.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F3PeakY
-            // 
-            F3PeakY.BackColor = Color.Gray;
-            F3PeakY.Location = new Point(706, 405);
-            F3PeakY.Name = "F3PeakY";
-            F3PeakY.Size = new Size(85, 35);
-            F3PeakY.TabIndex = 57;
-            F3PeakY.Text = "label176";
-            F3PeakY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label177
-            // 
-            label177.BackColor = Color.LightGray;
-            label177.Location = new Point(706, 370);
-            label177.Name = "label177";
-            label177.Size = new Size(85, 35);
-            label177.TabIndex = 56;
-            label177.Text = "Width";
-            label177.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F3Area
-            // 
-            F3Area.BackColor = Color.Gray;
-            F3Area.Location = new Point(615, 477);
-            F3Area.Name = "F3Area";
-            F3Area.Size = new Size(85, 37);
-            F3Area.TabIndex = 55;
-            F3Area.Text = "label178";
-            F3Area.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label179
-            // 
-            label179.BackColor = Color.LightGray;
-            label179.Location = new Point(615, 440);
-            label179.Name = "label179";
-            label179.Size = new Size(85, 37);
-            label179.TabIndex = 54;
-            label179.Text = "PatternX";
-            label179.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F3PeakX
-            // 
-            F3PeakX.BackColor = Color.Gray;
-            F3PeakX.Location = new Point(615, 405);
-            F3PeakX.Name = "F3PeakX";
-            F3PeakX.Size = new Size(85, 35);
-            F3PeakX.TabIndex = 53;
-            F3PeakX.Text = "label180";
-            F3PeakX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label181
-            // 
-            label181.BackColor = Color.LightGray;
-            label181.Location = new Point(615, 370);
-            label181.Name = "label181";
-            label181.Size = new Size(85, 35);
-            label181.TabIndex = 52;
-            label181.Text = "Peak Y";
-            label181.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F3Height
-            // 
-            F3Height.BackColor = Color.Gray;
-            F3Height.Location = new Point(524, 477);
-            F3Height.Name = "F3Height";
-            F3Height.Size = new Size(85, 37);
-            F3Height.TabIndex = 51;
-            F3Height.Text = "label182";
-            F3Height.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label183
-            // 
-            label183.BackColor = Color.LightGray;
-            label183.Location = new Point(524, 440);
-            label183.Name = "label183";
-            label183.Size = new Size(85, 37);
-            label183.TabIndex = 50;
-            label183.Text = "Area";
-            label183.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F3AreaY
-            // 
-            F3AreaY.BackColor = Color.Gray;
-            F3AreaY.Location = new Point(524, 405);
-            F3AreaY.Name = "F3AreaY";
-            F3AreaY.Size = new Size(85, 35);
-            F3AreaY.TabIndex = 49;
-            F3AreaY.Text = "label184";
-            F3AreaY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label185
-            // 
-            label185.BackColor = Color.LightGray;
-            label185.Location = new Point(524, 370);
-            label185.Name = "label185";
-            label185.Size = new Size(85, 35);
-            label185.TabIndex = 48;
-            label185.Text = "Peak X";
-            label185.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F3Width
-            // 
-            F3Width.BackColor = Color.Gray;
-            F3Width.Location = new Point(433, 477);
-            F3Width.Name = "F3Width";
-            F3Width.Size = new Size(85, 37);
-            F3Width.TabIndex = 47;
-            F3Width.Text = "label186";
-            F3Width.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label187
-            // 
-            label187.BackColor = Color.LightGray;
-            label187.Location = new Point(433, 440);
-            label187.Name = "label187";
-            label187.Size = new Size(85, 37);
-            label187.TabIndex = 46;
-            label187.Text = "Height";
-            label187.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F3AreaX
-            // 
-            F3AreaX.BackColor = Color.Gray;
-            F3AreaX.Location = new Point(433, 405);
-            F3AreaX.Name = "F3AreaX";
-            F3AreaX.Size = new Size(85, 35);
-            F3AreaX.TabIndex = 45;
-            F3AreaX.Text = "label188";
-            F3AreaX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label189
-            // 
-            label189.BackColor = Color.LightGray;
-            label189.Location = new Point(433, 370);
-            label189.Name = "label189";
-            label189.Size = new Size(85, 35);
-            label189.TabIndex = 44;
-            label189.Text = "홈 번호";
-            label189.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F2Angle
-            // 
-            F2Angle.BackColor = Color.Gray;
-            F2Angle.Location = new Point(706, 328);
-            F2Angle.Name = "F2Angle";
-            F2Angle.Size = new Size(85, 37);
-            F2Angle.TabIndex = 43;
-            F2Angle.Text = "label116";
-            F2Angle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label119
-            // 
-            label119.BackColor = Color.LightGray;
-            label119.Location = new Point(706, 291);
-            label119.Name = "label119";
-            label119.Size = new Size(85, 37);
-            label119.TabIndex = 42;
-            label119.Text = "PatternY";
-            label119.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F2PeakY
-            // 
-            F2PeakY.BackColor = Color.Gray;
-            F2PeakY.Location = new Point(706, 256);
-            F2PeakY.Name = "F2PeakY";
-            F2PeakY.Size = new Size(85, 35);
-            F2PeakY.TabIndex = 41;
-            F2PeakY.Text = "label128";
-            F2PeakY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label132
-            // 
-            label132.BackColor = Color.LightGray;
-            label132.Location = new Point(706, 221);
-            label132.Name = "label132";
-            label132.Size = new Size(85, 35);
-            label132.TabIndex = 40;
-            label132.Text = "Width";
-            label132.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F2Area
-            // 
-            F2Area.BackColor = Color.Gray;
-            F2Area.Location = new Point(615, 328);
-            F2Area.Name = "F2Area";
-            F2Area.Size = new Size(85, 37);
-            F2Area.TabIndex = 39;
-            F2Area.Text = "label133";
-            F2Area.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label148
-            // 
-            label148.BackColor = Color.LightGray;
-            label148.Location = new Point(615, 291);
-            label148.Name = "label148";
-            label148.Size = new Size(85, 37);
-            label148.TabIndex = 38;
-            label148.Text = "PatternX";
-            label148.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F2PeakX
-            // 
-            F2PeakX.BackColor = Color.Gray;
-            F2PeakX.Location = new Point(615, 256);
-            F2PeakX.Name = "F2PeakX";
-            F2PeakX.Size = new Size(85, 35);
-            F2PeakX.TabIndex = 37;
-            F2PeakX.Text = "label160";
-            F2PeakX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label165
-            // 
-            label165.BackColor = Color.LightGray;
-            label165.Location = new Point(615, 221);
-            label165.Name = "label165";
-            label165.Size = new Size(85, 35);
-            label165.TabIndex = 36;
-            label165.Text = "Peak Y";
-            label165.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F2Height
-            // 
-            F2Height.BackColor = Color.Gray;
-            F2Height.Location = new Point(524, 328);
-            F2Height.Name = "F2Height";
-            F2Height.Size = new Size(85, 37);
-            F2Height.TabIndex = 35;
-            F2Height.Text = "label166";
-            F2Height.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label167
-            // 
-            label167.BackColor = Color.LightGray;
-            label167.Location = new Point(524, 291);
-            label167.Name = "label167";
-            label167.Size = new Size(85, 37);
-            label167.TabIndex = 34;
-            label167.Text = "Area";
-            label167.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F2AreaY
-            // 
-            F2AreaY.BackColor = Color.Gray;
-            F2AreaY.Location = new Point(524, 256);
-            F2AreaY.Name = "F2AreaY";
-            F2AreaY.Size = new Size(85, 35);
-            F2AreaY.TabIndex = 33;
-            F2AreaY.Text = "label168";
-            F2AreaY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label169
-            // 
-            label169.BackColor = Color.LightGray;
-            label169.Location = new Point(524, 221);
-            label169.Name = "label169";
-            label169.Size = new Size(85, 35);
-            label169.TabIndex = 32;
-            label169.Text = "Peak X";
-            label169.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F2Width
-            // 
-            F2Width.BackColor = Color.Gray;
-            F2Width.Location = new Point(433, 328);
-            F2Width.Name = "F2Width";
-            F2Width.Size = new Size(85, 37);
-            F2Width.TabIndex = 31;
-            F2Width.Text = "label170";
-            F2Width.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label171
-            // 
-            label171.BackColor = Color.LightGray;
-            label171.Location = new Point(433, 291);
-            label171.Name = "label171";
-            label171.Size = new Size(85, 37);
-            label171.TabIndex = 30;
-            label171.Text = "Height";
-            label171.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F2AreaX
-            // 
-            F2AreaX.BackColor = Color.Gray;
-            F2AreaX.Location = new Point(433, 256);
-            F2AreaX.Name = "F2AreaX";
-            F2AreaX.Size = new Size(85, 35);
-            F2AreaX.TabIndex = 29;
-            F2AreaX.Text = "label172";
-            F2AreaX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label173
-            // 
-            label173.BackColor = Color.LightGray;
-            label173.Location = new Point(433, 221);
-            label173.Name = "label173";
-            label173.Size = new Size(85, 35);
-            label173.TabIndex = 28;
-            label173.Text = "홈 번호";
-            label173.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F1Angle
-            // 
-            F1Angle.BackColor = Color.Gray;
-            F1Angle.Location = new Point(706, 179);
-            F1Angle.Name = "F1Angle";
-            F1Angle.Size = new Size(85, 37);
-            F1Angle.TabIndex = 27;
-            F1Angle.Text = "label109";
-            F1Angle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label111
-            // 
-            label111.BackColor = Color.LightGray;
-            label111.Location = new Point(706, 142);
-            label111.Name = "label111";
-            label111.Size = new Size(85, 37);
-            label111.TabIndex = 26;
-            label111.Text = "PatternY";
-            label111.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F1PeakY
-            // 
-            F1PeakY.BackColor = Color.Gray;
-            F1PeakY.Location = new Point(706, 107);
-            F1PeakY.Name = "F1PeakY";
-            F1PeakY.Size = new Size(85, 35);
-            F1PeakY.TabIndex = 25;
-            F1PeakY.Text = "label112";
-            F1PeakY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label115
-            // 
-            label115.BackColor = Color.LightGray;
-            label115.Location = new Point(706, 72);
-            label115.Name = "label115";
-            label115.Size = new Size(85, 35);
-            label115.TabIndex = 24;
-            label115.Text = "Width";
-            label115.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F1Area
-            // 
-            F1Area.BackColor = Color.Gray;
-            F1Area.Location = new Point(615, 179);
-            F1Area.Name = "F1Area";
-            F1Area.Size = new Size(85, 37);
-            F1Area.TabIndex = 23;
-            F1Area.Text = "label69";
-            F1Area.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label99
-            // 
-            label99.BackColor = Color.LightGray;
-            label99.Location = new Point(615, 142);
-            label99.Name = "label99";
-            label99.Size = new Size(85, 37);
-            label99.TabIndex = 22;
-            label99.Text = "PatternX";
-            label99.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F1PeakX
-            // 
-            F1PeakX.BackColor = Color.Gray;
-            F1PeakX.Location = new Point(615, 107);
-            F1PeakX.Name = "F1PeakX";
-            F1PeakX.Size = new Size(85, 35);
-            F1PeakX.TabIndex = 21;
-            F1PeakX.Text = "label100";
-            F1PeakX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label105
-            // 
-            label105.BackColor = Color.LightGray;
-            label105.Location = new Point(615, 72);
-            label105.Name = "label105";
-            label105.Size = new Size(85, 35);
-            label105.TabIndex = 20;
-            label105.Text = "Peak Y";
-            label105.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F1Height
-            // 
-            F1Height.BackColor = Color.Gray;
-            F1Height.Location = new Point(524, 179);
-            F1Height.Name = "F1Height";
-            F1Height.Size = new Size(85, 37);
-            F1Height.TabIndex = 19;
-            F1Height.Text = "label59";
-            F1Height.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label60
-            // 
-            label60.BackColor = Color.LightGray;
-            label60.Location = new Point(524, 142);
-            label60.Name = "label60";
-            label60.Size = new Size(85, 37);
-            label60.TabIndex = 18;
-            label60.Text = "Area";
-            label60.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F1AreaY
-            // 
-            F1AreaY.BackColor = Color.Gray;
-            F1AreaY.Location = new Point(524, 107);
-            F1AreaY.Name = "F1AreaY";
-            F1AreaY.Size = new Size(85, 35);
-            F1AreaY.TabIndex = 17;
-            F1AreaY.Text = "label64";
-            F1AreaY.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label68
-            // 
-            label68.BackColor = Color.LightGray;
-            label68.Location = new Point(524, 72);
-            label68.Name = "label68";
-            label68.Size = new Size(85, 35);
-            label68.TabIndex = 16;
-            label68.Text = "Peak X";
-            label68.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F1Width
-            // 
-            F1Width.BackColor = Color.Gray;
-            F1Width.Location = new Point(433, 179);
-            F1Width.Name = "F1Width";
-            F1Width.Size = new Size(85, 37);
-            F1Width.TabIndex = 15;
-            F1Width.Text = "label58";
-            F1Width.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label55
-            // 
-            label55.BackColor = Color.LightGray;
-            label55.Location = new Point(433, 142);
-            label55.Name = "label55";
-            label55.Size = new Size(85, 37);
-            label55.TabIndex = 14;
-            label55.Text = "Height";
-            label55.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F1AreaX
-            // 
-            F1AreaX.BackColor = Color.Gray;
-            F1AreaX.Location = new Point(433, 107);
-            F1AreaX.Name = "F1AreaX";
-            F1AreaX.Size = new Size(85, 35);
-            F1AreaX.TabIndex = 13;
-            F1AreaX.Text = "label54";
-            F1AreaX.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label50
-            // 
-            label50.BackColor = Color.LightGray;
-            label50.Location = new Point(433, 72);
-            label50.Name = "label50";
-            label50.Size = new Size(85, 35);
-            label50.TabIndex = 12;
-            label50.Text = "홈 번호";
-            label50.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F1picturebox
-            // 
-            F1picturebox.BackColor = Color.White;
-            F1picturebox.Location = new Point(144, 21);
-            F1picturebox.Name = "F1picturebox";
-            F1picturebox.Size = new Size(211, 194);
-            F1picturebox.TabIndex = 7;
-            F1picturebox.TabStop = false;
-            // 
-            // F5
-            // 
-            F5.BorderStyle = BorderStyle.FixedSingle;
-            F5.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            F5.ForeColor = Color.White;
-            F5.Location = new Point(1, 669);
-            F5.Name = "F5";
-            F5.Size = new Size(70, 143);
-            F5.TabIndex = 6;
-            F5.Text = "5";
-            F5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F4
-            // 
-            F4.BorderStyle = BorderStyle.FixedSingle;
-            F4.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            F4.ForeColor = Color.White;
-            F4.Location = new Point(1, 519);
-            F4.Name = "F4";
-            F4.Size = new Size(70, 143);
-            F4.TabIndex = 5;
-            F4.Text = "4";
-            F4.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F3
-            // 
-            F3.BorderStyle = BorderStyle.FixedSingle;
-            F3.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            F3.ForeColor = Color.White;
-            F3.Location = new Point(1, 369);
-            F3.Name = "F3";
-            F3.Size = new Size(70, 143);
-            F3.TabIndex = 4;
-            F3.Text = "3";
-            F3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F2
-            // 
-            F2.BorderStyle = BorderStyle.FixedSingle;
-            F2.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            F2.ForeColor = Color.White;
-            F2.Location = new Point(1, 220);
-            F2.Name = "F2";
-            F2.Size = new Size(70, 143);
-            F2.TabIndex = 3;
-            F2.Text = "2";
-            F2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F1
-            // 
-            F1.BorderStyle = BorderStyle.FixedSingle;
-            F1.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            F1.ForeColor = Color.White;
-            F1.Location = new Point(1, 72);
-            F1.Name = "F1";
-            F1.Size = new Size(70, 143);
-            F1.TabIndex = 2;
-            F1.Text = "1";
-            F1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label30
-            // 
-            label30.BorderStyle = BorderStyle.FixedSingle;
-            label30.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label30.ForeColor = Color.White;
-            label30.Location = new Point(1, 4);
-            label30.Name = "label30";
-            label30.Size = new Size(70, 64);
-            label30.TabIndex = 0;
-            label30.Text = "NO";
-            label30.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // F2picturebox
-            // 
-            F2picturebox.BackColor = Color.White;
-            F2picturebox.Location = new Point(144, 179);
-            F2picturebox.Name = "F2picturebox";
-            F2picturebox.Size = new Size(211, 194);
-            F2picturebox.TabIndex = 8;
-            F2picturebox.TabStop = false;
-            // 
-            // F3picturebox
-            // 
-            F3picturebox.BackColor = Color.White;
-            F3picturebox.Location = new Point(144, 326);
-            F3picturebox.Name = "F3picturebox";
-            F3picturebox.Size = new Size(211, 194);
-            F3picturebox.TabIndex = 9;
-            F3picturebox.TabStop = false;
-            // 
-            // F4picturebox
-            // 
-            F4picturebox.BackColor = Color.White;
-            F4picturebox.Location = new Point(144, 475);
-            F4picturebox.Name = "F4picturebox";
-            F4picturebox.Size = new Size(211, 194);
-            F4picturebox.TabIndex = 10;
-            F4picturebox.TabStop = false;
-            // 
-            // F5picturebox
-            // 
-            F5picturebox.BackColor = Color.White;
-            F5picturebox.Location = new Point(144, 622);
-            F5picturebox.Name = "F5picturebox";
-            F5picturebox.Size = new Size(211, 194);
-            F5picturebox.TabIndex = 11;
-            F5picturebox.TabStop = false;
-            // 
-            // Img46to50Label
-            // 
-            Img46to50Label.AutoSize = true;
-            Img46to50Label.BackColor = Color.DimGray;
-            Img46to50Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            Img46to50Label.ForeColor = Color.White;
-            Img46to50Label.Location = new Point(341, 48);
-            Img46to50Label.Name = "Img46to50Label";
-            Img46to50Label.Size = new Size(74, 28);
-            Img46to50Label.TabIndex = 10;
-            Img46to50Label.Text = "46~50";
-            // 
-            // Img41to45Label
-            // 
-            Img41to45Label.AutoSize = true;
-            Img41to45Label.BackColor = Color.DimGray;
-            Img41to45Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            Img41to45Label.ForeColor = Color.White;
-            Img41to45Label.Location = new Point(261, 48);
-            Img41to45Label.Name = "Img41to45Label";
-            Img41to45Label.Size = new Size(74, 28);
-            Img41to45Label.TabIndex = 9;
-            Img41to45Label.Text = "41~45";
-            // 
-            // Img36to40Label
-            // 
-            Img36to40Label.AutoSize = true;
-            Img36to40Label.BackColor = Color.DimGray;
-            Img36to40Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            Img36to40Label.ForeColor = Color.White;
-            Img36to40Label.Location = new Point(181, 48);
-            Img36to40Label.Name = "Img36to40Label";
-            Img36to40Label.Size = new Size(74, 28);
-            Img36to40Label.TabIndex = 8;
-            Img36to40Label.Text = "36~40";
-            // 
-            // Img31to35Label
-            // 
-            Img31to35Label.AutoSize = true;
-            Img31to35Label.BackColor = Color.DimGray;
-            Img31to35Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            Img31to35Label.ForeColor = Color.White;
-            Img31to35Label.Location = new Point(101, 48);
-            Img31to35Label.Name = "Img31to35Label";
-            Img31to35Label.Size = new Size(74, 28);
-            Img31to35Label.TabIndex = 7;
-            Img31to35Label.Text = "31~35";
-            // 
-            // Img26to30Label
-            // 
-            Img26to30Label.AutoSize = true;
-            Img26to30Label.BackColor = Color.DimGray;
-            Img26to30Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            Img26to30Label.ForeColor = Color.White;
-            Img26to30Label.Location = new Point(21, 48);
-            Img26to30Label.Name = "Img26to30Label";
-            Img26to30Label.Size = new Size(74, 28);
-            Img26to30Label.TabIndex = 6;
-            Img26to30Label.Text = "26~30";
-            // 
-            // Img21to25Label
-            // 
-            Img21to25Label.AutoSize = true;
-            Img21to25Label.BackColor = Color.DimGray;
-            Img21to25Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            Img21to25Label.ForeColor = Color.White;
-            Img21to25Label.Location = new Point(341, 15);
-            Img21to25Label.Name = "Img21to25Label";
-            Img21to25Label.Size = new Size(74, 28);
-            Img21to25Label.TabIndex = 5;
-            Img21to25Label.Text = "21~25";
-            // 
-            // Img16to20Label
-            // 
-            Img16to20Label.AutoSize = true;
-            Img16to20Label.BackColor = Color.DimGray;
-            Img16to20Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            Img16to20Label.ForeColor = Color.White;
-            Img16to20Label.Location = new Point(261, 15);
-            Img16to20Label.Name = "Img16to20Label";
-            Img16to20Label.Size = new Size(74, 28);
-            Img16to20Label.TabIndex = 4;
-            Img16to20Label.Text = "16~20";
-            // 
-            // Img11to15Label
-            // 
-            Img11to15Label.AutoSize = true;
-            Img11to15Label.BackColor = Color.DimGray;
-            Img11to15Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            Img11to15Label.ForeColor = Color.White;
-            Img11to15Label.Location = new Point(181, 15);
-            Img11to15Label.Name = "Img11to15Label";
-            Img11to15Label.Size = new Size(74, 28);
-            Img11to15Label.TabIndex = 3;
-            Img11to15Label.Text = "11~15";
-            // 
-            // Img6to10Label
-            // 
-            Img6to10Label.AutoSize = true;
-            Img6to10Label.BackColor = Color.DimGray;
-            Img6to10Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            Img6to10Label.ForeColor = Color.White;
-            Img6to10Label.Location = new Point(101, 15);
-            Img6to10Label.Name = "Img6to10Label";
-            Img6to10Label.Size = new Size(74, 28);
-            Img6to10Label.TabIndex = 2;
-            Img6to10Label.Text = "06~10";
-            // 
-            // Img1to5Label
-            // 
-            Img1to5Label.AutoSize = true;
-            Img1to5Label.BackColor = Color.DimGray;
-            Img1to5Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            Img1to5Label.ForeColor = Color.White;
-            Img1to5Label.Location = new Point(21, 15);
-            Img1to5Label.Name = "Img1to5Label";
-            Img1to5Label.Size = new Size(74, 28);
-            Img1to5Label.TabIndex = 1;
-            Img1to5Label.Text = "01~05";
-            // 
-            // SicngleImgCheckPanelExitButton
-            // 
-            SicngleImgCheckPanelExitButton.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            SicngleImgCheckPanelExitButton.Location = new Point(1667, 0);
-            SicngleImgCheckPanelExitButton.Name = "SicngleImgCheckPanelExitButton";
-            SicngleImgCheckPanelExitButton.Size = new Size(39, 36);
-            SicngleImgCheckPanelExitButton.TabIndex = 0;
-            SicngleImgCheckPanelExitButton.Text = "X";
-            SicngleImgCheckPanelExitButton.UseVisualStyleBackColor = true;
-            SicngleImgCheckPanelExitButton.Click += (this.SicngleImgCheckPanelExitButton_Click);
             // 
             // ListPanel
             // 
+            ListPanel.Controls.Add(ComentSavBtr);
+            ListPanel.Controls.Add(ComentTextBox);
             ListPanel.Controls.Add(SingleStaticButton);
             ListPanel.Controls.Add(PluralStaticButton);
             ListPanel.Controls.Add(SingleImgCheckButton);
             ListPanel.Controls.Add(ListDisplyPanel);
-            ListPanel.Location = new Point(1155, 36);
+            ListPanel.Location = new Point(10, 105);
             ListPanel.Name = "ListPanel";
-            ListPanel.Size = new Size(43, 33);
+            ListPanel.Size = new Size(1675, 788);
             ListPanel.TabIndex = 5;
             ListPanel.Visible = false;
+            // 
+            // ComentSavBtr
+            // 
+            ComentSavBtr.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
+            ComentSavBtr.Location = new Point(1363, 411);
+            ComentSavBtr.Name = "ComentSavBtr";
+            ComentSavBtr.Size = new Size(296, 66);
+            ComentSavBtr.TabIndex = 13;
+            ComentSavBtr.Text = "메모 저장";
+            ComentSavBtr.UseVisualStyleBackColor = true;
+            ComentSavBtr.Click += (this.ComentSavBtr_Click);
+            // 
+            // ComentTextBox
+            // 
+            ComentTextBox.Location = new Point(1363, 493);
+            ComentTextBox.Multiline = true;
+            ComentTextBox.Name = "ComentTextBox";
+            ComentTextBox.ReadOnly = true;
+            ComentTextBox.Size = new Size(296, 283);
+            ComentTextBox.TabIndex = 12;
+            ComentTextBox.Text = "행을 선택해 주세요\r\n읽기만 가능합니다.";
             // 
             // SingleStaticButton
             // 
@@ -6246,2484 +3421,145 @@
             ListDisplyPanel.Size = new Size(1320, 785);
             ListDisplyPanel.TabIndex = 8;
             // 
-            // FTPSettingButton
-            // 
-            FTPSettingButton.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            FTPSettingButton.Location = new Point(1545, 19);
-            FTPSettingButton.Name = "FTPSettingButton";
-            FTPSettingButton.Size = new Size(119, 75);
-            FTPSettingButton.TabIndex = 12;
-            FTPSettingButton.Text = "FTPSetting";
-            FTPSettingButton.UseVisualStyleBackColor = true;
-            FTPSettingButton.Click += (this.FTPSettingButton_Click);
-            // 
-            // RecipeSelectPanel
-            // 
-            RecipeSelectPanel.Controls.Add(label125);
-            RecipeSelectPanel.Controls.Add(label139);
-            RecipeSelectPanel.Controls.Add(label140);
-            RecipeSelectPanel.Controls.Add(label141);
-            RecipeSelectPanel.Controls.Add(label142);
-            RecipeSelectPanel.Controls.Add(label143);
-            RecipeSelectPanel.Controls.Add(label144);
-            RecipeSelectPanel.Controls.Add(label145);
-            RecipeSelectPanel.Controls.Add(label146);
-            RecipeSelectPanel.Controls.Add(label147);
-            RecipeSelectPanel.Controls.Add(WDRS4OPENICE8535TR3727);
-            RecipeSelectPanel.Controls.Add(label149);
-            RecipeSelectPanel.Controls.Add(label150);
-            RecipeSelectPanel.Controls.Add(label151);
-            RecipeSelectPanel.Controls.Add(label152);
-            RecipeSelectPanel.Controls.Add(label153);
-            RecipeSelectPanel.Controls.Add(label154);
-            RecipeSelectPanel.Controls.Add(label155);
-            RecipeSelectPanel.Controls.Add(label156);
-            RecipeSelectPanel.Controls.Add(label157);
-            RecipeSelectPanel.Controls.Add(label158);
-            RecipeSelectPanel.Controls.Add(label159);
-            RecipeSelectPanel.Controls.Add(WRRS4OPENICE8535TR3727);
-            RecipeSelectPanel.Controls.Add(label161);
-            RecipeSelectPanel.Controls.Add(label162);
-            RecipeSelectPanel.Controls.Add(label163);
-            RecipeSelectPanel.Controls.Add(label164);
-            RecipeSelectPanel.Controls.Add(WDJXHEVeLSD8835TR3846);
-            RecipeSelectPanel.Controls.Add(WDJXHEVOPEN8835TR3846);
-            RecipeSelectPanel.Controls.Add(label95);
-            RecipeSelectPanel.Controls.Add(label98);
-            RecipeSelectPanel.Controls.Add(WDJXICEeLSD8835TR3909);
-            RecipeSelectPanel.Controls.Add(WDJXICEeLSD8825TR4363);
-            RecipeSelectPanel.Controls.Add(label101);
-            RecipeSelectPanel.Controls.Add(label104);
-            RecipeSelectPanel.Controls.Add(WDJXICEOPEN8835TR3909);
-            RecipeSelectPanel.Controls.Add(label106);
-            RecipeSelectPanel.Controls.Add(label107);
-            RecipeSelectPanel.Controls.Add(label110);
-            RecipeSelectPanel.Controls.Add(WRJXHEVeLSD8835TR3846);
-            RecipeSelectPanel.Controls.Add(WRJXHEVOPEN8835TR3846);
-            RecipeSelectPanel.Controls.Add(label113);
-            RecipeSelectPanel.Controls.Add(label114);
-            RecipeSelectPanel.Controls.Add(WRJXICEeLSD8835TR3909);
-            RecipeSelectPanel.Controls.Add(WRJXICEeLSD8825TR4363);
-            RecipeSelectPanel.Controls.Add(label117);
-            RecipeSelectPanel.Controls.Add(label118);
-            RecipeSelectPanel.Controls.Add(WRJXICEOPEN8835TR3909);
-            RecipeSelectPanel.Controls.Add(label120);
-            RecipeSelectPanel.Controls.Add(label121);
-            RecipeSelectPanel.Controls.Add(label122);
-            RecipeSelectPanel.Controls.Add(label123);
-            RecipeSelectPanel.Controls.Add(label124);
-            RecipeSelectPanel.Controls.Add(label28);
-            RecipeSelectPanel.Controls.Add(label29);
-            RecipeSelectPanel.Controls.Add(WDJKHEVeLSD8525TR3538);
-            RecipeSelectPanel.Controls.Add(WDJKOPENHEV8525TR3538);
-            RecipeSelectPanel.Controls.Add(label44);
-            RecipeSelectPanel.Controls.Add(label45);
-            RecipeSelectPanel.Controls.Add(WDJKICEeLSD8535TR3909);
-            RecipeSelectPanel.Controls.Add(WDJKICEeLSD8025TR4181);
-            RecipeSelectPanel.Controls.Add(label48);
-            RecipeSelectPanel.Controls.Add(label49);
-            RecipeSelectPanel.Controls.Add(WDJKICEOPEN8535TR3909);
-            RecipeSelectPanel.Controls.Add(label51);
-            RecipeSelectPanel.Controls.Add(label52);
-            RecipeSelectPanel.Controls.Add(label53);
-            RecipeSelectPanel.Controls.Add(WRJKHEVeLSD8525TR3538);
-            RecipeSelectPanel.Controls.Add(WRJKOPENHEV8525TR3538);
-            RecipeSelectPanel.Controls.Add(label56);
-            RecipeSelectPanel.Controls.Add(label57);
-            RecipeSelectPanel.Controls.Add(WRJKICEeLSD8535TR3909);
-            RecipeSelectPanel.Controls.Add(WRJKICEeLSD8025TR4181);
-            RecipeSelectPanel.Controls.Add(label62);
-            RecipeSelectPanel.Controls.Add(label63);
-            RecipeSelectPanel.Controls.Add(WRJKICEOPEN8535TR3909);
-            RecipeSelectPanel.Controls.Add(label65);
-            RecipeSelectPanel.Controls.Add(label66);
-            RecipeSelectPanel.Controls.Add(label67);
-            RecipeSelectPanel.Controls.Add(label86);
-            RecipeSelectPanel.Controls.Add(label87);
-            RecipeSelectPanel.Controls.Add(label90);
-            RecipeSelectPanel.Controls.Add(label91);
-            RecipeSelectPanel.Controls.Add(label92);
-            RecipeSelectPanel.Controls.Add(label93);
-            RecipeSelectPanel.Controls.Add(label35);
-            RecipeSelectPanel.Controls.Add(label75);
-            RecipeSelectPanel.Controls.Add(label88);
-            RecipeSelectPanel.Controls.Add(label89);
-            RecipeSelectPanel.Controls.Add(label94);
-            RecipeSelectPanel.Controls.Add(SearchStratButton);
-            RecipeSelectPanel.Controls.Add(EnddateTimePicker);
-            RecipeSelectPanel.Controls.Add(StartdateTimePicker);
-            RecipeSelectPanel.Controls.Add(TodayDateLabel);
-            RecipeSelectPanel.Controls.Add(SelectedModeDisplaylLabel);
-            RecipeSelectPanel.Controls.Add(label138);
-            RecipeSelectPanel.Controls.Add(label137);
-            RecipeSelectPanel.Controls.Add(label136);
-            RecipeSelectPanel.Controls.Add(label135);
-            RecipeSelectPanel.Controls.Add(label96);
-            RecipeSelectPanel.Controls.Add(label97);
-            RecipeSelectPanel.Controls.Add(label102);
-            RecipeSelectPanel.Controls.Add(label103);
-            RecipeSelectPanel.Controls.Add(label108);
-            RecipeSelectPanel.Controls.Add(WDRG3HEVOPEN8525TR3307);
-            RecipeSelectPanel.Controls.Add(label126);
-            RecipeSelectPanel.Controls.Add(label127);
-            RecipeSelectPanel.Controls.Add(WDRG3ICEeLSD8535TR3538);
-            RecipeSelectPanel.Controls.Add(label129);
-            RecipeSelectPanel.Controls.Add(label130);
-            RecipeSelectPanel.Controls.Add(label131);
-            RecipeSelectPanel.Controls.Add(WDRG3ICEOPEN8535TR3538);
-            RecipeSelectPanel.Controls.Add(WDRG3ICEOPEN8025TR3909);
-            RecipeSelectPanel.Controls.Add(label134);
-            RecipeSelectPanel.Controls.Add(label74);
-            RecipeSelectPanel.Controls.Add(label84);
-            RecipeSelectPanel.Controls.Add(label85);
-            RecipeSelectPanel.Controls.Add(label82);
-            RecipeSelectPanel.Controls.Add(label83);
-            RecipeSelectPanel.Controls.Add(label78);
-            RecipeSelectPanel.Controls.Add(label79);
-            RecipeSelectPanel.Controls.Add(label80);
-            RecipeSelectPanel.Controls.Add(label81);
-            RecipeSelectPanel.Controls.Add(label76);
-            RecipeSelectPanel.Controls.Add(label77);
-            RecipeSelectPanel.Controls.Add(label73);
-            RecipeSelectPanel.Controls.Add(label72);
-            RecipeSelectPanel.Controls.Add(label70);
-            RecipeSelectPanel.Controls.Add(label71);
-            RecipeSelectPanel.Controls.Add(label61);
-            RecipeSelectPanel.Controls.Add(WRRG3HEVOPEN8525TR3307);
-            RecipeSelectPanel.Controls.Add(label36);
-            RecipeSelectPanel.Controls.Add(label41);
-            RecipeSelectPanel.Controls.Add(WRRG3ICEeLSD8535TR3538);
-            RecipeSelectPanel.Controls.Add(label43);
-            RecipeSelectPanel.Controls.Add(label40);
-            RecipeSelectPanel.Controls.Add(label39);
-            RecipeSelectPanel.Controls.Add(WRRG3ICEOPEN8035TR3538);
-            RecipeSelectPanel.Controls.Add(WRRG3ICEOPEN8025TR3909);
-            RecipeSelectPanel.Controls.Add(WrapingGearLabel);
-            RecipeSelectPanel.Controls.Add(label34);
-            RecipeSelectPanel.Controls.Add(label33);
-            RecipeSelectPanel.Controls.Add(label32);
-            RecipeSelectPanel.Controls.Add(label27);
-            RecipeSelectPanel.Controls.Add(label26);
-            RecipeSelectPanel.Controls.Add(label25);
-            RecipeSelectPanel.Location = new Point(756, 39);
-            RecipeSelectPanel.Name = "RecipeSelectPanel";
-            RecipeSelectPanel.Size = new Size(63, 30);
-            RecipeSelectPanel.TabIndex = 4;
-            // 
-            // label162
-            // 
-            label162.BackColor = Color.White;
-            label162.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label162.Location = new Point(106, 664);
-            label162.Margin = new Padding(3);
-            label162.Name = "label162";
-            label162.Size = new Size(67, 52);
-            label162.TabIndex = 187;
-            label162.Text = "e-LSD";
-            label162.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label163
-            // 
-            label163.BackColor = Color.White;
-            label163.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label163.Location = new Point(106, 601);
-            label163.Margin = new Padding(3);
-            label163.Name = "label163";
-            label163.Size = new Size(67, 57);
-            label163.TabIndex = 186;
-            label163.Text = "OPEN";
-            label163.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label164
-            // 
-            label164.BackColor = Color.Gray;
-            label164.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
-            label164.ForeColor = Color.White;
-            label164.Location = new Point(38, 601);
-            label164.Margin = new Padding(3);
-            label164.Name = "label164";
-            label164.Size = new Size(61, 115);
-            label164.TabIndex = 185;
-            label164.Text = "RS4";
-            label164.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label123
-            // 
-            label123.BackColor = Color.White;
-            label123.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label123.Location = new Point(106, 543);
-            label123.Margin = new Padding(3);
-            label123.Name = "label123";
-            label123.Size = new Size(67, 52);
-            label123.TabIndex = 160;
-            label123.Text = "e-LSD";
-            label123.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label124
-            // 
-            label124.BackColor = Color.White;
-            label124.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label124.Location = new Point(106, 480);
-            label124.Margin = new Padding(3);
-            label124.Name = "label124";
-            label124.Size = new Size(67, 57);
-            label124.TabIndex = 159;
-            label124.Text = "OPEN";
-            label124.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label66
-            // 
-            label66.BackColor = Color.White;
-            label66.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label66.Location = new Point(106, 422);
-            label66.Margin = new Padding(3);
-            label66.Name = "label66";
-            label66.Size = new Size(67, 52);
-            label66.TabIndex = 134;
-            label66.Text = "e-LSD";
-            label66.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label67
-            // 
-            label67.BackColor = Color.White;
-            label67.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label67.Location = new Point(106, 359);
-            label67.Margin = new Padding(3);
-            label67.Name = "label67";
-            label67.Size = new Size(67, 57);
-            label67.TabIndex = 133;
-            label67.Text = "OPEN";
-            label67.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // SearchStratButton
-            // 
-            SearchStratButton.BackColor = Color.FromArgb((int)(byte)255, (int)(byte)255, (int)(byte)128);
-            SearchStratButton.Font = new Font("맑은 고딕", 24F, FontStyle.Bold, GraphicsUnit.Pixel, (byte)129);
-            SearchStratButton.Location = new Point(1330, 712);
-            SearchStratButton.Name = "SearchStratButton";
-            SearchStratButton.Size = new Size(278, 77);
-            SearchStratButton.TabIndex = 121;
-            SearchStratButton.Text = "검색시작";
-            SearchStratButton.UseVisualStyleBackColor = false;
-            SearchStratButton.Click += (this.SearchStratButton_Click);
-            // 
-            // EnddateTimePicker
-            // 
-            EnddateTimePicker.CalendarMonthBackground = SystemColors.Highlight;
-            EnddateTimePicker.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            EnddateTimePicker.Location = new Point(1374, 163);
-            EnddateTimePicker.Name = "EnddateTimePicker";
-            EnddateTimePicker.Size = new Size(247, 43);
-            EnddateTimePicker.TabIndex = 120;
-            // 
-            // StartdateTimePicker
-            // 
-            StartdateTimePicker.CalendarMonthBackground = SystemColors.Highlight;
-            StartdateTimePicker.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            StartdateTimePicker.Location = new Point(1374, 79);
-            StartdateTimePicker.Name = "StartdateTimePicker";
-            StartdateTimePicker.Size = new Size(247, 43);
-            StartdateTimePicker.TabIndex = 119;
-            // 
-            // TodayDateLabel
-            // 
-            TodayDateLabel.BackColor = Color.Transparent;
-            TodayDateLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            TodayDateLabel.ForeColor = Color.White;
-            TodayDateLabel.Location = new Point(1373, 238);
-            TodayDateLabel.Margin = new Padding(3);
-            TodayDateLabel.Name = "TodayDateLabel";
-            TodayDateLabel.Size = new Size(223, 46);
-            TodayDateLabel.TabIndex = 118;
-            TodayDateLabel.Text = "yyyy.mm.dd";
-            TodayDateLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // SelectedModeDisplaylLabel
-            // 
-            SelectedModeDisplaylLabel.BackColor = Color.Transparent;
-            SelectedModeDisplaylLabel.Font = new Font("맑은 고딕", 10F, FontStyle.Bold);
-            SelectedModeDisplaylLabel.ForeColor = Color.White;
-            SelectedModeDisplaylLabel.Location = new Point(1245, 379);
-            SelectedModeDisplaylLabel.Margin = new Padding(3);
-            SelectedModeDisplaylLabel.Name = "SelectedModeDisplaylLabel";
-            SelectedModeDisplaylLabel.Size = new Size(307, 46);
-            SelectedModeDisplaylLabel.TabIndex = 117;
-            SelectedModeDisplaylLabel.Text = "-";
-            SelectedModeDisplaylLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label138
-            // 
-            label138.BackColor = Color.Transparent;
-            label138.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            label138.ForeColor = Color.White;
-            label138.Location = new Point(1245, 318);
-            label138.Margin = new Padding(3);
-            label138.Name = "label138";
-            label138.Size = new Size(307, 46);
-            label138.TabIndex = 116;
-            label138.Text = "선택된 모델 명";
-            label138.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label137
-            // 
-            label137.BackColor = Color.Transparent;
-            label137.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            label137.ForeColor = Color.White;
-            label137.Location = new Point(1245, 238);
-            label137.Margin = new Padding(3);
-            label137.Name = "label137";
-            label137.Size = new Size(134, 46);
-            label137.TabIndex = 115;
-            label137.Text = "오 늘 :";
-            label137.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label136
-            // 
-            label136.BackColor = Color.Transparent;
-            label136.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            label136.ForeColor = Color.White;
-            label136.Location = new Point(1245, 160);
-            label136.Margin = new Padding(3);
-            label136.Name = "label136";
-            label136.Size = new Size(134, 46);
-            label136.TabIndex = 114;
-            label136.Text = "종 료 일 :";
-            label136.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label135
-            // 
-            label135.BackColor = Color.Transparent;
-            label135.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            label135.ForeColor = Color.White;
-            label135.Location = new Point(1245, 79);
-            label135.Margin = new Padding(3);
-            label135.Name = "label135";
-            label135.Size = new Size(134, 46);
-            label135.TabIndex = 113;
-            label135.Text = "시 작 일 :";
-            label135.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label96
-            // 
-            label96.BackColor = Color.Silver;
-            label96.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            label96.Location = new Point(986, 93);
-            label96.Margin = new Padding(3);
-            label96.Name = "label96";
-            label96.Size = new Size(216, 46);
-            label96.TabIndex = 101;
-            label96.Text = "HEV";
-            label96.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label97
-            // 
-            label97.BackColor = Color.Silver;
-            label97.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            label97.Location = new Point(694, 93);
-            label97.Margin = new Padding(3);
-            label97.Name = "label97";
-            label97.Size = new Size(286, 46);
-            label97.TabIndex = 100;
-            label97.Text = "ICE";
-            label97.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label134
-            // 
-            label134.BackColor = Color.Gray;
-            label134.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            label134.ForeColor = Color.White;
-            label134.Location = new Point(694, 42);
-            label134.Margin = new Padding(3);
-            label134.Name = "label134";
-            label134.Size = new Size(508, 45);
-            label134.TabIndex = 63;
-            label134.Text = "용접기어";
-            label134.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label73
-            // 
-            label73.BackColor = Color.Silver;
-            label73.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            label73.Location = new Point(472, 93);
-            label73.Margin = new Padding(3);
-            label73.Name = "label73";
-            label73.Size = new Size(216, 46);
-            label73.TabIndex = 49;
-            label73.Text = "HEV";
-            label73.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label72
-            // 
-            label72.BackColor = Color.Silver;
-            label72.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            label72.Location = new Point(180, 93);
-            label72.Margin = new Padding(3);
-            label72.Name = "label72";
-            label72.Size = new Size(286, 46);
-            label72.TabIndex = 48;
-            label72.Text = "ICE";
-            label72.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // WrapingGearLabel
-            // 
-            WrapingGearLabel.BackColor = Color.Gray;
-            WrapingGearLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            WrapingGearLabel.ForeColor = Color.White;
-            WrapingGearLabel.Location = new Point(180, 42);
-            WrapingGearLabel.Margin = new Padding(3);
-            WrapingGearLabel.Name = "WrapingGearLabel";
-            WrapingGearLabel.Size = new Size(508, 45);
-            WrapingGearLabel.TabIndex = 10;
-            WrapingGearLabel.Text = "랩핑기어";
-            WrapingGearLabel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label34
-            // 
-            label34.BackColor = Color.Gray;
-            label34.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
-            label34.ForeColor = Color.White;
-            label34.Location = new Point(38, 480);
-            label34.Margin = new Padding(3);
-            label34.Name = "label34";
-            label34.Size = new Size(61, 115);
-            label34.TabIndex = 9;
-            label34.Text = "JX";
-            label34.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label33
-            // 
-            label33.BackColor = Color.Gray;
-            label33.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
-            label33.ForeColor = Color.White;
-            label33.Location = new Point(38, 359);
-            label33.Margin = new Padding(3);
-            label33.Name = "label33";
-            label33.Size = new Size(61, 115);
-            label33.TabIndex = 8;
-            label33.Text = "JK";
-            label33.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label32
-            // 
-            label32.BackColor = Color.Gray;
-            label32.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
-            label32.ForeColor = Color.White;
-            label32.Location = new Point(38, 238);
-            label32.Margin = new Padding(3);
-            label32.Name = "label32";
-            label32.Size = new Size(61, 115);
-            label32.TabIndex = 7;
-            label32.Text = "RG3";
-            label32.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label27
-            // 
-            label27.BackColor = Color.White;
-            label27.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label27.Location = new Point(106, 301);
-            label27.Margin = new Padding(3);
-            label27.Name = "label27";
-            label27.Size = new Size(67, 52);
-            label27.TabIndex = 2;
-            label27.Text = "e-LSD";
-            label27.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label26
-            // 
-            label26.BackColor = Color.White;
-            label26.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
-            label26.Location = new Point(106, 238);
-            label26.Margin = new Padding(3);
-            label26.Name = "label26";
-            label26.Size = new Size(67, 57);
-            label26.TabIndex = 1;
-            label26.Text = "OPEN";
-            label26.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label25
-            // 
-            label25.BackColor = Color.Silver;
-            label25.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            label25.Location = new Point(38, 42);
-            label25.Margin = new Padding(3);
-            label25.Name = "label25";
-            label25.Size = new Size(135, 190);
-            label25.TabIndex = 0;
-            label25.Text = "구 분";
-            label25.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // PluralStaticLabel
-            // 
-            PluralStaticLabel.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            PluralStaticLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            PluralStaticLabel.ForeColor = Color.White;
-            PluralStaticLabel.Location = new Point(547, 19);
-            PluralStaticLabel.Name = "PluralStaticLabel";
-            PluralStaticLabel.Size = new Size(173, 75);
-            PluralStaticLabel.TabIndex = 3;
-            PluralStaticLabel.Text = "복수 통계";
-            PluralStaticLabel.TextAlign = ContentAlignment.MiddleCenter;
-            PluralStaticLabel.Click += (this.PluralStaticLabel_Click);
-            // 
-            // SingleStaticLabel
-            // 
-            SingleStaticLabel.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            SingleStaticLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            SingleStaticLabel.ForeColor = Color.White;
-            SingleStaticLabel.Location = new Point(368, 19);
-            SingleStaticLabel.Name = "SingleStaticLabel";
-            SingleStaticLabel.Size = new Size(173, 75);
-            SingleStaticLabel.TabIndex = 2;
-            SingleStaticLabel.Text = "단일 통계";
-            SingleStaticLabel.TextAlign = ContentAlignment.MiddleCenter;
-            SingleStaticLabel.Click += (this.SingleStaticLabel_Click);
-            // 
-            // ListLabel
-            // 
-            ListLabel.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            ListLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            ListLabel.ForeColor = Color.White;
-            ListLabel.Location = new Point(189, 19);
-            ListLabel.Name = "ListLabel";
-            ListLabel.Size = new Size(173, 75);
-            ListLabel.TabIndex = 1;
-            ListLabel.Text = "리스트";
-            ListLabel.TextAlign = ContentAlignment.MiddleCenter;
-            ListLabel.Click += (this.ListLabel_Click);
-            // 
-            // RecipeSelectLabel
-            // 
-            RecipeSelectLabel.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            RecipeSelectLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
-            RecipeSelectLabel.ForeColor = Color.White;
-            RecipeSelectLabel.Location = new Point(10, 19);
-            RecipeSelectLabel.Name = "RecipeSelectLabel";
-            RecipeSelectLabel.Size = new Size(173, 75);
-            RecipeSelectLabel.TabIndex = 0;
-            RecipeSelectLabel.Text = "레시피";
-            RecipeSelectLabel.TextAlign = ContentAlignment.MiddleCenter;
-            RecipeSelectLabel.Click += (this.RecipeSelectLabel_Click);
-            // 
             // SingleStaticPanel
             // 
+            SingleStaticPanel.Controls.Add(SingleStaticPanel_5);
+            SingleStaticPanel.Controls.Add(SingleStaticPanel_2);
+            SingleStaticPanel.Controls.Add(SingleStaticSavebtr);
+            SingleStaticPanel.Controls.Add(label564);
             SingleStaticPanel.Controls.Add(SingleStaticPanel_4);
+            SingleStaticPanel.Controls.Add(SingleStaticPanel_3);
             SingleStaticPanel.Controls.Add(DCFinalGradelabel);
             SingleStaticPanel.Controls.Add(ACFinalGradelabel);
             SingleStaticPanel.Controls.Add(SingleStaticPanel_1);
-            SingleStaticPanel.Controls.Add(SingleStaticPanel_2);
             SingleStaticPanel.Controls.Add(TotalGradeScore);
-            SingleStaticPanel.Controls.Add(SingleStaticPanel_3);
             SingleStaticPanel.Controls.Add(SingleStaticPanelCountDownButton);
             SingleStaticPanel.Controls.Add(SingleStaticPanelCountUpButton);
             SingleStaticPanel.Controls.Add(SingletaticDisplayLabel);
-            SingleStaticPanel.Location = new Point(1127, 242);
+            SingleStaticPanel.Location = new Point(985, 36);
             SingleStaticPanel.Name = "SingleStaticPanel";
-            SingleStaticPanel.Size = new Size(155, 65);
+            SingleStaticPanel.Size = new Size(172, 46);
             SingleStaticPanel.TabIndex = 14;
             SingleStaticPanel.Visible = false;
             // 
-            // SingleStaticPanel_4
-            // 
-            SingleStaticPanel_4.Controls.Add(label335);
-            SingleStaticPanel_4.Controls.Add(label336);
-            SingleStaticPanel_4.Controls.Add(label338);
-            SingleStaticPanel_4.Controls.Add(label339);
-            SingleStaticPanel_4.Controls.Add(label340);
-            SingleStaticPanel_4.Controls.Add(label341);
-            SingleStaticPanel_4.Controls.Add(label342);
-            SingleStaticPanel_4.Controls.Add(label327);
-            SingleStaticPanel_4.Controls.Add(label328);
-            SingleStaticPanel_4.Controls.Add(label330);
-            SingleStaticPanel_4.Controls.Add(label331);
-            SingleStaticPanel_4.Controls.Add(label332);
-            SingleStaticPanel_4.Controls.Add(label333);
-            SingleStaticPanel_4.Controls.Add(label334);
-            SingleStaticPanel_4.Controls.Add(label326);
-            SingleStaticPanel_4.Controls.Add(label325);
-            SingleStaticPanel_4.Controls.Add(label323);
-            SingleStaticPanel_4.Controls.Add(label322);
-            SingleStaticPanel_4.Controls.Add(label321);
-            SingleStaticPanel_4.Controls.Add(label320);
-            SingleStaticPanel_4.Controls.Add(label319);
-            SingleStaticPanel_4.Controls.Add(label318);
-            SingleStaticPanel_4.Controls.Add(label317);
-            SingleStaticPanel_4.Controls.Add(label316);
-            SingleStaticPanel_4.Controls.Add(label296);
-            SingleStaticPanel_4.Controls.Add(label298);
-            SingleStaticPanel_4.Controls.Add(label300);
-            SingleStaticPanel_4.Controls.Add(label302);
-            SingleStaticPanel_4.Controls.Add(label303);
-            SingleStaticPanel_4.Controls.Add(label304);
-            SingleStaticPanel_4.Controls.Add(label305);
-            SingleStaticPanel_4.Controls.Add(label306);
-            SingleStaticPanel_4.Controls.Add(label309);
-            SingleStaticPanel_4.Controls.Add(label310);
-            SingleStaticPanel_4.Controls.Add(label311);
-            SingleStaticPanel_4.Controls.Add(label312);
-            SingleStaticPanel_4.Controls.Add(label313);
-            SingleStaticPanel_4.Controls.Add(label314);
-            SingleStaticPanel_4.Controls.Add(label315);
-            SingleStaticPanel_4.Controls.Add(label286);
-            SingleStaticPanel_4.Controls.Add(label288);
-            SingleStaticPanel_4.Controls.Add(label290);
-            SingleStaticPanel_4.Controls.Add(label292);
-            SingleStaticPanel_4.Controls.Add(label294);
-            SingleStaticPanel_4.Controls.Add(label276);
-            SingleStaticPanel_4.Controls.Add(label278);
-            SingleStaticPanel_4.Controls.Add(label280);
-            SingleStaticPanel_4.Controls.Add(label282);
-            SingleStaticPanel_4.Controls.Add(label284);
-            SingleStaticPanel_4.Controls.Add(label244);
-            SingleStaticPanel_4.Controls.Add(label268);
-            SingleStaticPanel_4.Controls.Add(label270);
-            SingleStaticPanel_4.Controls.Add(label272);
-            SingleStaticPanel_4.Controls.Add(label274);
-            SingleStaticPanel_4.Controls.Add(label212);
-            SingleStaticPanel_4.Controls.Add(label238);
-            SingleStaticPanel_4.Controls.Add(label240);
-            SingleStaticPanel_4.Controls.Add(label242);
-            SingleStaticPanel_4.Controls.Add(label210);
-            SingleStaticPanel_4.Controls.Add(label208);
-            SingleStaticPanel_4.Controls.Add(label206);
-            SingleStaticPanel_4.Controls.Add(label204);
-            SingleStaticPanel_4.Controls.Add(label180);
-            SingleStaticPanel_4.Controls.Add(label178);
-            SingleStaticPanel_4.Controls.Add(label176);
-            SingleStaticPanel_4.Controls.Add(label174);
-            SingleStaticPanel_4.Controls.Add(label172);
-            SingleStaticPanel_4.Controls.Add(label170);
-            SingleStaticPanel_4.Location = new Point(24, 71);
-            SingleStaticPanel_4.Name = "SingleStaticPanel_4";
-            SingleStaticPanel_4.Size = new Size(1667, 733);
-            SingleStaticPanel_4.TabIndex = 9;
-            // 
-            // label335
-            // 
-            label335.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label335.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label335.ForeColor = Color.White;
-            label335.Location = new Point(1441, 628);
-            label335.Name = "label335";
-            label335.Padding = new Padding(3);
-            label335.Size = new Size(186, 57);
-            label335.TabIndex = 70;
-            label335.Text = "-";
-            label335.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label336
-            // 
-            label336.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label336.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label336.ForeColor = Color.White;
-            label336.Location = new Point(1256, 628);
-            label336.Name = "label336";
-            label336.Padding = new Padding(3);
-            label336.Size = new Size(179, 57);
-            label336.TabIndex = 69;
-            label336.Text = "-";
-            label336.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label338
-            // 
-            label338.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label338.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label338.ForeColor = Color.White;
-            label338.Location = new Point(1053, 628);
-            label338.Name = "label338";
-            label338.Padding = new Padding(3);
-            label338.Size = new Size(198, 57);
-            label338.TabIndex = 67;
-            label338.Text = "-";
-            label338.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label339
-            // 
-            label339.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label339.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label339.ForeColor = Color.White;
-            label339.Location = new Point(849, 628);
-            label339.Name = "label339";
-            label339.Padding = new Padding(3);
-            label339.Size = new Size(198, 57);
-            label339.TabIndex = 66;
-            label339.Text = "-";
-            label339.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label340
-            // 
-            label340.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label340.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label340.ForeColor = Color.White;
-            label340.Location = new Point(645, 628);
-            label340.Name = "label340";
-            label340.Padding = new Padding(3);
-            label340.Size = new Size(198, 57);
-            label340.TabIndex = 65;
-            label340.Text = "-";
-            label340.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label341
-            // 
-            label341.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label341.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label341.ForeColor = Color.White;
-            label341.Location = new Point(441, 628);
-            label341.Name = "label341";
-            label341.Padding = new Padding(3);
-            label341.Size = new Size(198, 57);
-            label341.TabIndex = 64;
-            label341.Text = "-";
-            label341.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label342
-            // 
-            label342.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label342.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label342.ForeColor = Color.White;
-            label342.Location = new Point(237, 629);
-            label342.Name = "label342";
-            label342.Padding = new Padding(3);
-            label342.Size = new Size(198, 57);
-            label342.TabIndex = 63;
-            label342.Text = "-";
-            label342.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label327
-            // 
-            label327.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label327.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label327.ForeColor = Color.White;
-            label327.Location = new Point(1441, 567);
-            label327.Name = "label327";
-            label327.Padding = new Padding(3);
-            label327.Size = new Size(186, 57);
-            label327.TabIndex = 62;
-            label327.Text = "-";
-            label327.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label328
-            // 
-            label328.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label328.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label328.ForeColor = Color.White;
-            label328.Location = new Point(1256, 567);
-            label328.Name = "label328";
-            label328.Padding = new Padding(3);
-            label328.Size = new Size(179, 57);
-            label328.TabIndex = 61;
-            label328.Text = "-";
-            label328.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label330
-            // 
-            label330.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label330.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label330.ForeColor = Color.White;
-            label330.Location = new Point(1053, 567);
-            label330.Name = "label330";
-            label330.Padding = new Padding(3);
-            label330.Size = new Size(198, 57);
-            label330.TabIndex = 59;
-            label330.Text = "-";
-            label330.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label331
-            // 
-            label331.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label331.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label331.ForeColor = Color.White;
-            label331.Location = new Point(849, 567);
-            label331.Name = "label331";
-            label331.Padding = new Padding(3);
-            label331.Size = new Size(198, 57);
-            label331.TabIndex = 58;
-            label331.Text = "-";
-            label331.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label332
-            // 
-            label332.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label332.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label332.ForeColor = Color.White;
-            label332.Location = new Point(645, 567);
-            label332.Name = "label332";
-            label332.Padding = new Padding(3);
-            label332.Size = new Size(198, 57);
-            label332.TabIndex = 57;
-            label332.Text = "-";
-            label332.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label333
-            // 
-            label333.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label333.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label333.ForeColor = Color.White;
-            label333.Location = new Point(441, 567);
-            label333.Name = "label333";
-            label333.Padding = new Padding(3);
-            label333.Size = new Size(198, 57);
-            label333.TabIndex = 56;
-            label333.Text = "-";
-            label333.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label334
-            // 
-            label334.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label334.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label334.ForeColor = Color.White;
-            label334.Location = new Point(237, 568);
-            label334.Name = "label334";
-            label334.Padding = new Padding(3);
-            label334.Size = new Size(198, 57);
-            label334.TabIndex = 55;
-            label334.Text = "-";
-            label334.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label326
-            // 
-            label326.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label326.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label326.ForeColor = Color.White;
-            label326.Location = new Point(1441, 506);
-            label326.Name = "label326";
-            label326.Padding = new Padding(3);
-            label326.Size = new Size(186, 57);
-            label326.TabIndex = 54;
-            label326.Text = "비율";
-            label326.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label325
-            // 
-            label325.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label325.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label325.ForeColor = Color.White;
-            label325.Location = new Point(1256, 506);
-            label325.Name = "label325";
-            label325.Padding = new Padding(3);
-            label325.Size = new Size(179, 57);
-            label325.TabIndex = 53;
-            label325.Text = "계";
-            label325.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label323
-            // 
-            label323.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label323.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label323.ForeColor = Color.White;
-            label323.Location = new Point(1053, 506);
-            label323.Name = "label323";
-            label323.Padding = new Padding(3);
-            label323.Size = new Size(198, 57);
-            label323.TabIndex = 51;
-            label323.Text = "Area";
-            label323.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label322
-            // 
-            label322.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label322.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label322.ForeColor = Color.White;
-            label322.Location = new Point(849, 506);
-            label322.Name = "label322";
-            label322.Padding = new Padding(3);
-            label322.Size = new Size(198, 57);
-            label322.TabIndex = 50;
-            label322.Text = "Height";
-            label322.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label321
-            // 
-            label321.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label321.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label321.ForeColor = Color.White;
-            label321.Location = new Point(645, 506);
-            label321.Name = "label321";
-            label321.Padding = new Padding(3);
-            label321.Size = new Size(198, 57);
-            label321.TabIndex = 49;
-            label321.Text = "Width";
-            label321.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label320
-            // 
-            label320.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label320.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label320.ForeColor = Color.White;
-            label320.Location = new Point(441, 506);
-            label320.Name = "label320";
-            label320.Padding = new Padding(3);
-            label320.Size = new Size(198, 57);
-            label320.TabIndex = 48;
-            label320.Text = "PeakY";
-            label320.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label319
-            // 
-            label319.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label319.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label319.ForeColor = Color.White;
-            label319.Location = new Point(237, 507);
-            label319.Name = "label319";
-            label319.Padding = new Padding(3);
-            label319.Size = new Size(198, 57);
-            label319.TabIndex = 47;
-            label319.Text = "PeakX";
-            label319.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label318
-            // 
-            label318.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label318.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label318.ForeColor = Color.White;
-            label318.Location = new Point(3, 629);
-            label318.Name = "label318";
-            label318.Padding = new Padding(3);
-            label318.Size = new Size(229, 57);
-            label318.TabIndex = 46;
-            label318.Text = "감속";
-            label318.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label317
-            // 
-            label317.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label317.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label317.ForeColor = Color.White;
-            label317.Location = new Point(3, 568);
-            label317.Name = "label317";
-            label317.Padding = new Padding(3);
-            label317.Size = new Size(229, 57);
-            label317.TabIndex = 45;
-            label317.Text = "가속";
-            label317.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label316
-            // 
-            label316.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label316.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label316.ForeColor = Color.White;
-            label316.Location = new Point(3, 507);
-            label316.Name = "label316";
-            label316.Padding = new Padding(3);
-            label316.Size = new Size(229, 57);
-            label316.TabIndex = 44;
-            label316.Text = "등급";
-            label316.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label296
-            // 
-            label296.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label296.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label296.ForeColor = Color.White;
-            label296.Location = new Point(1144, 378);
-            label296.Name = "label296";
-            label296.Padding = new Padding(3);
-            label296.Size = new Size(242, 57);
-            label296.TabIndex = 43;
-            label296.Text = "-";
-            label296.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label298
-            // 
-            label298.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label298.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label298.ForeColor = Color.White;
-            label298.Location = new Point(1392, 378);
-            label298.Name = "label298";
-            label298.Padding = new Padding(3);
-            label298.Size = new Size(242, 57);
-            label298.TabIndex = 42;
-            label298.Text = "-";
-            label298.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label300
-            // 
-            label300.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label300.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label300.ForeColor = Color.White;
-            label300.Location = new Point(896, 378);
-            label300.Name = "label300";
-            label300.Padding = new Padding(3);
-            label300.Size = new Size(242, 57);
-            label300.TabIndex = 41;
-            label300.Text = "-";
-            label300.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label302
-            // 
-            label302.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label302.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label302.ForeColor = Color.White;
-            label302.Location = new Point(648, 378);
-            label302.Name = "label302";
-            label302.Padding = new Padding(3);
-            label302.Size = new Size(242, 57);
-            label302.TabIndex = 40;
-            label302.Text = "-";
-            label302.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label303
-            // 
-            label303.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label303.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label303.ForeColor = Color.White;
-            label303.Location = new Point(400, 378);
-            label303.Name = "label303";
-            label303.Padding = new Padding(3);
-            label303.Size = new Size(242, 57);
-            label303.TabIndex = 39;
-            label303.Text = "-";
-            label303.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label304
-            // 
-            label304.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label304.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label304.ForeColor = Color.White;
-            label304.Location = new Point(1144, 315);
-            label304.Name = "label304";
-            label304.Padding = new Padding(3);
-            label304.Size = new Size(242, 57);
-            label304.TabIndex = 38;
-            label304.Text = "-";
-            label304.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label305
-            // 
-            label305.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label305.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label305.ForeColor = Color.White;
-            label305.Location = new Point(1392, 315);
-            label305.Name = "label305";
-            label305.Padding = new Padding(3);
-            label305.Size = new Size(242, 57);
-            label305.TabIndex = 37;
-            label305.Text = "-";
-            label305.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label306
-            // 
-            label306.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label306.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label306.ForeColor = Color.White;
-            label306.Location = new Point(896, 315);
-            label306.Name = "label306";
-            label306.Padding = new Padding(3);
-            label306.Size = new Size(242, 57);
-            label306.TabIndex = 36;
-            label306.Text = "-";
-            label306.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label309
-            // 
-            label309.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label309.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label309.ForeColor = Color.White;
-            label309.Location = new Point(648, 315);
-            label309.Name = "label309";
-            label309.Padding = new Padding(3);
-            label309.Size = new Size(242, 57);
-            label309.TabIndex = 35;
-            label309.Text = "-";
-            label309.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label310
-            // 
-            label310.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label310.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label310.ForeColor = Color.White;
-            label310.Location = new Point(400, 315);
-            label310.Name = "label310";
-            label310.Padding = new Padding(3);
-            label310.Size = new Size(242, 57);
-            label310.TabIndex = 34;
-            label310.Text = "-";
-            label310.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label311
-            // 
-            label311.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label311.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label311.ForeColor = Color.White;
-            label311.Location = new Point(1144, 252);
-            label311.Name = "label311";
-            label311.Padding = new Padding(3);
-            label311.Size = new Size(242, 57);
-            label311.TabIndex = 33;
-            label311.Text = "-";
-            label311.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label312
-            // 
-            label312.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label312.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label312.ForeColor = Color.White;
-            label312.Location = new Point(1392, 252);
-            label312.Name = "label312";
-            label312.Padding = new Padding(3);
-            label312.Size = new Size(242, 57);
-            label312.TabIndex = 32;
-            label312.Text = "-";
-            label312.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label313
-            // 
-            label313.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label313.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label313.ForeColor = Color.White;
-            label313.Location = new Point(896, 252);
-            label313.Name = "label313";
-            label313.Padding = new Padding(3);
-            label313.Size = new Size(242, 57);
-            label313.TabIndex = 31;
-            label313.Text = "-";
-            label313.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label314
-            // 
-            label314.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label314.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label314.ForeColor = Color.White;
-            label314.Location = new Point(648, 252);
-            label314.Name = "label314";
-            label314.Padding = new Padding(3);
-            label314.Size = new Size(242, 57);
-            label314.TabIndex = 30;
-            label314.Text = "-";
-            label314.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label315
-            // 
-            label315.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label315.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label315.ForeColor = Color.White;
-            label315.Location = new Point(400, 252);
-            label315.Name = "label315";
-            label315.Padding = new Padding(3);
-            label315.Size = new Size(242, 57);
-            label315.TabIndex = 29;
-            label315.Text = "-";
-            label315.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label286
-            // 
-            label286.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label286.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label286.ForeColor = Color.White;
-            label286.Location = new Point(1144, 190);
-            label286.Name = "label286";
-            label286.Padding = new Padding(3);
-            label286.Size = new Size(242, 57);
-            label286.TabIndex = 28;
-            label286.Text = "-";
-            label286.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label288
-            // 
-            label288.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label288.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label288.ForeColor = Color.White;
-            label288.Location = new Point(1392, 190);
-            label288.Name = "label288";
-            label288.Padding = new Padding(3);
-            label288.Size = new Size(242, 57);
-            label288.TabIndex = 27;
-            label288.Text = "-";
-            label288.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label290
-            // 
-            label290.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label290.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label290.ForeColor = Color.White;
-            label290.Location = new Point(896, 190);
-            label290.Name = "label290";
-            label290.Padding = new Padding(3);
-            label290.Size = new Size(242, 57);
-            label290.TabIndex = 26;
-            label290.Text = "-";
-            label290.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label292
-            // 
-            label292.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label292.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label292.ForeColor = Color.White;
-            label292.Location = new Point(648, 190);
-            label292.Name = "label292";
-            label292.Padding = new Padding(3);
-            label292.Size = new Size(242, 57);
-            label292.TabIndex = 25;
-            label292.Text = "-";
-            label292.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label294
-            // 
-            label294.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label294.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label294.ForeColor = Color.White;
-            label294.Location = new Point(400, 190);
-            label294.Name = "label294";
-            label294.Padding = new Padding(3);
-            label294.Size = new Size(242, 57);
-            label294.TabIndex = 24;
-            label294.Text = "-";
-            label294.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label276
-            // 
-            label276.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label276.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label276.ForeColor = Color.White;
-            label276.Location = new Point(1144, 128);
-            label276.Name = "label276";
-            label276.Padding = new Padding(3);
-            label276.Size = new Size(242, 57);
-            label276.TabIndex = 23;
-            label276.Text = "-";
-            label276.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label278
-            // 
-            label278.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label278.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label278.ForeColor = Color.White;
-            label278.Location = new Point(1392, 128);
-            label278.Name = "label278";
-            label278.Padding = new Padding(3);
-            label278.Size = new Size(242, 57);
-            label278.TabIndex = 22;
-            label278.Text = "-";
-            label278.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label280
-            // 
-            label280.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label280.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label280.ForeColor = Color.White;
-            label280.Location = new Point(896, 128);
-            label280.Name = "label280";
-            label280.Padding = new Padding(3);
-            label280.Size = new Size(242, 57);
-            label280.TabIndex = 21;
-            label280.Text = "-";
-            label280.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label282
-            // 
-            label282.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label282.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label282.ForeColor = Color.White;
-            label282.Location = new Point(648, 128);
-            label282.Name = "label282";
-            label282.Padding = new Padding(3);
-            label282.Size = new Size(242, 57);
-            label282.TabIndex = 20;
-            label282.Text = "-";
-            label282.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label284
-            // 
-            label284.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label284.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label284.ForeColor = Color.White;
-            label284.Location = new Point(400, 128);
-            label284.Name = "label284";
-            label284.Padding = new Padding(3);
-            label284.Size = new Size(242, 57);
-            label284.TabIndex = 19;
-            label284.Text = "-";
-            label284.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label244
-            // 
-            label244.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label244.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label244.ForeColor = Color.White;
-            label244.Location = new Point(1144, 66);
-            label244.Name = "label244";
-            label244.Padding = new Padding(3);
-            label244.Size = new Size(242, 57);
-            label244.TabIndex = 18;
-            label244.Text = "-";
-            label244.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label268
-            // 
-            label268.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label268.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label268.ForeColor = Color.White;
-            label268.Location = new Point(1392, 66);
-            label268.Name = "label268";
-            label268.Padding = new Padding(3);
-            label268.Size = new Size(242, 57);
-            label268.TabIndex = 17;
-            label268.Text = "-";
-            label268.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label270
-            // 
-            label270.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label270.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label270.ForeColor = Color.White;
-            label270.Location = new Point(896, 66);
-            label270.Name = "label270";
-            label270.Padding = new Padding(3);
-            label270.Size = new Size(242, 57);
-            label270.TabIndex = 16;
-            label270.Text = "-";
-            label270.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label272
-            // 
-            label272.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label272.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label272.ForeColor = Color.White;
-            label272.Location = new Point(648, 66);
-            label272.Name = "label272";
-            label272.Padding = new Padding(3);
-            label272.Size = new Size(242, 57);
-            label272.TabIndex = 15;
-            label272.Text = "-";
-            label272.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label274
-            // 
-            label274.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label274.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label274.ForeColor = Color.White;
-            label274.Location = new Point(400, 66);
-            label274.Name = "label274";
-            label274.Padding = new Padding(3);
-            label274.Size = new Size(242, 57);
-            label274.TabIndex = 14;
-            label274.Text = "-";
-            label274.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label212
-            // 
-            label212.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label212.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label212.ForeColor = Color.White;
-            label212.Location = new Point(238, 378);
-            label212.Margin = new Padding(3);
-            label212.Name = "label212";
-            label212.Padding = new Padding(3);
-            label212.Size = new Size(156, 57);
-            label212.TabIndex = 13;
-            label212.Text = "계";
-            label212.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label238
-            // 
-            label238.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label238.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label238.ForeColor = Color.White;
-            label238.Location = new Point(238, 315);
-            label238.Margin = new Padding(3);
-            label238.Name = "label238";
-            label238.Padding = new Padding(3);
-            label238.Size = new Size(156, 57);
-            label238.TabIndex = 12;
-            label238.Text = "Y";
-            label238.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label240
-            // 
-            label240.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label240.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label240.ForeColor = Color.White;
-            label240.Location = new Point(238, 252);
-            label240.Margin = new Padding(3);
-            label240.Name = "label240";
-            label240.Padding = new Padding(3);
-            label240.Size = new Size(156, 57);
-            label240.TabIndex = 11;
-            label240.Text = "X";
-            label240.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label242
-            // 
-            label242.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label242.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label242.ForeColor = Color.White;
-            label242.Location = new Point(3, 252);
-            label242.Margin = new Padding(3);
-            label242.Name = "label242";
-            label242.Padding = new Padding(3);
-            label242.Size = new Size(229, 183);
-            label242.TabIndex = 10;
-            label242.Text = "감속";
-            label242.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label210
-            // 
-            label210.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label210.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label210.ForeColor = Color.White;
-            label210.Location = new Point(238, 190);
-            label210.Margin = new Padding(3);
-            label210.Name = "label210";
-            label210.Padding = new Padding(3);
-            label210.Size = new Size(156, 57);
-            label210.TabIndex = 9;
-            label210.Text = "계";
-            label210.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label208
-            // 
-            label208.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label208.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label208.ForeColor = Color.White;
-            label208.Location = new Point(238, 128);
-            label208.Margin = new Padding(3);
-            label208.Name = "label208";
-            label208.Padding = new Padding(3);
-            label208.Size = new Size(156, 57);
-            label208.TabIndex = 8;
-            label208.Text = "Y";
-            label208.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label206
-            // 
-            label206.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label206.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label206.ForeColor = Color.White;
-            label206.Location = new Point(238, 66);
-            label206.Margin = new Padding(3);
-            label206.Name = "label206";
-            label206.Padding = new Padding(3);
-            label206.Size = new Size(156, 57);
-            label206.TabIndex = 7;
-            label206.Text = "X";
-            label206.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label204
-            // 
-            label204.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label204.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label204.ForeColor = Color.White;
-            label204.Location = new Point(3, 66);
-            label204.Margin = new Padding(3);
-            label204.Name = "label204";
-            label204.Padding = new Padding(3);
-            label204.Size = new Size(229, 181);
-            label204.TabIndex = 6;
-            label204.Text = "가속";
-            label204.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label180
-            // 
-            label180.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label180.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label180.ForeColor = Color.White;
-            label180.Location = new Point(1144, 5);
-            label180.Name = "label180";
-            label180.Padding = new Padding(3);
-            label180.Size = new Size(242, 57);
-            label180.TabIndex = 5;
-            label180.Text = "G4";
-            label180.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label178
-            // 
-            label178.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label178.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label178.ForeColor = Color.White;
-            label178.Location = new Point(1392, 5);
-            label178.Name = "label178";
-            label178.Padding = new Padding(3);
-            label178.Size = new Size(242, 57);
-            label178.TabIndex = 4;
-            label178.Text = "G5";
-            label178.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label176
-            // 
-            label176.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label176.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label176.ForeColor = Color.White;
-            label176.Location = new Point(896, 5);
-            label176.Name = "label176";
-            label176.Padding = new Padding(3);
-            label176.Size = new Size(242, 57);
-            label176.TabIndex = 3;
-            label176.Text = "G3";
-            label176.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label174
-            // 
-            label174.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label174.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label174.ForeColor = Color.White;
-            label174.Location = new Point(648, 5);
-            label174.Name = "label174";
-            label174.Padding = new Padding(3);
-            label174.Size = new Size(242, 57);
-            label174.TabIndex = 2;
-            label174.Text = "G2";
-            label174.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label172
-            // 
-            label172.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label172.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label172.ForeColor = Color.White;
-            label172.Location = new Point(400, 5);
-            label172.Name = "label172";
-            label172.Padding = new Padding(3);
-            label172.Size = new Size(242, 57);
-            label172.TabIndex = 1;
-            label172.Text = "G1";
-            label172.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label170
-            // 
-            label170.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
-            label170.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label170.ForeColor = Color.White;
-            label170.Location = new Point(3, 5);
-            label170.Name = "label170";
-            label170.Padding = new Padding(3);
-            label170.Size = new Size(391, 57);
-            label170.TabIndex = 0;
-            label170.Text = "등급";
-            label170.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DCFinalGradelabel
-            // 
-            DCFinalGradelabel.AutoSize = true;
-            DCFinalGradelabel.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
-            DCFinalGradelabel.ForeColor = Color.White;
-            DCFinalGradelabel.Location = new Point(1042, 33);
-            DCFinalGradelabel.Name = "DCFinalGradelabel";
-            DCFinalGradelabel.Size = new Size(22, 30);
-            DCFinalGradelabel.TabIndex = 8;
-            DCFinalGradelabel.Text = "-";
-            // 
-            // ACFinalGradelabel
-            // 
-            ACFinalGradelabel.AutoSize = true;
-            ACFinalGradelabel.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
-            ACFinalGradelabel.ForeColor = Color.White;
-            ACFinalGradelabel.Location = new Point(869, 33);
-            ACFinalGradelabel.Name = "ACFinalGradelabel";
-            ACFinalGradelabel.Size = new Size(22, 30);
-            ACFinalGradelabel.TabIndex = 7;
-            ACFinalGradelabel.Text = "-";
-            // 
-            // SingleStaticPanel_1
-            // 
-            SingleStaticPanel_1.BackColor = Color.RosyBrown;
-            SingleStaticPanel_1.Controls.Add(AccelerationPeakX);
-            SingleStaticPanel_1.Controls.Add(DCPeakY_Grade);
-            SingleStaticPanel_1.Controls.Add(DCPeakY_ROUT);
-            SingleStaticPanel_1.Controls.Add(DCPeakY__nugeock);
-            SingleStaticPanel_1.Controls.Add(DCPeakY_MaxInterval);
-            SingleStaticPanel_1.Controls.Add(DCPeakY_MaxOne);
-            SingleStaticPanel_1.Controls.Add(label246);
-            SingleStaticPanel_1.Controls.Add(label248);
-            SingleStaticPanel_1.Controls.Add(label250);
-            SingleStaticPanel_1.Controls.Add(label252);
-            SingleStaticPanel_1.Controls.Add(label254);
-            SingleStaticPanel_1.Controls.Add(label256);
-            SingleStaticPanel_1.Controls.Add(label258);
-            SingleStaticPanel_1.Controls.Add(label260);
-            SingleStaticPanel_1.Controls.Add(label262);
-            SingleStaticPanel_1.Controls.Add(label264);
-            SingleStaticPanel_1.Controls.Add(label266);
-            SingleStaticPanel_1.Controls.Add(DCPeakX_Grade);
-            SingleStaticPanel_1.Controls.Add(DCPeakX_ROUT);
-            SingleStaticPanel_1.Controls.Add(DCPeakX__nugeock);
-            SingleStaticPanel_1.Controls.Add(DCPeakX_MaxInterval);
-            SingleStaticPanel_1.Controls.Add(DCPeakX_MaxOne);
-            SingleStaticPanel_1.Controls.Add(label214);
-            SingleStaticPanel_1.Controls.Add(label216);
-            SingleStaticPanel_1.Controls.Add(label218);
-            SingleStaticPanel_1.Controls.Add(label220);
-            SingleStaticPanel_1.Controls.Add(label222);
-            SingleStaticPanel_1.Controls.Add(label224);
-            SingleStaticPanel_1.Controls.Add(label226);
-            SingleStaticPanel_1.Controls.Add(label228);
-            SingleStaticPanel_1.Controls.Add(label230);
-            SingleStaticPanel_1.Controls.Add(label232);
-            SingleStaticPanel_1.Controls.Add(label234);
-            SingleStaticPanel_1.Controls.Add(ACPeakY_Grade);
-            SingleStaticPanel_1.Controls.Add(ACPeakY_ROUT);
-            SingleStaticPanel_1.Controls.Add(ACPeakY__nugeock);
-            SingleStaticPanel_1.Controls.Add(ACPeakY_MaxInterval);
-            SingleStaticPanel_1.Controls.Add(ACPeakY_MaxOne);
-            SingleStaticPanel_1.Controls.Add(label182);
-            SingleStaticPanel_1.Controls.Add(label184);
-            SingleStaticPanel_1.Controls.Add(label186);
-            SingleStaticPanel_1.Controls.Add(label188);
-            SingleStaticPanel_1.Controls.Add(label190);
-            SingleStaticPanel_1.Controls.Add(label192);
-            SingleStaticPanel_1.Controls.Add(label194);
-            SingleStaticPanel_1.Controls.Add(label196);
-            SingleStaticPanel_1.Controls.Add(label198);
-            SingleStaticPanel_1.Controls.Add(label200);
-            SingleStaticPanel_1.Controls.Add(label202);
-            SingleStaticPanel_1.Controls.Add(ACPeakX_Grade);
-            SingleStaticPanel_1.Controls.Add(ACPeakX_ROUT);
-            SingleStaticPanel_1.Controls.Add(ACPeakX__nugeock);
-            SingleStaticPanel_1.Controls.Add(ACPeakX_MaxInterval);
-            SingleStaticPanel_1.Controls.Add(ACPeakX_MaxOne);
-            SingleStaticPanel_1.Controls.Add(label128);
-            SingleStaticPanel_1.Controls.Add(label116);
-            SingleStaticPanel_1.Controls.Add(label112);
-            SingleStaticPanel_1.Controls.Add(label109);
-            SingleStaticPanel_1.Controls.Add(label100);
-            SingleStaticPanel_1.Controls.Add(label69);
-            SingleStaticPanel_1.Controls.Add(label64);
-            SingleStaticPanel_1.Controls.Add(label59);
-            SingleStaticPanel_1.Controls.Add(label58);
-            SingleStaticPanel_1.Controls.Add(label54);
-            SingleStaticPanel_1.Controls.Add(label47);
-            SingleStaticPanel_1.Controls.Add(SingleStaticPanel_1_imgcheckButton);
-            SingleStaticPanel_1.Controls.Add(label46);
-            SingleStaticPanel_1.Controls.Add(label42);
-            SingleStaticPanel_1.Controls.Add(DecelerationPeakY);
-            SingleStaticPanel_1.Controls.Add(DecelerationPeakX);
-            SingleStaticPanel_1.Controls.Add(AccelerationPeakY);
-            SingleStaticPanel_1.Location = new Point(288, 36);
-            SingleStaticPanel_1.Name = "SingleStaticPanel_1";
-            SingleStaticPanel_1.Size = new Size(64, 10);
-            SingleStaticPanel_1.TabIndex = 3;
-            // 
-            // AccelerationPeakX
-            // 
-            AccelerationPeakX.Location = new Point(9, 56);
-            AccelerationPeakX.Name = "AccelerationPeakX";
-            AccelerationPeakX.Size = new Size(490, 246);
-            AccelerationPeakX.TabIndex = 0;
-            // 
-            // DCPeakY_Grade
-            // 
-            DCPeakY_Grade.BackColor = Color.Gray;
-            DCPeakY_Grade.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            DCPeakY_Grade.ForeColor = Color.White;
-            DCPeakY_Grade.Location = new Point(1579, 339);
-            DCPeakY_Grade.Name = "DCPeakY_Grade";
-            DCPeakY_Grade.Size = new Size(86, 212);
-            DCPeakY_Grade.TabIndex = 74;
-            DCPeakY_Grade.Text = "-";
-            DCPeakY_Grade.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DCPeakY_ROUT
-            // 
-            DCPeakY_ROUT.BackColor = Color.Gray;
-            DCPeakY_ROUT.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            DCPeakY_ROUT.ForeColor = Color.White;
-            DCPeakY_ROUT.Location = new Point(1462, 500);
-            DCPeakY_ROUT.Name = "DCPeakY_ROUT";
-            DCPeakY_ROUT.Size = new Size(112, 51);
-            DCPeakY_ROUT.TabIndex = 73;
-            DCPeakY_ROUT.Text = "-";
-            DCPeakY_ROUT.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DCPeakY__nugeock
-            // 
-            DCPeakY__nugeock.BackColor = Color.Gray;
-            DCPeakY__nugeock.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            DCPeakY__nugeock.ForeColor = Color.White;
-            DCPeakY__nugeock.Location = new Point(1462, 446);
-            DCPeakY__nugeock.Name = "DCPeakY__nugeock";
-            DCPeakY__nugeock.Size = new Size(112, 51);
-            DCPeakY__nugeock.TabIndex = 72;
-            DCPeakY__nugeock.Text = "-";
-            DCPeakY__nugeock.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DCPeakY_MaxInterval
-            // 
-            DCPeakY_MaxInterval.BackColor = Color.Gray;
-            DCPeakY_MaxInterval.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            DCPeakY_MaxInterval.ForeColor = Color.White;
-            DCPeakY_MaxInterval.Location = new Point(1462, 393);
-            DCPeakY_MaxInterval.Name = "DCPeakY_MaxInterval";
-            DCPeakY_MaxInterval.Size = new Size(112, 51);
-            DCPeakY_MaxInterval.TabIndex = 71;
-            DCPeakY_MaxInterval.Text = "-";
-            DCPeakY_MaxInterval.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DCPeakY_MaxOne
-            // 
-            DCPeakY_MaxOne.BackColor = Color.Gray;
-            DCPeakY_MaxOne.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            DCPeakY_MaxOne.ForeColor = Color.White;
-            DCPeakY_MaxOne.Location = new Point(1462, 339);
-            DCPeakY_MaxOne.Name = "DCPeakY_MaxOne";
-            DCPeakY_MaxOne.Size = new Size(112, 51);
-            DCPeakY_MaxOne.TabIndex = 70;
-            DCPeakY_MaxOne.Text = "-";
-            DCPeakY_MaxOne.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label246
-            // 
-            label246.BackColor = Color.Silver;
-            label246.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label246.ForeColor = Color.Black;
-            label246.Location = new Point(1385, 500);
-            label246.Name = "label246";
-            label246.Size = new Size(75, 51);
-            label246.TabIndex = 69;
-            label246.Text = "R/OUT";
-            label246.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label248
-            // 
-            label248.BackColor = Color.Silver;
-            label248.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label248.ForeColor = Color.Black;
-            label248.Location = new Point(1385, 446);
-            label248.Name = "label248";
-            label248.Size = new Size(75, 51);
-            label248.TabIndex = 68;
-            label248.Text = "누적치";
-            label248.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label250
-            // 
-            label250.BackColor = Color.Silver;
-            label250.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label250.ForeColor = Color.Black;
-            label250.Location = new Point(1385, 393);
-            label250.Name = "label250";
-            label250.Size = new Size(75, 51);
-            label250.TabIndex = 67;
-            label250.Text = "인접치";
-            label250.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label252
-            // 
-            label252.BackColor = Color.Silver;
-            label252.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label252.ForeColor = Color.Black;
-            label252.Location = new Point(1385, 339);
-            label252.Name = "label252";
-            label252.Size = new Size(75, 51);
-            label252.TabIndex = 66;
-            label252.Text = "단일치";
-            label252.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label254
-            // 
-            label254.BackColor = Color.Silver;
-            label254.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label254.ForeColor = Color.Black;
-            label254.Location = new Point(1349, 500);
-            label254.Name = "label254";
-            label254.Size = new Size(33, 51);
-            label254.TabIndex = 65;
-            label254.Text = "D";
-            label254.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label256
-            // 
-            label256.BackColor = Color.Silver;
-            label256.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label256.ForeColor = Color.Black;
-            label256.Location = new Point(1349, 446);
-            label256.Name = "label256";
-            label256.Size = new Size(33, 51);
-            label256.TabIndex = 64;
-            label256.Text = "C";
-            label256.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label258
-            // 
-            label258.BackColor = Color.Silver;
-            label258.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label258.ForeColor = Color.Black;
-            label258.Location = new Point(1349, 393);
-            label258.Name = "label258";
-            label258.Size = new Size(33, 51);
-            label258.TabIndex = 63;
-            label258.Text = "B";
-            label258.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label260
-            // 
-            label260.BackColor = Color.Silver;
-            label260.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label260.ForeColor = Color.Black;
-            label260.Location = new Point(1349, 339);
-            label260.Name = "label260";
-            label260.Size = new Size(33, 51);
-            label260.TabIndex = 62;
-            label260.Text = "A";
-            label260.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label262
-            // 
-            label262.BackColor = Color.Silver;
-            label262.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label262.ForeColor = Color.Black;
-            label262.Location = new Point(1579, 305);
-            label262.Name = "label262";
-            label262.Size = new Size(86, 30);
-            label262.TabIndex = 61;
-            label262.Text = "등급";
-            label262.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label264
-            // 
-            label264.BackColor = Color.Silver;
-            label264.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label264.ForeColor = Color.Black;
-            label264.Location = new Point(1462, 305);
-            label264.Name = "label264";
-            label264.Size = new Size(112, 30);
-            label264.TabIndex = 60;
-            label264.Text = "실제값";
-            label264.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label266
-            // 
-            label266.BackColor = Color.Silver;
-            label266.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label266.ForeColor = Color.Black;
-            label266.Location = new Point(1349, 305);
-            label266.Name = "label266";
-            label266.Size = new Size(111, 30);
-            label266.TabIndex = 59;
-            label266.Text = "구분";
-            label266.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DCPeakX_Grade
-            // 
-            DCPeakX_Grade.BackColor = Color.Gray;
-            DCPeakX_Grade.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            DCPeakX_Grade.ForeColor = Color.White;
-            DCPeakX_Grade.Location = new Point(1579, 90);
-            DCPeakX_Grade.Name = "DCPeakX_Grade";
-            DCPeakX_Grade.Size = new Size(86, 212);
-            DCPeakX_Grade.TabIndex = 58;
-            DCPeakX_Grade.Text = "-";
-            DCPeakX_Grade.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DCPeakX_ROUT
-            // 
-            DCPeakX_ROUT.BackColor = Color.Gray;
-            DCPeakX_ROUT.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            DCPeakX_ROUT.ForeColor = Color.White;
-            DCPeakX_ROUT.Location = new Point(1462, 251);
-            DCPeakX_ROUT.Name = "DCPeakX_ROUT";
-            DCPeakX_ROUT.Size = new Size(112, 51);
-            DCPeakX_ROUT.TabIndex = 57;
-            DCPeakX_ROUT.Text = "-";
-            DCPeakX_ROUT.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DCPeakX__nugeock
-            // 
-            DCPeakX__nugeock.BackColor = Color.Gray;
-            DCPeakX__nugeock.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            DCPeakX__nugeock.ForeColor = Color.White;
-            DCPeakX__nugeock.Location = new Point(1462, 197);
-            DCPeakX__nugeock.Name = "DCPeakX__nugeock";
-            DCPeakX__nugeock.Size = new Size(112, 51);
-            DCPeakX__nugeock.TabIndex = 56;
-            DCPeakX__nugeock.Text = "-";
-            DCPeakX__nugeock.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DCPeakX_MaxInterval
-            // 
-            DCPeakX_MaxInterval.BackColor = Color.Gray;
-            DCPeakX_MaxInterval.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            DCPeakX_MaxInterval.ForeColor = Color.White;
-            DCPeakX_MaxInterval.Location = new Point(1462, 144);
-            DCPeakX_MaxInterval.Name = "DCPeakX_MaxInterval";
-            DCPeakX_MaxInterval.Size = new Size(112, 51);
-            DCPeakX_MaxInterval.TabIndex = 55;
-            DCPeakX_MaxInterval.Text = "-";
-            DCPeakX_MaxInterval.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DCPeakX_MaxOne
-            // 
-            DCPeakX_MaxOne.BackColor = Color.Gray;
-            DCPeakX_MaxOne.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            DCPeakX_MaxOne.ForeColor = Color.White;
-            DCPeakX_MaxOne.Location = new Point(1462, 90);
-            DCPeakX_MaxOne.Name = "DCPeakX_MaxOne";
-            DCPeakX_MaxOne.Size = new Size(112, 51);
-            DCPeakX_MaxOne.TabIndex = 54;
-            DCPeakX_MaxOne.Text = "-";
-            DCPeakX_MaxOne.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label214
-            // 
-            label214.BackColor = Color.Silver;
-            label214.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label214.ForeColor = Color.Black;
-            label214.Location = new Point(1385, 251);
-            label214.Name = "label214";
-            label214.Size = new Size(75, 51);
-            label214.TabIndex = 53;
-            label214.Text = "R/OUT";
-            label214.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label216
-            // 
-            label216.BackColor = Color.Silver;
-            label216.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label216.ForeColor = Color.Black;
-            label216.Location = new Point(1385, 197);
-            label216.Name = "label216";
-            label216.Size = new Size(75, 51);
-            label216.TabIndex = 52;
-            label216.Text = "누적치";
-            label216.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label218
-            // 
-            label218.BackColor = Color.Silver;
-            label218.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label218.ForeColor = Color.Black;
-            label218.Location = new Point(1385, 144);
-            label218.Name = "label218";
-            label218.Size = new Size(75, 51);
-            label218.TabIndex = 51;
-            label218.Text = "인접치";
-            label218.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label220
-            // 
-            label220.BackColor = Color.Silver;
-            label220.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label220.ForeColor = Color.Black;
-            label220.Location = new Point(1385, 90);
-            label220.Name = "label220";
-            label220.Size = new Size(75, 51);
-            label220.TabIndex = 50;
-            label220.Text = "단일치";
-            label220.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label222
-            // 
-            label222.BackColor = Color.Silver;
-            label222.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label222.ForeColor = Color.Black;
-            label222.Location = new Point(1349, 251);
-            label222.Name = "label222";
-            label222.Size = new Size(33, 51);
-            label222.TabIndex = 49;
-            label222.Text = "D";
-            label222.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label224
-            // 
-            label224.BackColor = Color.Silver;
-            label224.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label224.ForeColor = Color.Black;
-            label224.Location = new Point(1349, 197);
-            label224.Name = "label224";
-            label224.Size = new Size(33, 51);
-            label224.TabIndex = 48;
-            label224.Text = "C";
-            label224.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label226
-            // 
-            label226.BackColor = Color.Silver;
-            label226.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label226.ForeColor = Color.Black;
-            label226.Location = new Point(1349, 144);
-            label226.Name = "label226";
-            label226.Size = new Size(33, 51);
-            label226.TabIndex = 47;
-            label226.Text = "B";
-            label226.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label228
-            // 
-            label228.BackColor = Color.Silver;
-            label228.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label228.ForeColor = Color.Black;
-            label228.Location = new Point(1349, 90);
-            label228.Name = "label228";
-            label228.Size = new Size(33, 51);
-            label228.TabIndex = 46;
-            label228.Text = "A";
-            label228.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label230
-            // 
-            label230.BackColor = Color.Silver;
-            label230.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label230.ForeColor = Color.Black;
-            label230.Location = new Point(1579, 56);
-            label230.Name = "label230";
-            label230.Size = new Size(86, 30);
-            label230.TabIndex = 45;
-            label230.Text = "등급";
-            label230.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label232
-            // 
-            label232.BackColor = Color.Silver;
-            label232.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label232.ForeColor = Color.Black;
-            label232.Location = new Point(1462, 56);
-            label232.Name = "label232";
-            label232.Size = new Size(112, 30);
-            label232.TabIndex = 44;
-            label232.Text = "실제값";
-            label232.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label234
-            // 
-            label234.BackColor = Color.Silver;
-            label234.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label234.ForeColor = Color.Black;
-            label234.Location = new Point(1349, 56);
-            label234.Name = "label234";
-            label234.Size = new Size(111, 30);
-            label234.TabIndex = 43;
-            label234.Text = "구분";
-            label234.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // ACPeakY_Grade
-            // 
-            ACPeakY_Grade.BackColor = Color.Gray;
-            ACPeakY_Grade.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            ACPeakY_Grade.ForeColor = Color.White;
-            ACPeakY_Grade.Location = new Point(738, 340);
-            ACPeakY_Grade.Name = "ACPeakY_Grade";
-            ACPeakY_Grade.Size = new Size(85, 212);
-            ACPeakY_Grade.TabIndex = 42;
-            ACPeakY_Grade.Text = "-";
-            ACPeakY_Grade.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // ACPeakY_ROUT
-            // 
-            ACPeakY_ROUT.BackColor = Color.Gray;
-            ACPeakY_ROUT.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            ACPeakY_ROUT.ForeColor = Color.White;
-            ACPeakY_ROUT.Location = new Point(615, 501);
-            ACPeakY_ROUT.Name = "ACPeakY_ROUT";
-            ACPeakY_ROUT.Size = new Size(119, 51);
-            ACPeakY_ROUT.TabIndex = 41;
-            ACPeakY_ROUT.Text = "-";
-            ACPeakY_ROUT.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // ACPeakY__nugeock
-            // 
-            ACPeakY__nugeock.BackColor = Color.Gray;
-            ACPeakY__nugeock.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            ACPeakY__nugeock.ForeColor = Color.White;
-            ACPeakY__nugeock.Location = new Point(615, 447);
-            ACPeakY__nugeock.Name = "ACPeakY__nugeock";
-            ACPeakY__nugeock.Size = new Size(119, 51);
-            ACPeakY__nugeock.TabIndex = 40;
-            ACPeakY__nugeock.Text = "-";
-            ACPeakY__nugeock.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // ACPeakY_MaxInterval
-            // 
-            ACPeakY_MaxInterval.BackColor = Color.Gray;
-            ACPeakY_MaxInterval.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            ACPeakY_MaxInterval.ForeColor = Color.White;
-            ACPeakY_MaxInterval.Location = new Point(615, 394);
-            ACPeakY_MaxInterval.Name = "ACPeakY_MaxInterval";
-            ACPeakY_MaxInterval.Size = new Size(119, 51);
-            ACPeakY_MaxInterval.TabIndex = 39;
-            ACPeakY_MaxInterval.Text = "-";
-            ACPeakY_MaxInterval.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // ACPeakY_MaxOne
-            // 
-            ACPeakY_MaxOne.BackColor = Color.Gray;
-            ACPeakY_MaxOne.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            ACPeakY_MaxOne.ForeColor = Color.White;
-            ACPeakY_MaxOne.Location = new Point(615, 340);
-            ACPeakY_MaxOne.Name = "ACPeakY_MaxOne";
-            ACPeakY_MaxOne.Size = new Size(119, 51);
-            ACPeakY_MaxOne.TabIndex = 38;
-            ACPeakY_MaxOne.Text = "-";
-            ACPeakY_MaxOne.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label182
-            // 
-            label182.BackColor = Color.Silver;
-            label182.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label182.ForeColor = Color.Black;
-            label182.Location = new Point(538, 501);
-            label182.Name = "label182";
-            label182.Size = new Size(75, 51);
-            label182.TabIndex = 37;
-            label182.Text = "R/OUT";
-            label182.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label184
-            // 
-            label184.BackColor = Color.Silver;
-            label184.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label184.ForeColor = Color.Black;
-            label184.Location = new Point(538, 447);
-            label184.Name = "label184";
-            label184.Size = new Size(75, 51);
-            label184.TabIndex = 36;
-            label184.Text = "누적치";
-            label184.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label186
-            // 
-            label186.BackColor = Color.Silver;
-            label186.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label186.ForeColor = Color.Black;
-            label186.Location = new Point(538, 394);
-            label186.Name = "label186";
-            label186.Size = new Size(75, 51);
-            label186.TabIndex = 35;
-            label186.Text = "인접치";
-            label186.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label188
-            // 
-            label188.BackColor = Color.Silver;
-            label188.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label188.ForeColor = Color.Black;
-            label188.Location = new Point(538, 340);
-            label188.Name = "label188";
-            label188.Size = new Size(75, 51);
-            label188.TabIndex = 34;
-            label188.Text = "단일치";
-            label188.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label190
-            // 
-            label190.BackColor = Color.Silver;
-            label190.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label190.ForeColor = Color.Black;
-            label190.Location = new Point(502, 501);
-            label190.Name = "label190";
-            label190.Size = new Size(33, 51);
-            label190.TabIndex = 33;
-            label190.Text = "D";
-            label190.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label192
-            // 
-            label192.BackColor = Color.Silver;
-            label192.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label192.ForeColor = Color.Black;
-            label192.Location = new Point(502, 447);
-            label192.Name = "label192";
-            label192.Size = new Size(33, 51);
-            label192.TabIndex = 32;
-            label192.Text = "C";
-            label192.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label194
-            // 
-            label194.BackColor = Color.Silver;
-            label194.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label194.ForeColor = Color.Black;
-            label194.Location = new Point(502, 394);
-            label194.Name = "label194";
-            label194.Size = new Size(33, 51);
-            label194.TabIndex = 31;
-            label194.Text = "B";
-            label194.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label196
-            // 
-            label196.BackColor = Color.Silver;
-            label196.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label196.ForeColor = Color.Black;
-            label196.Location = new Point(502, 340);
-            label196.Name = "label196";
-            label196.Size = new Size(33, 51);
-            label196.TabIndex = 30;
-            label196.Text = "A";
-            label196.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label198
-            // 
-            label198.BackColor = Color.Silver;
-            label198.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label198.ForeColor = Color.Black;
-            label198.Location = new Point(738, 306);
-            label198.Name = "label198";
-            label198.Size = new Size(85, 30);
-            label198.TabIndex = 29;
-            label198.Text = "등급";
-            label198.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label200
-            // 
-            label200.BackColor = Color.Silver;
-            label200.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label200.ForeColor = Color.Black;
-            label200.Location = new Point(615, 306);
-            label200.Name = "label200";
-            label200.Size = new Size(119, 30);
-            label200.TabIndex = 28;
-            label200.Text = "실제값";
-            label200.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label202
-            // 
-            label202.BackColor = Color.Silver;
-            label202.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label202.ForeColor = Color.Black;
-            label202.Location = new Point(502, 306);
-            label202.Name = "label202";
-            label202.Size = new Size(111, 30);
-            label202.TabIndex = 27;
-            label202.Text = "구분";
-            label202.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // ACPeakX_Grade
-            // 
-            ACPeakX_Grade.BackColor = Color.Gray;
-            ACPeakX_Grade.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            ACPeakX_Grade.ForeColor = Color.White;
-            ACPeakX_Grade.Location = new Point(738, 90);
-            ACPeakX_Grade.Name = "ACPeakX_Grade";
-            ACPeakX_Grade.Size = new Size(85, 212);
-            ACPeakX_Grade.TabIndex = 26;
-            ACPeakX_Grade.Text = "-";
-            ACPeakX_Grade.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // ACPeakX_ROUT
-            // 
-            ACPeakX_ROUT.BackColor = Color.Gray;
-            ACPeakX_ROUT.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            ACPeakX_ROUT.ForeColor = Color.White;
-            ACPeakX_ROUT.Location = new Point(615, 251);
-            ACPeakX_ROUT.Name = "ACPeakX_ROUT";
-            ACPeakX_ROUT.Size = new Size(119, 51);
-            ACPeakX_ROUT.TabIndex = 25;
-            ACPeakX_ROUT.Text = "-";
-            ACPeakX_ROUT.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // ACPeakX__nugeock
-            // 
-            ACPeakX__nugeock.BackColor = Color.Gray;
-            ACPeakX__nugeock.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            ACPeakX__nugeock.ForeColor = Color.White;
-            ACPeakX__nugeock.Location = new Point(615, 197);
-            ACPeakX__nugeock.Name = "ACPeakX__nugeock";
-            ACPeakX__nugeock.Size = new Size(119, 51);
-            ACPeakX__nugeock.TabIndex = 24;
-            ACPeakX__nugeock.Text = "-";
-            ACPeakX__nugeock.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // ACPeakX_MaxInterval
-            // 
-            ACPeakX_MaxInterval.BackColor = Color.Gray;
-            ACPeakX_MaxInterval.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            ACPeakX_MaxInterval.ForeColor = Color.White;
-            ACPeakX_MaxInterval.Location = new Point(615, 144);
-            ACPeakX_MaxInterval.Name = "ACPeakX_MaxInterval";
-            ACPeakX_MaxInterval.Size = new Size(119, 51);
-            ACPeakX_MaxInterval.TabIndex = 23;
-            ACPeakX_MaxInterval.Text = "-";
-            ACPeakX_MaxInterval.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // ACPeakX_MaxOne
-            // 
-            ACPeakX_MaxOne.BackColor = Color.Gray;
-            ACPeakX_MaxOne.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            ACPeakX_MaxOne.ForeColor = Color.White;
-            ACPeakX_MaxOne.Location = new Point(615, 90);
-            ACPeakX_MaxOne.Name = "ACPeakX_MaxOne";
-            ACPeakX_MaxOne.Size = new Size(119, 51);
-            ACPeakX_MaxOne.TabIndex = 22;
-            ACPeakX_MaxOne.Text = "-";
-            ACPeakX_MaxOne.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label128
-            // 
-            label128.BackColor = Color.Silver;
-            label128.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label128.ForeColor = Color.Black;
-            label128.Location = new Point(538, 251);
-            label128.Name = "label128";
-            label128.Size = new Size(75, 51);
-            label128.TabIndex = 21;
-            label128.Text = "R/OUT";
-            label128.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label116
-            // 
-            label116.BackColor = Color.Silver;
-            label116.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label116.ForeColor = Color.Black;
-            label116.Location = new Point(538, 197);
-            label116.Name = "label116";
-            label116.Size = new Size(75, 51);
-            label116.TabIndex = 20;
-            label116.Text = "누적치";
-            label116.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label112
-            // 
-            label112.BackColor = Color.Silver;
-            label112.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label112.ForeColor = Color.Black;
-            label112.Location = new Point(538, 144);
-            label112.Name = "label112";
-            label112.Size = new Size(75, 51);
-            label112.TabIndex = 19;
-            label112.Text = "인접치";
-            label112.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label109
-            // 
-            label109.BackColor = Color.Silver;
-            label109.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
-            label109.ForeColor = Color.Black;
-            label109.Location = new Point(538, 90);
-            label109.Name = "label109";
-            label109.Size = new Size(75, 51);
-            label109.TabIndex = 18;
-            label109.Text = "단일치";
-            label109.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label100
-            // 
-            label100.BackColor = Color.Silver;
-            label100.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label100.ForeColor = Color.Black;
-            label100.Location = new Point(502, 251);
-            label100.Name = "label100";
-            label100.Size = new Size(33, 51);
-            label100.TabIndex = 17;
-            label100.Text = "D";
-            label100.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label69
-            // 
-            label69.BackColor = Color.Silver;
-            label69.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label69.ForeColor = Color.Black;
-            label69.Location = new Point(502, 197);
-            label69.Name = "label69";
-            label69.Size = new Size(33, 51);
-            label69.TabIndex = 16;
-            label69.Text = "C";
-            label69.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label64
-            // 
-            label64.BackColor = Color.Silver;
-            label64.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label64.ForeColor = Color.Black;
-            label64.Location = new Point(502, 144);
-            label64.Name = "label64";
-            label64.Size = new Size(33, 51);
-            label64.TabIndex = 15;
-            label64.Text = "B";
-            label64.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label59
-            // 
-            label59.BackColor = Color.Silver;
-            label59.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label59.ForeColor = Color.Black;
-            label59.Location = new Point(502, 90);
-            label59.Name = "label59";
-            label59.Size = new Size(33, 51);
-            label59.TabIndex = 14;
-            label59.Text = "A";
-            label59.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label58
-            // 
-            label58.BackColor = Color.Silver;
-            label58.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label58.ForeColor = Color.Black;
-            label58.Location = new Point(738, 56);
-            label58.Name = "label58";
-            label58.Size = new Size(85, 30);
-            label58.TabIndex = 13;
-            label58.Text = "등급";
-            label58.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label54
-            // 
-            label54.BackColor = Color.Silver;
-            label54.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label54.ForeColor = Color.Black;
-            label54.Location = new Point(615, 56);
-            label54.Name = "label54";
-            label54.Size = new Size(119, 30);
-            label54.TabIndex = 12;
-            label54.Text = "실제값";
-            label54.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label47
-            // 
-            label47.BackColor = Color.Silver;
-            label47.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
-            label47.ForeColor = Color.Black;
-            label47.Location = new Point(502, 56);
-            label47.Name = "label47";
-            label47.Size = new Size(111, 30);
-            label47.TabIndex = 11;
-            label47.Text = "구분";
-            label47.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // SingleStaticPanel_1_imgcheckButton
-            // 
-            SingleStaticPanel_1_imgcheckButton.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
-            SingleStaticPanel_1_imgcheckButton.Location = new Point(1313, 580);
-            SingleStaticPanel_1_imgcheckButton.Name = "SingleStaticPanel_1_imgcheckButton";
-            SingleStaticPanel_1_imgcheckButton.Size = new Size(322, 77);
-            SingleStaticPanel_1_imgcheckButton.TabIndex = 10;
-            SingleStaticPanel_1_imgcheckButton.Text = "단일 이미지 확인";
-            SingleStaticPanel_1_imgcheckButton.UseVisualStyleBackColor = true;
-            SingleStaticPanel_1_imgcheckButton.Click += (this.SingleImgCheckButton_Click);
-            // 
-            // label46
-            // 
-            label46.AutoEllipsis = true;
-            label46.BackColor = Color.Black;
-            label46.BorderStyle = BorderStyle.Fixed3D;
-            label46.Font = new Font("맑은 고딕", 21.75F, FontStyle.Bold);
-            label46.ForeColor = Color.White;
-            label46.Location = new Point(829, 5);
-            label46.Name = "label46";
-            label46.Size = new Size(836, 48);
-            label46.TabIndex = 8;
-            label46.Text = "Decelearation";
-            label46.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label42
-            // 
-            label42.AutoEllipsis = true;
-            label42.BackColor = Color.Black;
-            label42.BorderStyle = BorderStyle.Fixed3D;
-            label42.Font = new Font("맑은 고딕", 21.75F, FontStyle.Bold);
-            label42.ForeColor = Color.White;
-            label42.Location = new Point(9, 5);
-            label42.Name = "label42";
-            label42.Size = new Size(814, 48);
-            label42.TabIndex = 7;
-            label42.Text = "Acceleration";
-            label42.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DecelerationPeakY
-            // 
-            DecelerationPeakY.Location = new Point(829, 306);
-            DecelerationPeakY.Name = "DecelerationPeakY";
-            DecelerationPeakY.Size = new Size(515, 245);
-            DecelerationPeakY.TabIndex = 3;
-            // 
-            // DecelerationPeakX
-            // 
-            DecelerationPeakX.Location = new Point(829, 56);
-            DecelerationPeakX.Name = "DecelerationPeakX";
-            DecelerationPeakX.Size = new Size(515, 246);
-            DecelerationPeakX.TabIndex = 2;
-            // 
-            // AccelerationPeakY
-            // 
-            AccelerationPeakY.Location = new Point(9, 306);
-            AccelerationPeakY.Name = "AccelerationPeakY";
-            AccelerationPeakY.Size = new Size(490, 246);
-            AccelerationPeakY.TabIndex = 1;
+            // SingleStaticPanel_5
+            // 
+            SingleStaticPanel_5.Controls.Add(label584);
+            SingleStaticPanel_5.Controls.Add(label585);
+            SingleStaticPanel_5.Controls.Add(label582);
+            SingleStaticPanel_5.Controls.Add(label583);
+            SingleStaticPanel_5.Controls.Add(label581);
+            SingleStaticPanel_5.Controls.Add(label580);
+            SingleStaticPanel_5.Controls.Add(label575);
+            SingleStaticPanel_5.Controls.Add(label353);
+            SingleStaticPanel_5.Controls.Add(SensingROUT);
+            SingleStaticPanel_5.Location = new Point(24, 68);
+            SingleStaticPanel_5.Name = "SingleStaticPanel_5";
+            SingleStaticPanel_5.Size = new Size(1501, 678);
+            SingleStaticPanel_5.TabIndex = 38;
+            // 
+            // label584
+            // 
+            label584.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label584.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label584.ForeColor = Color.White;
+            label584.Location = new Point(1170, 361);
+            label584.Name = "label584";
+            label584.Size = new Size(173, 75);
+            label584.TabIndex = 84;
+            label584.Text = "-";
+            label584.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label585
+            // 
+            label585.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label585.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label585.ForeColor = Color.White;
+            label585.Location = new Point(992, 361);
+            label585.Name = "label585";
+            label585.Size = new Size(173, 75);
+            label585.TabIndex = 83;
+            label585.Text = "R/OUT";
+            label585.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label582
+            // 
+            label582.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label582.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label582.ForeColor = Color.White;
+            label582.Location = new Point(1170, 283);
+            label582.Name = "label582";
+            label582.Size = new Size(173, 75);
+            label582.TabIndex = 82;
+            label582.Text = "-";
+            label582.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label583
+            // 
+            label583.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label583.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label583.ForeColor = Color.White;
+            label583.Location = new Point(992, 283);
+            label583.Name = "label583";
+            label583.Size = new Size(173, 75);
+            label583.TabIndex = 81;
+            label583.Text = "최소";
+            label583.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label581
+            // 
+            label581.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label581.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label581.ForeColor = Color.White;
+            label581.Location = new Point(992, 129);
+            label581.Name = "label581";
+            label581.Size = new Size(173, 75);
+            label581.TabIndex = 80;
+            label581.Text = "구분";
+            label581.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label580
+            // 
+            label580.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label580.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label580.ForeColor = Color.White;
+            label580.Location = new Point(1170, 129);
+            label580.Name = "label580";
+            label580.Size = new Size(173, 75);
+            label580.TabIndex = 79;
+            label580.Text = "데이터";
+            label580.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label575
+            // 
+            label575.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label575.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label575.ForeColor = Color.White;
+            label575.Location = new Point(1170, 206);
+            label575.Name = "label575";
+            label575.Size = new Size(173, 75);
+            label575.TabIndex = 78;
+            label575.Text = "-";
+            label575.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label353
+            // 
+            label353.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label353.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label353.ForeColor = Color.White;
+            label353.Location = new Point(992, 206);
+            label353.Name = "label353";
+            label353.Size = new Size(173, 75);
+            label353.TabIndex = 77;
+            label353.Text = "최대";
+            label353.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SensingROUT
+            // 
+            SensingROUT.Location = new Point(14, 16);
+            SensingROUT.Name = "SensingROUT";
+            SensingROUT.Size = new Size(934, 567);
+            SensingROUT.TabIndex = 76;
             // 
             // SingleStaticPanel_2
             // 
@@ -8832,9 +3668,9 @@
             SingleStaticPanel_2.Controls.Add(label418);
             SingleStaticPanel_2.Controls.Add(label419);
             SingleStaticPanel_2.Controls.Add(label420);
-            SingleStaticPanel_2.Location = new Point(638, 33);
+            SingleStaticPanel_2.Location = new Point(789, 324);
             SingleStaticPanel_2.Name = "SingleStaticPanel_2";
-            SingleStaticPanel_2.Size = new Size(26, 10);
+            SingleStaticPanel_2.Size = new Size(690, 226);
             SingleStaticPanel_2.TabIndex = 5;
             // 
             // DCArea_ROUT
@@ -10101,6 +4937,3786 @@
             label420.Text = "Acceleration";
             label420.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // SingleStaticSavebtr
+            // 
+            SingleStaticSavebtr.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            SingleStaticSavebtr.Location = new Point(1474, 16);
+            SingleStaticSavebtr.Name = "SingleStaticSavebtr";
+            SingleStaticSavebtr.Size = new Size(95, 54);
+            SingleStaticSavebtr.TabIndex = 37;
+            SingleStaticSavebtr.Text = "단일 통계 저장";
+            SingleStaticSavebtr.UseVisualStyleBackColor = true;
+            SingleStaticSavebtr.Click += (this.SingleStaticSavebtr_Click);
+            // 
+            // label564
+            // 
+            label564.AutoSize = true;
+            label564.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
+            label564.ForeColor = Color.White;
+            label564.Location = new Point(667, 33);
+            label564.Name = "label564";
+            label564.Size = new Size(22, 30);
+            label564.TabIndex = 11;
+            label564.Text = "-";
+            // 
+            // SingleStaticPanel_4
+            // 
+            SingleStaticPanel_4.Controls.Add(label561);
+            SingleStaticPanel_4.Controls.Add(label562);
+            SingleStaticPanel_4.Controls.Add(label563);
+            SingleStaticPanel_4.Controls.Add(label558);
+            SingleStaticPanel_4.Controls.Add(label559);
+            SingleStaticPanel_4.Controls.Add(label560);
+            SingleStaticPanel_4.Controls.Add(label555);
+            SingleStaticPanel_4.Controls.Add(label556);
+            SingleStaticPanel_4.Controls.Add(label557);
+            SingleStaticPanel_4.Controls.Add(label543);
+            SingleStaticPanel_4.Controls.Add(label544);
+            SingleStaticPanel_4.Controls.Add(label545);
+            SingleStaticPanel_4.Controls.Add(label546);
+            SingleStaticPanel_4.Controls.Add(label547);
+            SingleStaticPanel_4.Controls.Add(label548);
+            SingleStaticPanel_4.Controls.Add(label549);
+            SingleStaticPanel_4.Controls.Add(label550);
+            SingleStaticPanel_4.Controls.Add(label551);
+            SingleStaticPanel_4.Controls.Add(label552);
+            SingleStaticPanel_4.Controls.Add(label553);
+            SingleStaticPanel_4.Controls.Add(label554);
+            SingleStaticPanel_4.Controls.Add(label537);
+            SingleStaticPanel_4.Controls.Add(label538);
+            SingleStaticPanel_4.Controls.Add(label539);
+            SingleStaticPanel_4.Controls.Add(label540);
+            SingleStaticPanel_4.Controls.Add(label541);
+            SingleStaticPanel_4.Controls.Add(label542);
+            SingleStaticPanel_4.Controls.Add(label421);
+            SingleStaticPanel_4.Controls.Add(label422);
+            SingleStaticPanel_4.Controls.Add(label533);
+            SingleStaticPanel_4.Controls.Add(label534);
+            SingleStaticPanel_4.Controls.Add(label535);
+            SingleStaticPanel_4.Controls.Add(label536);
+            SingleStaticPanel_4.Controls.Add(label125);
+            SingleStaticPanel_4.Controls.Add(label335);
+            SingleStaticPanel_4.Controls.Add(label336);
+            SingleStaticPanel_4.Controls.Add(label338);
+            SingleStaticPanel_4.Controls.Add(label339);
+            SingleStaticPanel_4.Controls.Add(label340);
+            SingleStaticPanel_4.Controls.Add(label341);
+            SingleStaticPanel_4.Controls.Add(label342);
+            SingleStaticPanel_4.Controls.Add(label327);
+            SingleStaticPanel_4.Controls.Add(label328);
+            SingleStaticPanel_4.Controls.Add(label330);
+            SingleStaticPanel_4.Controls.Add(label331);
+            SingleStaticPanel_4.Controls.Add(label332);
+            SingleStaticPanel_4.Controls.Add(label333);
+            SingleStaticPanel_4.Controls.Add(label334);
+            SingleStaticPanel_4.Controls.Add(label326);
+            SingleStaticPanel_4.Controls.Add(label325);
+            SingleStaticPanel_4.Controls.Add(label323);
+            SingleStaticPanel_4.Controls.Add(label322);
+            SingleStaticPanel_4.Controls.Add(label321);
+            SingleStaticPanel_4.Controls.Add(label320);
+            SingleStaticPanel_4.Controls.Add(label319);
+            SingleStaticPanel_4.Controls.Add(label318);
+            SingleStaticPanel_4.Controls.Add(label317);
+            SingleStaticPanel_4.Controls.Add(label316);
+            SingleStaticPanel_4.Controls.Add(label296);
+            SingleStaticPanel_4.Controls.Add(label298);
+            SingleStaticPanel_4.Controls.Add(label300);
+            SingleStaticPanel_4.Controls.Add(label302);
+            SingleStaticPanel_4.Controls.Add(label303);
+            SingleStaticPanel_4.Controls.Add(label304);
+            SingleStaticPanel_4.Controls.Add(label305);
+            SingleStaticPanel_4.Controls.Add(label306);
+            SingleStaticPanel_4.Controls.Add(label309);
+            SingleStaticPanel_4.Controls.Add(label310);
+            SingleStaticPanel_4.Controls.Add(label311);
+            SingleStaticPanel_4.Controls.Add(label312);
+            SingleStaticPanel_4.Controls.Add(label313);
+            SingleStaticPanel_4.Controls.Add(label314);
+            SingleStaticPanel_4.Controls.Add(label315);
+            SingleStaticPanel_4.Controls.Add(label286);
+            SingleStaticPanel_4.Controls.Add(label288);
+            SingleStaticPanel_4.Controls.Add(label290);
+            SingleStaticPanel_4.Controls.Add(label292);
+            SingleStaticPanel_4.Controls.Add(label294);
+            SingleStaticPanel_4.Controls.Add(label276);
+            SingleStaticPanel_4.Controls.Add(label278);
+            SingleStaticPanel_4.Controls.Add(label280);
+            SingleStaticPanel_4.Controls.Add(label282);
+            SingleStaticPanel_4.Controls.Add(label284);
+            SingleStaticPanel_4.Controls.Add(label244);
+            SingleStaticPanel_4.Controls.Add(label268);
+            SingleStaticPanel_4.Controls.Add(label270);
+            SingleStaticPanel_4.Controls.Add(label272);
+            SingleStaticPanel_4.Controls.Add(label274);
+            SingleStaticPanel_4.Controls.Add(label212);
+            SingleStaticPanel_4.Controls.Add(label238);
+            SingleStaticPanel_4.Controls.Add(label240);
+            SingleStaticPanel_4.Controls.Add(label242);
+            SingleStaticPanel_4.Controls.Add(label210);
+            SingleStaticPanel_4.Controls.Add(label208);
+            SingleStaticPanel_4.Controls.Add(label206);
+            SingleStaticPanel_4.Controls.Add(label204);
+            SingleStaticPanel_4.Controls.Add(label180);
+            SingleStaticPanel_4.Controls.Add(label178);
+            SingleStaticPanel_4.Controls.Add(label176);
+            SingleStaticPanel_4.Controls.Add(label174);
+            SingleStaticPanel_4.Controls.Add(label172);
+            SingleStaticPanel_4.Controls.Add(label170);
+            SingleStaticPanel_4.Location = new Point(1409, 445);
+            SingleStaticPanel_4.Name = "SingleStaticPanel_4";
+            SingleStaticPanel_4.Size = new Size(87, 38);
+            SingleStaticPanel_4.TabIndex = 9;
+            SingleStaticPanel_4.Visible = false;
+            // 
+            // label561
+            // 
+            label561.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label561.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label561.ForeColor = Color.White;
+            label561.Location = new Point(1195, 624);
+            label561.Name = "label561";
+            label561.Padding = new Padding(3);
+            label561.Size = new Size(130, 57);
+            label561.TabIndex = 104;
+            label561.Text = "-";
+            label561.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label562
+            // 
+            label562.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label562.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label562.ForeColor = Color.White;
+            label562.Location = new Point(1195, 563);
+            label562.Name = "label562";
+            label562.Padding = new Padding(3);
+            label562.Size = new Size(130, 57);
+            label562.TabIndex = 103;
+            label562.Text = "-";
+            label562.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label563
+            // 
+            label563.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label563.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label563.ForeColor = Color.White;
+            label563.Location = new Point(1195, 502);
+            label563.Name = "label563";
+            label563.Padding = new Padding(3);
+            label563.Size = new Size(130, 57);
+            label563.TabIndex = 102;
+            label563.Text = "Dist";
+            label563.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label558
+            // 
+            label558.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label558.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label558.ForeColor = Color.White;
+            label558.Location = new Point(651, 625);
+            label558.Name = "label558";
+            label558.Padding = new Padding(3);
+            label558.Size = new Size(130, 57);
+            label558.TabIndex = 101;
+            label558.Text = "-";
+            label558.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label559
+            // 
+            label559.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label559.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label559.ForeColor = Color.White;
+            label559.Location = new Point(651, 564);
+            label559.Name = "label559";
+            label559.Padding = new Padding(3);
+            label559.Size = new Size(130, 57);
+            label559.TabIndex = 100;
+            label559.Text = "-";
+            label559.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label560
+            // 
+            label560.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label560.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label560.ForeColor = Color.White;
+            label560.Location = new Point(651, 503);
+            label560.Name = "label560";
+            label560.Padding = new Padding(3);
+            label560.Size = new Size(130, 57);
+            label560.TabIndex = 99;
+            label560.Text = "AreaY";
+            label560.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label555
+            // 
+            label555.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label555.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label555.ForeColor = Color.White;
+            label555.Location = new Point(515, 625);
+            label555.Name = "label555";
+            label555.Padding = new Padding(3);
+            label555.Size = new Size(130, 57);
+            label555.TabIndex = 98;
+            label555.Text = "-";
+            label555.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label556
+            // 
+            label556.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label556.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label556.ForeColor = Color.White;
+            label556.Location = new Point(515, 564);
+            label556.Name = "label556";
+            label556.Padding = new Padding(3);
+            label556.Size = new Size(130, 57);
+            label556.TabIndex = 97;
+            label556.Text = "-";
+            label556.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label557
+            // 
+            label557.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label557.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label557.ForeColor = Color.White;
+            label557.Location = new Point(515, 503);
+            label557.Name = "label557";
+            label557.Padding = new Padding(3);
+            label557.Size = new Size(130, 57);
+            label557.TabIndex = 96;
+            label557.Text = "AreaX";
+            label557.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label543
+            // 
+            label543.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label543.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label543.ForeColor = Color.White;
+            label543.Location = new Point(1144, 340);
+            label543.Name = "label543";
+            label543.Padding = new Padding(3);
+            label543.Size = new Size(242, 32);
+            label543.TabIndex = 95;
+            label543.Text = "-";
+            label543.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label544
+            // 
+            label544.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label544.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label544.ForeColor = Color.White;
+            label544.Location = new Point(1392, 340);
+            label544.Name = "label544";
+            label544.Padding = new Padding(3);
+            label544.Size = new Size(242, 32);
+            label544.TabIndex = 94;
+            label544.Text = "-";
+            label544.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label545
+            // 
+            label545.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label545.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label545.ForeColor = Color.White;
+            label545.Location = new Point(896, 340);
+            label545.Name = "label545";
+            label545.Padding = new Padding(3);
+            label545.Size = new Size(242, 32);
+            label545.TabIndex = 93;
+            label545.Text = "-";
+            label545.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label546
+            // 
+            label546.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label546.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label546.ForeColor = Color.White;
+            label546.Location = new Point(648, 340);
+            label546.Name = "label546";
+            label546.Padding = new Padding(3);
+            label546.Size = new Size(242, 32);
+            label546.TabIndex = 92;
+            label546.Text = "-";
+            label546.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label547
+            // 
+            label547.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label547.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label547.ForeColor = Color.White;
+            label547.Location = new Point(400, 340);
+            label547.Name = "label547";
+            label547.Padding = new Padding(3);
+            label547.Size = new Size(242, 32);
+            label547.TabIndex = 91;
+            label547.Text = "-";
+            label547.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label548
+            // 
+            label548.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label548.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label548.ForeColor = Color.White;
+            label548.Location = new Point(238, 340);
+            label548.Margin = new Padding(3);
+            label548.Name = "label548";
+            label548.Padding = new Padding(3);
+            label548.Size = new Size(156, 32);
+            label548.TabIndex = 90;
+            label548.Text = "AreaY";
+            label548.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label549
+            // 
+            label549.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label549.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label549.ForeColor = Color.White;
+            label549.Location = new Point(1144, 303);
+            label549.Name = "label549";
+            label549.Padding = new Padding(3);
+            label549.Size = new Size(242, 32);
+            label549.TabIndex = 89;
+            label549.Text = "-";
+            label549.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label550
+            // 
+            label550.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label550.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label550.ForeColor = Color.White;
+            label550.Location = new Point(1392, 303);
+            label550.Name = "label550";
+            label550.Padding = new Padding(3);
+            label550.Size = new Size(242, 32);
+            label550.TabIndex = 88;
+            label550.Text = "-";
+            label550.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label551
+            // 
+            label551.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label551.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label551.ForeColor = Color.White;
+            label551.Location = new Point(896, 303);
+            label551.Name = "label551";
+            label551.Padding = new Padding(3);
+            label551.Size = new Size(242, 32);
+            label551.TabIndex = 87;
+            label551.Text = "-";
+            label551.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label552
+            // 
+            label552.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label552.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label552.ForeColor = Color.White;
+            label552.Location = new Point(648, 303);
+            label552.Name = "label552";
+            label552.Padding = new Padding(3);
+            label552.Size = new Size(242, 32);
+            label552.TabIndex = 86;
+            label552.Text = "-";
+            label552.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label553
+            // 
+            label553.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label553.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label553.ForeColor = Color.White;
+            label553.Location = new Point(400, 303);
+            label553.Name = "label553";
+            label553.Padding = new Padding(3);
+            label553.Size = new Size(242, 32);
+            label553.TabIndex = 85;
+            label553.Text = "-";
+            label553.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label554
+            // 
+            label554.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label554.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label554.ForeColor = Color.White;
+            label554.Location = new Point(238, 303);
+            label554.Margin = new Padding(3);
+            label554.Name = "label554";
+            label554.Padding = new Padding(3);
+            label554.Size = new Size(156, 32);
+            label554.TabIndex = 84;
+            label554.Text = "AreaX";
+            label554.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label537
+            // 
+            label537.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label537.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label537.ForeColor = Color.White;
+            label537.Location = new Point(1144, 153);
+            label537.Name = "label537";
+            label537.Padding = new Padding(3);
+            label537.Size = new Size(242, 32);
+            label537.TabIndex = 83;
+            label537.Text = "-";
+            label537.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label538
+            // 
+            label538.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label538.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label538.ForeColor = Color.White;
+            label538.Location = new Point(1392, 153);
+            label538.Name = "label538";
+            label538.Padding = new Padding(3);
+            label538.Size = new Size(242, 32);
+            label538.TabIndex = 82;
+            label538.Text = "-";
+            label538.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label539
+            // 
+            label539.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label539.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label539.ForeColor = Color.White;
+            label539.Location = new Point(896, 153);
+            label539.Name = "label539";
+            label539.Padding = new Padding(3);
+            label539.Size = new Size(242, 32);
+            label539.TabIndex = 81;
+            label539.Text = "-";
+            label539.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label540
+            // 
+            label540.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label540.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label540.ForeColor = Color.White;
+            label540.Location = new Point(648, 153);
+            label540.Name = "label540";
+            label540.Padding = new Padding(3);
+            label540.Size = new Size(242, 32);
+            label540.TabIndex = 80;
+            label540.Text = "-";
+            label540.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label541
+            // 
+            label541.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label541.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label541.ForeColor = Color.White;
+            label541.Location = new Point(400, 153);
+            label541.Name = "label541";
+            label541.Padding = new Padding(3);
+            label541.Size = new Size(242, 32);
+            label541.TabIndex = 79;
+            label541.Text = "-";
+            label541.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label542
+            // 
+            label542.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label542.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label542.ForeColor = Color.White;
+            label542.Location = new Point(238, 153);
+            label542.Margin = new Padding(3);
+            label542.Name = "label542";
+            label542.Padding = new Padding(3);
+            label542.Size = new Size(156, 32);
+            label542.TabIndex = 78;
+            label542.Text = "AreaY";
+            label542.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label421
+            // 
+            label421.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label421.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label421.ForeColor = Color.White;
+            label421.Location = new Point(1144, 117);
+            label421.Name = "label421";
+            label421.Padding = new Padding(3);
+            label421.Size = new Size(242, 32);
+            label421.TabIndex = 77;
+            label421.Text = "-";
+            label421.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label422
+            // 
+            label422.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label422.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label422.ForeColor = Color.White;
+            label422.Location = new Point(1392, 117);
+            label422.Name = "label422";
+            label422.Padding = new Padding(3);
+            label422.Size = new Size(242, 32);
+            label422.TabIndex = 76;
+            label422.Text = "-";
+            label422.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label533
+            // 
+            label533.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label533.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label533.ForeColor = Color.White;
+            label533.Location = new Point(896, 117);
+            label533.Name = "label533";
+            label533.Padding = new Padding(3);
+            label533.Size = new Size(242, 32);
+            label533.TabIndex = 75;
+            label533.Text = "-";
+            label533.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label534
+            // 
+            label534.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label534.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label534.ForeColor = Color.White;
+            label534.Location = new Point(648, 117);
+            label534.Name = "label534";
+            label534.Padding = new Padding(3);
+            label534.Size = new Size(242, 32);
+            label534.TabIndex = 74;
+            label534.Text = "-";
+            label534.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label535
+            // 
+            label535.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label535.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label535.ForeColor = Color.White;
+            label535.Location = new Point(400, 117);
+            label535.Name = "label535";
+            label535.Padding = new Padding(3);
+            label535.Size = new Size(242, 32);
+            label535.TabIndex = 73;
+            label535.Text = "-";
+            label535.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label536
+            // 
+            label536.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label536.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label536.ForeColor = Color.White;
+            label536.Location = new Point(238, 117);
+            label536.Margin = new Padding(3);
+            label536.Name = "label536";
+            label536.Padding = new Padding(3);
+            label536.Size = new Size(156, 32);
+            label536.TabIndex = 72;
+            label536.Text = "AreaX";
+            label536.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label125
+            // 
+            label125.AutoSize = true;
+            label125.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label125.ForeColor = Color.White;
+            label125.Location = new Point(23, 451);
+            label125.Name = "label125";
+            label125.Size = new Size(161, 37);
+            label125.TabIndex = 71;
+            label125.Text = "이상치 비율";
+            // 
+            // label335
+            // 
+            label335.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label335.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label335.ForeColor = Color.White;
+            label335.Location = new Point(1447, 624);
+            label335.Name = "label335";
+            label335.Padding = new Padding(3);
+            label335.Size = new Size(186, 57);
+            label335.TabIndex = 70;
+            label335.Text = "-";
+            label335.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label336
+            // 
+            label336.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label336.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label336.ForeColor = Color.White;
+            label336.Location = new Point(1331, 624);
+            label336.Name = "label336";
+            label336.Padding = new Padding(3);
+            label336.Size = new Size(110, 57);
+            label336.TabIndex = 69;
+            label336.Text = "-";
+            label336.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label338
+            // 
+            label338.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label338.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label338.ForeColor = Color.White;
+            label338.Location = new Point(1059, 625);
+            label338.Name = "label338";
+            label338.Padding = new Padding(3);
+            label338.Size = new Size(130, 57);
+            label338.TabIndex = 67;
+            label338.Text = "-";
+            label338.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label339
+            // 
+            label339.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label339.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label339.ForeColor = Color.White;
+            label339.Location = new Point(923, 625);
+            label339.Name = "label339";
+            label339.Padding = new Padding(3);
+            label339.Size = new Size(130, 57);
+            label339.TabIndex = 66;
+            label339.Text = "-";
+            label339.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label340
+            // 
+            label340.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label340.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label340.ForeColor = Color.White;
+            label340.Location = new Point(787, 624);
+            label340.Name = "label340";
+            label340.Padding = new Padding(3);
+            label340.Size = new Size(130, 57);
+            label340.TabIndex = 65;
+            label340.Text = "-";
+            label340.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label341
+            // 
+            label341.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label341.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label341.ForeColor = Color.White;
+            label341.Location = new Point(379, 625);
+            label341.Name = "label341";
+            label341.Padding = new Padding(3);
+            label341.Size = new Size(130, 57);
+            label341.TabIndex = 64;
+            label341.Text = "-";
+            label341.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label342
+            // 
+            label342.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label342.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label342.ForeColor = Color.White;
+            label342.Location = new Point(243, 625);
+            label342.Name = "label342";
+            label342.Padding = new Padding(3);
+            label342.Size = new Size(130, 57);
+            label342.TabIndex = 63;
+            label342.Text = "-";
+            label342.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label327
+            // 
+            label327.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label327.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label327.ForeColor = Color.White;
+            label327.Location = new Point(1447, 563);
+            label327.Name = "label327";
+            label327.Padding = new Padding(3);
+            label327.Size = new Size(186, 57);
+            label327.TabIndex = 62;
+            label327.Text = "-";
+            label327.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label328
+            // 
+            label328.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label328.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label328.ForeColor = Color.White;
+            label328.Location = new Point(1331, 563);
+            label328.Name = "label328";
+            label328.Padding = new Padding(3);
+            label328.Size = new Size(110, 57);
+            label328.TabIndex = 61;
+            label328.Text = "-";
+            label328.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label330
+            // 
+            label330.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label330.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label330.ForeColor = Color.White;
+            label330.Location = new Point(1059, 564);
+            label330.Name = "label330";
+            label330.Padding = new Padding(3);
+            label330.Size = new Size(130, 57);
+            label330.TabIndex = 59;
+            label330.Text = "-";
+            label330.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label331
+            // 
+            label331.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label331.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label331.ForeColor = Color.White;
+            label331.Location = new Point(923, 564);
+            label331.Name = "label331";
+            label331.Padding = new Padding(3);
+            label331.Size = new Size(130, 57);
+            label331.TabIndex = 58;
+            label331.Text = "-";
+            label331.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label332
+            // 
+            label332.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label332.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label332.ForeColor = Color.White;
+            label332.Location = new Point(787, 563);
+            label332.Name = "label332";
+            label332.Padding = new Padding(3);
+            label332.Size = new Size(130, 57);
+            label332.TabIndex = 57;
+            label332.Text = "-";
+            label332.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label333
+            // 
+            label333.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label333.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label333.ForeColor = Color.White;
+            label333.Location = new Point(379, 564);
+            label333.Name = "label333";
+            label333.Padding = new Padding(3);
+            label333.Size = new Size(130, 57);
+            label333.TabIndex = 56;
+            label333.Text = "-";
+            label333.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label334
+            // 
+            label334.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label334.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label334.ForeColor = Color.White;
+            label334.Location = new Point(243, 564);
+            label334.Name = "label334";
+            label334.Padding = new Padding(3);
+            label334.Size = new Size(130, 57);
+            label334.TabIndex = 55;
+            label334.Text = "-";
+            label334.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label326
+            // 
+            label326.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label326.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label326.ForeColor = Color.White;
+            label326.Location = new Point(1447, 502);
+            label326.Name = "label326";
+            label326.Padding = new Padding(3);
+            label326.Size = new Size(186, 57);
+            label326.TabIndex = 54;
+            label326.Text = "비율";
+            label326.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label325
+            // 
+            label325.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label325.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label325.ForeColor = Color.White;
+            label325.Location = new Point(1331, 502);
+            label325.Name = "label325";
+            label325.Padding = new Padding(3);
+            label325.Size = new Size(110, 57);
+            label325.TabIndex = 53;
+            label325.Text = "계";
+            label325.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label323
+            // 
+            label323.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label323.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label323.ForeColor = Color.White;
+            label323.Location = new Point(1059, 503);
+            label323.Name = "label323";
+            label323.Padding = new Padding(3);
+            label323.Size = new Size(130, 57);
+            label323.TabIndex = 51;
+            label323.Text = "Area";
+            label323.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label322
+            // 
+            label322.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label322.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label322.ForeColor = Color.White;
+            label322.Location = new Point(923, 503);
+            label322.Name = "label322";
+            label322.Padding = new Padding(3);
+            label322.Size = new Size(130, 57);
+            label322.TabIndex = 50;
+            label322.Text = "Height";
+            label322.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label321
+            // 
+            label321.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label321.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label321.ForeColor = Color.White;
+            label321.Location = new Point(787, 502);
+            label321.Name = "label321";
+            label321.Padding = new Padding(3);
+            label321.Size = new Size(130, 57);
+            label321.TabIndex = 49;
+            label321.Text = "Length";
+            label321.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label320
+            // 
+            label320.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label320.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label320.ForeColor = Color.White;
+            label320.Location = new Point(379, 503);
+            label320.Name = "label320";
+            label320.Padding = new Padding(3);
+            label320.Size = new Size(130, 57);
+            label320.TabIndex = 48;
+            label320.Text = "PeakY";
+            label320.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label319
+            // 
+            label319.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label319.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label319.ForeColor = Color.White;
+            label319.Location = new Point(243, 503);
+            label319.Name = "label319";
+            label319.Padding = new Padding(3);
+            label319.Size = new Size(130, 57);
+            label319.TabIndex = 47;
+            label319.Text = "PeakX";
+            label319.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label318
+            // 
+            label318.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label318.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label318.ForeColor = Color.White;
+            label318.Location = new Point(9, 625);
+            label318.Name = "label318";
+            label318.Padding = new Padding(3);
+            label318.Size = new Size(229, 57);
+            label318.TabIndex = 46;
+            label318.Text = "감속";
+            label318.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label317
+            // 
+            label317.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label317.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label317.ForeColor = Color.White;
+            label317.Location = new Point(9, 564);
+            label317.Name = "label317";
+            label317.Padding = new Padding(3);
+            label317.Size = new Size(229, 57);
+            label317.TabIndex = 45;
+            label317.Text = "가속";
+            label317.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label316
+            // 
+            label316.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label316.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label316.ForeColor = Color.White;
+            label316.Location = new Point(9, 503);
+            label316.Name = "label316";
+            label316.Padding = new Padding(3);
+            label316.Size = new Size(229, 57);
+            label316.TabIndex = 44;
+            label316.Text = "등급";
+            label316.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label296
+            // 
+            label296.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label296.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label296.ForeColor = Color.White;
+            label296.Location = new Point(1144, 378);
+            label296.Name = "label296";
+            label296.Padding = new Padding(3);
+            label296.Size = new Size(242, 32);
+            label296.TabIndex = 43;
+            label296.Text = "-";
+            label296.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label298
+            // 
+            label298.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label298.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label298.ForeColor = Color.White;
+            label298.Location = new Point(1392, 378);
+            label298.Name = "label298";
+            label298.Padding = new Padding(3);
+            label298.Size = new Size(242, 32);
+            label298.TabIndex = 42;
+            label298.Text = "-";
+            label298.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label300
+            // 
+            label300.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label300.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label300.ForeColor = Color.White;
+            label300.Location = new Point(896, 378);
+            label300.Name = "label300";
+            label300.Padding = new Padding(3);
+            label300.Size = new Size(242, 32);
+            label300.TabIndex = 41;
+            label300.Text = "-";
+            label300.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label302
+            // 
+            label302.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label302.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label302.ForeColor = Color.White;
+            label302.Location = new Point(648, 378);
+            label302.Name = "label302";
+            label302.Padding = new Padding(3);
+            label302.Size = new Size(242, 32);
+            label302.TabIndex = 40;
+            label302.Text = "-";
+            label302.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label303
+            // 
+            label303.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label303.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label303.ForeColor = Color.White;
+            label303.Location = new Point(400, 378);
+            label303.Name = "label303";
+            label303.Padding = new Padding(3);
+            label303.Size = new Size(242, 32);
+            label303.TabIndex = 39;
+            label303.Text = "-";
+            label303.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label304
+            // 
+            label304.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label304.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label304.ForeColor = Color.White;
+            label304.Location = new Point(1144, 266);
+            label304.Name = "label304";
+            label304.Padding = new Padding(3);
+            label304.Size = new Size(242, 32);
+            label304.TabIndex = 38;
+            label304.Text = "-";
+            label304.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label305
+            // 
+            label305.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label305.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label305.ForeColor = Color.White;
+            label305.Location = new Point(1392, 266);
+            label305.Name = "label305";
+            label305.Padding = new Padding(3);
+            label305.Size = new Size(242, 32);
+            label305.TabIndex = 37;
+            label305.Text = "-";
+            label305.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label306
+            // 
+            label306.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label306.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label306.ForeColor = Color.White;
+            label306.Location = new Point(896, 266);
+            label306.Name = "label306";
+            label306.Padding = new Padding(3);
+            label306.Size = new Size(242, 32);
+            label306.TabIndex = 36;
+            label306.Text = "-";
+            label306.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label309
+            // 
+            label309.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label309.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label309.ForeColor = Color.White;
+            label309.Location = new Point(648, 266);
+            label309.Name = "label309";
+            label309.Padding = new Padding(3);
+            label309.Size = new Size(242, 32);
+            label309.TabIndex = 35;
+            label309.Text = "-";
+            label309.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label310
+            // 
+            label310.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label310.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label310.ForeColor = Color.White;
+            label310.Location = new Point(400, 266);
+            label310.Name = "label310";
+            label310.Padding = new Padding(3);
+            label310.Size = new Size(242, 32);
+            label310.TabIndex = 34;
+            label310.Text = "-";
+            label310.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label311
+            // 
+            label311.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label311.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label311.ForeColor = Color.White;
+            label311.Location = new Point(1144, 228);
+            label311.Name = "label311";
+            label311.Padding = new Padding(3);
+            label311.Size = new Size(242, 32);
+            label311.TabIndex = 33;
+            label311.Text = "-";
+            label311.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label312
+            // 
+            label312.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label312.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label312.ForeColor = Color.White;
+            label312.Location = new Point(1392, 228);
+            label312.Name = "label312";
+            label312.Padding = new Padding(3);
+            label312.Size = new Size(242, 32);
+            label312.TabIndex = 32;
+            label312.Text = "-";
+            label312.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label313
+            // 
+            label313.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label313.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label313.ForeColor = Color.White;
+            label313.Location = new Point(896, 228);
+            label313.Name = "label313";
+            label313.Padding = new Padding(3);
+            label313.Size = new Size(242, 32);
+            label313.TabIndex = 31;
+            label313.Text = "-";
+            label313.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label314
+            // 
+            label314.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label314.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label314.ForeColor = Color.White;
+            label314.Location = new Point(648, 228);
+            label314.Name = "label314";
+            label314.Padding = new Padding(3);
+            label314.Size = new Size(242, 32);
+            label314.TabIndex = 30;
+            label314.Text = "-";
+            label314.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label315
+            // 
+            label315.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label315.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label315.ForeColor = Color.White;
+            label315.Location = new Point(400, 228);
+            label315.Name = "label315";
+            label315.Padding = new Padding(3);
+            label315.Size = new Size(242, 32);
+            label315.TabIndex = 29;
+            label315.Text = "-";
+            label315.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label286
+            // 
+            label286.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label286.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label286.ForeColor = Color.White;
+            label286.Location = new Point(1144, 190);
+            label286.Name = "label286";
+            label286.Padding = new Padding(3);
+            label286.Size = new Size(242, 32);
+            label286.TabIndex = 28;
+            label286.Text = "-";
+            label286.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label288
+            // 
+            label288.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label288.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label288.ForeColor = Color.White;
+            label288.Location = new Point(1392, 190);
+            label288.Name = "label288";
+            label288.Padding = new Padding(3);
+            label288.Size = new Size(242, 32);
+            label288.TabIndex = 27;
+            label288.Text = "-";
+            label288.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label290
+            // 
+            label290.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label290.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label290.ForeColor = Color.White;
+            label290.Location = new Point(896, 190);
+            label290.Name = "label290";
+            label290.Padding = new Padding(3);
+            label290.Size = new Size(242, 32);
+            label290.TabIndex = 26;
+            label290.Text = "-";
+            label290.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label292
+            // 
+            label292.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label292.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label292.ForeColor = Color.White;
+            label292.Location = new Point(648, 190);
+            label292.Name = "label292";
+            label292.Padding = new Padding(3);
+            label292.Size = new Size(242, 32);
+            label292.TabIndex = 25;
+            label292.Text = "-";
+            label292.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label294
+            // 
+            label294.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label294.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label294.ForeColor = Color.White;
+            label294.Location = new Point(400, 190);
+            label294.Name = "label294";
+            label294.Padding = new Padding(3);
+            label294.Size = new Size(242, 32);
+            label294.TabIndex = 24;
+            label294.Text = "-";
+            label294.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label276
+            // 
+            label276.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label276.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label276.ForeColor = Color.White;
+            label276.Location = new Point(1144, 80);
+            label276.Name = "label276";
+            label276.Padding = new Padding(3);
+            label276.Size = new Size(242, 32);
+            label276.TabIndex = 23;
+            label276.Text = "-";
+            label276.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label278
+            // 
+            label278.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label278.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label278.ForeColor = Color.White;
+            label278.Location = new Point(1392, 80);
+            label278.Name = "label278";
+            label278.Padding = new Padding(3);
+            label278.Size = new Size(242, 32);
+            label278.TabIndex = 22;
+            label278.Text = "-";
+            label278.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label280
+            // 
+            label280.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label280.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label280.ForeColor = Color.White;
+            label280.Location = new Point(896, 80);
+            label280.Name = "label280";
+            label280.Padding = new Padding(3);
+            label280.Size = new Size(242, 32);
+            label280.TabIndex = 21;
+            label280.Text = "-";
+            label280.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label282
+            // 
+            label282.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label282.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label282.ForeColor = Color.White;
+            label282.Location = new Point(648, 80);
+            label282.Name = "label282";
+            label282.Padding = new Padding(3);
+            label282.Size = new Size(242, 32);
+            label282.TabIndex = 20;
+            label282.Text = "-";
+            label282.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label284
+            // 
+            label284.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label284.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label284.ForeColor = Color.White;
+            label284.Location = new Point(400, 80);
+            label284.Name = "label284";
+            label284.Padding = new Padding(3);
+            label284.Size = new Size(242, 32);
+            label284.TabIndex = 19;
+            label284.Text = "-";
+            label284.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label244
+            // 
+            label244.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label244.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label244.ForeColor = Color.White;
+            label244.Location = new Point(1144, 44);
+            label244.Name = "label244";
+            label244.Padding = new Padding(3);
+            label244.Size = new Size(242, 32);
+            label244.TabIndex = 18;
+            label244.Text = "-";
+            label244.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label268
+            // 
+            label268.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label268.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label268.ForeColor = Color.White;
+            label268.Location = new Point(1392, 44);
+            label268.Name = "label268";
+            label268.Padding = new Padding(3);
+            label268.Size = new Size(242, 32);
+            label268.TabIndex = 17;
+            label268.Text = "-";
+            label268.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label270
+            // 
+            label270.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label270.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label270.ForeColor = Color.White;
+            label270.Location = new Point(896, 44);
+            label270.Name = "label270";
+            label270.Padding = new Padding(3);
+            label270.Size = new Size(242, 32);
+            label270.TabIndex = 16;
+            label270.Text = "-";
+            label270.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label272
+            // 
+            label272.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label272.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label272.ForeColor = Color.White;
+            label272.Location = new Point(648, 44);
+            label272.Name = "label272";
+            label272.Padding = new Padding(3);
+            label272.Size = new Size(242, 32);
+            label272.TabIndex = 15;
+            label272.Text = "-";
+            label272.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label274
+            // 
+            label274.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label274.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label274.ForeColor = Color.White;
+            label274.Location = new Point(400, 44);
+            label274.Name = "label274";
+            label274.Padding = new Padding(3);
+            label274.Size = new Size(242, 32);
+            label274.TabIndex = 14;
+            label274.Text = "-";
+            label274.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label212
+            // 
+            label212.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label212.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label212.ForeColor = Color.White;
+            label212.Location = new Point(238, 378);
+            label212.Margin = new Padding(3);
+            label212.Name = "label212";
+            label212.Padding = new Padding(3);
+            label212.Size = new Size(156, 32);
+            label212.TabIndex = 13;
+            label212.Text = "계";
+            label212.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label238
+            // 
+            label238.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label238.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label238.ForeColor = Color.White;
+            label238.Location = new Point(238, 266);
+            label238.Margin = new Padding(3);
+            label238.Name = "label238";
+            label238.Padding = new Padding(3);
+            label238.Size = new Size(156, 32);
+            label238.TabIndex = 12;
+            label238.Text = "PeakY";
+            label238.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label240
+            // 
+            label240.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label240.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label240.ForeColor = Color.White;
+            label240.Location = new Point(238, 228);
+            label240.Margin = new Padding(3);
+            label240.Name = "label240";
+            label240.Padding = new Padding(3);
+            label240.Size = new Size(156, 32);
+            label240.TabIndex = 11;
+            label240.Text = "PeakX";
+            label240.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label242
+            // 
+            label242.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label242.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label242.ForeColor = Color.White;
+            label242.Location = new Point(3, 228);
+            label242.Margin = new Padding(3);
+            label242.Name = "label242";
+            label242.Padding = new Padding(3);
+            label242.Size = new Size(229, 182);
+            label242.TabIndex = 10;
+            label242.Text = "감속";
+            label242.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label210
+            // 
+            label210.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label210.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label210.ForeColor = Color.White;
+            label210.Location = new Point(238, 190);
+            label210.Margin = new Padding(3);
+            label210.Name = "label210";
+            label210.Padding = new Padding(3);
+            label210.Size = new Size(156, 32);
+            label210.TabIndex = 9;
+            label210.Text = "계";
+            label210.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label208
+            // 
+            label208.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label208.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label208.ForeColor = Color.White;
+            label208.Location = new Point(238, 80);
+            label208.Margin = new Padding(3);
+            label208.Name = "label208";
+            label208.Padding = new Padding(3);
+            label208.Size = new Size(156, 32);
+            label208.TabIndex = 8;
+            label208.Text = "PeakY";
+            label208.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label206
+            // 
+            label206.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label206.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label206.ForeColor = Color.White;
+            label206.Location = new Point(238, 44);
+            label206.Margin = new Padding(3);
+            label206.Name = "label206";
+            label206.Padding = new Padding(3);
+            label206.Size = new Size(156, 32);
+            label206.TabIndex = 7;
+            label206.Text = "PeakX";
+            label206.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label204
+            // 
+            label204.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label204.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label204.ForeColor = Color.White;
+            label204.Location = new Point(3, 44);
+            label204.Margin = new Padding(3);
+            label204.Name = "label204";
+            label204.Padding = new Padding(3);
+            label204.Size = new Size(229, 178);
+            label204.TabIndex = 6;
+            label204.Text = "가속";
+            label204.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label180
+            // 
+            label180.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label180.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label180.ForeColor = Color.White;
+            label180.Location = new Point(1144, 5);
+            label180.Name = "label180";
+            label180.Padding = new Padding(3);
+            label180.Size = new Size(242, 35);
+            label180.TabIndex = 5;
+            label180.Text = "G4";
+            label180.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label178
+            // 
+            label178.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label178.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label178.ForeColor = Color.White;
+            label178.Location = new Point(1392, 5);
+            label178.Name = "label178";
+            label178.Padding = new Padding(3);
+            label178.Size = new Size(242, 35);
+            label178.TabIndex = 4;
+            label178.Text = "G5";
+            label178.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label176
+            // 
+            label176.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label176.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label176.ForeColor = Color.White;
+            label176.Location = new Point(896, 5);
+            label176.Name = "label176";
+            label176.Padding = new Padding(3);
+            label176.Size = new Size(242, 35);
+            label176.TabIndex = 3;
+            label176.Text = "G3";
+            label176.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label174
+            // 
+            label174.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label174.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label174.ForeColor = Color.White;
+            label174.Location = new Point(648, 5);
+            label174.Name = "label174";
+            label174.Padding = new Padding(3);
+            label174.Size = new Size(242, 35);
+            label174.TabIndex = 2;
+            label174.Text = "G2";
+            label174.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label172
+            // 
+            label172.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label172.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label172.ForeColor = Color.White;
+            label172.Location = new Point(400, 5);
+            label172.Name = "label172";
+            label172.Padding = new Padding(3);
+            label172.Size = new Size(242, 35);
+            label172.TabIndex = 1;
+            label172.Text = "G1";
+            label172.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label170
+            // 
+            label170.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            label170.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label170.ForeColor = Color.White;
+            label170.Location = new Point(3, 5);
+            label170.Name = "label170";
+            label170.Padding = new Padding(3);
+            label170.Size = new Size(391, 35);
+            label170.TabIndex = 0;
+            label170.Text = "등급";
+            label170.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SingleStaticPanel_3
+            // 
+            SingleStaticPanel_3.BackColor = Color.RosyBrown;
+            SingleStaticPanel_3.Controls.Add(AccelerationAreaX);
+            SingleStaticPanel_3.Controls.Add(label351);
+            SingleStaticPanel_3.Controls.Add(label352);
+            SingleStaticPanel_3.Controls.Add(label385);
+            SingleStaticPanel_3.Controls.Add(label387);
+            SingleStaticPanel_3.Controls.Add(label388);
+            SingleStaticPanel_3.Controls.Add(label389);
+            SingleStaticPanel_3.Controls.Add(label390);
+            SingleStaticPanel_3.Controls.Add(label391);
+            SingleStaticPanel_3.Controls.Add(label403);
+            SingleStaticPanel_3.Controls.Add(label404);
+            SingleStaticPanel_3.Controls.Add(label405);
+            SingleStaticPanel_3.Controls.Add(label406);
+            SingleStaticPanel_3.Controls.Add(label407);
+            SingleStaticPanel_3.Controls.Add(label423);
+            SingleStaticPanel_3.Controls.Add(label424);
+            SingleStaticPanel_3.Controls.Add(label425);
+            SingleStaticPanel_3.Controls.Add(label426);
+            SingleStaticPanel_3.Controls.Add(label427);
+            SingleStaticPanel_3.Controls.Add(label428);
+            SingleStaticPanel_3.Controls.Add(label450);
+            SingleStaticPanel_3.Controls.Add(label451);
+            SingleStaticPanel_3.Controls.Add(label456);
+            SingleStaticPanel_3.Controls.Add(label457);
+            SingleStaticPanel_3.Controls.Add(label458);
+            SingleStaticPanel_3.Controls.Add(label459);
+            SingleStaticPanel_3.Controls.Add(label460);
+            SingleStaticPanel_3.Controls.Add(label461);
+            SingleStaticPanel_3.Controls.Add(label462);
+            SingleStaticPanel_3.Controls.Add(label463);
+            SingleStaticPanel_3.Controls.Add(label464);
+            SingleStaticPanel_3.Controls.Add(label465);
+            SingleStaticPanel_3.Controls.Add(label466);
+            SingleStaticPanel_3.Controls.Add(DecelerationDistance);
+            SingleStaticPanel_3.Controls.Add(DecelerationAreaY);
+            SingleStaticPanel_3.Controls.Add(DecelerationAreaX);
+            SingleStaticPanel_3.Controls.Add(label467);
+            SingleStaticPanel_3.Controls.Add(label468);
+            SingleStaticPanel_3.Controls.Add(label469);
+            SingleStaticPanel_3.Controls.Add(label470);
+            SingleStaticPanel_3.Controls.Add(label471);
+            SingleStaticPanel_3.Controls.Add(label472);
+            SingleStaticPanel_3.Controls.Add(label473);
+            SingleStaticPanel_3.Controls.Add(label474);
+            SingleStaticPanel_3.Controls.Add(label475);
+            SingleStaticPanel_3.Controls.Add(label476);
+            SingleStaticPanel_3.Controls.Add(label477);
+            SingleStaticPanel_3.Controls.Add(label478);
+            SingleStaticPanel_3.Controls.Add(label479);
+            SingleStaticPanel_3.Controls.Add(label480);
+            SingleStaticPanel_3.Controls.Add(label481);
+            SingleStaticPanel_3.Controls.Add(label482);
+            SingleStaticPanel_3.Controls.Add(label483);
+            SingleStaticPanel_3.Controls.Add(label484);
+            SingleStaticPanel_3.Controls.Add(label485);
+            SingleStaticPanel_3.Controls.Add(label486);
+            SingleStaticPanel_3.Controls.Add(label487);
+            SingleStaticPanel_3.Controls.Add(label488);
+            SingleStaticPanel_3.Controls.Add(label489);
+            SingleStaticPanel_3.Controls.Add(label490);
+            SingleStaticPanel_3.Controls.Add(label491);
+            SingleStaticPanel_3.Controls.Add(label492);
+            SingleStaticPanel_3.Controls.Add(label493);
+            SingleStaticPanel_3.Controls.Add(label494);
+            SingleStaticPanel_3.Controls.Add(label495);
+            SingleStaticPanel_3.Controls.Add(label496);
+            SingleStaticPanel_3.Controls.Add(label497);
+            SingleStaticPanel_3.Controls.Add(label498);
+            SingleStaticPanel_3.Controls.Add(label499);
+            SingleStaticPanel_3.Controls.Add(label500);
+            SingleStaticPanel_3.Controls.Add(label501);
+            SingleStaticPanel_3.Controls.Add(label502);
+            SingleStaticPanel_3.Controls.Add(label503);
+            SingleStaticPanel_3.Controls.Add(label504);
+            SingleStaticPanel_3.Controls.Add(label505);
+            SingleStaticPanel_3.Controls.Add(label506);
+            SingleStaticPanel_3.Controls.Add(label507);
+            SingleStaticPanel_3.Controls.Add(label508);
+            SingleStaticPanel_3.Controls.Add(label509);
+            SingleStaticPanel_3.Controls.Add(label510);
+            SingleStaticPanel_3.Controls.Add(label511);
+            SingleStaticPanel_3.Controls.Add(label512);
+            SingleStaticPanel_3.Controls.Add(label513);
+            SingleStaticPanel_3.Controls.Add(label514);
+            SingleStaticPanel_3.Controls.Add(AccelerationDistance);
+            SingleStaticPanel_3.Controls.Add(AccelerationAreaY);
+            SingleStaticPanel_3.Controls.Add(label515);
+            SingleStaticPanel_3.Controls.Add(label516);
+            SingleStaticPanel_3.Controls.Add(label517);
+            SingleStaticPanel_3.Controls.Add(label518);
+            SingleStaticPanel_3.Controls.Add(label519);
+            SingleStaticPanel_3.Controls.Add(label520);
+            SingleStaticPanel_3.Controls.Add(label521);
+            SingleStaticPanel_3.Controls.Add(label522);
+            SingleStaticPanel_3.Controls.Add(label523);
+            SingleStaticPanel_3.Controls.Add(label524);
+            SingleStaticPanel_3.Controls.Add(label525);
+            SingleStaticPanel_3.Controls.Add(label526);
+            SingleStaticPanel_3.Controls.Add(label527);
+            SingleStaticPanel_3.Controls.Add(label528);
+            SingleStaticPanel_3.Controls.Add(label529);
+            SingleStaticPanel_3.Controls.Add(label530);
+            SingleStaticPanel_3.Controls.Add(label531);
+            SingleStaticPanel_3.Controls.Add(label532);
+            SingleStaticPanel_3.Location = new Point(623, 371);
+            SingleStaticPanel_3.Name = "SingleStaticPanel_3";
+            SingleStaticPanel_3.Size = new Size(117, 36);
+            SingleStaticPanel_3.TabIndex = 10;
+            // 
+            // AccelerationAreaX
+            // 
+            AccelerationAreaX.Location = new Point(3, 53);
+            AccelerationAreaX.Name = "AccelerationAreaX";
+            AccelerationAreaX.Size = new Size(487, 228);
+            AccelerationAreaX.TabIndex = 75;
+            // 
+            // label351
+            // 
+            label351.AutoEllipsis = true;
+            label351.BackColor = Color.Gray;
+            label351.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label351.ForeColor = Color.White;
+            label351.Location = new Point(1466, 698);
+            label351.Name = "label351";
+            label351.Size = new Size(110, 48);
+            label351.TabIndex = 161;
+            label351.Text = "-";
+            label351.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label352
+            // 
+            label352.AutoEllipsis = true;
+            label352.BackColor = Color.Gray;
+            label352.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label352.ForeColor = Color.White;
+            label352.Location = new Point(1466, 650);
+            label352.Name = "label352";
+            label352.Size = new Size(110, 46);
+            label352.TabIndex = 160;
+            label352.Text = "-";
+            label352.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label385
+            // 
+            label385.BackColor = Color.Silver;
+            label385.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label385.ForeColor = Color.Black;
+            label385.Location = new Point(1389, 698);
+            label385.Name = "label385";
+            label385.Size = new Size(75, 48);
+            label385.TabIndex = 159;
+            label385.Text = "R/OUT";
+            label385.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label387
+            // 
+            label387.BackColor = Color.Silver;
+            label387.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label387.ForeColor = Color.Black;
+            label387.Location = new Point(1389, 650);
+            label387.Name = "label387";
+            label387.Size = new Size(75, 46);
+            label387.TabIndex = 158;
+            label387.Text = "누적치";
+            label387.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label388
+            // 
+            label388.BackColor = Color.Silver;
+            label388.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label388.ForeColor = Color.Black;
+            label388.Location = new Point(1353, 698);
+            label388.Name = "label388";
+            label388.Size = new Size(33, 48);
+            label388.TabIndex = 157;
+            label388.Text = "D";
+            label388.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label389
+            // 
+            label389.BackColor = Color.Silver;
+            label389.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label389.ForeColor = Color.Black;
+            label389.Location = new Point(1353, 650);
+            label389.Name = "label389";
+            label389.Size = new Size(33, 46);
+            label389.TabIndex = 156;
+            label389.Text = "C";
+            label389.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label390
+            // 
+            label390.AutoEllipsis = true;
+            label390.BackColor = Color.Gray;
+            label390.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label390.ForeColor = Color.White;
+            label390.Location = new Point(1579, 553);
+            label390.Name = "label390";
+            label390.Size = new Size(85, 194);
+            label390.TabIndex = 155;
+            label390.Text = "-";
+            label390.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label391
+            // 
+            label391.AutoEllipsis = true;
+            label391.BackColor = Color.Gray;
+            label391.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label391.ForeColor = Color.White;
+            label391.Location = new Point(1466, 602);
+            label391.Name = "label391";
+            label391.Size = new Size(110, 45);
+            label391.TabIndex = 154;
+            label391.Text = "-";
+            label391.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label403
+            // 
+            label403.AutoEllipsis = true;
+            label403.BackColor = Color.Gray;
+            label403.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label403.ForeColor = Color.White;
+            label403.Location = new Point(1466, 554);
+            label403.Name = "label403";
+            label403.Size = new Size(110, 45);
+            label403.TabIndex = 153;
+            label403.Text = "-";
+            label403.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label404
+            // 
+            label404.BackColor = Color.Silver;
+            label404.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label404.ForeColor = Color.Black;
+            label404.Location = new Point(1389, 603);
+            label404.Name = "label404";
+            label404.Size = new Size(75, 45);
+            label404.TabIndex = 152;
+            label404.Text = "인접치";
+            label404.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label405
+            // 
+            label405.BackColor = Color.Silver;
+            label405.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label405.ForeColor = Color.Black;
+            label405.Location = new Point(1389, 554);
+            label405.Name = "label405";
+            label405.Size = new Size(75, 45);
+            label405.TabIndex = 151;
+            label405.Text = "단일치";
+            label405.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label406
+            // 
+            label406.BackColor = Color.Silver;
+            label406.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label406.ForeColor = Color.Black;
+            label406.Location = new Point(1353, 603);
+            label406.Name = "label406";
+            label406.Size = new Size(33, 45);
+            label406.TabIndex = 150;
+            label406.Text = "B";
+            label406.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label407
+            // 
+            label407.BackColor = Color.Silver;
+            label407.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label407.ForeColor = Color.Black;
+            label407.Location = new Point(1353, 554);
+            label407.Name = "label407";
+            label407.Size = new Size(33, 45);
+            label407.TabIndex = 149;
+            label407.Text = "A";
+            label407.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label423
+            // 
+            label423.AutoEllipsis = true;
+            label423.BackColor = Color.Silver;
+            label423.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label423.ForeColor = Color.Black;
+            label423.Location = new Point(1579, 520);
+            label423.Name = "label423";
+            label423.Size = new Size(85, 30);
+            label423.TabIndex = 148;
+            label423.Text = "등급";
+            label423.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label424
+            // 
+            label424.AutoEllipsis = true;
+            label424.BackColor = Color.Silver;
+            label424.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label424.ForeColor = Color.Black;
+            label424.Location = new Point(1466, 520);
+            label424.Name = "label424";
+            label424.Size = new Size(110, 30);
+            label424.TabIndex = 147;
+            label424.Text = "실제값";
+            label424.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label425
+            // 
+            label425.BackColor = Color.Silver;
+            label425.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label425.ForeColor = Color.Black;
+            label425.Location = new Point(1353, 520);
+            label425.Name = "label425";
+            label425.Size = new Size(111, 30);
+            label425.TabIndex = 146;
+            label425.Text = "구분";
+            label425.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label426
+            // 
+            label426.AutoEllipsis = true;
+            label426.BackColor = Color.Gray;
+            label426.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label426.ForeColor = Color.White;
+            label426.Location = new Point(1579, 321);
+            label426.Name = "label426";
+            label426.Size = new Size(85, 194);
+            label426.TabIndex = 145;
+            label426.Text = "-";
+            label426.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label427
+            // 
+            label427.AutoEllipsis = true;
+            label427.BackColor = Color.Gray;
+            label427.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label427.ForeColor = Color.White;
+            label427.Location = new Point(1466, 467);
+            label427.Name = "label427";
+            label427.Size = new Size(110, 48);
+            label427.TabIndex = 144;
+            label427.Text = "-";
+            label427.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label428
+            // 
+            label428.AutoEllipsis = true;
+            label428.BackColor = Color.Gray;
+            label428.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label428.ForeColor = Color.White;
+            label428.Location = new Point(1466, 419);
+            label428.Name = "label428";
+            label428.Size = new Size(110, 46);
+            label428.TabIndex = 143;
+            label428.Text = "-";
+            label428.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label450
+            // 
+            label450.AutoEllipsis = true;
+            label450.BackColor = Color.Gray;
+            label450.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label450.ForeColor = Color.White;
+            label450.Location = new Point(1466, 370);
+            label450.Name = "label450";
+            label450.Size = new Size(110, 45);
+            label450.TabIndex = 142;
+            label450.Text = "-";
+            label450.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label451
+            // 
+            label451.AutoEllipsis = true;
+            label451.BackColor = Color.Gray;
+            label451.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label451.ForeColor = Color.White;
+            label451.Location = new Point(1466, 321);
+            label451.Name = "label451";
+            label451.Size = new Size(110, 45);
+            label451.TabIndex = 141;
+            label451.Text = "-";
+            label451.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label456
+            // 
+            label456.BackColor = Color.Silver;
+            label456.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label456.ForeColor = Color.Black;
+            label456.Location = new Point(1389, 467);
+            label456.Name = "label456";
+            label456.Size = new Size(75, 48);
+            label456.TabIndex = 140;
+            label456.Text = "R/OUT";
+            label456.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label457
+            // 
+            label457.BackColor = Color.Silver;
+            label457.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label457.ForeColor = Color.Black;
+            label457.Location = new Point(1389, 419);
+            label457.Name = "label457";
+            label457.Size = new Size(75, 46);
+            label457.TabIndex = 139;
+            label457.Text = "누적치";
+            label457.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label458
+            // 
+            label458.BackColor = Color.Silver;
+            label458.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label458.ForeColor = Color.Black;
+            label458.Location = new Point(1389, 370);
+            label458.Name = "label458";
+            label458.Size = new Size(75, 45);
+            label458.TabIndex = 138;
+            label458.Text = "인접치";
+            label458.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label459
+            // 
+            label459.BackColor = Color.Silver;
+            label459.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label459.ForeColor = Color.Black;
+            label459.Location = new Point(1389, 321);
+            label459.Name = "label459";
+            label459.Size = new Size(75, 45);
+            label459.TabIndex = 137;
+            label459.Text = "단일치";
+            label459.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label460
+            // 
+            label460.BackColor = Color.Silver;
+            label460.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label460.ForeColor = Color.Black;
+            label460.Location = new Point(1353, 467);
+            label460.Name = "label460";
+            label460.Size = new Size(33, 48);
+            label460.TabIndex = 136;
+            label460.Text = "D";
+            label460.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label461
+            // 
+            label461.BackColor = Color.Silver;
+            label461.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label461.ForeColor = Color.Black;
+            label461.Location = new Point(1353, 419);
+            label461.Name = "label461";
+            label461.Size = new Size(33, 46);
+            label461.TabIndex = 135;
+            label461.Text = "C";
+            label461.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label462
+            // 
+            label462.BackColor = Color.Silver;
+            label462.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label462.ForeColor = Color.Black;
+            label462.Location = new Point(1353, 370);
+            label462.Name = "label462";
+            label462.Size = new Size(33, 45);
+            label462.TabIndex = 134;
+            label462.Text = "B";
+            label462.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label463
+            // 
+            label463.BackColor = Color.Silver;
+            label463.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label463.ForeColor = Color.Black;
+            label463.Location = new Point(1353, 321);
+            label463.Name = "label463";
+            label463.Size = new Size(33, 45);
+            label463.TabIndex = 133;
+            label463.Text = "A";
+            label463.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label464
+            // 
+            label464.AutoEllipsis = true;
+            label464.BackColor = Color.Silver;
+            label464.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label464.ForeColor = Color.Black;
+            label464.Location = new Point(1579, 287);
+            label464.Name = "label464";
+            label464.Size = new Size(85, 30);
+            label464.TabIndex = 132;
+            label464.Text = "등급";
+            label464.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label465
+            // 
+            label465.AutoEllipsis = true;
+            label465.BackColor = Color.Silver;
+            label465.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label465.ForeColor = Color.Black;
+            label465.Location = new Point(1466, 287);
+            label465.Name = "label465";
+            label465.Size = new Size(110, 30);
+            label465.TabIndex = 131;
+            label465.Text = "실제값";
+            label465.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label466
+            // 
+            label466.BackColor = Color.Silver;
+            label466.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label466.ForeColor = Color.Black;
+            label466.Location = new Point(1353, 287);
+            label466.Name = "label466";
+            label466.Size = new Size(111, 30);
+            label466.TabIndex = 130;
+            label466.Text = "구분";
+            label466.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DecelerationDistance
+            // 
+            DecelerationDistance.Location = new Point(831, 520);
+            DecelerationDistance.Name = "DecelerationDistance";
+            DecelerationDistance.Size = new Size(516, 228);
+            DecelerationDistance.TabIndex = 129;
+            // 
+            // DecelerationAreaY
+            // 
+            DecelerationAreaY.Location = new Point(831, 287);
+            DecelerationAreaY.Name = "DecelerationAreaY";
+            DecelerationAreaY.Size = new Size(516, 228);
+            DecelerationAreaY.TabIndex = 128;
+            // 
+            // DecelerationAreaX
+            // 
+            DecelerationAreaX.Location = new Point(831, 54);
+            DecelerationAreaX.Name = "DecelerationAreaX";
+            DecelerationAreaX.Size = new Size(516, 228);
+            DecelerationAreaX.TabIndex = 127;
+            // 
+            // label467
+            // 
+            label467.AutoEllipsis = true;
+            label467.BackColor = Color.Gray;
+            label467.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label467.ForeColor = Color.White;
+            label467.Location = new Point(1579, 88);
+            label467.Name = "label467";
+            label467.Size = new Size(85, 194);
+            label467.TabIndex = 126;
+            label467.Text = "-";
+            label467.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label468
+            // 
+            label468.AutoEllipsis = true;
+            label468.BackColor = Color.Gray;
+            label468.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label468.ForeColor = Color.White;
+            label468.Location = new Point(1466, 234);
+            label468.Name = "label468";
+            label468.Size = new Size(110, 48);
+            label468.TabIndex = 125;
+            label468.Text = "-";
+            label468.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label469
+            // 
+            label469.AutoEllipsis = true;
+            label469.BackColor = Color.Gray;
+            label469.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label469.ForeColor = Color.White;
+            label469.Location = new Point(1466, 186);
+            label469.Name = "label469";
+            label469.Size = new Size(110, 46);
+            label469.TabIndex = 124;
+            label469.Text = "-";
+            label469.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label470
+            // 
+            label470.AutoEllipsis = true;
+            label470.BackColor = Color.Gray;
+            label470.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label470.ForeColor = Color.White;
+            label470.Location = new Point(1466, 137);
+            label470.Name = "label470";
+            label470.Size = new Size(110, 45);
+            label470.TabIndex = 123;
+            label470.Text = "-";
+            label470.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label471
+            // 
+            label471.AutoEllipsis = true;
+            label471.BackColor = Color.Gray;
+            label471.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label471.ForeColor = Color.White;
+            label471.Location = new Point(1466, 88);
+            label471.Name = "label471";
+            label471.Size = new Size(110, 45);
+            label471.TabIndex = 122;
+            label471.Text = "-";
+            label471.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label472
+            // 
+            label472.BackColor = Color.Silver;
+            label472.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label472.ForeColor = Color.Black;
+            label472.Location = new Point(1389, 234);
+            label472.Name = "label472";
+            label472.Size = new Size(75, 48);
+            label472.TabIndex = 121;
+            label472.Text = "R/OUT";
+            label472.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label473
+            // 
+            label473.BackColor = Color.Silver;
+            label473.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label473.ForeColor = Color.Black;
+            label473.Location = new Point(1389, 186);
+            label473.Name = "label473";
+            label473.Size = new Size(75, 46);
+            label473.TabIndex = 120;
+            label473.Text = "누적치";
+            label473.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label474
+            // 
+            label474.BackColor = Color.Silver;
+            label474.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label474.ForeColor = Color.Black;
+            label474.Location = new Point(1389, 137);
+            label474.Name = "label474";
+            label474.Size = new Size(75, 45);
+            label474.TabIndex = 119;
+            label474.Text = "인접치";
+            label474.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label475
+            // 
+            label475.BackColor = Color.Silver;
+            label475.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label475.ForeColor = Color.Black;
+            label475.Location = new Point(1389, 88);
+            label475.Name = "label475";
+            label475.Size = new Size(75, 45);
+            label475.TabIndex = 118;
+            label475.Text = "단일치";
+            label475.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label476
+            // 
+            label476.BackColor = Color.Silver;
+            label476.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label476.ForeColor = Color.Black;
+            label476.Location = new Point(1353, 234);
+            label476.Name = "label476";
+            label476.Size = new Size(33, 48);
+            label476.TabIndex = 117;
+            label476.Text = "D";
+            label476.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label477
+            // 
+            label477.BackColor = Color.Silver;
+            label477.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label477.ForeColor = Color.Black;
+            label477.Location = new Point(1353, 186);
+            label477.Name = "label477";
+            label477.Size = new Size(33, 46);
+            label477.TabIndex = 116;
+            label477.Text = "C";
+            label477.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label478
+            // 
+            label478.BackColor = Color.Silver;
+            label478.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label478.ForeColor = Color.Black;
+            label478.Location = new Point(1353, 137);
+            label478.Name = "label478";
+            label478.Size = new Size(33, 45);
+            label478.TabIndex = 115;
+            label478.Text = "B";
+            label478.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label479
+            // 
+            label479.BackColor = Color.Silver;
+            label479.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label479.ForeColor = Color.Black;
+            label479.Location = new Point(1353, 88);
+            label479.Name = "label479";
+            label479.Size = new Size(33, 45);
+            label479.TabIndex = 114;
+            label479.Text = "A";
+            label479.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label480
+            // 
+            label480.AutoEllipsis = true;
+            label480.BackColor = Color.Silver;
+            label480.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label480.ForeColor = Color.Black;
+            label480.Location = new Point(1579, 54);
+            label480.Name = "label480";
+            label480.Size = new Size(85, 30);
+            label480.TabIndex = 113;
+            label480.Text = "등급";
+            label480.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label481
+            // 
+            label481.AutoEllipsis = true;
+            label481.BackColor = Color.Silver;
+            label481.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label481.ForeColor = Color.Black;
+            label481.Location = new Point(1466, 54);
+            label481.Name = "label481";
+            label481.Size = new Size(110, 30);
+            label481.TabIndex = 112;
+            label481.Text = "실제값";
+            label481.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label482
+            // 
+            label482.BackColor = Color.Silver;
+            label482.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label482.ForeColor = Color.Black;
+            label482.Location = new Point(1353, 54);
+            label482.Name = "label482";
+            label482.Size = new Size(111, 30);
+            label482.TabIndex = 111;
+            label482.Text = "구분";
+            label482.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label483
+            // 
+            label483.AutoEllipsis = true;
+            label483.BackColor = Color.Gray;
+            label483.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label483.ForeColor = Color.White;
+            label483.Location = new Point(740, 553);
+            label483.Name = "label483";
+            label483.Size = new Size(85, 194);
+            label483.TabIndex = 110;
+            label483.Text = "-";
+            label483.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label484
+            // 
+            label484.AutoEllipsis = true;
+            label484.BackColor = Color.Gray;
+            label484.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label484.ForeColor = Color.White;
+            label484.Location = new Point(609, 699);
+            label484.Name = "label484";
+            label484.Size = new Size(127, 48);
+            label484.TabIndex = 109;
+            label484.Text = "-";
+            label484.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label485
+            // 
+            label485.AutoEllipsis = true;
+            label485.BackColor = Color.Gray;
+            label485.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label485.ForeColor = Color.White;
+            label485.Location = new Point(609, 651);
+            label485.Name = "label485";
+            label485.Size = new Size(127, 46);
+            label485.TabIndex = 108;
+            label485.Text = "-";
+            label485.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label486
+            // 
+            label486.AutoEllipsis = true;
+            label486.BackColor = Color.Gray;
+            label486.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label486.ForeColor = Color.White;
+            label486.Location = new Point(609, 602);
+            label486.Name = "label486";
+            label486.Size = new Size(127, 45);
+            label486.TabIndex = 107;
+            label486.Text = "-";
+            label486.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label487
+            // 
+            label487.AutoEllipsis = true;
+            label487.BackColor = Color.Gray;
+            label487.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label487.ForeColor = Color.White;
+            label487.Location = new Point(609, 553);
+            label487.Name = "label487";
+            label487.Size = new Size(127, 45);
+            label487.TabIndex = 106;
+            label487.Text = "-";
+            label487.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label488
+            // 
+            label488.BackColor = Color.Silver;
+            label488.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label488.ForeColor = Color.Black;
+            label488.Location = new Point(532, 699);
+            label488.Name = "label488";
+            label488.Size = new Size(75, 48);
+            label488.TabIndex = 105;
+            label488.Text = "R/OUT";
+            label488.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label489
+            // 
+            label489.BackColor = Color.Silver;
+            label489.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label489.ForeColor = Color.Black;
+            label489.Location = new Point(532, 651);
+            label489.Name = "label489";
+            label489.Size = new Size(75, 46);
+            label489.TabIndex = 104;
+            label489.Text = "누적치";
+            label489.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label490
+            // 
+            label490.BackColor = Color.Silver;
+            label490.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label490.ForeColor = Color.Black;
+            label490.Location = new Point(532, 602);
+            label490.Name = "label490";
+            label490.Size = new Size(75, 45);
+            label490.TabIndex = 103;
+            label490.Text = "인접치";
+            label490.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label491
+            // 
+            label491.BackColor = Color.Silver;
+            label491.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label491.ForeColor = Color.Black;
+            label491.Location = new Point(532, 553);
+            label491.Name = "label491";
+            label491.Size = new Size(75, 45);
+            label491.TabIndex = 102;
+            label491.Text = "단일치";
+            label491.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label492
+            // 
+            label492.BackColor = Color.Silver;
+            label492.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label492.ForeColor = Color.Black;
+            label492.Location = new Point(496, 699);
+            label492.Name = "label492";
+            label492.Size = new Size(33, 48);
+            label492.TabIndex = 101;
+            label492.Text = "D";
+            label492.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label493
+            // 
+            label493.BackColor = Color.Silver;
+            label493.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label493.ForeColor = Color.Black;
+            label493.Location = new Point(496, 651);
+            label493.Name = "label493";
+            label493.Size = new Size(33, 46);
+            label493.TabIndex = 100;
+            label493.Text = "C";
+            label493.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label494
+            // 
+            label494.BackColor = Color.Silver;
+            label494.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label494.ForeColor = Color.Black;
+            label494.Location = new Point(496, 602);
+            label494.Name = "label494";
+            label494.Size = new Size(33, 45);
+            label494.TabIndex = 99;
+            label494.Text = "B";
+            label494.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label495
+            // 
+            label495.BackColor = Color.Silver;
+            label495.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label495.ForeColor = Color.Black;
+            label495.Location = new Point(496, 553);
+            label495.Name = "label495";
+            label495.Size = new Size(33, 45);
+            label495.TabIndex = 98;
+            label495.Text = "A";
+            label495.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label496
+            // 
+            label496.AutoEllipsis = true;
+            label496.BackColor = Color.Silver;
+            label496.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label496.ForeColor = Color.Black;
+            label496.Location = new Point(740, 519);
+            label496.Name = "label496";
+            label496.Size = new Size(85, 30);
+            label496.TabIndex = 97;
+            label496.Text = "등급";
+            label496.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label497
+            // 
+            label497.AutoEllipsis = true;
+            label497.BackColor = Color.Silver;
+            label497.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label497.ForeColor = Color.Black;
+            label497.Location = new Point(609, 519);
+            label497.Name = "label497";
+            label497.Size = new Size(127, 30);
+            label497.TabIndex = 96;
+            label497.Text = "실제값";
+            label497.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label498
+            // 
+            label498.BackColor = Color.Silver;
+            label498.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label498.ForeColor = Color.Black;
+            label498.Location = new Point(496, 519);
+            label498.Name = "label498";
+            label498.Size = new Size(111, 30);
+            label498.TabIndex = 95;
+            label498.Text = "구분";
+            label498.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label499
+            // 
+            label499.AutoEllipsis = true;
+            label499.BackColor = Color.Gray;
+            label499.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label499.ForeColor = Color.White;
+            label499.Location = new Point(740, 320);
+            label499.Name = "label499";
+            label499.Size = new Size(85, 194);
+            label499.TabIndex = 94;
+            label499.Text = "-";
+            label499.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label500
+            // 
+            label500.AutoEllipsis = true;
+            label500.BackColor = Color.Gray;
+            label500.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label500.ForeColor = Color.White;
+            label500.Location = new Point(609, 466);
+            label500.Name = "label500";
+            label500.Size = new Size(127, 48);
+            label500.TabIndex = 93;
+            label500.Text = "-";
+            label500.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label501
+            // 
+            label501.AutoEllipsis = true;
+            label501.BackColor = Color.Gray;
+            label501.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label501.ForeColor = Color.White;
+            label501.Location = new Point(609, 418);
+            label501.Name = "label501";
+            label501.Size = new Size(127, 46);
+            label501.TabIndex = 92;
+            label501.Text = "-";
+            label501.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label502
+            // 
+            label502.AutoEllipsis = true;
+            label502.BackColor = Color.Gray;
+            label502.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label502.ForeColor = Color.White;
+            label502.Location = new Point(609, 369);
+            label502.Name = "label502";
+            label502.Size = new Size(127, 45);
+            label502.TabIndex = 91;
+            label502.Text = "-";
+            label502.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label503
+            // 
+            label503.AutoEllipsis = true;
+            label503.BackColor = Color.Gray;
+            label503.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label503.ForeColor = Color.White;
+            label503.Location = new Point(609, 320);
+            label503.Name = "label503";
+            label503.Size = new Size(127, 45);
+            label503.TabIndex = 90;
+            label503.Text = "-";
+            label503.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label504
+            // 
+            label504.BackColor = Color.Silver;
+            label504.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label504.ForeColor = Color.Black;
+            label504.Location = new Point(532, 466);
+            label504.Name = "label504";
+            label504.Size = new Size(75, 48);
+            label504.TabIndex = 89;
+            label504.Text = "R/OUT";
+            label504.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label505
+            // 
+            label505.BackColor = Color.Silver;
+            label505.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label505.ForeColor = Color.Black;
+            label505.Location = new Point(532, 418);
+            label505.Name = "label505";
+            label505.Size = new Size(75, 46);
+            label505.TabIndex = 88;
+            label505.Text = "누적치";
+            label505.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label506
+            // 
+            label506.BackColor = Color.Silver;
+            label506.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label506.ForeColor = Color.Black;
+            label506.Location = new Point(532, 369);
+            label506.Name = "label506";
+            label506.Size = new Size(75, 45);
+            label506.TabIndex = 87;
+            label506.Text = "인접치";
+            label506.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label507
+            // 
+            label507.BackColor = Color.Silver;
+            label507.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label507.ForeColor = Color.Black;
+            label507.Location = new Point(532, 320);
+            label507.Name = "label507";
+            label507.Size = new Size(75, 45);
+            label507.TabIndex = 86;
+            label507.Text = "단일치";
+            label507.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label508
+            // 
+            label508.BackColor = Color.Silver;
+            label508.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label508.ForeColor = Color.Black;
+            label508.Location = new Point(496, 466);
+            label508.Name = "label508";
+            label508.Size = new Size(33, 48);
+            label508.TabIndex = 85;
+            label508.Text = "D";
+            label508.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label509
+            // 
+            label509.BackColor = Color.Silver;
+            label509.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label509.ForeColor = Color.Black;
+            label509.Location = new Point(496, 418);
+            label509.Name = "label509";
+            label509.Size = new Size(33, 46);
+            label509.TabIndex = 84;
+            label509.Text = "C";
+            label509.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label510
+            // 
+            label510.BackColor = Color.Silver;
+            label510.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label510.ForeColor = Color.Black;
+            label510.Location = new Point(496, 369);
+            label510.Name = "label510";
+            label510.Size = new Size(33, 45);
+            label510.TabIndex = 83;
+            label510.Text = "B";
+            label510.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label511
+            // 
+            label511.BackColor = Color.Silver;
+            label511.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label511.ForeColor = Color.Black;
+            label511.Location = new Point(496, 320);
+            label511.Name = "label511";
+            label511.Size = new Size(33, 45);
+            label511.TabIndex = 82;
+            label511.Text = "A";
+            label511.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label512
+            // 
+            label512.AutoEllipsis = true;
+            label512.BackColor = Color.Silver;
+            label512.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label512.ForeColor = Color.Black;
+            label512.Location = new Point(740, 286);
+            label512.Name = "label512";
+            label512.Size = new Size(85, 30);
+            label512.TabIndex = 81;
+            label512.Text = "등급";
+            label512.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label513
+            // 
+            label513.AutoEllipsis = true;
+            label513.BackColor = Color.Silver;
+            label513.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label513.ForeColor = Color.Black;
+            label513.Location = new Point(609, 286);
+            label513.Name = "label513";
+            label513.Size = new Size(127, 30);
+            label513.TabIndex = 80;
+            label513.Text = "실제값";
+            label513.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label514
+            // 
+            label514.BackColor = Color.Silver;
+            label514.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label514.ForeColor = Color.Black;
+            label514.Location = new Point(496, 286);
+            label514.Name = "label514";
+            label514.Size = new Size(111, 30);
+            label514.TabIndex = 79;
+            label514.Text = "구분";
+            label514.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // AccelerationDistance
+            // 
+            AccelerationDistance.Location = new Point(3, 519);
+            AccelerationDistance.Name = "AccelerationDistance";
+            AccelerationDistance.Size = new Size(487, 228);
+            AccelerationDistance.TabIndex = 77;
+            // 
+            // AccelerationAreaY
+            // 
+            AccelerationAreaY.Location = new Point(3, 286);
+            AccelerationAreaY.Name = "AccelerationAreaY";
+            AccelerationAreaY.Size = new Size(487, 228);
+            AccelerationAreaY.TabIndex = 76;
+            // 
+            // label515
+            // 
+            label515.AutoEllipsis = true;
+            label515.BackColor = Color.Gray;
+            label515.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label515.ForeColor = Color.White;
+            label515.Location = new Point(740, 87);
+            label515.Name = "label515";
+            label515.Size = new Size(85, 194);
+            label515.TabIndex = 26;
+            label515.Text = "-";
+            label515.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label516
+            // 
+            label516.AutoEllipsis = true;
+            label516.BackColor = Color.Gray;
+            label516.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label516.ForeColor = Color.White;
+            label516.Location = new Point(609, 233);
+            label516.Name = "label516";
+            label516.Size = new Size(127, 48);
+            label516.TabIndex = 25;
+            label516.Text = "-";
+            label516.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label517
+            // 
+            label517.AutoEllipsis = true;
+            label517.BackColor = Color.Gray;
+            label517.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label517.ForeColor = Color.White;
+            label517.Location = new Point(609, 185);
+            label517.Name = "label517";
+            label517.Size = new Size(127, 46);
+            label517.TabIndex = 24;
+            label517.Text = "-";
+            label517.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label518
+            // 
+            label518.AutoEllipsis = true;
+            label518.BackColor = Color.Gray;
+            label518.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label518.ForeColor = Color.White;
+            label518.Location = new Point(609, 136);
+            label518.Name = "label518";
+            label518.Size = new Size(127, 45);
+            label518.TabIndex = 23;
+            label518.Text = "-";
+            label518.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label519
+            // 
+            label519.AutoEllipsis = true;
+            label519.BackColor = Color.Gray;
+            label519.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label519.ForeColor = Color.White;
+            label519.Location = new Point(609, 87);
+            label519.Name = "label519";
+            label519.Size = new Size(127, 45);
+            label519.TabIndex = 22;
+            label519.Text = "-";
+            label519.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label520
+            // 
+            label520.BackColor = Color.Silver;
+            label520.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label520.ForeColor = Color.Black;
+            label520.Location = new Point(532, 233);
+            label520.Name = "label520";
+            label520.Size = new Size(75, 48);
+            label520.TabIndex = 21;
+            label520.Text = "R/OUT";
+            label520.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label521
+            // 
+            label521.BackColor = Color.Silver;
+            label521.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label521.ForeColor = Color.Black;
+            label521.Location = new Point(532, 185);
+            label521.Name = "label521";
+            label521.Size = new Size(75, 46);
+            label521.TabIndex = 20;
+            label521.Text = "누적치";
+            label521.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label522
+            // 
+            label522.BackColor = Color.Silver;
+            label522.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label522.ForeColor = Color.Black;
+            label522.Location = new Point(532, 136);
+            label522.Name = "label522";
+            label522.Size = new Size(75, 45);
+            label522.TabIndex = 19;
+            label522.Text = "인접치";
+            label522.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label523
+            // 
+            label523.BackColor = Color.Silver;
+            label523.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label523.ForeColor = Color.Black;
+            label523.Location = new Point(532, 87);
+            label523.Name = "label523";
+            label523.Size = new Size(75, 45);
+            label523.TabIndex = 18;
+            label523.Text = "단일치";
+            label523.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label524
+            // 
+            label524.BackColor = Color.Silver;
+            label524.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label524.ForeColor = Color.Black;
+            label524.Location = new Point(496, 233);
+            label524.Name = "label524";
+            label524.Size = new Size(33, 48);
+            label524.TabIndex = 17;
+            label524.Text = "D";
+            label524.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label525
+            // 
+            label525.BackColor = Color.Silver;
+            label525.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label525.ForeColor = Color.Black;
+            label525.Location = new Point(496, 185);
+            label525.Name = "label525";
+            label525.Size = new Size(33, 46);
+            label525.TabIndex = 16;
+            label525.Text = "C";
+            label525.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label526
+            // 
+            label526.BackColor = Color.Silver;
+            label526.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label526.ForeColor = Color.Black;
+            label526.Location = new Point(496, 136);
+            label526.Name = "label526";
+            label526.Size = new Size(33, 45);
+            label526.TabIndex = 15;
+            label526.Text = "B";
+            label526.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label527
+            // 
+            label527.BackColor = Color.Silver;
+            label527.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label527.ForeColor = Color.Black;
+            label527.Location = new Point(496, 87);
+            label527.Name = "label527";
+            label527.Size = new Size(33, 45);
+            label527.TabIndex = 14;
+            label527.Text = "A";
+            label527.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label528
+            // 
+            label528.AutoEllipsis = true;
+            label528.BackColor = Color.Silver;
+            label528.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label528.ForeColor = Color.Black;
+            label528.Location = new Point(740, 53);
+            label528.Name = "label528";
+            label528.Size = new Size(85, 30);
+            label528.TabIndex = 13;
+            label528.Text = "등급";
+            label528.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label529
+            // 
+            label529.AutoEllipsis = true;
+            label529.BackColor = Color.Silver;
+            label529.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label529.ForeColor = Color.Black;
+            label529.Location = new Point(609, 53);
+            label529.Name = "label529";
+            label529.Size = new Size(127, 30);
+            label529.TabIndex = 12;
+            label529.Text = "실제값";
+            label529.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label530
+            // 
+            label530.BackColor = Color.Silver;
+            label530.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label530.ForeColor = Color.Black;
+            label530.Location = new Point(496, 53);
+            label530.Name = "label530";
+            label530.Size = new Size(111, 30);
+            label530.TabIndex = 11;
+            label530.Text = "구분";
+            label530.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label531
+            // 
+            label531.AutoEllipsis = true;
+            label531.BackColor = Color.Black;
+            label531.BorderStyle = BorderStyle.Fixed3D;
+            label531.Font = new Font("맑은 고딕", 21.75F, FontStyle.Bold);
+            label531.ForeColor = Color.White;
+            label531.Location = new Point(831, 3);
+            label531.Name = "label531";
+            label531.Size = new Size(833, 48);
+            label531.TabIndex = 8;
+            label531.Text = "Decelearation";
+            label531.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label532
+            // 
+            label532.AutoEllipsis = true;
+            label532.BackColor = Color.Black;
+            label532.BorderStyle = BorderStyle.Fixed3D;
+            label532.Font = new Font("맑은 고딕", 21.75F, FontStyle.Bold);
+            label532.ForeColor = Color.White;
+            label532.Location = new Point(3, 2);
+            label532.Name = "label532";
+            label532.Size = new Size(822, 48);
+            label532.TabIndex = 7;
+            label532.Text = "Acceleration";
+            label532.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DCFinalGradelabel
+            // 
+            DCFinalGradelabel.AutoSize = true;
+            DCFinalGradelabel.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
+            DCFinalGradelabel.ForeColor = Color.White;
+            DCFinalGradelabel.Location = new Point(1042, 33);
+            DCFinalGradelabel.Name = "DCFinalGradelabel";
+            DCFinalGradelabel.Size = new Size(22, 30);
+            DCFinalGradelabel.TabIndex = 8;
+            DCFinalGradelabel.Text = "-";
+            // 
+            // ACFinalGradelabel
+            // 
+            ACFinalGradelabel.AutoSize = true;
+            ACFinalGradelabel.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
+            ACFinalGradelabel.ForeColor = Color.White;
+            ACFinalGradelabel.Location = new Point(869, 33);
+            ACFinalGradelabel.Name = "ACFinalGradelabel";
+            ACFinalGradelabel.Size = new Size(22, 30);
+            ACFinalGradelabel.TabIndex = 7;
+            ACFinalGradelabel.Text = "-";
+            // 
+            // SingleStaticPanel_1
+            // 
+            SingleStaticPanel_1.BackColor = Color.RosyBrown;
+            SingleStaticPanel_1.Controls.Add(AccelerationPeakX);
+            SingleStaticPanel_1.Controls.Add(DCPeakY_Grade);
+            SingleStaticPanel_1.Controls.Add(DCPeakY_ROUT);
+            SingleStaticPanel_1.Controls.Add(DCPeakY__nugeock);
+            SingleStaticPanel_1.Controls.Add(DCPeakY_MaxInterval);
+            SingleStaticPanel_1.Controls.Add(DCPeakY_MaxOne);
+            SingleStaticPanel_1.Controls.Add(label246);
+            SingleStaticPanel_1.Controls.Add(label248);
+            SingleStaticPanel_1.Controls.Add(label250);
+            SingleStaticPanel_1.Controls.Add(label252);
+            SingleStaticPanel_1.Controls.Add(label254);
+            SingleStaticPanel_1.Controls.Add(label256);
+            SingleStaticPanel_1.Controls.Add(label258);
+            SingleStaticPanel_1.Controls.Add(label260);
+            SingleStaticPanel_1.Controls.Add(label262);
+            SingleStaticPanel_1.Controls.Add(label264);
+            SingleStaticPanel_1.Controls.Add(label266);
+            SingleStaticPanel_1.Controls.Add(DCPeakX_Grade);
+            SingleStaticPanel_1.Controls.Add(DCPeakX_ROUT);
+            SingleStaticPanel_1.Controls.Add(DCPeakX__nugeock);
+            SingleStaticPanel_1.Controls.Add(DCPeakX_MaxInterval);
+            SingleStaticPanel_1.Controls.Add(DCPeakX_MaxOne);
+            SingleStaticPanel_1.Controls.Add(label214);
+            SingleStaticPanel_1.Controls.Add(label216);
+            SingleStaticPanel_1.Controls.Add(label218);
+            SingleStaticPanel_1.Controls.Add(label220);
+            SingleStaticPanel_1.Controls.Add(label222);
+            SingleStaticPanel_1.Controls.Add(label224);
+            SingleStaticPanel_1.Controls.Add(label226);
+            SingleStaticPanel_1.Controls.Add(label228);
+            SingleStaticPanel_1.Controls.Add(label230);
+            SingleStaticPanel_1.Controls.Add(label232);
+            SingleStaticPanel_1.Controls.Add(label234);
+            SingleStaticPanel_1.Controls.Add(ACPeakY_Grade);
+            SingleStaticPanel_1.Controls.Add(ACPeakY_ROUT);
+            SingleStaticPanel_1.Controls.Add(ACPeakY__nugeock);
+            SingleStaticPanel_1.Controls.Add(ACPeakY_MaxInterval);
+            SingleStaticPanel_1.Controls.Add(ACPeakY_MaxOne);
+            SingleStaticPanel_1.Controls.Add(label182);
+            SingleStaticPanel_1.Controls.Add(label184);
+            SingleStaticPanel_1.Controls.Add(label186);
+            SingleStaticPanel_1.Controls.Add(label188);
+            SingleStaticPanel_1.Controls.Add(label190);
+            SingleStaticPanel_1.Controls.Add(label192);
+            SingleStaticPanel_1.Controls.Add(label194);
+            SingleStaticPanel_1.Controls.Add(label196);
+            SingleStaticPanel_1.Controls.Add(label198);
+            SingleStaticPanel_1.Controls.Add(label200);
+            SingleStaticPanel_1.Controls.Add(label202);
+            SingleStaticPanel_1.Controls.Add(ACPeakX_Grade);
+            SingleStaticPanel_1.Controls.Add(ACPeakX_ROUT);
+            SingleStaticPanel_1.Controls.Add(ACPeakX__nugeock);
+            SingleStaticPanel_1.Controls.Add(ACPeakX_MaxInterval);
+            SingleStaticPanel_1.Controls.Add(ACPeakX_MaxOne);
+            SingleStaticPanel_1.Controls.Add(label128);
+            SingleStaticPanel_1.Controls.Add(label116);
+            SingleStaticPanel_1.Controls.Add(label112);
+            SingleStaticPanel_1.Controls.Add(label109);
+            SingleStaticPanel_1.Controls.Add(label100);
+            SingleStaticPanel_1.Controls.Add(label69);
+            SingleStaticPanel_1.Controls.Add(label64);
+            SingleStaticPanel_1.Controls.Add(label59);
+            SingleStaticPanel_1.Controls.Add(label58);
+            SingleStaticPanel_1.Controls.Add(label54);
+            SingleStaticPanel_1.Controls.Add(label47);
+            SingleStaticPanel_1.Controls.Add(SingleStaticPanel_1_imgcheckButton);
+            SingleStaticPanel_1.Controls.Add(label46);
+            SingleStaticPanel_1.Controls.Add(label42);
+            SingleStaticPanel_1.Controls.Add(DecelerationPeakY);
+            SingleStaticPanel_1.Controls.Add(DecelerationPeakX);
+            SingleStaticPanel_1.Controls.Add(AccelerationPeakY);
+            SingleStaticPanel_1.Location = new Point(473, 380);
+            SingleStaticPanel_1.Name = "SingleStaticPanel_1";
+            SingleStaticPanel_1.Size = new Size(64, 10);
+            SingleStaticPanel_1.TabIndex = 3;
+            // 
+            // AccelerationPeakX
+            // 
+            AccelerationPeakX.Location = new Point(9, 56);
+            AccelerationPeakX.Name = "AccelerationPeakX";
+            AccelerationPeakX.Size = new Size(490, 246);
+            AccelerationPeakX.TabIndex = 0;
+            // 
+            // DCPeakY_Grade
+            // 
+            DCPeakY_Grade.BackColor = Color.Gray;
+            DCPeakY_Grade.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            DCPeakY_Grade.ForeColor = Color.White;
+            DCPeakY_Grade.Location = new Point(1579, 339);
+            DCPeakY_Grade.Name = "DCPeakY_Grade";
+            DCPeakY_Grade.Size = new Size(86, 212);
+            DCPeakY_Grade.TabIndex = 74;
+            DCPeakY_Grade.Text = "-";
+            DCPeakY_Grade.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DCPeakY_ROUT
+            // 
+            DCPeakY_ROUT.BackColor = Color.Gray;
+            DCPeakY_ROUT.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            DCPeakY_ROUT.ForeColor = Color.White;
+            DCPeakY_ROUT.Location = new Point(1462, 500);
+            DCPeakY_ROUT.Name = "DCPeakY_ROUT";
+            DCPeakY_ROUT.Size = new Size(112, 51);
+            DCPeakY_ROUT.TabIndex = 73;
+            DCPeakY_ROUT.Text = "-";
+            DCPeakY_ROUT.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DCPeakY__nugeock
+            // 
+            DCPeakY__nugeock.BackColor = Color.Gray;
+            DCPeakY__nugeock.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            DCPeakY__nugeock.ForeColor = Color.White;
+            DCPeakY__nugeock.Location = new Point(1462, 446);
+            DCPeakY__nugeock.Name = "DCPeakY__nugeock";
+            DCPeakY__nugeock.Size = new Size(112, 51);
+            DCPeakY__nugeock.TabIndex = 72;
+            DCPeakY__nugeock.Text = "-";
+            DCPeakY__nugeock.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DCPeakY_MaxInterval
+            // 
+            DCPeakY_MaxInterval.BackColor = Color.Gray;
+            DCPeakY_MaxInterval.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            DCPeakY_MaxInterval.ForeColor = Color.White;
+            DCPeakY_MaxInterval.Location = new Point(1462, 393);
+            DCPeakY_MaxInterval.Name = "DCPeakY_MaxInterval";
+            DCPeakY_MaxInterval.Size = new Size(112, 51);
+            DCPeakY_MaxInterval.TabIndex = 71;
+            DCPeakY_MaxInterval.Text = "-";
+            DCPeakY_MaxInterval.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DCPeakY_MaxOne
+            // 
+            DCPeakY_MaxOne.BackColor = Color.Gray;
+            DCPeakY_MaxOne.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            DCPeakY_MaxOne.ForeColor = Color.White;
+            DCPeakY_MaxOne.Location = new Point(1462, 339);
+            DCPeakY_MaxOne.Name = "DCPeakY_MaxOne";
+            DCPeakY_MaxOne.Size = new Size(112, 51);
+            DCPeakY_MaxOne.TabIndex = 70;
+            DCPeakY_MaxOne.Text = "-";
+            DCPeakY_MaxOne.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label246
+            // 
+            label246.BackColor = Color.Silver;
+            label246.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label246.ForeColor = Color.Black;
+            label246.Location = new Point(1385, 500);
+            label246.Name = "label246";
+            label246.Size = new Size(75, 51);
+            label246.TabIndex = 69;
+            label246.Text = "R/OUT";
+            label246.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label248
+            // 
+            label248.BackColor = Color.Silver;
+            label248.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label248.ForeColor = Color.Black;
+            label248.Location = new Point(1385, 446);
+            label248.Name = "label248";
+            label248.Size = new Size(75, 51);
+            label248.TabIndex = 68;
+            label248.Text = "누적치";
+            label248.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label250
+            // 
+            label250.BackColor = Color.Silver;
+            label250.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label250.ForeColor = Color.Black;
+            label250.Location = new Point(1385, 393);
+            label250.Name = "label250";
+            label250.Size = new Size(75, 51);
+            label250.TabIndex = 67;
+            label250.Text = "인접치";
+            label250.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label252
+            // 
+            label252.BackColor = Color.Silver;
+            label252.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label252.ForeColor = Color.Black;
+            label252.Location = new Point(1385, 339);
+            label252.Name = "label252";
+            label252.Size = new Size(75, 51);
+            label252.TabIndex = 66;
+            label252.Text = "단일치";
+            label252.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label254
+            // 
+            label254.BackColor = Color.Silver;
+            label254.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label254.ForeColor = Color.Black;
+            label254.Location = new Point(1349, 500);
+            label254.Name = "label254";
+            label254.Size = new Size(33, 51);
+            label254.TabIndex = 65;
+            label254.Text = "D";
+            label254.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label256
+            // 
+            label256.BackColor = Color.Silver;
+            label256.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label256.ForeColor = Color.Black;
+            label256.Location = new Point(1349, 446);
+            label256.Name = "label256";
+            label256.Size = new Size(33, 51);
+            label256.TabIndex = 64;
+            label256.Text = "C";
+            label256.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label258
+            // 
+            label258.BackColor = Color.Silver;
+            label258.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label258.ForeColor = Color.Black;
+            label258.Location = new Point(1349, 393);
+            label258.Name = "label258";
+            label258.Size = new Size(33, 51);
+            label258.TabIndex = 63;
+            label258.Text = "B";
+            label258.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label260
+            // 
+            label260.BackColor = Color.Silver;
+            label260.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label260.ForeColor = Color.Black;
+            label260.Location = new Point(1349, 339);
+            label260.Name = "label260";
+            label260.Size = new Size(33, 51);
+            label260.TabIndex = 62;
+            label260.Text = "A";
+            label260.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label262
+            // 
+            label262.BackColor = Color.Silver;
+            label262.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label262.ForeColor = Color.Black;
+            label262.Location = new Point(1579, 305);
+            label262.Name = "label262";
+            label262.Size = new Size(86, 30);
+            label262.TabIndex = 61;
+            label262.Text = "등급";
+            label262.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label264
+            // 
+            label264.BackColor = Color.Silver;
+            label264.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label264.ForeColor = Color.Black;
+            label264.Location = new Point(1462, 305);
+            label264.Name = "label264";
+            label264.Size = new Size(112, 30);
+            label264.TabIndex = 60;
+            label264.Text = "실제값";
+            label264.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label266
+            // 
+            label266.BackColor = Color.Silver;
+            label266.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label266.ForeColor = Color.Black;
+            label266.Location = new Point(1349, 305);
+            label266.Name = "label266";
+            label266.Size = new Size(111, 30);
+            label266.TabIndex = 59;
+            label266.Text = "구분";
+            label266.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DCPeakX_Grade
+            // 
+            DCPeakX_Grade.BackColor = Color.Gray;
+            DCPeakX_Grade.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            DCPeakX_Grade.ForeColor = Color.White;
+            DCPeakX_Grade.Location = new Point(1579, 90);
+            DCPeakX_Grade.Name = "DCPeakX_Grade";
+            DCPeakX_Grade.Size = new Size(86, 212);
+            DCPeakX_Grade.TabIndex = 58;
+            DCPeakX_Grade.Text = "-";
+            DCPeakX_Grade.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DCPeakX_ROUT
+            // 
+            DCPeakX_ROUT.BackColor = Color.Gray;
+            DCPeakX_ROUT.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            DCPeakX_ROUT.ForeColor = Color.White;
+            DCPeakX_ROUT.Location = new Point(1462, 251);
+            DCPeakX_ROUT.Name = "DCPeakX_ROUT";
+            DCPeakX_ROUT.Size = new Size(112, 51);
+            DCPeakX_ROUT.TabIndex = 57;
+            DCPeakX_ROUT.Text = "-";
+            DCPeakX_ROUT.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DCPeakX__nugeock
+            // 
+            DCPeakX__nugeock.BackColor = Color.Gray;
+            DCPeakX__nugeock.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            DCPeakX__nugeock.ForeColor = Color.White;
+            DCPeakX__nugeock.Location = new Point(1462, 197);
+            DCPeakX__nugeock.Name = "DCPeakX__nugeock";
+            DCPeakX__nugeock.Size = new Size(112, 51);
+            DCPeakX__nugeock.TabIndex = 56;
+            DCPeakX__nugeock.Text = "-";
+            DCPeakX__nugeock.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DCPeakX_MaxInterval
+            // 
+            DCPeakX_MaxInterval.BackColor = Color.Gray;
+            DCPeakX_MaxInterval.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            DCPeakX_MaxInterval.ForeColor = Color.White;
+            DCPeakX_MaxInterval.Location = new Point(1462, 144);
+            DCPeakX_MaxInterval.Name = "DCPeakX_MaxInterval";
+            DCPeakX_MaxInterval.Size = new Size(112, 51);
+            DCPeakX_MaxInterval.TabIndex = 55;
+            DCPeakX_MaxInterval.Text = "-";
+            DCPeakX_MaxInterval.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DCPeakX_MaxOne
+            // 
+            DCPeakX_MaxOne.BackColor = Color.Gray;
+            DCPeakX_MaxOne.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            DCPeakX_MaxOne.ForeColor = Color.White;
+            DCPeakX_MaxOne.Location = new Point(1462, 90);
+            DCPeakX_MaxOne.Name = "DCPeakX_MaxOne";
+            DCPeakX_MaxOne.Size = new Size(112, 51);
+            DCPeakX_MaxOne.TabIndex = 54;
+            DCPeakX_MaxOne.Text = "-";
+            DCPeakX_MaxOne.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label214
+            // 
+            label214.BackColor = Color.Silver;
+            label214.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label214.ForeColor = Color.Black;
+            label214.Location = new Point(1385, 251);
+            label214.Name = "label214";
+            label214.Size = new Size(75, 51);
+            label214.TabIndex = 53;
+            label214.Text = "R/OUT";
+            label214.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label216
+            // 
+            label216.BackColor = Color.Silver;
+            label216.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label216.ForeColor = Color.Black;
+            label216.Location = new Point(1385, 197);
+            label216.Name = "label216";
+            label216.Size = new Size(75, 51);
+            label216.TabIndex = 52;
+            label216.Text = "누적치";
+            label216.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label218
+            // 
+            label218.BackColor = Color.Silver;
+            label218.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label218.ForeColor = Color.Black;
+            label218.Location = new Point(1385, 144);
+            label218.Name = "label218";
+            label218.Size = new Size(75, 51);
+            label218.TabIndex = 51;
+            label218.Text = "인접치";
+            label218.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label220
+            // 
+            label220.BackColor = Color.Silver;
+            label220.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label220.ForeColor = Color.Black;
+            label220.Location = new Point(1385, 90);
+            label220.Name = "label220";
+            label220.Size = new Size(75, 51);
+            label220.TabIndex = 50;
+            label220.Text = "단일치";
+            label220.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label222
+            // 
+            label222.BackColor = Color.Silver;
+            label222.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label222.ForeColor = Color.Black;
+            label222.Location = new Point(1349, 251);
+            label222.Name = "label222";
+            label222.Size = new Size(33, 51);
+            label222.TabIndex = 49;
+            label222.Text = "D";
+            label222.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label224
+            // 
+            label224.BackColor = Color.Silver;
+            label224.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label224.ForeColor = Color.Black;
+            label224.Location = new Point(1349, 197);
+            label224.Name = "label224";
+            label224.Size = new Size(33, 51);
+            label224.TabIndex = 48;
+            label224.Text = "C";
+            label224.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label226
+            // 
+            label226.BackColor = Color.Silver;
+            label226.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label226.ForeColor = Color.Black;
+            label226.Location = new Point(1349, 144);
+            label226.Name = "label226";
+            label226.Size = new Size(33, 51);
+            label226.TabIndex = 47;
+            label226.Text = "B";
+            label226.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label228
+            // 
+            label228.BackColor = Color.Silver;
+            label228.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label228.ForeColor = Color.Black;
+            label228.Location = new Point(1349, 90);
+            label228.Name = "label228";
+            label228.Size = new Size(33, 51);
+            label228.TabIndex = 46;
+            label228.Text = "A";
+            label228.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label230
+            // 
+            label230.BackColor = Color.Silver;
+            label230.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label230.ForeColor = Color.Black;
+            label230.Location = new Point(1579, 56);
+            label230.Name = "label230";
+            label230.Size = new Size(86, 30);
+            label230.TabIndex = 45;
+            label230.Text = "등급";
+            label230.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label232
+            // 
+            label232.BackColor = Color.Silver;
+            label232.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label232.ForeColor = Color.Black;
+            label232.Location = new Point(1462, 56);
+            label232.Name = "label232";
+            label232.Size = new Size(112, 30);
+            label232.TabIndex = 44;
+            label232.Text = "실제값";
+            label232.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label234
+            // 
+            label234.BackColor = Color.Silver;
+            label234.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label234.ForeColor = Color.Black;
+            label234.Location = new Point(1349, 56);
+            label234.Name = "label234";
+            label234.Size = new Size(111, 30);
+            label234.TabIndex = 43;
+            label234.Text = "구분";
+            label234.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ACPeakY_Grade
+            // 
+            ACPeakY_Grade.BackColor = Color.Gray;
+            ACPeakY_Grade.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            ACPeakY_Grade.ForeColor = Color.White;
+            ACPeakY_Grade.Location = new Point(738, 340);
+            ACPeakY_Grade.Name = "ACPeakY_Grade";
+            ACPeakY_Grade.Size = new Size(85, 212);
+            ACPeakY_Grade.TabIndex = 42;
+            ACPeakY_Grade.Text = "-";
+            ACPeakY_Grade.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ACPeakY_ROUT
+            // 
+            ACPeakY_ROUT.BackColor = Color.Gray;
+            ACPeakY_ROUT.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            ACPeakY_ROUT.ForeColor = Color.White;
+            ACPeakY_ROUT.Location = new Point(615, 501);
+            ACPeakY_ROUT.Name = "ACPeakY_ROUT";
+            ACPeakY_ROUT.Size = new Size(119, 51);
+            ACPeakY_ROUT.TabIndex = 41;
+            ACPeakY_ROUT.Text = "-";
+            ACPeakY_ROUT.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ACPeakY__nugeock
+            // 
+            ACPeakY__nugeock.BackColor = Color.Gray;
+            ACPeakY__nugeock.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            ACPeakY__nugeock.ForeColor = Color.White;
+            ACPeakY__nugeock.Location = new Point(615, 447);
+            ACPeakY__nugeock.Name = "ACPeakY__nugeock";
+            ACPeakY__nugeock.Size = new Size(119, 51);
+            ACPeakY__nugeock.TabIndex = 40;
+            ACPeakY__nugeock.Text = "-";
+            ACPeakY__nugeock.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ACPeakY_MaxInterval
+            // 
+            ACPeakY_MaxInterval.BackColor = Color.Gray;
+            ACPeakY_MaxInterval.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            ACPeakY_MaxInterval.ForeColor = Color.White;
+            ACPeakY_MaxInterval.Location = new Point(615, 394);
+            ACPeakY_MaxInterval.Name = "ACPeakY_MaxInterval";
+            ACPeakY_MaxInterval.Size = new Size(119, 51);
+            ACPeakY_MaxInterval.TabIndex = 39;
+            ACPeakY_MaxInterval.Text = "-";
+            ACPeakY_MaxInterval.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ACPeakY_MaxOne
+            // 
+            ACPeakY_MaxOne.BackColor = Color.Gray;
+            ACPeakY_MaxOne.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            ACPeakY_MaxOne.ForeColor = Color.White;
+            ACPeakY_MaxOne.Location = new Point(615, 340);
+            ACPeakY_MaxOne.Name = "ACPeakY_MaxOne";
+            ACPeakY_MaxOne.Size = new Size(119, 51);
+            ACPeakY_MaxOne.TabIndex = 38;
+            ACPeakY_MaxOne.Text = "-";
+            ACPeakY_MaxOne.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label182
+            // 
+            label182.BackColor = Color.Silver;
+            label182.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label182.ForeColor = Color.Black;
+            label182.Location = new Point(538, 501);
+            label182.Name = "label182";
+            label182.Size = new Size(75, 51);
+            label182.TabIndex = 37;
+            label182.Text = "R/OUT";
+            label182.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label184
+            // 
+            label184.BackColor = Color.Silver;
+            label184.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label184.ForeColor = Color.Black;
+            label184.Location = new Point(538, 447);
+            label184.Name = "label184";
+            label184.Size = new Size(75, 51);
+            label184.TabIndex = 36;
+            label184.Text = "누적치";
+            label184.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label186
+            // 
+            label186.BackColor = Color.Silver;
+            label186.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label186.ForeColor = Color.Black;
+            label186.Location = new Point(538, 394);
+            label186.Name = "label186";
+            label186.Size = new Size(75, 51);
+            label186.TabIndex = 35;
+            label186.Text = "인접치";
+            label186.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label188
+            // 
+            label188.BackColor = Color.Silver;
+            label188.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label188.ForeColor = Color.Black;
+            label188.Location = new Point(538, 340);
+            label188.Name = "label188";
+            label188.Size = new Size(75, 51);
+            label188.TabIndex = 34;
+            label188.Text = "단일치";
+            label188.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label190
+            // 
+            label190.BackColor = Color.Silver;
+            label190.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label190.ForeColor = Color.Black;
+            label190.Location = new Point(502, 501);
+            label190.Name = "label190";
+            label190.Size = new Size(33, 51);
+            label190.TabIndex = 33;
+            label190.Text = "D";
+            label190.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label192
+            // 
+            label192.BackColor = Color.Silver;
+            label192.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label192.ForeColor = Color.Black;
+            label192.Location = new Point(502, 447);
+            label192.Name = "label192";
+            label192.Size = new Size(33, 51);
+            label192.TabIndex = 32;
+            label192.Text = "C";
+            label192.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label194
+            // 
+            label194.BackColor = Color.Silver;
+            label194.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label194.ForeColor = Color.Black;
+            label194.Location = new Point(502, 394);
+            label194.Name = "label194";
+            label194.Size = new Size(33, 51);
+            label194.TabIndex = 31;
+            label194.Text = "B";
+            label194.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label196
+            // 
+            label196.BackColor = Color.Silver;
+            label196.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label196.ForeColor = Color.Black;
+            label196.Location = new Point(502, 340);
+            label196.Name = "label196";
+            label196.Size = new Size(33, 51);
+            label196.TabIndex = 30;
+            label196.Text = "A";
+            label196.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label198
+            // 
+            label198.BackColor = Color.Silver;
+            label198.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label198.ForeColor = Color.Black;
+            label198.Location = new Point(738, 306);
+            label198.Name = "label198";
+            label198.Size = new Size(85, 30);
+            label198.TabIndex = 29;
+            label198.Text = "등급";
+            label198.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label200
+            // 
+            label200.BackColor = Color.Silver;
+            label200.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label200.ForeColor = Color.Black;
+            label200.Location = new Point(615, 306);
+            label200.Name = "label200";
+            label200.Size = new Size(119, 30);
+            label200.TabIndex = 28;
+            label200.Text = "실제값";
+            label200.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label202
+            // 
+            label202.BackColor = Color.Silver;
+            label202.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label202.ForeColor = Color.Black;
+            label202.Location = new Point(502, 306);
+            label202.Name = "label202";
+            label202.Size = new Size(111, 30);
+            label202.TabIndex = 27;
+            label202.Text = "구분";
+            label202.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ACPeakX_Grade
+            // 
+            ACPeakX_Grade.BackColor = Color.Gray;
+            ACPeakX_Grade.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            ACPeakX_Grade.ForeColor = Color.White;
+            ACPeakX_Grade.Location = new Point(738, 90);
+            ACPeakX_Grade.Name = "ACPeakX_Grade";
+            ACPeakX_Grade.Size = new Size(85, 212);
+            ACPeakX_Grade.TabIndex = 26;
+            ACPeakX_Grade.Text = "-";
+            ACPeakX_Grade.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ACPeakX_ROUT
+            // 
+            ACPeakX_ROUT.BackColor = Color.Gray;
+            ACPeakX_ROUT.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            ACPeakX_ROUT.ForeColor = Color.White;
+            ACPeakX_ROUT.Location = new Point(615, 251);
+            ACPeakX_ROUT.Name = "ACPeakX_ROUT";
+            ACPeakX_ROUT.Size = new Size(119, 51);
+            ACPeakX_ROUT.TabIndex = 25;
+            ACPeakX_ROUT.Text = "-";
+            ACPeakX_ROUT.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ACPeakX__nugeock
+            // 
+            ACPeakX__nugeock.BackColor = Color.Gray;
+            ACPeakX__nugeock.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            ACPeakX__nugeock.ForeColor = Color.White;
+            ACPeakX__nugeock.Location = new Point(615, 197);
+            ACPeakX__nugeock.Name = "ACPeakX__nugeock";
+            ACPeakX__nugeock.Size = new Size(119, 51);
+            ACPeakX__nugeock.TabIndex = 24;
+            ACPeakX__nugeock.Text = "-";
+            ACPeakX__nugeock.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ACPeakX_MaxInterval
+            // 
+            ACPeakX_MaxInterval.BackColor = Color.Gray;
+            ACPeakX_MaxInterval.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            ACPeakX_MaxInterval.ForeColor = Color.White;
+            ACPeakX_MaxInterval.Location = new Point(615, 144);
+            ACPeakX_MaxInterval.Name = "ACPeakX_MaxInterval";
+            ACPeakX_MaxInterval.Size = new Size(119, 51);
+            ACPeakX_MaxInterval.TabIndex = 23;
+            ACPeakX_MaxInterval.Text = "-";
+            ACPeakX_MaxInterval.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ACPeakX_MaxOne
+            // 
+            ACPeakX_MaxOne.BackColor = Color.Gray;
+            ACPeakX_MaxOne.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            ACPeakX_MaxOne.ForeColor = Color.White;
+            ACPeakX_MaxOne.Location = new Point(615, 90);
+            ACPeakX_MaxOne.Name = "ACPeakX_MaxOne";
+            ACPeakX_MaxOne.Size = new Size(119, 51);
+            ACPeakX_MaxOne.TabIndex = 22;
+            ACPeakX_MaxOne.Text = "-";
+            ACPeakX_MaxOne.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label128
+            // 
+            label128.BackColor = Color.Silver;
+            label128.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label128.ForeColor = Color.Black;
+            label128.Location = new Point(538, 251);
+            label128.Name = "label128";
+            label128.Size = new Size(75, 51);
+            label128.TabIndex = 21;
+            label128.Text = "R/OUT";
+            label128.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label116
+            // 
+            label116.BackColor = Color.Silver;
+            label116.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label116.ForeColor = Color.Black;
+            label116.Location = new Point(538, 197);
+            label116.Name = "label116";
+            label116.Size = new Size(75, 51);
+            label116.TabIndex = 20;
+            label116.Text = "누적치";
+            label116.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label112
+            // 
+            label112.BackColor = Color.Silver;
+            label112.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label112.ForeColor = Color.Black;
+            label112.Location = new Point(538, 144);
+            label112.Name = "label112";
+            label112.Size = new Size(75, 51);
+            label112.TabIndex = 19;
+            label112.Text = "인접치";
+            label112.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label109
+            // 
+            label109.BackColor = Color.Silver;
+            label109.Font = new Font("맑은 고딕", 13F, FontStyle.Bold);
+            label109.ForeColor = Color.Black;
+            label109.Location = new Point(538, 90);
+            label109.Name = "label109";
+            label109.Size = new Size(75, 51);
+            label109.TabIndex = 18;
+            label109.Text = "단일치";
+            label109.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label100
+            // 
+            label100.BackColor = Color.Silver;
+            label100.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label100.ForeColor = Color.Black;
+            label100.Location = new Point(502, 251);
+            label100.Name = "label100";
+            label100.Size = new Size(33, 51);
+            label100.TabIndex = 17;
+            label100.Text = "D";
+            label100.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label69
+            // 
+            label69.BackColor = Color.Silver;
+            label69.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label69.ForeColor = Color.Black;
+            label69.Location = new Point(502, 197);
+            label69.Name = "label69";
+            label69.Size = new Size(33, 51);
+            label69.TabIndex = 16;
+            label69.Text = "C";
+            label69.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label64
+            // 
+            label64.BackColor = Color.Silver;
+            label64.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label64.ForeColor = Color.Black;
+            label64.Location = new Point(502, 144);
+            label64.Name = "label64";
+            label64.Size = new Size(33, 51);
+            label64.TabIndex = 15;
+            label64.Text = "B";
+            label64.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label59
+            // 
+            label59.BackColor = Color.Silver;
+            label59.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label59.ForeColor = Color.Black;
+            label59.Location = new Point(502, 90);
+            label59.Name = "label59";
+            label59.Size = new Size(33, 51);
+            label59.TabIndex = 14;
+            label59.Text = "A";
+            label59.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label58
+            // 
+            label58.BackColor = Color.Silver;
+            label58.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label58.ForeColor = Color.Black;
+            label58.Location = new Point(738, 56);
+            label58.Name = "label58";
+            label58.Size = new Size(85, 30);
+            label58.TabIndex = 13;
+            label58.Text = "등급";
+            label58.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label54
+            // 
+            label54.BackColor = Color.Silver;
+            label54.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label54.ForeColor = Color.Black;
+            label54.Location = new Point(615, 56);
+            label54.Name = "label54";
+            label54.Size = new Size(119, 30);
+            label54.TabIndex = 12;
+            label54.Text = "실제값";
+            label54.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label47
+            // 
+            label47.BackColor = Color.Silver;
+            label47.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label47.ForeColor = Color.Black;
+            label47.Location = new Point(502, 56);
+            label47.Name = "label47";
+            label47.Size = new Size(111, 30);
+            label47.TabIndex = 11;
+            label47.Text = "구분";
+            label47.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SingleStaticPanel_1_imgcheckButton
+            // 
+            SingleStaticPanel_1_imgcheckButton.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
+            SingleStaticPanel_1_imgcheckButton.Location = new Point(1313, 580);
+            SingleStaticPanel_1_imgcheckButton.Name = "SingleStaticPanel_1_imgcheckButton";
+            SingleStaticPanel_1_imgcheckButton.Size = new Size(322, 77);
+            SingleStaticPanel_1_imgcheckButton.TabIndex = 10;
+            SingleStaticPanel_1_imgcheckButton.Text = "단일 이미지 확인";
+            SingleStaticPanel_1_imgcheckButton.UseVisualStyleBackColor = true;
+            SingleStaticPanel_1_imgcheckButton.Click += (this.SingleImgCheckButton_Click);
+            // 
+            // label46
+            // 
+            label46.AutoEllipsis = true;
+            label46.BackColor = Color.Black;
+            label46.BorderStyle = BorderStyle.Fixed3D;
+            label46.Font = new Font("맑은 고딕", 21.75F, FontStyle.Bold);
+            label46.ForeColor = Color.White;
+            label46.Location = new Point(829, 5);
+            label46.Name = "label46";
+            label46.Size = new Size(836, 48);
+            label46.TabIndex = 8;
+            label46.Text = "Decelearation";
+            label46.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label42
+            // 
+            label42.AutoEllipsis = true;
+            label42.BackColor = Color.Black;
+            label42.BorderStyle = BorderStyle.Fixed3D;
+            label42.Font = new Font("맑은 고딕", 21.75F, FontStyle.Bold);
+            label42.ForeColor = Color.White;
+            label42.Location = new Point(9, 5);
+            label42.Name = "label42";
+            label42.Size = new Size(814, 48);
+            label42.TabIndex = 7;
+            label42.Text = "Acceleration";
+            label42.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DecelerationPeakY
+            // 
+            DecelerationPeakY.Location = new Point(829, 306);
+            DecelerationPeakY.Name = "DecelerationPeakY";
+            DecelerationPeakY.Size = new Size(515, 245);
+            DecelerationPeakY.TabIndex = 3;
+            // 
+            // DecelerationPeakX
+            // 
+            DecelerationPeakX.Location = new Point(829, 56);
+            DecelerationPeakX.Name = "DecelerationPeakX";
+            DecelerationPeakX.Size = new Size(515, 246);
+            DecelerationPeakX.TabIndex = 2;
+            // 
+            // AccelerationPeakY
+            // 
+            AccelerationPeakY.Location = new Point(9, 306);
+            AccelerationPeakY.Name = "AccelerationPeakY";
+            AccelerationPeakY.Size = new Size(490, 246);
+            AccelerationPeakY.TabIndex = 1;
+            // 
             // TotalGradeScore
             // 
             TotalGradeScore.AutoSize = true;
@@ -10111,76 +8727,6 @@
             TotalGradeScore.Size = new Size(28, 37);
             TotalGradeScore.TabIndex = 6;
             TotalGradeScore.Text = "-";
-            // 
-            // SingleStaticPanel_3
-            // 
-            SingleStaticPanel_3.BackColor = Color.RosyBrown;
-            SingleStaticPanel_3.Controls.Add(label351);
-            SingleStaticPanel_3.Controls.Add(label352);
-            SingleStaticPanel_3.Controls.Add(DecelerationPatternY);
-            SingleStaticPanel_3.Controls.Add(DecelerationPatternX);
-            SingleStaticPanel_3.Controls.Add(AccelerationPatternY);
-            SingleStaticPanel_3.Controls.Add(AccelerationPatternX);
-            SingleStaticPanel_3.Location = new Point(439, 15);
-            SingleStaticPanel_3.Name = "SingleStaticPanel_3";
-            SingleStaticPanel_3.Size = new Size(120, 55);
-            SingleStaticPanel_3.TabIndex = 4;
-            // 
-            // label351
-            // 
-            label351.AutoEllipsis = true;
-            label351.BackColor = Color.Black;
-            label351.BorderStyle = BorderStyle.Fixed3D;
-            label351.Font = new Font("맑은 고딕", 21.75F, FontStyle.Bold);
-            label351.ForeColor = Color.White;
-            label351.Location = new Point(848, 3);
-            label351.Name = "label351";
-            label351.Size = new Size(803, 48);
-            label351.TabIndex = 8;
-            label351.Text = "Decelearation";
-            label351.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label352
-            // 
-            label352.AutoEllipsis = true;
-            label352.BackColor = Color.Black;
-            label352.BorderStyle = BorderStyle.Fixed3D;
-            label352.Font = new Font("맑은 고딕", 21.75F, FontStyle.Bold);
-            label352.ForeColor = Color.White;
-            label352.Location = new Point(32, 3);
-            label352.Name = "label352";
-            label352.Size = new Size(776, 48);
-            label352.TabIndex = 7;
-            label352.Text = "Acceleration";
-            label352.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // DecelerationPatternY
-            // 
-            DecelerationPatternY.Location = new Point(848, 415);
-            DecelerationPatternY.Name = "DecelerationPatternY";
-            DecelerationPatternY.Size = new Size(801, 342);
-            DecelerationPatternY.TabIndex = 3;
-            // 
-            // DecelerationPatternX
-            // 
-            DecelerationPatternX.Location = new Point(848, 54);
-            DecelerationPatternX.Name = "DecelerationPatternX";
-            DecelerationPatternX.Size = new Size(801, 342);
-            DecelerationPatternX.TabIndex = 2;
-            // 
-            // AccelerationPatternY
-            // 
-            AccelerationPatternY.Location = new Point(32, 413);
-            AccelerationPatternY.Name = "AccelerationPatternY";
-            AccelerationPatternY.Size = new Size(776, 342);
-            AccelerationPatternY.TabIndex = 1;
-            // 
-            // AccelerationPatternX
-            // 
-            AccelerationPatternX.Location = new Point(32, 54);
-            AccelerationPatternX.Name = "AccelerationPatternX";
-            AccelerationPatternX.Size = new Size(776, 342);
-            AccelerationPatternX.TabIndex = 0;
             // 
             // SingleStaticPanelCountDownButton
             // 
@@ -10214,6 +8760,3979 @@
             SingletaticDisplayLabel.Size = new Size(179, 37);
             SingletaticDisplayLabel.TabIndex = 0;
             SingletaticDisplayLabel.Text = "단일 통계 [1]";
+            // 
+            // RecipeSelectPanel
+            // 
+            RecipeSelectPanel.Controls.Add(Master_Jig);
+            RecipeSelectPanel.Controls.Add(label139);
+            RecipeSelectPanel.Controls.Add(label140);
+            RecipeSelectPanel.Controls.Add(label141);
+            RecipeSelectPanel.Controls.Add(label142);
+            RecipeSelectPanel.Controls.Add(label143);
+            RecipeSelectPanel.Controls.Add(label144);
+            RecipeSelectPanel.Controls.Add(label145);
+            RecipeSelectPanel.Controls.Add(label146);
+            RecipeSelectPanel.Controls.Add(label147);
+            RecipeSelectPanel.Controls.Add(WDRS4OPENICE8535TR3727);
+            RecipeSelectPanel.Controls.Add(label149);
+            RecipeSelectPanel.Controls.Add(label150);
+            RecipeSelectPanel.Controls.Add(label151);
+            RecipeSelectPanel.Controls.Add(label152);
+            RecipeSelectPanel.Controls.Add(label153);
+            RecipeSelectPanel.Controls.Add(label154);
+            RecipeSelectPanel.Controls.Add(label155);
+            RecipeSelectPanel.Controls.Add(label156);
+            RecipeSelectPanel.Controls.Add(label157);
+            RecipeSelectPanel.Controls.Add(label158);
+            RecipeSelectPanel.Controls.Add(label159);
+            RecipeSelectPanel.Controls.Add(WRRS4OPENICE8535TR3727);
+            RecipeSelectPanel.Controls.Add(label161);
+            RecipeSelectPanel.Controls.Add(label162);
+            RecipeSelectPanel.Controls.Add(label163);
+            RecipeSelectPanel.Controls.Add(label164);
+            RecipeSelectPanel.Controls.Add(WDJXHEVeLSD8835TR3846);
+            RecipeSelectPanel.Controls.Add(WDJXHEVOPEN8835TR3846);
+            RecipeSelectPanel.Controls.Add(label95);
+            RecipeSelectPanel.Controls.Add(label98);
+            RecipeSelectPanel.Controls.Add(WDJXICEeLSD8835TR3909);
+            RecipeSelectPanel.Controls.Add(WDJXICEeLSD8825TR4363);
+            RecipeSelectPanel.Controls.Add(label101);
+            RecipeSelectPanel.Controls.Add(label104);
+            RecipeSelectPanel.Controls.Add(WDJXICEOPEN8835TR3909);
+            RecipeSelectPanel.Controls.Add(label106);
+            RecipeSelectPanel.Controls.Add(label107);
+            RecipeSelectPanel.Controls.Add(label110);
+            RecipeSelectPanel.Controls.Add(WRJXHEVeLSD8835TR3846);
+            RecipeSelectPanel.Controls.Add(WRJXHEVOPEN8835TR3846);
+            RecipeSelectPanel.Controls.Add(label113);
+            RecipeSelectPanel.Controls.Add(label114);
+            RecipeSelectPanel.Controls.Add(WRJXICEeLSD8835TR3909);
+            RecipeSelectPanel.Controls.Add(WRJXICEeLSD8825TR4363);
+            RecipeSelectPanel.Controls.Add(label117);
+            RecipeSelectPanel.Controls.Add(label118);
+            RecipeSelectPanel.Controls.Add(WRJXICEOPEN8835TR3909);
+            RecipeSelectPanel.Controls.Add(label120);
+            RecipeSelectPanel.Controls.Add(label121);
+            RecipeSelectPanel.Controls.Add(label122);
+            RecipeSelectPanel.Controls.Add(label123);
+            RecipeSelectPanel.Controls.Add(label124);
+            RecipeSelectPanel.Controls.Add(label28);
+            RecipeSelectPanel.Controls.Add(label29);
+            RecipeSelectPanel.Controls.Add(WDJKHEVeLSD8525TR3538);
+            RecipeSelectPanel.Controls.Add(WDJKOPENHEV8525TR3538);
+            RecipeSelectPanel.Controls.Add(label44);
+            RecipeSelectPanel.Controls.Add(label45);
+            RecipeSelectPanel.Controls.Add(WDJKICEeLSD8535TR3909);
+            RecipeSelectPanel.Controls.Add(WDJKICEeLSD8025TR4181);
+            RecipeSelectPanel.Controls.Add(label48);
+            RecipeSelectPanel.Controls.Add(label49);
+            RecipeSelectPanel.Controls.Add(WDJKICEOPEN8535TR3909);
+            RecipeSelectPanel.Controls.Add(label51);
+            RecipeSelectPanel.Controls.Add(label52);
+            RecipeSelectPanel.Controls.Add(label53);
+            RecipeSelectPanel.Controls.Add(WRJKHEVeLSD8525TR3538);
+            RecipeSelectPanel.Controls.Add(WRJKOPENHEV8525TR3538);
+            RecipeSelectPanel.Controls.Add(label56);
+            RecipeSelectPanel.Controls.Add(label57);
+            RecipeSelectPanel.Controls.Add(WRJKICEeLSD8535TR3909);
+            RecipeSelectPanel.Controls.Add(WRJKICEeLSD8025TR4181);
+            RecipeSelectPanel.Controls.Add(label62);
+            RecipeSelectPanel.Controls.Add(label63);
+            RecipeSelectPanel.Controls.Add(WRJKICEOPEN8535TR3909);
+            RecipeSelectPanel.Controls.Add(label65);
+            RecipeSelectPanel.Controls.Add(label66);
+            RecipeSelectPanel.Controls.Add(label67);
+            RecipeSelectPanel.Controls.Add(label86);
+            RecipeSelectPanel.Controls.Add(label87);
+            RecipeSelectPanel.Controls.Add(label90);
+            RecipeSelectPanel.Controls.Add(label91);
+            RecipeSelectPanel.Controls.Add(label92);
+            RecipeSelectPanel.Controls.Add(label93);
+            RecipeSelectPanel.Controls.Add(label35);
+            RecipeSelectPanel.Controls.Add(label75);
+            RecipeSelectPanel.Controls.Add(label88);
+            RecipeSelectPanel.Controls.Add(label89);
+            RecipeSelectPanel.Controls.Add(label94);
+            RecipeSelectPanel.Controls.Add(SearchStratButton);
+            RecipeSelectPanel.Controls.Add(EnddateTimePicker);
+            RecipeSelectPanel.Controls.Add(StartdateTimePicker);
+            RecipeSelectPanel.Controls.Add(TodayDateLabel);
+            RecipeSelectPanel.Controls.Add(SelectedModeDisplaylLabel);
+            RecipeSelectPanel.Controls.Add(label138);
+            RecipeSelectPanel.Controls.Add(label137);
+            RecipeSelectPanel.Controls.Add(label136);
+            RecipeSelectPanel.Controls.Add(label135);
+            RecipeSelectPanel.Controls.Add(label96);
+            RecipeSelectPanel.Controls.Add(label97);
+            RecipeSelectPanel.Controls.Add(label102);
+            RecipeSelectPanel.Controls.Add(label103);
+            RecipeSelectPanel.Controls.Add(label108);
+            RecipeSelectPanel.Controls.Add(WDRG3HEVOPEN8525TR3307);
+            RecipeSelectPanel.Controls.Add(label126);
+            RecipeSelectPanel.Controls.Add(label127);
+            RecipeSelectPanel.Controls.Add(WDRG3ICEeLSD8535TR3538);
+            RecipeSelectPanel.Controls.Add(label129);
+            RecipeSelectPanel.Controls.Add(label130);
+            RecipeSelectPanel.Controls.Add(label131);
+            RecipeSelectPanel.Controls.Add(WDRG3ICEOPEN8535TR3538);
+            RecipeSelectPanel.Controls.Add(WDRG3ICEOPEN8025TR3909);
+            RecipeSelectPanel.Controls.Add(label134);
+            RecipeSelectPanel.Controls.Add(label74);
+            RecipeSelectPanel.Controls.Add(label84);
+            RecipeSelectPanel.Controls.Add(label85);
+            RecipeSelectPanel.Controls.Add(label82);
+            RecipeSelectPanel.Controls.Add(label83);
+            RecipeSelectPanel.Controls.Add(label78);
+            RecipeSelectPanel.Controls.Add(label79);
+            RecipeSelectPanel.Controls.Add(label80);
+            RecipeSelectPanel.Controls.Add(label81);
+            RecipeSelectPanel.Controls.Add(label76);
+            RecipeSelectPanel.Controls.Add(label77);
+            RecipeSelectPanel.Controls.Add(label73);
+            RecipeSelectPanel.Controls.Add(label72);
+            RecipeSelectPanel.Controls.Add(label70);
+            RecipeSelectPanel.Controls.Add(label71);
+            RecipeSelectPanel.Controls.Add(label61);
+            RecipeSelectPanel.Controls.Add(WRRG3HEVOPEN8525TR3307);
+            RecipeSelectPanel.Controls.Add(label36);
+            RecipeSelectPanel.Controls.Add(label41);
+            RecipeSelectPanel.Controls.Add(WRRG3ICEeLSD8535TR3538);
+            RecipeSelectPanel.Controls.Add(label43);
+            RecipeSelectPanel.Controls.Add(label40);
+            RecipeSelectPanel.Controls.Add(label39);
+            RecipeSelectPanel.Controls.Add(WRRG3ICEOPEN8035TR3538);
+            RecipeSelectPanel.Controls.Add(WRRG3ICEOPEN8025TR3909);
+            RecipeSelectPanel.Controls.Add(WrapingGearLabel);
+            RecipeSelectPanel.Controls.Add(label34);
+            RecipeSelectPanel.Controls.Add(label33);
+            RecipeSelectPanel.Controls.Add(label32);
+            RecipeSelectPanel.Controls.Add(label27);
+            RecipeSelectPanel.Controls.Add(label26);
+            RecipeSelectPanel.Controls.Add(label25);
+            RecipeSelectPanel.Location = new Point(420, 279);
+            RecipeSelectPanel.Name = "RecipeSelectPanel";
+            RecipeSelectPanel.Size = new Size(135, 41);
+            RecipeSelectPanel.TabIndex = 4;
+            // 
+            // label162
+            // 
+            label162.BackColor = Color.White;
+            label162.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label162.Location = new Point(106, 664);
+            label162.Margin = new Padding(3);
+            label162.Name = "label162";
+            label162.Size = new Size(67, 52);
+            label162.TabIndex = 187;
+            label162.Text = "e-LSD";
+            label162.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label163
+            // 
+            label163.BackColor = Color.White;
+            label163.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label163.Location = new Point(106, 601);
+            label163.Margin = new Padding(3);
+            label163.Name = "label163";
+            label163.Size = new Size(67, 57);
+            label163.TabIndex = 186;
+            label163.Text = "OPEN";
+            label163.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label164
+            // 
+            label164.BackColor = Color.Gray;
+            label164.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
+            label164.ForeColor = Color.White;
+            label164.Location = new Point(38, 601);
+            label164.Margin = new Padding(3);
+            label164.Name = "label164";
+            label164.Size = new Size(61, 115);
+            label164.TabIndex = 185;
+            label164.Text = "RS4";
+            label164.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label123
+            // 
+            label123.BackColor = Color.White;
+            label123.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label123.Location = new Point(106, 543);
+            label123.Margin = new Padding(3);
+            label123.Name = "label123";
+            label123.Size = new Size(67, 52);
+            label123.TabIndex = 160;
+            label123.Text = "e-LSD";
+            label123.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label124
+            // 
+            label124.BackColor = Color.White;
+            label124.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label124.Location = new Point(106, 480);
+            label124.Margin = new Padding(3);
+            label124.Name = "label124";
+            label124.Size = new Size(67, 57);
+            label124.TabIndex = 159;
+            label124.Text = "OPEN";
+            label124.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label66
+            // 
+            label66.BackColor = Color.White;
+            label66.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label66.Location = new Point(106, 422);
+            label66.Margin = new Padding(3);
+            label66.Name = "label66";
+            label66.Size = new Size(67, 52);
+            label66.TabIndex = 134;
+            label66.Text = "e-LSD";
+            label66.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label67
+            // 
+            label67.BackColor = Color.White;
+            label67.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label67.Location = new Point(106, 359);
+            label67.Margin = new Padding(3);
+            label67.Name = "label67";
+            label67.Size = new Size(67, 57);
+            label67.TabIndex = 133;
+            label67.Text = "OPEN";
+            label67.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SearchStratButton
+            // 
+            SearchStratButton.BackColor = Color.FromArgb((int)(byte)255, (int)(byte)255, (int)(byte)128);
+            SearchStratButton.Font = new Font("맑은 고딕", 24F, FontStyle.Bold, GraphicsUnit.Pixel, (byte)129);
+            SearchStratButton.Location = new Point(1330, 712);
+            SearchStratButton.Name = "SearchStratButton";
+            SearchStratButton.Size = new Size(278, 77);
+            SearchStratButton.TabIndex = 121;
+            SearchStratButton.Text = "검색시작";
+            SearchStratButton.UseVisualStyleBackColor = false;
+            SearchStratButton.Click += (this.SearchStratButton_Click);
+            // 
+            // EnddateTimePicker
+            // 
+            EnddateTimePicker.CalendarMonthBackground = SystemColors.Highlight;
+            EnddateTimePicker.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            EnddateTimePicker.Location = new Point(1374, 163);
+            EnddateTimePicker.Name = "EnddateTimePicker";
+            EnddateTimePicker.Size = new Size(247, 43);
+            EnddateTimePicker.TabIndex = 120;
+            // 
+            // StartdateTimePicker
+            // 
+            StartdateTimePicker.CalendarMonthBackground = SystemColors.Highlight;
+            StartdateTimePicker.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            StartdateTimePicker.Location = new Point(1374, 79);
+            StartdateTimePicker.Name = "StartdateTimePicker";
+            StartdateTimePicker.Size = new Size(247, 43);
+            StartdateTimePicker.TabIndex = 119;
+            // 
+            // TodayDateLabel
+            // 
+            TodayDateLabel.BackColor = Color.Transparent;
+            TodayDateLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            TodayDateLabel.ForeColor = Color.White;
+            TodayDateLabel.Location = new Point(1373, 238);
+            TodayDateLabel.Margin = new Padding(3);
+            TodayDateLabel.Name = "TodayDateLabel";
+            TodayDateLabel.Size = new Size(223, 46);
+            TodayDateLabel.TabIndex = 118;
+            TodayDateLabel.Text = "yyyy.mm.dd";
+            TodayDateLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // SelectedModeDisplaylLabel
+            // 
+            SelectedModeDisplaylLabel.BackColor = Color.Transparent;
+            SelectedModeDisplaylLabel.Font = new Font("맑은 고딕", 10F, FontStyle.Bold);
+            SelectedModeDisplaylLabel.ForeColor = Color.White;
+            SelectedModeDisplaylLabel.Location = new Point(1245, 379);
+            SelectedModeDisplaylLabel.Margin = new Padding(3);
+            SelectedModeDisplaylLabel.Name = "SelectedModeDisplaylLabel";
+            SelectedModeDisplaylLabel.Size = new Size(307, 46);
+            SelectedModeDisplaylLabel.TabIndex = 117;
+            SelectedModeDisplaylLabel.Text = "-";
+            SelectedModeDisplaylLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label138
+            // 
+            label138.BackColor = Color.Transparent;
+            label138.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label138.ForeColor = Color.White;
+            label138.Location = new Point(1245, 318);
+            label138.Margin = new Padding(3);
+            label138.Name = "label138";
+            label138.Size = new Size(307, 46);
+            label138.TabIndex = 116;
+            label138.Text = "선택된 모델 명";
+            label138.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label137
+            // 
+            label137.BackColor = Color.Transparent;
+            label137.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label137.ForeColor = Color.White;
+            label137.Location = new Point(1245, 238);
+            label137.Margin = new Padding(3);
+            label137.Name = "label137";
+            label137.Size = new Size(134, 46);
+            label137.TabIndex = 115;
+            label137.Text = "오 늘 :";
+            label137.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label136
+            // 
+            label136.BackColor = Color.Transparent;
+            label136.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label136.ForeColor = Color.White;
+            label136.Location = new Point(1245, 160);
+            label136.Margin = new Padding(3);
+            label136.Name = "label136";
+            label136.Size = new Size(134, 46);
+            label136.TabIndex = 114;
+            label136.Text = "종 료 일 :";
+            label136.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label135
+            // 
+            label135.BackColor = Color.Transparent;
+            label135.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label135.ForeColor = Color.White;
+            label135.Location = new Point(1245, 79);
+            label135.Margin = new Padding(3);
+            label135.Name = "label135";
+            label135.Size = new Size(134, 46);
+            label135.TabIndex = 113;
+            label135.Text = "시 작 일 :";
+            label135.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label96
+            // 
+            label96.BackColor = Color.Silver;
+            label96.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label96.Location = new Point(986, 93);
+            label96.Margin = new Padding(3);
+            label96.Name = "label96";
+            label96.Size = new Size(216, 46);
+            label96.TabIndex = 101;
+            label96.Text = "HEV";
+            label96.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label97
+            // 
+            label97.BackColor = Color.Silver;
+            label97.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label97.Location = new Point(694, 93);
+            label97.Margin = new Padding(3);
+            label97.Name = "label97";
+            label97.Size = new Size(286, 46);
+            label97.TabIndex = 100;
+            label97.Text = "ICE";
+            label97.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label134
+            // 
+            label134.BackColor = Color.Gray;
+            label134.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label134.ForeColor = Color.White;
+            label134.Location = new Point(694, 42);
+            label134.Margin = new Padding(3);
+            label134.Name = "label134";
+            label134.Size = new Size(508, 45);
+            label134.TabIndex = 63;
+            label134.Text = "용접기어";
+            label134.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label73
+            // 
+            label73.BackColor = Color.Silver;
+            label73.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label73.Location = new Point(472, 93);
+            label73.Margin = new Padding(3);
+            label73.Name = "label73";
+            label73.Size = new Size(216, 46);
+            label73.TabIndex = 49;
+            label73.Text = "HEV";
+            label73.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label72
+            // 
+            label72.BackColor = Color.Silver;
+            label72.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label72.Location = new Point(180, 93);
+            label72.Margin = new Padding(3);
+            label72.Name = "label72";
+            label72.Size = new Size(286, 46);
+            label72.TabIndex = 48;
+            label72.Text = "ICE";
+            label72.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // WrapingGearLabel
+            // 
+            WrapingGearLabel.BackColor = Color.Gray;
+            WrapingGearLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            WrapingGearLabel.ForeColor = Color.White;
+            WrapingGearLabel.Location = new Point(180, 42);
+            WrapingGearLabel.Margin = new Padding(3);
+            WrapingGearLabel.Name = "WrapingGearLabel";
+            WrapingGearLabel.Size = new Size(508, 45);
+            WrapingGearLabel.TabIndex = 10;
+            WrapingGearLabel.Text = "랩핑기어";
+            WrapingGearLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            label34.BackColor = Color.Gray;
+            label34.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
+            label34.ForeColor = Color.White;
+            label34.Location = new Point(38, 480);
+            label34.Margin = new Padding(3);
+            label34.Name = "label34";
+            label34.Size = new Size(61, 115);
+            label34.TabIndex = 9;
+            label34.Text = "JX";
+            label34.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            label33.BackColor = Color.Gray;
+            label33.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
+            label33.ForeColor = Color.White;
+            label33.Location = new Point(38, 359);
+            label33.Margin = new Padding(3);
+            label33.Name = "label33";
+            label33.Size = new Size(61, 115);
+            label33.TabIndex = 8;
+            label33.Text = "JK";
+            label33.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            label32.BackColor = Color.Gray;
+            label32.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold);
+            label32.ForeColor = Color.White;
+            label32.Location = new Point(38, 238);
+            label32.Margin = new Padding(3);
+            label32.Name = "label32";
+            label32.Size = new Size(61, 115);
+            label32.TabIndex = 7;
+            label32.Text = "RG3";
+            label32.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label27
+            // 
+            label27.BackColor = Color.White;
+            label27.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label27.Location = new Point(106, 301);
+            label27.Margin = new Padding(3);
+            label27.Name = "label27";
+            label27.Size = new Size(67, 52);
+            label27.TabIndex = 2;
+            label27.Text = "e-LSD";
+            label27.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            label26.BackColor = Color.White;
+            label26.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label26.Location = new Point(106, 238);
+            label26.Margin = new Padding(3);
+            label26.Name = "label26";
+            label26.Size = new Size(67, 57);
+            label26.TabIndex = 1;
+            label26.Text = "OPEN";
+            label26.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label25
+            // 
+            label25.BackColor = Color.Silver;
+            label25.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            label25.Location = new Point(38, 42);
+            label25.Margin = new Padding(3);
+            label25.Name = "label25";
+            label25.Size = new Size(135, 190);
+            label25.TabIndex = 0;
+            label25.Text = "구 분";
+            label25.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // PerulStaticPanel
+            // 
+            PerulStaticPanel.Controls.Add(PlurStaticCSVSaveBtr);
+            PerulStaticPanel.Controls.Add(PerulStaticPanel_11);
+            PerulStaticPanel.Controls.Add(PerulStaticPanel_10);
+            PerulStaticPanel.Controls.Add(PerulStaticPanel_9);
+            PerulStaticPanel.Controls.Add(PerulStaticPanel_8);
+            PerulStaticPanel.Controls.Add(PerulStaticPanel_7);
+            PerulStaticPanel.Controls.Add(PerulStaticPanel_6);
+            PerulStaticPanel.Controls.Add(PerulStaticPanel_5);
+            PerulStaticPanel.Controls.Add(PerulStaticPanel_4);
+            PerulStaticPanel.Controls.Add(PerulStaticPanel_3);
+            PerulStaticPanel.Controls.Add(PerulStaticPanel_2);
+            PerulStaticPanel.Controls.Add(PerulStaticPanel_1);
+            PerulStaticPanel.Controls.Add(PluerPageUpbtr);
+            PerulStaticPanel.Controls.Add(PluerPageDownbtr);
+            PerulStaticPanel.Controls.Add(PerulStaticDisplayLabel);
+            PerulStaticPanel.Location = new Point(722, 519);
+            PerulStaticPanel.Name = "PerulStaticPanel";
+            PerulStaticPanel.Size = new Size(353, 192);
+            PerulStaticPanel.TabIndex = 15;
+            PerulStaticPanel.Visible = false;
+            // 
+            // PlurStaticCSVSaveBtr
+            // 
+            PlurStaticCSVSaveBtr.Font = new Font("맑은 고딕", 9F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            PlurStaticCSVSaveBtr.Location = new Point(1441, 13);
+            PlurStaticCSVSaveBtr.Name = "PlurStaticCSVSaveBtr";
+            PlurStaticCSVSaveBtr.Size = new Size(95, 45);
+            PlurStaticCSVSaveBtr.TabIndex = 36;
+            PlurStaticCSVSaveBtr.Text = "복수 통계 저장";
+            PlurStaticCSVSaveBtr.UseVisualStyleBackColor = true;
+            PlurStaticCSVSaveBtr.Click += (this.PlurStaticCSVSaveBtr_Click);
+            // 
+            // PerulStaticPanel_11
+            // 
+            PerulStaticPanel_11.Controls.Add(FinalDCGradeCountPlot);
+            PerulStaticPanel_11.Controls.Add(FinalACGradeCountPlot);
+            PerulStaticPanel_11.Controls.Add(FinalGradeCountPlot);
+            PerulStaticPanel_11.Location = new Point(377, 381);
+            PerulStaticPanel_11.Name = "PerulStaticPanel_11";
+            PerulStaticPanel_11.Size = new Size(97, 100);
+            PerulStaticPanel_11.TabIndex = 35;
+            // 
+            // FinalDCGradeCountPlot
+            // 
+            FinalDCGradeCountPlot.Location = new Point(1137, 39);
+            FinalDCGradeCountPlot.Name = "FinalDCGradeCountPlot";
+            FinalDCGradeCountPlot.Size = new Size(515, 699);
+            FinalDCGradeCountPlot.TabIndex = 2;
+            // 
+            // FinalACGradeCountPlot
+            // 
+            FinalACGradeCountPlot.Location = new Point(593, 40);
+            FinalACGradeCountPlot.Name = "FinalACGradeCountPlot";
+            FinalACGradeCountPlot.Size = new Size(515, 699);
+            FinalACGradeCountPlot.TabIndex = 1;
+            // 
+            // FinalGradeCountPlot
+            // 
+            FinalGradeCountPlot.Location = new Point(46, 39);
+            FinalGradeCountPlot.Name = "FinalGradeCountPlot";
+            FinalGradeCountPlot.Size = new Size(515, 699);
+            FinalGradeCountPlot.TabIndex = 0;
+            // 
+            // PerulStaticPanel_10
+            // 
+            PerulStaticPanel_10.Controls.Add(DCDistanceMADPlot);
+            PerulStaticPanel_10.Controls.Add(DCAreaMADPlot);
+            PerulStaticPanel_10.Controls.Add(DCHeightMADPlot);
+            PerulStaticPanel_10.Controls.Add(DCWidthMADPlot);
+            PerulStaticPanel_10.Location = new Point(789, 262);
+            PerulStaticPanel_10.Name = "PerulStaticPanel_10";
+            PerulStaticPanel_10.Size = new Size(93, 47);
+            PerulStaticPanel_10.TabIndex = 34;
+            // 
+            // DCDistanceMADPlot
+            // 
+            DCDistanceMADPlot.Location = new Point(808, 384);
+            DCDistanceMADPlot.Name = "DCDistanceMADPlot";
+            DCDistanceMADPlot.Size = new Size(854, 331);
+            DCDistanceMADPlot.TabIndex = 3;
+            // 
+            // DCAreaMADPlot
+            // 
+            DCAreaMADPlot.Location = new Point(5, 384);
+            DCAreaMADPlot.Name = "DCAreaMADPlot";
+            DCAreaMADPlot.Size = new Size(797, 331);
+            DCAreaMADPlot.TabIndex = 2;
+            // 
+            // DCHeightMADPlot
+            // 
+            DCHeightMADPlot.Location = new Point(808, 42);
+            DCHeightMADPlot.Name = "DCHeightMADPlot";
+            DCHeightMADPlot.Size = new Size(854, 331);
+            DCHeightMADPlot.TabIndex = 1;
+            // 
+            // DCWidthMADPlot
+            // 
+            DCWidthMADPlot.Location = new Point(5, 42);
+            DCWidthMADPlot.Name = "DCWidthMADPlot";
+            DCWidthMADPlot.Size = new Size(797, 331);
+            DCWidthMADPlot.TabIndex = 0;
+            // 
+            // PerulStaticPanel_9
+            // 
+            PerulStaticPanel_9.Controls.Add(DCAreaYMADPlot);
+            PerulStaticPanel_9.Controls.Add(DCAreaXMADPlot);
+            PerulStaticPanel_9.Controls.Add(DCPeakYMADPlot);
+            PerulStaticPanel_9.Controls.Add(DCPeakXMADPlot);
+            PerulStaticPanel_9.Location = new Point(645, 260);
+            PerulStaticPanel_9.Name = "PerulStaticPanel_9";
+            PerulStaticPanel_9.Size = new Size(61, 51);
+            PerulStaticPanel_9.TabIndex = 33;
+            // 
+            // DCAreaYMADPlot
+            // 
+            DCAreaYMADPlot.Location = new Point(808, 384);
+            DCAreaYMADPlot.Name = "DCAreaYMADPlot";
+            DCAreaYMADPlot.Size = new Size(854, 331);
+            DCAreaYMADPlot.TabIndex = 3;
+            // 
+            // DCAreaXMADPlot
+            // 
+            DCAreaXMADPlot.Location = new Point(5, 384);
+            DCAreaXMADPlot.Name = "DCAreaXMADPlot";
+            DCAreaXMADPlot.Size = new Size(797, 331);
+            DCAreaXMADPlot.TabIndex = 2;
+            // 
+            // DCPeakYMADPlot
+            // 
+            DCPeakYMADPlot.Location = new Point(808, 42);
+            DCPeakYMADPlot.Name = "DCPeakYMADPlot";
+            DCPeakYMADPlot.Size = new Size(854, 331);
+            DCPeakYMADPlot.TabIndex = 1;
+            // 
+            // DCPeakXMADPlot
+            // 
+            DCPeakXMADPlot.Location = new Point(5, 42);
+            DCPeakXMADPlot.Name = "DCPeakXMADPlot";
+            DCPeakXMADPlot.Size = new Size(797, 331);
+            DCPeakXMADPlot.TabIndex = 0;
+            // 
+            // PerulStaticPanel_8
+            // 
+            PerulStaticPanel_8.Controls.Add(DCDistanceScorePlot);
+            PerulStaticPanel_8.Controls.Add(DCAreaScorePlot);
+            PerulStaticPanel_8.Controls.Add(DCHeightScorePlot);
+            PerulStaticPanel_8.Controls.Add(DCWidthScorePlot);
+            PerulStaticPanel_8.Location = new Point(506, 244);
+            PerulStaticPanel_8.Name = "PerulStaticPanel_8";
+            PerulStaticPanel_8.Size = new Size(95, 80);
+            PerulStaticPanel_8.TabIndex = 32;
+            // 
+            // DCDistanceScorePlot
+            // 
+            DCDistanceScorePlot.Location = new Point(808, 384);
+            DCDistanceScorePlot.Name = "DCDistanceScorePlot";
+            DCDistanceScorePlot.Size = new Size(854, 331);
+            DCDistanceScorePlot.TabIndex = 3;
+            // 
+            // DCAreaScorePlot
+            // 
+            DCAreaScorePlot.Location = new Point(5, 384);
+            DCAreaScorePlot.Name = "DCAreaScorePlot";
+            DCAreaScorePlot.Size = new Size(797, 331);
+            DCAreaScorePlot.TabIndex = 2;
+            // 
+            // DCHeightScorePlot
+            // 
+            DCHeightScorePlot.Location = new Point(808, 42);
+            DCHeightScorePlot.Name = "DCHeightScorePlot";
+            DCHeightScorePlot.Size = new Size(854, 331);
+            DCHeightScorePlot.TabIndex = 1;
+            // 
+            // DCWidthScorePlot
+            // 
+            DCWidthScorePlot.Location = new Point(5, 42);
+            DCWidthScorePlot.Name = "DCWidthScorePlot";
+            DCWidthScorePlot.Size = new Size(797, 331);
+            DCWidthScorePlot.TabIndex = 0;
+            // 
+            // PerulStaticPanel_7
+            // 
+            PerulStaticPanel_7.Controls.Add(DCAreaYScorePlot);
+            PerulStaticPanel_7.Controls.Add(DCAreaXScorePlot);
+            PerulStaticPanel_7.Controls.Add(DCPeakYScorePlot);
+            PerulStaticPanel_7.Controls.Add(DCPeakXScorePlot);
+            PerulStaticPanel_7.Location = new Point(339, 244);
+            PerulStaticPanel_7.Name = "PerulStaticPanel_7";
+            PerulStaticPanel_7.Size = new Size(68, 61);
+            PerulStaticPanel_7.TabIndex = 31;
+            // 
+            // DCAreaYScorePlot
+            // 
+            DCAreaYScorePlot.Location = new Point(808, 384);
+            DCAreaYScorePlot.Name = "DCAreaYScorePlot";
+            DCAreaYScorePlot.Size = new Size(854, 331);
+            DCAreaYScorePlot.TabIndex = 3;
+            // 
+            // DCAreaXScorePlot
+            // 
+            DCAreaXScorePlot.Location = new Point(5, 384);
+            DCAreaXScorePlot.Name = "DCAreaXScorePlot";
+            DCAreaXScorePlot.Size = new Size(797, 331);
+            DCAreaXScorePlot.TabIndex = 2;
+            // 
+            // DCPeakYScorePlot
+            // 
+            DCPeakYScorePlot.Location = new Point(808, 42);
+            DCPeakYScorePlot.Name = "DCPeakYScorePlot";
+            DCPeakYScorePlot.Size = new Size(854, 331);
+            DCPeakYScorePlot.TabIndex = 1;
+            // 
+            // DCPeakXScorePlot
+            // 
+            DCPeakXScorePlot.Location = new Point(5, 42);
+            DCPeakXScorePlot.Name = "DCPeakXScorePlot";
+            DCPeakXScorePlot.Size = new Size(797, 331);
+            DCPeakXScorePlot.TabIndex = 0;
+            // 
+            // PerulStaticPanel_6
+            // 
+            PerulStaticPanel_6.Controls.Add(ACDistanceMADPlot);
+            PerulStaticPanel_6.Controls.Add(ACAreaMADPlot);
+            PerulStaticPanel_6.Controls.Add(ACHeightMADPlot);
+            PerulStaticPanel_6.Controls.Add(ACWidthMADPlot);
+            PerulStaticPanel_6.Location = new Point(883, 146);
+            PerulStaticPanel_6.Name = "PerulStaticPanel_6";
+            PerulStaticPanel_6.Size = new Size(59, 78);
+            PerulStaticPanel_6.TabIndex = 30;
+            // 
+            // ACDistanceMADPlot
+            // 
+            ACDistanceMADPlot.Location = new Point(808, 384);
+            ACDistanceMADPlot.Name = "ACDistanceMADPlot";
+            ACDistanceMADPlot.Size = new Size(854, 331);
+            ACDistanceMADPlot.TabIndex = 3;
+            // 
+            // ACAreaMADPlot
+            // 
+            ACAreaMADPlot.Location = new Point(5, 384);
+            ACAreaMADPlot.Name = "ACAreaMADPlot";
+            ACAreaMADPlot.Size = new Size(797, 331);
+            ACAreaMADPlot.TabIndex = 2;
+            // 
+            // ACHeightMADPlot
+            // 
+            ACHeightMADPlot.Location = new Point(808, 42);
+            ACHeightMADPlot.Name = "ACHeightMADPlot";
+            ACHeightMADPlot.Size = new Size(854, 331);
+            ACHeightMADPlot.TabIndex = 1;
+            // 
+            // ACWidthMADPlot
+            // 
+            ACWidthMADPlot.Location = new Point(5, 42);
+            ACWidthMADPlot.Name = "ACWidthMADPlot";
+            ACWidthMADPlot.Size = new Size(797, 331);
+            ACWidthMADPlot.TabIndex = 0;
+            // 
+            // PerulStaticPanel_5
+            // 
+            PerulStaticPanel_5.Controls.Add(ACAreaYMADPlot);
+            PerulStaticPanel_5.Controls.Add(ACAreaXMADPlot);
+            PerulStaticPanel_5.Controls.Add(ACPeakYMADPlot);
+            PerulStaticPanel_5.Controls.Add(ACPeakXMADPlot);
+            PerulStaticPanel_5.Location = new Point(635, 150);
+            PerulStaticPanel_5.Name = "PerulStaticPanel_5";
+            PerulStaticPanel_5.Size = new Size(103, 55);
+            PerulStaticPanel_5.TabIndex = 29;
+            // 
+            // ACAreaYMADPlot
+            // 
+            ACAreaYMADPlot.Location = new Point(808, 384);
+            ACAreaYMADPlot.Name = "ACAreaYMADPlot";
+            ACAreaYMADPlot.Size = new Size(854, 331);
+            ACAreaYMADPlot.TabIndex = 3;
+            // 
+            // ACAreaXMADPlot
+            // 
+            ACAreaXMADPlot.Location = new Point(5, 384);
+            ACAreaXMADPlot.Name = "ACAreaXMADPlot";
+            ACAreaXMADPlot.Size = new Size(797, 331);
+            ACAreaXMADPlot.TabIndex = 2;
+            // 
+            // ACPeakYMADPlot
+            // 
+            ACPeakYMADPlot.Location = new Point(808, 42);
+            ACPeakYMADPlot.Name = "ACPeakYMADPlot";
+            ACPeakYMADPlot.Size = new Size(854, 331);
+            ACPeakYMADPlot.TabIndex = 1;
+            // 
+            // ACPeakXMADPlot
+            // 
+            ACPeakXMADPlot.Location = new Point(5, 42);
+            ACPeakXMADPlot.Name = "ACPeakXMADPlot";
+            ACPeakXMADPlot.Size = new Size(797, 331);
+            ACPeakXMADPlot.TabIndex = 0;
+            // 
+            // PerulStaticPanel_4
+            // 
+            PerulStaticPanel_4.Controls.Add(ACDistanceScorePlot);
+            PerulStaticPanel_4.Controls.Add(ACAreaScorePlot);
+            PerulStaticPanel_4.Controls.Add(ACHeightScorePlot);
+            PerulStaticPanel_4.Controls.Add(ACWidthScorePlot);
+            PerulStaticPanel_4.Location = new Point(501, 147);
+            PerulStaticPanel_4.Name = "PerulStaticPanel_4";
+            PerulStaticPanel_4.Size = new Size(100, 60);
+            PerulStaticPanel_4.TabIndex = 28;
+            // 
+            // ACDistanceScorePlot
+            // 
+            ACDistanceScorePlot.Location = new Point(808, 384);
+            ACDistanceScorePlot.Name = "ACDistanceScorePlot";
+            ACDistanceScorePlot.Size = new Size(854, 331);
+            ACDistanceScorePlot.TabIndex = 3;
+            // 
+            // ACAreaScorePlot
+            // 
+            ACAreaScorePlot.Location = new Point(5, 384);
+            ACAreaScorePlot.Name = "ACAreaScorePlot";
+            ACAreaScorePlot.Size = new Size(797, 331);
+            ACAreaScorePlot.TabIndex = 2;
+            // 
+            // ACHeightScorePlot
+            // 
+            ACHeightScorePlot.Location = new Point(808, 42);
+            ACHeightScorePlot.Name = "ACHeightScorePlot";
+            ACHeightScorePlot.Size = new Size(854, 331);
+            ACHeightScorePlot.TabIndex = 1;
+            // 
+            // ACWidthScorePlot
+            // 
+            ACWidthScorePlot.Location = new Point(5, 42);
+            ACWidthScorePlot.Name = "ACWidthScorePlot";
+            ACWidthScorePlot.Size = new Size(797, 331);
+            ACWidthScorePlot.TabIndex = 0;
+            // 
+            // PerulStaticPanel_3
+            // 
+            PerulStaticPanel_3.Controls.Add(ACAreaYScorePlot);
+            PerulStaticPanel_3.Controls.Add(ACAreaXScorePlot);
+            PerulStaticPanel_3.Controls.Add(ACPeakYScorePlot);
+            PerulStaticPanel_3.Controls.Add(ACPeakXScorePlot);
+            PerulStaticPanel_3.Location = new Point(339, 147);
+            PerulStaticPanel_3.Name = "PerulStaticPanel_3";
+            PerulStaticPanel_3.Size = new Size(124, 55);
+            PerulStaticPanel_3.TabIndex = 27;
+            // 
+            // ACAreaYScorePlot
+            // 
+            ACAreaYScorePlot.Location = new Point(808, 384);
+            ACAreaYScorePlot.Name = "ACAreaYScorePlot";
+            ACAreaYScorePlot.Size = new Size(854, 331);
+            ACAreaYScorePlot.TabIndex = 3;
+            // 
+            // ACAreaXScorePlot
+            // 
+            ACAreaXScorePlot.Location = new Point(5, 384);
+            ACAreaXScorePlot.Name = "ACAreaXScorePlot";
+            ACAreaXScorePlot.Size = new Size(797, 331);
+            ACAreaXScorePlot.TabIndex = 2;
+            // 
+            // ACPeakYScorePlot
+            // 
+            ACPeakYScorePlot.Location = new Point(808, 42);
+            ACPeakYScorePlot.Name = "ACPeakYScorePlot";
+            ACPeakYScorePlot.Size = new Size(854, 331);
+            ACPeakYScorePlot.TabIndex = 1;
+            // 
+            // ACPeakXScorePlot
+            // 
+            ACPeakXScorePlot.Location = new Point(5, 42);
+            ACPeakXScorePlot.Name = "ACPeakXScorePlot";
+            ACPeakXScorePlot.Size = new Size(797, 331);
+            ACPeakXScorePlot.TabIndex = 0;
+            // 
+            // PerulStaticPanel_2
+            // 
+            PerulStaticPanel_2.Controls.Add(label344);
+            PerulStaticPanel_2.Controls.Add(PlurerFlowPanel2);
+            PerulStaticPanel_2.Controls.Add(label345);
+            PerulStaticPanel_2.Controls.Add(label381);
+            PerulStaticPanel_2.Controls.Add(label346);
+            PerulStaticPanel_2.Controls.Add(label579);
+            PerulStaticPanel_2.Controls.Add(label347);
+            PerulStaticPanel_2.Controls.Add(label578);
+            PerulStaticPanel_2.Controls.Add(label348);
+            PerulStaticPanel_2.Controls.Add(label577);
+            PerulStaticPanel_2.Controls.Add(label349);
+            PerulStaticPanel_2.Controls.Add(label576);
+            PerulStaticPanel_2.Controls.Add(label350);
+            PerulStaticPanel_2.Controls.Add(label574);
+            PerulStaticPanel_2.Controls.Add(label354);
+            PerulStaticPanel_2.Controls.Add(label573);
+            PerulStaticPanel_2.Controls.Add(label355);
+            PerulStaticPanel_2.Controls.Add(label572);
+            PerulStaticPanel_2.Controls.Add(label357);
+            PerulStaticPanel_2.Controls.Add(label384);
+            PerulStaticPanel_2.Controls.Add(label365);
+            PerulStaticPanel_2.Controls.Add(label383);
+            PerulStaticPanel_2.Controls.Add(label366);
+            PerulStaticPanel_2.Controls.Add(label382);
+            PerulStaticPanel_2.Controls.Add(label367);
+            PerulStaticPanel_2.Controls.Add(label369);
+            PerulStaticPanel_2.Controls.Add(label368);
+            PerulStaticPanel_2.Location = new Point(799, 385);
+            PerulStaticPanel_2.Name = "PerulStaticPanel_2";
+            PerulStaticPanel_2.Size = new Size(99, 93);
+            PerulStaticPanel_2.TabIndex = 24;
+            PerulStaticPanel_2.Visible = false;
+            // 
+            // label344
+            // 
+            label344.BackColor = Color.DimGray;
+            label344.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label344.ForeColor = Color.White;
+            label344.Location = new Point(1284, 52);
+            label344.Name = "label344";
+            label344.Padding = new Padding(1);
+            label344.Size = new Size(60, 45);
+            label344.TabIndex = 66;
+            label344.Text = "거리";
+            label344.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // PlurerFlowPanel2
+            // 
+            PlurerFlowPanel2.AutoScroll = true;
+            PlurerFlowPanel2.BackColor = Color.Transparent;
+            PlurerFlowPanel2.Location = new Point(10, 99);
+            PlurerFlowPanel2.Name = "PlurerFlowPanel2";
+            PlurerFlowPanel2.Size = new Size(1462, 631);
+            PlurerFlowPanel2.TabIndex = 23;
+            // 
+            // label345
+            // 
+            label345.BackColor = Color.DimGray;
+            label345.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label345.ForeColor = Color.White;
+            label345.Location = new Point(974, 52);
+            label345.Name = "label345";
+            label345.Padding = new Padding(1);
+            label345.Size = new Size(60, 45);
+            label345.TabIndex = 64;
+            label345.Text = "AreaX";
+            label345.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label381
+            // 
+            label381.BackColor = Color.DimGray;
+            label381.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label381.ForeColor = Color.White;
+            label381.Location = new Point(11, 10);
+            label381.Name = "label381";
+            label381.Padding = new Padding(1);
+            label381.Size = new Size(157, 39);
+            label381.TabIndex = 39;
+            label381.Text = "구분";
+            label381.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label346
+            // 
+            label346.BackColor = Color.DimGray;
+            label346.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label346.ForeColor = Color.White;
+            label346.Location = new Point(1036, 52);
+            label346.Name = "label346";
+            label346.Padding = new Padding(1);
+            label346.Size = new Size(60, 45);
+            label346.TabIndex = 65;
+            label346.Text = "AreaY";
+            label346.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label579
+            // 
+            label579.BackColor = Color.DimGray;
+            label579.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label579.ForeColor = Color.White;
+            label579.Location = new Point(602, 52);
+            label579.Name = "label579";
+            label579.Padding = new Padding(1);
+            label579.Size = new Size(60, 45);
+            label579.TabIndex = 47;
+            label579.Text = "면적";
+            label579.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label347
+            // 
+            label347.BackColor = Color.DimGray;
+            label347.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label347.ForeColor = Color.White;
+            label347.Location = new Point(1408, 52);
+            label347.Name = "label347";
+            label347.Padding = new Padding(1);
+            label347.Size = new Size(60, 45);
+            label347.TabIndex = 63;
+            label347.Text = "이상치\r\n비율(%)";
+            label347.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label578
+            // 
+            label578.BackColor = Color.DimGray;
+            label578.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label578.ForeColor = Color.White;
+            label578.Location = new Point(540, 52);
+            label578.Name = "label578";
+            label578.Padding = new Padding(1);
+            label578.Size = new Size(60, 45);
+            label578.TabIndex = 46;
+            label578.Text = "높이";
+            label578.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label348
+            // 
+            label348.BackColor = Color.DimGray;
+            label348.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label348.ForeColor = Color.White;
+            label348.Location = new Point(1346, 52);
+            label348.Name = "label348";
+            label348.Padding = new Padding(1);
+            label348.Size = new Size(60, 45);
+            label348.TabIndex = 62;
+            label348.Text = "최종\r\n등급";
+            label348.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label577
+            // 
+            label577.BackColor = Color.DimGray;
+            label577.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label577.ForeColor = Color.White;
+            label577.Location = new Point(478, 52);
+            label577.Name = "label577";
+            label577.Padding = new Padding(1);
+            label577.Size = new Size(60, 45);
+            label577.TabIndex = 45;
+            label577.Text = "길이";
+            label577.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label349
+            // 
+            label349.BackColor = Color.DimGray;
+            label349.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label349.ForeColor = Color.White;
+            label349.Location = new Point(850, 10);
+            label349.Name = "label349";
+            label349.Padding = new Padding(1);
+            label349.Size = new Size(617, 38);
+            label349.TabIndex = 55;
+            label349.Text = "감속";
+            label349.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label576
+            // 
+            label576.BackColor = Color.DimGray;
+            label576.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label576.ForeColor = Color.White;
+            label576.Location = new Point(292, 52);
+            label576.Name = "label576";
+            label576.Padding = new Padding(1);
+            label576.Size = new Size(60, 45);
+            label576.TabIndex = 44;
+            label576.Text = "PeakY";
+            label576.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label350
+            // 
+            label350.BackColor = Color.DimGray;
+            label350.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label350.ForeColor = Color.White;
+            label350.Location = new Point(850, 52);
+            label350.Name = "label350";
+            label350.Padding = new Padding(1);
+            label350.Size = new Size(60, 45);
+            label350.TabIndex = 56;
+            label350.Text = "PeakX";
+            label350.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label574
+            // 
+            label574.BackColor = Color.DimGray;
+            label574.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label574.ForeColor = Color.White;
+            label574.Location = new Point(230, 52);
+            label574.Name = "label574";
+            label574.Padding = new Padding(1);
+            label574.Size = new Size(60, 45);
+            label574.TabIndex = 43;
+            label574.Text = "PeakX";
+            label574.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label354
+            // 
+            label354.BackColor = Color.DimGray;
+            label354.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label354.ForeColor = Color.White;
+            label354.Location = new Point(912, 52);
+            label354.Name = "label354";
+            label354.Padding = new Padding(1);
+            label354.Size = new Size(60, 45);
+            label354.TabIndex = 57;
+            label354.Text = "PeakY";
+            label354.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label573
+            // 
+            label573.BackColor = Color.DimGray;
+            label573.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label573.ForeColor = Color.White;
+            label573.Location = new Point(230, 10);
+            label573.Name = "label573";
+            label573.Padding = new Padding(1);
+            label573.Size = new Size(618, 38);
+            label573.TabIndex = 42;
+            label573.Text = "가속";
+            label573.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label355
+            // 
+            label355.BackColor = Color.DimGray;
+            label355.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label355.ForeColor = Color.White;
+            label355.Location = new Point(1098, 52);
+            label355.Name = "label355";
+            label355.Padding = new Padding(1);
+            label355.Size = new Size(60, 45);
+            label355.TabIndex = 58;
+            label355.Text = "길이";
+            label355.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label572
+            // 
+            label572.BackColor = Color.DimGray;
+            label572.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label572.ForeColor = Color.White;
+            label572.Location = new Point(726, 52);
+            label572.Name = "label572";
+            label572.Padding = new Padding(1);
+            label572.Size = new Size(60, 45);
+            label572.TabIndex = 49;
+            label572.Text = "최종\r\n등급";
+            label572.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label357
+            // 
+            label357.BackColor = Color.DimGray;
+            label357.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label357.ForeColor = Color.White;
+            label357.Location = new Point(1160, 52);
+            label357.Name = "label357";
+            label357.Padding = new Padding(1);
+            label357.Size = new Size(60, 45);
+            label357.TabIndex = 59;
+            label357.Text = "높이";
+            label357.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label384
+            // 
+            label384.BackColor = Color.DimGray;
+            label384.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label384.ForeColor = Color.White;
+            label384.Location = new Point(60, 52);
+            label384.Name = "label384";
+            label384.Padding = new Padding(1);
+            label384.Size = new Size(108, 45);
+            label384.TabIndex = 41;
+            label384.Text = "S/No.";
+            label384.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label365
+            // 
+            label365.BackColor = Color.DimGray;
+            label365.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label365.ForeColor = Color.White;
+            label365.Location = new Point(1222, 52);
+            label365.Name = "label365";
+            label365.Padding = new Padding(1);
+            label365.Size = new Size(60, 45);
+            label365.TabIndex = 60;
+            label365.Text = "면적";
+            label365.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label383
+            // 
+            label383.BackColor = Color.DimGray;
+            label383.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label383.ForeColor = Color.White;
+            label383.Location = new Point(788, 52);
+            label383.Name = "label383";
+            label383.Padding = new Padding(1);
+            label383.Size = new Size(60, 45);
+            label383.TabIndex = 50;
+            label383.Text = "이상치\r\n비율(%)";
+            label383.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label366
+            // 
+            label366.BackColor = Color.DimGray;
+            label366.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label366.ForeColor = Color.White;
+            label366.Location = new Point(664, 52);
+            label366.Name = "label366";
+            label366.Padding = new Padding(1);
+            label366.Size = new Size(60, 45);
+            label366.TabIndex = 54;
+            label366.Text = "거리";
+            label366.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label382
+            // 
+            label382.BackColor = Color.DimGray;
+            label382.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label382.ForeColor = Color.White;
+            label382.Location = new Point(11, 52);
+            label382.Name = "label382";
+            label382.Padding = new Padding(1);
+            label382.Size = new Size(47, 45);
+            label382.TabIndex = 40;
+            label382.Text = "No.";
+            label382.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label367
+            // 
+            label367.BackColor = Color.DimGray;
+            label367.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label367.ForeColor = Color.White;
+            label367.Location = new Point(354, 52);
+            label367.Name = "label367";
+            label367.Padding = new Padding(1);
+            label367.Size = new Size(60, 45);
+            label367.TabIndex = 52;
+            label367.Text = "AreaX";
+            label367.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label369
+            // 
+            label369.BackColor = Color.DimGray;
+            label369.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label369.ForeColor = Color.White;
+            label369.Location = new Point(170, 10);
+            label369.Name = "label369";
+            label369.Padding = new Padding(1);
+            label369.Size = new Size(58, 87);
+            label369.TabIndex = 51;
+            label369.Text = "R/Out";
+            label369.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label368
+            // 
+            label368.BackColor = Color.DimGray;
+            label368.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label368.ForeColor = Color.White;
+            label368.Location = new Point(416, 52);
+            label368.Name = "label368";
+            label368.Padding = new Padding(1);
+            label368.Size = new Size(60, 45);
+            label368.TabIndex = 53;
+            label368.Text = "AreaY";
+            label368.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // PerulStaticPanel_1
+            // 
+            PerulStaticPanel_1.BackColor = Color.Transparent;
+            PerulStaticPanel_1.Controls.Add(label19);
+            PerulStaticPanel_1.Controls.Add(label37);
+            PerulStaticPanel_1.Controls.Add(label38);
+            PerulStaticPanel_1.Controls.Add(label133);
+            PerulStaticPanel_1.Controls.Add(label160);
+            PerulStaticPanel_1.Controls.Add(label166);
+            PerulStaticPanel_1.Controls.Add(label168);
+            PerulStaticPanel_1.Controls.Add(label337);
+            PerulStaticPanel_1.Controls.Add(label343);
+            PerulStaticPanel_1.Controls.Add(label569);
+            PerulStaticPanel_1.Controls.Add(label570);
+            PerulStaticPanel_1.Controls.Add(label571);
+            PerulStaticPanel_1.Controls.Add(label568);
+            PerulStaticPanel_1.Controls.Add(label566);
+            PerulStaticPanel_1.Controls.Add(label567);
+            PerulStaticPanel_1.Controls.Add(label565);
+            PerulStaticPanel_1.Controls.Add(label15);
+            PerulStaticPanel_1.Controls.Add(PlurerFlowPanel1);
+            PerulStaticPanel_1.Controls.Add(label16);
+            PerulStaticPanel_1.Controls.Add(label329);
+            PerulStaticPanel_1.Controls.Add(label17);
+            PerulStaticPanel_1.Controls.Add(label324);
+            PerulStaticPanel_1.Controls.Add(label18);
+            PerulStaticPanel_1.Controls.Add(label20);
+            PerulStaticPanel_1.Controls.Add(label236);
+            PerulStaticPanel_1.Controls.Add(label21);
+            PerulStaticPanel_1.Controls.Add(label22);
+            PerulStaticPanel_1.Controls.Add(label23);
+            PerulStaticPanel_1.Controls.Add(label24);
+            PerulStaticPanel_1.Location = new Point(600, 406);
+            PerulStaticPanel_1.Name = "PerulStaticPanel_1";
+            PerulStaticPanel_1.Size = new Size(175, 100);
+            PerulStaticPanel_1.TabIndex = 23;
+            PerulStaticPanel_1.Visible = false;
+            // 
+            // label19
+            // 
+            label19.BackColor = Color.DimGray;
+            label19.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label19.ForeColor = Color.White;
+            label19.Location = new Point(1346, 51);
+            label19.Name = "label19";
+            label19.Padding = new Padding(1);
+            label19.Size = new Size(60, 45);
+            label19.TabIndex = 38;
+            label19.Text = "거리";
+            label19.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label37
+            // 
+            label37.BackColor = Color.DimGray;
+            label37.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label37.ForeColor = Color.White;
+            label37.Location = new Point(1036, 51);
+            label37.Name = "label37";
+            label37.Padding = new Padding(1);
+            label37.Size = new Size(60, 45);
+            label37.TabIndex = 36;
+            label37.Text = "AreaX";
+            label37.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label38
+            // 
+            label38.BackColor = Color.DimGray;
+            label38.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label38.ForeColor = Color.White;
+            label38.Location = new Point(1098, 51);
+            label38.Name = "label38";
+            label38.Padding = new Padding(1);
+            label38.Size = new Size(60, 45);
+            label38.TabIndex = 37;
+            label38.Text = "AreaY";
+            label38.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label133
+            // 
+            label133.BackColor = Color.DimGray;
+            label133.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label133.ForeColor = Color.White;
+            label133.Location = new Point(1532, 51);
+            label133.Name = "label133";
+            label133.Padding = new Padding(1);
+            label133.Size = new Size(60, 45);
+            label133.TabIndex = 35;
+            label133.Text = "이상치\r\n비율(%)";
+            label133.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label160
+            // 
+            label160.BackColor = Color.DimGray;
+            label160.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label160.ForeColor = Color.White;
+            label160.Location = new Point(1470, 51);
+            label160.Name = "label160";
+            label160.Padding = new Padding(1);
+            label160.Size = new Size(60, 45);
+            label160.TabIndex = 34;
+            label160.Text = "최종\r\n등급";
+            label160.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label166
+            // 
+            label166.BackColor = Color.DimGray;
+            label166.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label166.ForeColor = Color.White;
+            label166.Location = new Point(912, 9);
+            label166.Name = "label166";
+            label166.Padding = new Padding(1);
+            label166.Size = new Size(680, 38);
+            label166.TabIndex = 27;
+            label166.Text = "감속";
+            label166.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label168
+            // 
+            label168.BackColor = Color.DimGray;
+            label168.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label168.ForeColor = Color.White;
+            label168.Location = new Point(912, 51);
+            label168.Name = "label168";
+            label168.Padding = new Padding(1);
+            label168.Size = new Size(60, 45);
+            label168.TabIndex = 28;
+            label168.Text = "PeakX";
+            label168.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label337
+            // 
+            label337.BackColor = Color.DimGray;
+            label337.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label337.ForeColor = Color.White;
+            label337.Location = new Point(1408, 51);
+            label337.Name = "label337";
+            label337.Padding = new Padding(1);
+            label337.Size = new Size(60, 45);
+            label337.TabIndex = 33;
+            label337.Text = "합";
+            label337.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label343
+            // 
+            label343.BackColor = Color.DimGray;
+            label343.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label343.ForeColor = Color.White;
+            label343.Location = new Point(974, 51);
+            label343.Name = "label343";
+            label343.Padding = new Padding(1);
+            label343.Size = new Size(60, 45);
+            label343.TabIndex = 29;
+            label343.Text = "PeakY";
+            label343.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label569
+            // 
+            label569.BackColor = Color.DimGray;
+            label569.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label569.ForeColor = Color.White;
+            label569.Location = new Point(1160, 51);
+            label569.Name = "label569";
+            label569.Padding = new Padding(1);
+            label569.Size = new Size(60, 45);
+            label569.TabIndex = 30;
+            label569.Text = "길이";
+            label569.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label570
+            // 
+            label570.BackColor = Color.DimGray;
+            label570.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label570.ForeColor = Color.White;
+            label570.Location = new Point(1222, 51);
+            label570.Name = "label570";
+            label570.Padding = new Padding(1);
+            label570.Size = new Size(60, 45);
+            label570.TabIndex = 31;
+            label570.Text = "높이";
+            label570.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label571
+            // 
+            label571.BackColor = Color.DimGray;
+            label571.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label571.ForeColor = Color.White;
+            label571.Location = new Point(1284, 51);
+            label571.Name = "label571";
+            label571.Padding = new Padding(1);
+            label571.Size = new Size(60, 45);
+            label571.TabIndex = 32;
+            label571.Text = "면적";
+            label571.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label568
+            // 
+            label568.BackColor = Color.DimGray;
+            label568.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label568.ForeColor = Color.White;
+            label568.Location = new Point(664, 51);
+            label568.Name = "label568";
+            label568.Padding = new Padding(1);
+            label568.Size = new Size(60, 45);
+            label568.TabIndex = 26;
+            label568.Text = "거리";
+            label568.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label566
+            // 
+            label566.BackColor = Color.DimGray;
+            label566.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label566.ForeColor = Color.White;
+            label566.Location = new Point(354, 51);
+            label566.Name = "label566";
+            label566.Padding = new Padding(1);
+            label566.Size = new Size(60, 45);
+            label566.TabIndex = 24;
+            label566.Text = "AreaX";
+            label566.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label567
+            // 
+            label567.BackColor = Color.DimGray;
+            label567.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label567.ForeColor = Color.White;
+            label567.Location = new Point(416, 51);
+            label567.Name = "label567";
+            label567.Padding = new Padding(1);
+            label567.Size = new Size(60, 45);
+            label567.TabIndex = 25;
+            label567.Text = "AreaY";
+            label567.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label565
+            // 
+            label565.BackColor = Color.DimGray;
+            label565.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label565.ForeColor = Color.White;
+            label565.Location = new Point(170, 9);
+            label565.Name = "label565";
+            label565.Padding = new Padding(1);
+            label565.Size = new Size(58, 87);
+            label565.TabIndex = 23;
+            label565.Text = "R/Out";
+            label565.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            label15.BackColor = Color.DimGray;
+            label15.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label15.ForeColor = Color.White;
+            label15.Location = new Point(11, 9);
+            label15.Name = "label15";
+            label15.Padding = new Padding(1);
+            label15.Size = new Size(157, 39);
+            label15.TabIndex = 2;
+            label15.Text = "구분";
+            label15.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // PlurerFlowPanel1
+            // 
+            PlurerFlowPanel1.AutoScroll = true;
+            PlurerFlowPanel1.BackColor = Color.Black;
+            PlurerFlowPanel1.Location = new Point(10, 98);
+            PlurerFlowPanel1.Name = "PlurerFlowPanel1";
+            PlurerFlowPanel1.Size = new Size(1589, 648);
+            PlurerFlowPanel1.TabIndex = 1;
+            // 
+            // label16
+            // 
+            label16.BackColor = Color.DimGray;
+            label16.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label16.ForeColor = Color.White;
+            label16.Location = new Point(11, 51);
+            label16.Name = "label16";
+            label16.Padding = new Padding(1);
+            label16.Size = new Size(47, 45);
+            label16.TabIndex = 3;
+            label16.Text = "No.";
+            label16.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label329
+            // 
+            label329.BackColor = Color.DimGray;
+            label329.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label329.ForeColor = Color.White;
+            label329.Location = new Point(850, 51);
+            label329.Name = "label329";
+            label329.Padding = new Padding(1);
+            label329.Size = new Size(60, 45);
+            label329.TabIndex = 20;
+            label329.Text = "이상치\r\n비율(%)";
+            label329.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            label17.BackColor = Color.DimGray;
+            label17.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label17.ForeColor = Color.White;
+            label17.Location = new Point(60, 51);
+            label17.Name = "label17";
+            label17.Padding = new Padding(1);
+            label17.Size = new Size(108, 45);
+            label17.TabIndex = 4;
+            label17.Text = "S/No.";
+            label17.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label324
+            // 
+            label324.BackColor = Color.DimGray;
+            label324.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label324.ForeColor = Color.White;
+            label324.Location = new Point(788, 51);
+            label324.Name = "label324";
+            label324.Padding = new Padding(1);
+            label324.Size = new Size(60, 45);
+            label324.TabIndex = 19;
+            label324.Text = "최종\r\n등급";
+            label324.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            label18.BackColor = Color.DimGray;
+            label18.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label18.ForeColor = Color.White;
+            label18.Location = new Point(230, 9);
+            label18.Name = "label18";
+            label18.Padding = new Padding(1);
+            label18.Size = new Size(680, 38);
+            label18.TabIndex = 5;
+            label18.Text = "가속";
+            label18.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            label20.BackColor = Color.DimGray;
+            label20.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label20.ForeColor = Color.White;
+            label20.Location = new Point(230, 51);
+            label20.Name = "label20";
+            label20.Padding = new Padding(1);
+            label20.Size = new Size(60, 45);
+            label20.TabIndex = 7;
+            label20.Text = "PeakX";
+            label20.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label236
+            // 
+            label236.BackColor = Color.DimGray;
+            label236.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label236.ForeColor = Color.White;
+            label236.Location = new Point(726, 51);
+            label236.Name = "label236";
+            label236.Padding = new Padding(1);
+            label236.Size = new Size(60, 45);
+            label236.TabIndex = 17;
+            label236.Text = "합";
+            label236.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label21
+            // 
+            label21.BackColor = Color.DimGray;
+            label21.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label21.ForeColor = Color.White;
+            label21.Location = new Point(292, 51);
+            label21.Name = "label21";
+            label21.Padding = new Padding(1);
+            label21.Size = new Size(60, 45);
+            label21.TabIndex = 8;
+            label21.Text = "PeakY";
+            label21.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            label22.BackColor = Color.DimGray;
+            label22.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label22.ForeColor = Color.White;
+            label22.Location = new Point(478, 51);
+            label22.Name = "label22";
+            label22.Padding = new Padding(1);
+            label22.Size = new Size(60, 45);
+            label22.TabIndex = 9;
+            label22.Text = "길이";
+            label22.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label23
+            // 
+            label23.BackColor = Color.DimGray;
+            label23.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label23.ForeColor = Color.White;
+            label23.Location = new Point(540, 51);
+            label23.Name = "label23";
+            label23.Padding = new Padding(1);
+            label23.Size = new Size(60, 45);
+            label23.TabIndex = 10;
+            label23.Text = "높이";
+            label23.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            label24.BackColor = Color.DimGray;
+            label24.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            label24.ForeColor = Color.White;
+            label24.Location = new Point(602, 51);
+            label24.Name = "label24";
+            label24.Padding = new Padding(1);
+            label24.Size = new Size(60, 45);
+            label24.TabIndex = 11;
+            label24.Text = "면적";
+            label24.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // PluerPageUpbtr
+            // 
+            PluerPageUpbtr.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold);
+            PluerPageUpbtr.Location = new Point(1619, 12);
+            PluerPageUpbtr.Name = "PluerPageUpbtr";
+            PluerPageUpbtr.Size = new Size(45, 47);
+            PluerPageUpbtr.TabIndex = 26;
+            PluerPageUpbtr.Text = ">";
+            PluerPageUpbtr.UseVisualStyleBackColor = true;
+            PluerPageUpbtr.Click += (this.PluerPageUpbtr_Click);
+            // 
+            // PluerPageDownbtr
+            // 
+            PluerPageDownbtr.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold);
+            PluerPageDownbtr.Location = new Point(1565, 11);
+            PluerPageDownbtr.Name = "PluerPageDownbtr";
+            PluerPageDownbtr.Size = new Size(48, 49);
+            PluerPageDownbtr.TabIndex = 25;
+            PluerPageDownbtr.Text = "<";
+            PluerPageDownbtr.UseVisualStyleBackColor = true;
+            PluerPageDownbtr.Click += (this.PluerPageDownbtr_Click);
+            // 
+            // PerulStaticDisplayLabel
+            // 
+            PerulStaticDisplayLabel.AutoSize = true;
+            PerulStaticDisplayLabel.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            PerulStaticDisplayLabel.ForeColor = Color.White;
+            PerulStaticDisplayLabel.Location = new Point(24, 21);
+            PerulStaticDisplayLabel.Name = "PerulStaticDisplayLabel";
+            PerulStaticDisplayLabel.Size = new Size(134, 37);
+            PerulStaticDisplayLabel.TabIndex = 0;
+            PerulStaticDisplayLabel.Text = "복수 통계";
+            // 
+            // SicngleImgCheckPanel
+            // 
+            SicngleImgCheckPanel.Controls.Add(RearDisplayPanel);
+            SicngleImgCheckPanel.Controls.Add(FrontDisplayPanel);
+            SicngleImgCheckPanel.Controls.Add(Img46to50Label);
+            SicngleImgCheckPanel.Controls.Add(Img41to45Label);
+            SicngleImgCheckPanel.Controls.Add(Img36to40Label);
+            SicngleImgCheckPanel.Controls.Add(Img31to35Label);
+            SicngleImgCheckPanel.Controls.Add(Img26to30Label);
+            SicngleImgCheckPanel.Controls.Add(Img21to25Label);
+            SicngleImgCheckPanel.Controls.Add(Img16to20Label);
+            SicngleImgCheckPanel.Controls.Add(Img11to15Label);
+            SicngleImgCheckPanel.Controls.Add(Img6to10Label);
+            SicngleImgCheckPanel.Controls.Add(Img1to5Label);
+            SicngleImgCheckPanel.Controls.Add(SicngleImgCheckPanelExitButton);
+            SicngleImgCheckPanel.Location = new Point(982, 127);
+            SicngleImgCheckPanel.Name = "SicngleImgCheckPanel";
+            SicngleImgCheckPanel.Size = new Size(324, 68);
+            SicngleImgCheckPanel.TabIndex = 13;
+            SicngleImgCheckPanel.Visible = false;
+            // 
+            // RearDisplayPanel
+            // 
+            RearDisplayPanel.BorderStyle = BorderStyle.FixedSingle;
+            RearDisplayPanel.Controls.Add(label307);
+            RearDisplayPanel.Controls.Add(R5Angle);
+            RearDisplayPanel.Controls.Add(label223);
+            RearDisplayPanel.Controls.Add(R5PeakY);
+            RearDisplayPanel.Controls.Add(label225);
+            RearDisplayPanel.Controls.Add(R5Area);
+            RearDisplayPanel.Controls.Add(label227);
+            RearDisplayPanel.Controls.Add(R5PeakX);
+            RearDisplayPanel.Controls.Add(label229);
+            RearDisplayPanel.Controls.Add(R5Height);
+            RearDisplayPanel.Controls.Add(label231);
+            RearDisplayPanel.Controls.Add(R5AreaY);
+            RearDisplayPanel.Controls.Add(label233);
+            RearDisplayPanel.Controls.Add(R5Width);
+            RearDisplayPanel.Controls.Add(label235);
+            RearDisplayPanel.Controls.Add(R5AreaX);
+            RearDisplayPanel.Controls.Add(label237);
+            RearDisplayPanel.Controls.Add(R4Angle);
+            RearDisplayPanel.Controls.Add(label239);
+            RearDisplayPanel.Controls.Add(R4PeakY);
+            RearDisplayPanel.Controls.Add(label241);
+            RearDisplayPanel.Controls.Add(R4Area);
+            RearDisplayPanel.Controls.Add(label243);
+            RearDisplayPanel.Controls.Add(R4PeakX);
+            RearDisplayPanel.Controls.Add(label245);
+            RearDisplayPanel.Controls.Add(R4Height);
+            RearDisplayPanel.Controls.Add(label247);
+            RearDisplayPanel.Controls.Add(R4AreaY);
+            RearDisplayPanel.Controls.Add(label249);
+            RearDisplayPanel.Controls.Add(R4Width);
+            RearDisplayPanel.Controls.Add(label251);
+            RearDisplayPanel.Controls.Add(R4AreaX);
+            RearDisplayPanel.Controls.Add(label253);
+            RearDisplayPanel.Controls.Add(R3Angle);
+            RearDisplayPanel.Controls.Add(label255);
+            RearDisplayPanel.Controls.Add(R3PeakY);
+            RearDisplayPanel.Controls.Add(label257);
+            RearDisplayPanel.Controls.Add(R3Area);
+            RearDisplayPanel.Controls.Add(label259);
+            RearDisplayPanel.Controls.Add(R3PeakX);
+            RearDisplayPanel.Controls.Add(label261);
+            RearDisplayPanel.Controls.Add(R3Height);
+            RearDisplayPanel.Controls.Add(label263);
+            RearDisplayPanel.Controls.Add(R3AreaY);
+            RearDisplayPanel.Controls.Add(label265);
+            RearDisplayPanel.Controls.Add(R3Width);
+            RearDisplayPanel.Controls.Add(label267);
+            RearDisplayPanel.Controls.Add(R3AreaX);
+            RearDisplayPanel.Controls.Add(label269);
+            RearDisplayPanel.Controls.Add(R2Angle);
+            RearDisplayPanel.Controls.Add(label271);
+            RearDisplayPanel.Controls.Add(R2PeakY);
+            RearDisplayPanel.Controls.Add(label273);
+            RearDisplayPanel.Controls.Add(R2Area);
+            RearDisplayPanel.Controls.Add(label275);
+            RearDisplayPanel.Controls.Add(R2PeakX);
+            RearDisplayPanel.Controls.Add(label277);
+            RearDisplayPanel.Controls.Add(R2Height);
+            RearDisplayPanel.Controls.Add(label279);
+            RearDisplayPanel.Controls.Add(R2AreaY);
+            RearDisplayPanel.Controls.Add(label281);
+            RearDisplayPanel.Controls.Add(R2Width);
+            RearDisplayPanel.Controls.Add(label283);
+            RearDisplayPanel.Controls.Add(R2AreaX);
+            RearDisplayPanel.Controls.Add(label285);
+            RearDisplayPanel.Controls.Add(R1Angle);
+            RearDisplayPanel.Controls.Add(label287);
+            RearDisplayPanel.Controls.Add(R1PeakY);
+            RearDisplayPanel.Controls.Add(label289);
+            RearDisplayPanel.Controls.Add(R1Area);
+            RearDisplayPanel.Controls.Add(label291);
+            RearDisplayPanel.Controls.Add(R1PeakX);
+            RearDisplayPanel.Controls.Add(label293);
+            RearDisplayPanel.Controls.Add(R1Height);
+            RearDisplayPanel.Controls.Add(label295);
+            RearDisplayPanel.Controls.Add(R1AreaY);
+            RearDisplayPanel.Controls.Add(label297);
+            RearDisplayPanel.Controls.Add(R1Width);
+            RearDisplayPanel.Controls.Add(label299);
+            RearDisplayPanel.Controls.Add(R1AreaX);
+            RearDisplayPanel.Controls.Add(label301);
+            RearDisplayPanel.Controls.Add(R1picturebox);
+            RearDisplayPanel.Controls.Add(R5);
+            RearDisplayPanel.Controls.Add(R4);
+            RearDisplayPanel.Controls.Add(R3);
+            RearDisplayPanel.Controls.Add(R2);
+            RearDisplayPanel.Controls.Add(R1);
+            RearDisplayPanel.Controls.Add(label308);
+            RearDisplayPanel.Controls.Add(R2picturebox);
+            RearDisplayPanel.Controls.Add(R3picturebox);
+            RearDisplayPanel.Controls.Add(R4picturebox);
+            RearDisplayPanel.Controls.Add(R5picturebox);
+            RearDisplayPanel.Location = new Point(862, 79);
+            RearDisplayPanel.Name = "RearDisplayPanel";
+            RearDisplayPanel.Size = new Size(799, 821);
+            RearDisplayPanel.TabIndex = 92;
+            RearDisplayPanel.Visible = false;
+            // 
+            // label307
+            // 
+            label307.BorderStyle = BorderStyle.FixedSingle;
+            label307.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label307.ForeColor = Color.White;
+            label307.Location = new Point(73, 4);
+            label307.Name = "label307";
+            label307.Size = new Size(721, 64);
+            label307.TabIndex = 1;
+            label307.Text = "Decelearation";
+            label307.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R5Angle
+            // 
+            R5Angle.BackColor = Color.Gray;
+            R5Angle.Location = new Point(707, 776);
+            R5Angle.Name = "R5Angle";
+            R5Angle.Size = new Size(85, 37);
+            R5Angle.TabIndex = 91;
+            R5Angle.Text = "label222";
+            R5Angle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label223
+            // 
+            label223.BackColor = Color.LightGray;
+            label223.Location = new Point(707, 739);
+            label223.Name = "label223";
+            label223.Size = new Size(85, 37);
+            label223.TabIndex = 90;
+            label223.Text = "Distance";
+            label223.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R5PeakY
+            // 
+            R5PeakY.BackColor = Color.Gray;
+            R5PeakY.Location = new Point(707, 704);
+            R5PeakY.Name = "R5PeakY";
+            R5PeakY.Size = new Size(85, 35);
+            R5PeakY.TabIndex = 89;
+            R5PeakY.Text = "label224";
+            R5PeakY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label225
+            // 
+            label225.BackColor = Color.LightGray;
+            label225.Location = new Point(707, 669);
+            label225.Name = "label225";
+            label225.Size = new Size(85, 35);
+            label225.TabIndex = 88;
+            label225.Text = "AreaY";
+            label225.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R5Area
+            // 
+            R5Area.BackColor = Color.Gray;
+            R5Area.Location = new Point(616, 776);
+            R5Area.Name = "R5Area";
+            R5Area.Size = new Size(85, 37);
+            R5Area.TabIndex = 87;
+            R5Area.Text = "label226";
+            R5Area.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label227
+            // 
+            label227.BackColor = Color.LightGray;
+            label227.Location = new Point(616, 739);
+            label227.Name = "label227";
+            label227.Size = new Size(85, 37);
+            label227.TabIndex = 86;
+            label227.Text = "Area";
+            label227.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R5PeakX
+            // 
+            R5PeakX.BackColor = Color.Gray;
+            R5PeakX.Location = new Point(616, 704);
+            R5PeakX.Name = "R5PeakX";
+            R5PeakX.Size = new Size(85, 35);
+            R5PeakX.TabIndex = 85;
+            R5PeakX.Text = "label228";
+            R5PeakX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label229
+            // 
+            label229.BackColor = Color.LightGray;
+            label229.Location = new Point(616, 669);
+            label229.Name = "label229";
+            label229.Size = new Size(85, 35);
+            label229.TabIndex = 84;
+            label229.Text = "AreaX";
+            label229.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R5Height
+            // 
+            R5Height.BackColor = Color.Gray;
+            R5Height.Location = new Point(525, 776);
+            R5Height.Name = "R5Height";
+            R5Height.Size = new Size(85, 37);
+            R5Height.TabIndex = 83;
+            R5Height.Text = "label230";
+            R5Height.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label231
+            // 
+            label231.BackColor = Color.LightGray;
+            label231.Location = new Point(525, 739);
+            label231.Name = "label231";
+            label231.Size = new Size(85, 37);
+            label231.TabIndex = 82;
+            label231.Text = "Height";
+            label231.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R5AreaY
+            // 
+            R5AreaY.BackColor = Color.Gray;
+            R5AreaY.Location = new Point(525, 704);
+            R5AreaY.Name = "R5AreaY";
+            R5AreaY.Size = new Size(85, 35);
+            R5AreaY.TabIndex = 81;
+            R5AreaY.Text = "label232";
+            R5AreaY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label233
+            // 
+            label233.BackColor = Color.LightGray;
+            label233.Location = new Point(525, 669);
+            label233.Name = "label233";
+            label233.Size = new Size(85, 35);
+            label233.TabIndex = 80;
+            label233.Text = "PeakY";
+            label233.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R5Width
+            // 
+            R5Width.BackColor = Color.Gray;
+            R5Width.Location = new Point(434, 776);
+            R5Width.Name = "R5Width";
+            R5Width.Size = new Size(85, 37);
+            R5Width.TabIndex = 79;
+            R5Width.Text = "label234";
+            R5Width.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label235
+            // 
+            label235.BackColor = Color.LightGray;
+            label235.Location = new Point(434, 739);
+            label235.Name = "label235";
+            label235.Size = new Size(85, 37);
+            label235.TabIndex = 78;
+            label235.Text = "Length";
+            label235.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R5AreaX
+            // 
+            R5AreaX.BackColor = Color.Gray;
+            R5AreaX.Location = new Point(434, 704);
+            R5AreaX.Name = "R5AreaX";
+            R5AreaX.Size = new Size(85, 35);
+            R5AreaX.TabIndex = 77;
+            R5AreaX.Text = "label236";
+            R5AreaX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label237
+            // 
+            label237.BackColor = Color.LightGray;
+            label237.Location = new Point(434, 669);
+            label237.Name = "label237";
+            label237.Size = new Size(85, 35);
+            label237.TabIndex = 76;
+            label237.Text = "PeakX";
+            label237.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R4Angle
+            // 
+            R4Angle.BackColor = Color.Gray;
+            R4Angle.Location = new Point(707, 626);
+            R4Angle.Name = "R4Angle";
+            R4Angle.Size = new Size(85, 37);
+            R4Angle.TabIndex = 75;
+            R4Angle.Text = "label238";
+            R4Angle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label239
+            // 
+            label239.BackColor = Color.LightGray;
+            label239.Location = new Point(707, 589);
+            label239.Name = "label239";
+            label239.Size = new Size(85, 37);
+            label239.TabIndex = 74;
+            label239.Text = "Distance";
+            label239.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R4PeakY
+            // 
+            R4PeakY.BackColor = Color.Gray;
+            R4PeakY.Location = new Point(707, 554);
+            R4PeakY.Name = "R4PeakY";
+            R4PeakY.Size = new Size(85, 35);
+            R4PeakY.TabIndex = 73;
+            R4PeakY.Text = "label240";
+            R4PeakY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label241
+            // 
+            label241.BackColor = Color.LightGray;
+            label241.Location = new Point(707, 519);
+            label241.Name = "label241";
+            label241.Size = new Size(85, 35);
+            label241.TabIndex = 72;
+            label241.Text = "AreaY";
+            label241.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R4Area
+            // 
+            R4Area.BackColor = Color.Gray;
+            R4Area.Location = new Point(616, 626);
+            R4Area.Name = "R4Area";
+            R4Area.Size = new Size(85, 37);
+            R4Area.TabIndex = 71;
+            R4Area.Text = "label242";
+            R4Area.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label243
+            // 
+            label243.BackColor = Color.LightGray;
+            label243.Location = new Point(616, 589);
+            label243.Name = "label243";
+            label243.Size = new Size(85, 37);
+            label243.TabIndex = 70;
+            label243.Text = "Area";
+            label243.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R4PeakX
+            // 
+            R4PeakX.BackColor = Color.Gray;
+            R4PeakX.Location = new Point(616, 554);
+            R4PeakX.Name = "R4PeakX";
+            R4PeakX.Size = new Size(85, 35);
+            R4PeakX.TabIndex = 69;
+            R4PeakX.Text = "label244";
+            R4PeakX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label245
+            // 
+            label245.BackColor = Color.LightGray;
+            label245.Location = new Point(616, 519);
+            label245.Name = "label245";
+            label245.Size = new Size(85, 35);
+            label245.TabIndex = 68;
+            label245.Text = "AreaX";
+            label245.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R4Height
+            // 
+            R4Height.BackColor = Color.Gray;
+            R4Height.Location = new Point(525, 626);
+            R4Height.Name = "R4Height";
+            R4Height.Size = new Size(85, 37);
+            R4Height.TabIndex = 67;
+            R4Height.Text = "label246";
+            R4Height.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label247
+            // 
+            label247.BackColor = Color.LightGray;
+            label247.Location = new Point(525, 589);
+            label247.Name = "label247";
+            label247.Size = new Size(85, 37);
+            label247.TabIndex = 66;
+            label247.Text = "Height";
+            label247.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R4AreaY
+            // 
+            R4AreaY.BackColor = Color.Gray;
+            R4AreaY.Location = new Point(525, 554);
+            R4AreaY.Name = "R4AreaY";
+            R4AreaY.Size = new Size(85, 35);
+            R4AreaY.TabIndex = 65;
+            R4AreaY.Text = "label248";
+            R4AreaY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label249
+            // 
+            label249.BackColor = Color.LightGray;
+            label249.Location = new Point(525, 519);
+            label249.Name = "label249";
+            label249.Size = new Size(85, 35);
+            label249.TabIndex = 64;
+            label249.Text = "PeakY";
+            label249.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R4Width
+            // 
+            R4Width.BackColor = Color.Gray;
+            R4Width.Location = new Point(434, 626);
+            R4Width.Name = "R4Width";
+            R4Width.Size = new Size(85, 37);
+            R4Width.TabIndex = 63;
+            R4Width.Text = "label250";
+            R4Width.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label251
+            // 
+            label251.BackColor = Color.LightGray;
+            label251.Location = new Point(434, 589);
+            label251.Name = "label251";
+            label251.Size = new Size(85, 37);
+            label251.TabIndex = 62;
+            label251.Text = "Length";
+            label251.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R4AreaX
+            // 
+            R4AreaX.BackColor = Color.Gray;
+            R4AreaX.Location = new Point(434, 554);
+            R4AreaX.Name = "R4AreaX";
+            R4AreaX.Size = new Size(85, 35);
+            R4AreaX.TabIndex = 61;
+            R4AreaX.Text = "label252";
+            R4AreaX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label253
+            // 
+            label253.BackColor = Color.LightGray;
+            label253.Location = new Point(434, 519);
+            label253.Name = "label253";
+            label253.Size = new Size(85, 35);
+            label253.TabIndex = 60;
+            label253.Text = "PeakX";
+            label253.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R3Angle
+            // 
+            R3Angle.BackColor = Color.Gray;
+            R3Angle.Location = new Point(707, 477);
+            R3Angle.Name = "R3Angle";
+            R3Angle.Size = new Size(85, 37);
+            R3Angle.TabIndex = 59;
+            R3Angle.Text = "label254";
+            R3Angle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label255
+            // 
+            label255.BackColor = Color.LightGray;
+            label255.Location = new Point(707, 440);
+            label255.Name = "label255";
+            label255.Size = new Size(85, 37);
+            label255.TabIndex = 58;
+            label255.Text = "Distance";
+            label255.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R3PeakY
+            // 
+            R3PeakY.BackColor = Color.Gray;
+            R3PeakY.Location = new Point(707, 405);
+            R3PeakY.Name = "R3PeakY";
+            R3PeakY.Size = new Size(85, 35);
+            R3PeakY.TabIndex = 57;
+            R3PeakY.Text = "label256";
+            R3PeakY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label257
+            // 
+            label257.BackColor = Color.LightGray;
+            label257.Location = new Point(707, 370);
+            label257.Name = "label257";
+            label257.Size = new Size(85, 35);
+            label257.TabIndex = 56;
+            label257.Text = "AreaY";
+            label257.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R3Area
+            // 
+            R3Area.BackColor = Color.Gray;
+            R3Area.Location = new Point(616, 477);
+            R3Area.Name = "R3Area";
+            R3Area.Size = new Size(85, 37);
+            R3Area.TabIndex = 55;
+            R3Area.Text = "label258";
+            R3Area.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label259
+            // 
+            label259.BackColor = Color.LightGray;
+            label259.Location = new Point(616, 440);
+            label259.Name = "label259";
+            label259.Size = new Size(85, 37);
+            label259.TabIndex = 54;
+            label259.Text = "Area";
+            label259.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R3PeakX
+            // 
+            R3PeakX.BackColor = Color.Gray;
+            R3PeakX.Location = new Point(616, 405);
+            R3PeakX.Name = "R3PeakX";
+            R3PeakX.Size = new Size(85, 35);
+            R3PeakX.TabIndex = 53;
+            R3PeakX.Text = "label260";
+            R3PeakX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label261
+            // 
+            label261.BackColor = Color.LightGray;
+            label261.Location = new Point(616, 370);
+            label261.Name = "label261";
+            label261.Size = new Size(85, 35);
+            label261.TabIndex = 52;
+            label261.Text = "AreaX";
+            label261.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R3Height
+            // 
+            R3Height.BackColor = Color.Gray;
+            R3Height.Location = new Point(525, 477);
+            R3Height.Name = "R3Height";
+            R3Height.Size = new Size(85, 37);
+            R3Height.TabIndex = 51;
+            R3Height.Text = "label262";
+            R3Height.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label263
+            // 
+            label263.BackColor = Color.LightGray;
+            label263.Location = new Point(525, 440);
+            label263.Name = "label263";
+            label263.Size = new Size(85, 37);
+            label263.TabIndex = 50;
+            label263.Text = "Height";
+            label263.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R3AreaY
+            // 
+            R3AreaY.BackColor = Color.Gray;
+            R3AreaY.Location = new Point(525, 405);
+            R3AreaY.Name = "R3AreaY";
+            R3AreaY.Size = new Size(85, 35);
+            R3AreaY.TabIndex = 49;
+            R3AreaY.Text = "label264";
+            R3AreaY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label265
+            // 
+            label265.BackColor = Color.LightGray;
+            label265.Location = new Point(525, 370);
+            label265.Name = "label265";
+            label265.Size = new Size(85, 35);
+            label265.TabIndex = 48;
+            label265.Text = "PeakY";
+            label265.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R3Width
+            // 
+            R3Width.BackColor = Color.Gray;
+            R3Width.Location = new Point(434, 477);
+            R3Width.Name = "R3Width";
+            R3Width.Size = new Size(85, 37);
+            R3Width.TabIndex = 47;
+            R3Width.Text = "label266";
+            R3Width.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label267
+            // 
+            label267.BackColor = Color.LightGray;
+            label267.Location = new Point(434, 440);
+            label267.Name = "label267";
+            label267.Size = new Size(85, 37);
+            label267.TabIndex = 46;
+            label267.Text = "Length";
+            label267.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R3AreaX
+            // 
+            R3AreaX.BackColor = Color.Gray;
+            R3AreaX.Location = new Point(434, 405);
+            R3AreaX.Name = "R3AreaX";
+            R3AreaX.Size = new Size(85, 35);
+            R3AreaX.TabIndex = 45;
+            R3AreaX.Text = "label268";
+            R3AreaX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label269
+            // 
+            label269.BackColor = Color.LightGray;
+            label269.Location = new Point(434, 370);
+            label269.Name = "label269";
+            label269.Size = new Size(85, 35);
+            label269.TabIndex = 44;
+            label269.Text = "PeakX";
+            label269.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R2Angle
+            // 
+            R2Angle.BackColor = Color.Gray;
+            R2Angle.Location = new Point(707, 328);
+            R2Angle.Name = "R2Angle";
+            R2Angle.Size = new Size(85, 37);
+            R2Angle.TabIndex = 43;
+            R2Angle.Text = "label270";
+            R2Angle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label271
+            // 
+            label271.BackColor = Color.LightGray;
+            label271.Location = new Point(707, 291);
+            label271.Name = "label271";
+            label271.Size = new Size(85, 37);
+            label271.TabIndex = 42;
+            label271.Text = "Distance";
+            label271.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R2PeakY
+            // 
+            R2PeakY.BackColor = Color.Gray;
+            R2PeakY.Location = new Point(707, 256);
+            R2PeakY.Name = "R2PeakY";
+            R2PeakY.Size = new Size(85, 35);
+            R2PeakY.TabIndex = 41;
+            R2PeakY.Text = "label272";
+            R2PeakY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label273
+            // 
+            label273.BackColor = Color.LightGray;
+            label273.Location = new Point(707, 221);
+            label273.Name = "label273";
+            label273.Size = new Size(85, 35);
+            label273.TabIndex = 40;
+            label273.Text = "AreaY";
+            label273.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R2Area
+            // 
+            R2Area.BackColor = Color.Gray;
+            R2Area.Location = new Point(616, 328);
+            R2Area.Name = "R2Area";
+            R2Area.Size = new Size(85, 37);
+            R2Area.TabIndex = 39;
+            R2Area.Text = "label274";
+            R2Area.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label275
+            // 
+            label275.BackColor = Color.LightGray;
+            label275.Location = new Point(616, 291);
+            label275.Name = "label275";
+            label275.Size = new Size(85, 37);
+            label275.TabIndex = 38;
+            label275.Text = "Area";
+            label275.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R2PeakX
+            // 
+            R2PeakX.BackColor = Color.Gray;
+            R2PeakX.Location = new Point(616, 256);
+            R2PeakX.Name = "R2PeakX";
+            R2PeakX.Size = new Size(85, 35);
+            R2PeakX.TabIndex = 37;
+            R2PeakX.Text = "label276";
+            R2PeakX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label277
+            // 
+            label277.BackColor = Color.LightGray;
+            label277.Location = new Point(616, 221);
+            label277.Name = "label277";
+            label277.Size = new Size(85, 35);
+            label277.TabIndex = 36;
+            label277.Text = "AreaX";
+            label277.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R2Height
+            // 
+            R2Height.BackColor = Color.Gray;
+            R2Height.Location = new Point(525, 328);
+            R2Height.Name = "R2Height";
+            R2Height.Size = new Size(85, 37);
+            R2Height.TabIndex = 35;
+            R2Height.Text = "label278";
+            R2Height.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label279
+            // 
+            label279.BackColor = Color.LightGray;
+            label279.Location = new Point(525, 291);
+            label279.Name = "label279";
+            label279.Size = new Size(85, 37);
+            label279.TabIndex = 34;
+            label279.Text = "Height";
+            label279.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R2AreaY
+            // 
+            R2AreaY.BackColor = Color.Gray;
+            R2AreaY.Location = new Point(525, 256);
+            R2AreaY.Name = "R2AreaY";
+            R2AreaY.Size = new Size(85, 35);
+            R2AreaY.TabIndex = 33;
+            R2AreaY.Text = "label280";
+            R2AreaY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label281
+            // 
+            label281.BackColor = Color.LightGray;
+            label281.Location = new Point(525, 221);
+            label281.Name = "label281";
+            label281.Size = new Size(85, 35);
+            label281.TabIndex = 32;
+            label281.Text = "PeakY";
+            label281.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R2Width
+            // 
+            R2Width.BackColor = Color.Gray;
+            R2Width.Location = new Point(434, 328);
+            R2Width.Name = "R2Width";
+            R2Width.Size = new Size(85, 37);
+            R2Width.TabIndex = 31;
+            R2Width.Text = "label282";
+            R2Width.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label283
+            // 
+            label283.BackColor = Color.LightGray;
+            label283.Location = new Point(434, 291);
+            label283.Name = "label283";
+            label283.Size = new Size(85, 37);
+            label283.TabIndex = 30;
+            label283.Text = "Length";
+            label283.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R2AreaX
+            // 
+            R2AreaX.BackColor = Color.Gray;
+            R2AreaX.Location = new Point(434, 256);
+            R2AreaX.Name = "R2AreaX";
+            R2AreaX.Size = new Size(85, 35);
+            R2AreaX.TabIndex = 29;
+            R2AreaX.Text = "label284";
+            R2AreaX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label285
+            // 
+            label285.BackColor = Color.LightGray;
+            label285.Location = new Point(434, 221);
+            label285.Name = "label285";
+            label285.Size = new Size(85, 35);
+            label285.TabIndex = 28;
+            label285.Text = "PeakX";
+            label285.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R1Angle
+            // 
+            R1Angle.BackColor = Color.Gray;
+            R1Angle.Location = new Point(707, 179);
+            R1Angle.Name = "R1Angle";
+            R1Angle.Size = new Size(85, 37);
+            R1Angle.TabIndex = 27;
+            R1Angle.Text = "label286";
+            R1Angle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label287
+            // 
+            label287.BackColor = Color.LightGray;
+            label287.Location = new Point(707, 142);
+            label287.Name = "label287";
+            label287.Size = new Size(85, 37);
+            label287.TabIndex = 26;
+            label287.Text = "Distance";
+            label287.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R1PeakY
+            // 
+            R1PeakY.BackColor = Color.Gray;
+            R1PeakY.Location = new Point(707, 107);
+            R1PeakY.Name = "R1PeakY";
+            R1PeakY.Size = new Size(85, 35);
+            R1PeakY.TabIndex = 25;
+            R1PeakY.Text = "label288";
+            R1PeakY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label289
+            // 
+            label289.BackColor = Color.LightGray;
+            label289.Location = new Point(707, 72);
+            label289.Name = "label289";
+            label289.Size = new Size(85, 35);
+            label289.TabIndex = 24;
+            label289.Text = "AreaY";
+            label289.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R1Area
+            // 
+            R1Area.BackColor = Color.Gray;
+            R1Area.Location = new Point(616, 179);
+            R1Area.Name = "R1Area";
+            R1Area.Size = new Size(85, 37);
+            R1Area.TabIndex = 23;
+            R1Area.Text = "label290";
+            R1Area.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label291
+            // 
+            label291.BackColor = Color.LightGray;
+            label291.Location = new Point(616, 142);
+            label291.Name = "label291";
+            label291.Size = new Size(85, 37);
+            label291.TabIndex = 22;
+            label291.Text = "Area";
+            label291.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R1PeakX
+            // 
+            R1PeakX.BackColor = Color.Gray;
+            R1PeakX.Location = new Point(616, 107);
+            R1PeakX.Name = "R1PeakX";
+            R1PeakX.Size = new Size(85, 35);
+            R1PeakX.TabIndex = 21;
+            R1PeakX.Text = "label292";
+            R1PeakX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label293
+            // 
+            label293.BackColor = Color.LightGray;
+            label293.Location = new Point(616, 72);
+            label293.Name = "label293";
+            label293.Size = new Size(85, 35);
+            label293.TabIndex = 20;
+            label293.Text = "AreaX";
+            label293.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R1Height
+            // 
+            R1Height.BackColor = Color.Gray;
+            R1Height.Location = new Point(525, 179);
+            R1Height.Name = "R1Height";
+            R1Height.Size = new Size(85, 37);
+            R1Height.TabIndex = 19;
+            R1Height.Text = "label294";
+            R1Height.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label295
+            // 
+            label295.BackColor = Color.LightGray;
+            label295.Location = new Point(525, 142);
+            label295.Name = "label295";
+            label295.Size = new Size(85, 37);
+            label295.TabIndex = 18;
+            label295.Text = "Height";
+            label295.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R1AreaY
+            // 
+            R1AreaY.BackColor = Color.Gray;
+            R1AreaY.Location = new Point(525, 107);
+            R1AreaY.Name = "R1AreaY";
+            R1AreaY.Size = new Size(85, 35);
+            R1AreaY.TabIndex = 17;
+            R1AreaY.Text = "label296";
+            R1AreaY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label297
+            // 
+            label297.BackColor = Color.LightGray;
+            label297.Location = new Point(525, 72);
+            label297.Name = "label297";
+            label297.Size = new Size(85, 35);
+            label297.TabIndex = 16;
+            label297.Text = "PeakY";
+            label297.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R1Width
+            // 
+            R1Width.BackColor = Color.Gray;
+            R1Width.Location = new Point(434, 179);
+            R1Width.Name = "R1Width";
+            R1Width.Size = new Size(85, 37);
+            R1Width.TabIndex = 15;
+            R1Width.Text = "label298";
+            R1Width.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label299
+            // 
+            label299.BackColor = Color.LightGray;
+            label299.Location = new Point(434, 142);
+            label299.Name = "label299";
+            label299.Size = new Size(85, 37);
+            label299.TabIndex = 14;
+            label299.Text = "Length";
+            label299.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R1AreaX
+            // 
+            R1AreaX.BackColor = Color.Gray;
+            R1AreaX.Location = new Point(434, 107);
+            R1AreaX.Name = "R1AreaX";
+            R1AreaX.Size = new Size(85, 35);
+            R1AreaX.TabIndex = 13;
+            R1AreaX.Text = "label300";
+            R1AreaX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label301
+            // 
+            label301.BackColor = Color.LightGray;
+            label301.Location = new Point(434, 72);
+            label301.Name = "label301";
+            label301.Size = new Size(85, 35);
+            label301.TabIndex = 12;
+            label301.Text = "PeakX";
+            label301.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R1picturebox
+            // 
+            R1picturebox.BackColor = Color.White;
+            R1picturebox.Location = new Point(155, 25);
+            R1picturebox.Name = "R1picturebox";
+            R1picturebox.Size = new Size(211, 194);
+            R1picturebox.TabIndex = 7;
+            R1picturebox.TabStop = false;
+            // 
+            // R5
+            // 
+            R5.BorderStyle = BorderStyle.FixedSingle;
+            R5.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            R5.ForeColor = Color.White;
+            R5.Location = new Point(1, 669);
+            R5.Name = "R5";
+            R5.Size = new Size(70, 143);
+            R5.TabIndex = 6;
+            R5.Text = "5";
+            R5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R4
+            // 
+            R4.BorderStyle = BorderStyle.FixedSingle;
+            R4.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            R4.ForeColor = Color.White;
+            R4.Location = new Point(1, 519);
+            R4.Name = "R4";
+            R4.Size = new Size(70, 143);
+            R4.TabIndex = 5;
+            R4.Text = "4";
+            R4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R3
+            // 
+            R3.BorderStyle = BorderStyle.FixedSingle;
+            R3.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            R3.ForeColor = Color.White;
+            R3.Location = new Point(1, 369);
+            R3.Name = "R3";
+            R3.Size = new Size(70, 143);
+            R3.TabIndex = 4;
+            R3.Text = "3";
+            R3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R2
+            // 
+            R2.BorderStyle = BorderStyle.FixedSingle;
+            R2.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            R2.ForeColor = Color.White;
+            R2.Location = new Point(1, 220);
+            R2.Name = "R2";
+            R2.Size = new Size(70, 143);
+            R2.TabIndex = 3;
+            R2.Text = "2";
+            R2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R1
+            // 
+            R1.BorderStyle = BorderStyle.FixedSingle;
+            R1.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            R1.ForeColor = Color.White;
+            R1.Location = new Point(1, 72);
+            R1.Name = "R1";
+            R1.Size = new Size(70, 143);
+            R1.TabIndex = 2;
+            R1.Text = "1";
+            R1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label308
+            // 
+            label308.BorderStyle = BorderStyle.FixedSingle;
+            label308.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label308.ForeColor = Color.White;
+            label308.Location = new Point(1, 4);
+            label308.Name = "label308";
+            label308.Size = new Size(70, 64);
+            label308.TabIndex = 0;
+            label308.Text = "NO";
+            label308.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // R2picturebox
+            // 
+            R2picturebox.BackColor = Color.White;
+            R2picturebox.Location = new Point(155, 174);
+            R2picturebox.Name = "R2picturebox";
+            R2picturebox.Size = new Size(211, 194);
+            R2picturebox.TabIndex = 8;
+            R2picturebox.TabStop = false;
+            // 
+            // R3picturebox
+            // 
+            R3picturebox.BackColor = Color.White;
+            R3picturebox.Location = new Point(155, 323);
+            R3picturebox.Name = "R3picturebox";
+            R3picturebox.Size = new Size(211, 194);
+            R3picturebox.TabIndex = 9;
+            R3picturebox.TabStop = false;
+            // 
+            // R4picturebox
+            // 
+            R4picturebox.BackColor = Color.White;
+            R4picturebox.Location = new Point(155, 472);
+            R4picturebox.Name = "R4picturebox";
+            R4picturebox.Size = new Size(211, 194);
+            R4picturebox.TabIndex = 10;
+            R4picturebox.TabStop = false;
+            // 
+            // R5picturebox
+            // 
+            R5picturebox.BackColor = Color.White;
+            R5picturebox.Location = new Point(155, 622);
+            R5picturebox.Name = "R5picturebox";
+            R5picturebox.Size = new Size(211, 194);
+            R5picturebox.TabIndex = 11;
+            R5picturebox.TabStop = false;
+            // 
+            // FrontDisplayPanel
+            // 
+            FrontDisplayPanel.BorderStyle = BorderStyle.FixedSingle;
+            FrontDisplayPanel.Controls.Add(label31);
+            FrontDisplayPanel.Controls.Add(F5Angle);
+            FrontDisplayPanel.Controls.Add(label207);
+            FrontDisplayPanel.Controls.Add(F5PeakY);
+            FrontDisplayPanel.Controls.Add(label209);
+            FrontDisplayPanel.Controls.Add(F5Area);
+            FrontDisplayPanel.Controls.Add(label211);
+            FrontDisplayPanel.Controls.Add(F5PeakX);
+            FrontDisplayPanel.Controls.Add(label213);
+            FrontDisplayPanel.Controls.Add(F5Height);
+            FrontDisplayPanel.Controls.Add(label215);
+            FrontDisplayPanel.Controls.Add(F5AreaY);
+            FrontDisplayPanel.Controls.Add(label217);
+            FrontDisplayPanel.Controls.Add(F5Width);
+            FrontDisplayPanel.Controls.Add(label219);
+            FrontDisplayPanel.Controls.Add(F5AreaX);
+            FrontDisplayPanel.Controls.Add(label221);
+            FrontDisplayPanel.Controls.Add(F4Angle);
+            FrontDisplayPanel.Controls.Add(label191);
+            FrontDisplayPanel.Controls.Add(F4PeakY);
+            FrontDisplayPanel.Controls.Add(label193);
+            FrontDisplayPanel.Controls.Add(F4Area);
+            FrontDisplayPanel.Controls.Add(label195);
+            FrontDisplayPanel.Controls.Add(F4PeakX);
+            FrontDisplayPanel.Controls.Add(label197);
+            FrontDisplayPanel.Controls.Add(F4Height);
+            FrontDisplayPanel.Controls.Add(label199);
+            FrontDisplayPanel.Controls.Add(F4AreaY);
+            FrontDisplayPanel.Controls.Add(label201);
+            FrontDisplayPanel.Controls.Add(F4Width);
+            FrontDisplayPanel.Controls.Add(label203);
+            FrontDisplayPanel.Controls.Add(F4AreaX);
+            FrontDisplayPanel.Controls.Add(label205);
+            FrontDisplayPanel.Controls.Add(F3Angle);
+            FrontDisplayPanel.Controls.Add(label175);
+            FrontDisplayPanel.Controls.Add(F3PeakY);
+            FrontDisplayPanel.Controls.Add(label177);
+            FrontDisplayPanel.Controls.Add(F3Area);
+            FrontDisplayPanel.Controls.Add(label179);
+            FrontDisplayPanel.Controls.Add(F3PeakX);
+            FrontDisplayPanel.Controls.Add(label181);
+            FrontDisplayPanel.Controls.Add(F3Height);
+            FrontDisplayPanel.Controls.Add(label183);
+            FrontDisplayPanel.Controls.Add(F3AreaY);
+            FrontDisplayPanel.Controls.Add(label185);
+            FrontDisplayPanel.Controls.Add(F3Width);
+            FrontDisplayPanel.Controls.Add(label187);
+            FrontDisplayPanel.Controls.Add(F3AreaX);
+            FrontDisplayPanel.Controls.Add(label189);
+            FrontDisplayPanel.Controls.Add(F2Angle);
+            FrontDisplayPanel.Controls.Add(label119);
+            FrontDisplayPanel.Controls.Add(F2PeakY);
+            FrontDisplayPanel.Controls.Add(label132);
+            FrontDisplayPanel.Controls.Add(F2Area);
+            FrontDisplayPanel.Controls.Add(label148);
+            FrontDisplayPanel.Controls.Add(F2PeakX);
+            FrontDisplayPanel.Controls.Add(label165);
+            FrontDisplayPanel.Controls.Add(F2Height);
+            FrontDisplayPanel.Controls.Add(label167);
+            FrontDisplayPanel.Controls.Add(F2AreaY);
+            FrontDisplayPanel.Controls.Add(label169);
+            FrontDisplayPanel.Controls.Add(F2Width);
+            FrontDisplayPanel.Controls.Add(label171);
+            FrontDisplayPanel.Controls.Add(F2AreaX);
+            FrontDisplayPanel.Controls.Add(label173);
+            FrontDisplayPanel.Controls.Add(F1Angle);
+            FrontDisplayPanel.Controls.Add(label111);
+            FrontDisplayPanel.Controls.Add(F1PeakY);
+            FrontDisplayPanel.Controls.Add(label115);
+            FrontDisplayPanel.Controls.Add(F1Area);
+            FrontDisplayPanel.Controls.Add(label99);
+            FrontDisplayPanel.Controls.Add(F1PeakX);
+            FrontDisplayPanel.Controls.Add(label105);
+            FrontDisplayPanel.Controls.Add(F1Height);
+            FrontDisplayPanel.Controls.Add(label60);
+            FrontDisplayPanel.Controls.Add(F1AreaY);
+            FrontDisplayPanel.Controls.Add(label68);
+            FrontDisplayPanel.Controls.Add(F1Width);
+            FrontDisplayPanel.Controls.Add(label55);
+            FrontDisplayPanel.Controls.Add(F1AreaX);
+            FrontDisplayPanel.Controls.Add(label50);
+            FrontDisplayPanel.Controls.Add(F1picturebox);
+            FrontDisplayPanel.Controls.Add(F5);
+            FrontDisplayPanel.Controls.Add(F4);
+            FrontDisplayPanel.Controls.Add(F3);
+            FrontDisplayPanel.Controls.Add(F2);
+            FrontDisplayPanel.Controls.Add(F1);
+            FrontDisplayPanel.Controls.Add(label30);
+            FrontDisplayPanel.Controls.Add(F2picturebox);
+            FrontDisplayPanel.Controls.Add(F3picturebox);
+            FrontDisplayPanel.Controls.Add(F4picturebox);
+            FrontDisplayPanel.Controls.Add(F5picturebox);
+            FrontDisplayPanel.Location = new Point(21, 79);
+            FrontDisplayPanel.Name = "FrontDisplayPanel";
+            FrontDisplayPanel.Size = new Size(799, 821);
+            FrontDisplayPanel.TabIndex = 11;
+            FrontDisplayPanel.Visible = false;
+            // 
+            // label31
+            // 
+            label31.BorderStyle = BorderStyle.FixedSingle;
+            label31.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label31.ForeColor = Color.White;
+            label31.Location = new Point(73, 4);
+            label31.Name = "label31";
+            label31.Size = new Size(721, 64);
+            label31.TabIndex = 1;
+            label31.Text = "Acceleration";
+            label31.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F5Angle
+            // 
+            F5Angle.BackColor = Color.Gray;
+            F5Angle.Location = new Point(706, 776);
+            F5Angle.Name = "F5Angle";
+            F5Angle.Size = new Size(85, 37);
+            F5Angle.TabIndex = 91;
+            F5Angle.Text = "label206";
+            F5Angle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label207
+            // 
+            label207.BackColor = Color.LightGray;
+            label207.Location = new Point(706, 739);
+            label207.Name = "label207";
+            label207.Size = new Size(85, 37);
+            label207.TabIndex = 90;
+            label207.Text = "Distance";
+            label207.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F5PeakY
+            // 
+            F5PeakY.BackColor = Color.Gray;
+            F5PeakY.Location = new Point(706, 704);
+            F5PeakY.Name = "F5PeakY";
+            F5PeakY.Size = new Size(85, 35);
+            F5PeakY.TabIndex = 89;
+            F5PeakY.Text = "label208";
+            F5PeakY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label209
+            // 
+            label209.BackColor = Color.LightGray;
+            label209.Location = new Point(706, 669);
+            label209.Name = "label209";
+            label209.Size = new Size(85, 35);
+            label209.TabIndex = 88;
+            label209.Text = "AreaY";
+            label209.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F5Area
+            // 
+            F5Area.BackColor = Color.Gray;
+            F5Area.Location = new Point(615, 776);
+            F5Area.Name = "F5Area";
+            F5Area.Size = new Size(85, 37);
+            F5Area.TabIndex = 87;
+            F5Area.Text = "label210";
+            F5Area.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label211
+            // 
+            label211.BackColor = Color.LightGray;
+            label211.Location = new Point(615, 739);
+            label211.Name = "label211";
+            label211.Size = new Size(85, 37);
+            label211.TabIndex = 86;
+            label211.Text = "Area";
+            label211.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F5PeakX
+            // 
+            F5PeakX.BackColor = Color.Gray;
+            F5PeakX.Location = new Point(615, 704);
+            F5PeakX.Name = "F5PeakX";
+            F5PeakX.Size = new Size(85, 35);
+            F5PeakX.TabIndex = 85;
+            F5PeakX.Text = "label212";
+            F5PeakX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label213
+            // 
+            label213.BackColor = Color.LightGray;
+            label213.Location = new Point(615, 669);
+            label213.Name = "label213";
+            label213.Size = new Size(85, 35);
+            label213.TabIndex = 84;
+            label213.Text = "AreaX";
+            label213.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F5Height
+            // 
+            F5Height.BackColor = Color.Gray;
+            F5Height.Location = new Point(524, 776);
+            F5Height.Name = "F5Height";
+            F5Height.Size = new Size(85, 37);
+            F5Height.TabIndex = 83;
+            F5Height.Text = "label214";
+            F5Height.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label215
+            // 
+            label215.BackColor = Color.LightGray;
+            label215.Location = new Point(524, 739);
+            label215.Name = "label215";
+            label215.Size = new Size(85, 37);
+            label215.TabIndex = 82;
+            label215.Text = "Height";
+            label215.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F5AreaY
+            // 
+            F5AreaY.BackColor = Color.Gray;
+            F5AreaY.Location = new Point(524, 704);
+            F5AreaY.Name = "F5AreaY";
+            F5AreaY.Size = new Size(85, 35);
+            F5AreaY.TabIndex = 81;
+            F5AreaY.Text = "label216";
+            F5AreaY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label217
+            // 
+            label217.BackColor = Color.LightGray;
+            label217.Location = new Point(524, 669);
+            label217.Name = "label217";
+            label217.Size = new Size(85, 35);
+            label217.TabIndex = 80;
+            label217.Text = "PeakY";
+            label217.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F5Width
+            // 
+            F5Width.BackColor = Color.Gray;
+            F5Width.Location = new Point(433, 776);
+            F5Width.Name = "F5Width";
+            F5Width.Size = new Size(85, 37);
+            F5Width.TabIndex = 79;
+            F5Width.Text = "label218";
+            F5Width.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label219
+            // 
+            label219.BackColor = Color.LightGray;
+            label219.Location = new Point(433, 739);
+            label219.Name = "label219";
+            label219.Size = new Size(85, 37);
+            label219.TabIndex = 78;
+            label219.Text = "Length";
+            label219.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F5AreaX
+            // 
+            F5AreaX.BackColor = Color.Gray;
+            F5AreaX.Location = new Point(433, 704);
+            F5AreaX.Name = "F5AreaX";
+            F5AreaX.Size = new Size(85, 35);
+            F5AreaX.TabIndex = 77;
+            F5AreaX.Text = "label220";
+            F5AreaX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label221
+            // 
+            label221.BackColor = Color.LightGray;
+            label221.Location = new Point(433, 669);
+            label221.Name = "label221";
+            label221.Size = new Size(85, 35);
+            label221.TabIndex = 76;
+            label221.Text = "PeakX";
+            label221.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F4Angle
+            // 
+            F4Angle.BackColor = Color.Gray;
+            F4Angle.Location = new Point(706, 626);
+            F4Angle.Name = "F4Angle";
+            F4Angle.Size = new Size(85, 37);
+            F4Angle.TabIndex = 75;
+            F4Angle.Text = "label190";
+            F4Angle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label191
+            // 
+            label191.BackColor = Color.LightGray;
+            label191.Location = new Point(706, 589);
+            label191.Name = "label191";
+            label191.Size = new Size(85, 37);
+            label191.TabIndex = 74;
+            label191.Text = "Distance";
+            label191.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F4PeakY
+            // 
+            F4PeakY.BackColor = Color.Gray;
+            F4PeakY.Location = new Point(706, 554);
+            F4PeakY.Name = "F4PeakY";
+            F4PeakY.Size = new Size(85, 35);
+            F4PeakY.TabIndex = 73;
+            F4PeakY.Text = "label192";
+            F4PeakY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label193
+            // 
+            label193.BackColor = Color.LightGray;
+            label193.Location = new Point(706, 519);
+            label193.Name = "label193";
+            label193.Size = new Size(85, 35);
+            label193.TabIndex = 72;
+            label193.Text = "AreaY";
+            label193.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F4Area
+            // 
+            F4Area.BackColor = Color.Gray;
+            F4Area.Location = new Point(615, 626);
+            F4Area.Name = "F4Area";
+            F4Area.Size = new Size(85, 37);
+            F4Area.TabIndex = 71;
+            F4Area.Text = "label194";
+            F4Area.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label195
+            // 
+            label195.BackColor = Color.LightGray;
+            label195.Location = new Point(615, 589);
+            label195.Name = "label195";
+            label195.Size = new Size(85, 37);
+            label195.TabIndex = 70;
+            label195.Text = "Area";
+            label195.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F4PeakX
+            // 
+            F4PeakX.BackColor = Color.Gray;
+            F4PeakX.Location = new Point(615, 554);
+            F4PeakX.Name = "F4PeakX";
+            F4PeakX.Size = new Size(85, 35);
+            F4PeakX.TabIndex = 69;
+            F4PeakX.Text = "label196";
+            F4PeakX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label197
+            // 
+            label197.BackColor = Color.LightGray;
+            label197.Location = new Point(615, 519);
+            label197.Name = "label197";
+            label197.Size = new Size(85, 35);
+            label197.TabIndex = 68;
+            label197.Text = "AreaX";
+            label197.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F4Height
+            // 
+            F4Height.BackColor = Color.Gray;
+            F4Height.Location = new Point(524, 626);
+            F4Height.Name = "F4Height";
+            F4Height.Size = new Size(85, 37);
+            F4Height.TabIndex = 67;
+            F4Height.Text = "label198";
+            F4Height.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label199
+            // 
+            label199.BackColor = Color.LightGray;
+            label199.Location = new Point(524, 589);
+            label199.Name = "label199";
+            label199.Size = new Size(85, 37);
+            label199.TabIndex = 66;
+            label199.Text = "Height";
+            label199.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F4AreaY
+            // 
+            F4AreaY.BackColor = Color.Gray;
+            F4AreaY.Location = new Point(524, 554);
+            F4AreaY.Name = "F4AreaY";
+            F4AreaY.Size = new Size(85, 35);
+            F4AreaY.TabIndex = 65;
+            F4AreaY.Text = "label200";
+            F4AreaY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label201
+            // 
+            label201.BackColor = Color.LightGray;
+            label201.Location = new Point(524, 519);
+            label201.Name = "label201";
+            label201.Size = new Size(85, 35);
+            label201.TabIndex = 64;
+            label201.Text = "PeakY";
+            label201.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F4Width
+            // 
+            F4Width.BackColor = Color.Gray;
+            F4Width.Location = new Point(433, 626);
+            F4Width.Name = "F4Width";
+            F4Width.Size = new Size(85, 37);
+            F4Width.TabIndex = 63;
+            F4Width.Text = "label202";
+            F4Width.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label203
+            // 
+            label203.BackColor = Color.LightGray;
+            label203.Location = new Point(433, 589);
+            label203.Name = "label203";
+            label203.Size = new Size(85, 37);
+            label203.TabIndex = 62;
+            label203.Text = "Length";
+            label203.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F4AreaX
+            // 
+            F4AreaX.BackColor = Color.Gray;
+            F4AreaX.Location = new Point(433, 554);
+            F4AreaX.Name = "F4AreaX";
+            F4AreaX.Size = new Size(85, 35);
+            F4AreaX.TabIndex = 61;
+            F4AreaX.Text = "label204";
+            F4AreaX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label205
+            // 
+            label205.BackColor = Color.LightGray;
+            label205.Location = new Point(433, 519);
+            label205.Name = "label205";
+            label205.Size = new Size(85, 35);
+            label205.TabIndex = 60;
+            label205.Text = "PeakX";
+            label205.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F3Angle
+            // 
+            F3Angle.BackColor = Color.Gray;
+            F3Angle.Location = new Point(706, 477);
+            F3Angle.Name = "F3Angle";
+            F3Angle.Size = new Size(85, 37);
+            F3Angle.TabIndex = 59;
+            F3Angle.Text = "label174";
+            F3Angle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label175
+            // 
+            label175.BackColor = Color.LightGray;
+            label175.Location = new Point(706, 440);
+            label175.Name = "label175";
+            label175.Size = new Size(85, 37);
+            label175.TabIndex = 58;
+            label175.Text = "Distance";
+            label175.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F3PeakY
+            // 
+            F3PeakY.BackColor = Color.Gray;
+            F3PeakY.Location = new Point(706, 405);
+            F3PeakY.Name = "F3PeakY";
+            F3PeakY.Size = new Size(85, 35);
+            F3PeakY.TabIndex = 57;
+            F3PeakY.Text = "label176";
+            F3PeakY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label177
+            // 
+            label177.BackColor = Color.LightGray;
+            label177.Location = new Point(706, 370);
+            label177.Name = "label177";
+            label177.Size = new Size(85, 35);
+            label177.TabIndex = 56;
+            label177.Text = "AreaY";
+            label177.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F3Area
+            // 
+            F3Area.BackColor = Color.Gray;
+            F3Area.Location = new Point(615, 477);
+            F3Area.Name = "F3Area";
+            F3Area.Size = new Size(85, 37);
+            F3Area.TabIndex = 55;
+            F3Area.Text = "label178";
+            F3Area.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label179
+            // 
+            label179.BackColor = Color.LightGray;
+            label179.Location = new Point(615, 440);
+            label179.Name = "label179";
+            label179.Size = new Size(85, 37);
+            label179.TabIndex = 54;
+            label179.Text = "Area";
+            label179.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F3PeakX
+            // 
+            F3PeakX.BackColor = Color.Gray;
+            F3PeakX.Location = new Point(615, 405);
+            F3PeakX.Name = "F3PeakX";
+            F3PeakX.Size = new Size(85, 35);
+            F3PeakX.TabIndex = 53;
+            F3PeakX.Text = "label180";
+            F3PeakX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label181
+            // 
+            label181.BackColor = Color.LightGray;
+            label181.Location = new Point(615, 370);
+            label181.Name = "label181";
+            label181.Size = new Size(85, 35);
+            label181.TabIndex = 52;
+            label181.Text = "AreaX";
+            label181.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F3Height
+            // 
+            F3Height.BackColor = Color.Gray;
+            F3Height.Location = new Point(524, 477);
+            F3Height.Name = "F3Height";
+            F3Height.Size = new Size(85, 37);
+            F3Height.TabIndex = 51;
+            F3Height.Text = "label182";
+            F3Height.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label183
+            // 
+            label183.BackColor = Color.LightGray;
+            label183.Location = new Point(524, 440);
+            label183.Name = "label183";
+            label183.Size = new Size(85, 37);
+            label183.TabIndex = 50;
+            label183.Text = "Height";
+            label183.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F3AreaY
+            // 
+            F3AreaY.BackColor = Color.Gray;
+            F3AreaY.Location = new Point(524, 405);
+            F3AreaY.Name = "F3AreaY";
+            F3AreaY.Size = new Size(85, 35);
+            F3AreaY.TabIndex = 49;
+            F3AreaY.Text = "label184";
+            F3AreaY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label185
+            // 
+            label185.BackColor = Color.LightGray;
+            label185.Location = new Point(524, 370);
+            label185.Name = "label185";
+            label185.Size = new Size(85, 35);
+            label185.TabIndex = 48;
+            label185.Text = "PeakY";
+            label185.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F3Width
+            // 
+            F3Width.BackColor = Color.Gray;
+            F3Width.Location = new Point(433, 477);
+            F3Width.Name = "F3Width";
+            F3Width.Size = new Size(85, 37);
+            F3Width.TabIndex = 47;
+            F3Width.Text = "label186";
+            F3Width.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label187
+            // 
+            label187.BackColor = Color.LightGray;
+            label187.Location = new Point(433, 440);
+            label187.Name = "label187";
+            label187.Size = new Size(85, 37);
+            label187.TabIndex = 46;
+            label187.Text = "Length";
+            label187.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F3AreaX
+            // 
+            F3AreaX.BackColor = Color.Gray;
+            F3AreaX.Location = new Point(433, 405);
+            F3AreaX.Name = "F3AreaX";
+            F3AreaX.Size = new Size(85, 35);
+            F3AreaX.TabIndex = 45;
+            F3AreaX.Text = "label188";
+            F3AreaX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label189
+            // 
+            label189.BackColor = Color.LightGray;
+            label189.Location = new Point(433, 370);
+            label189.Name = "label189";
+            label189.Size = new Size(85, 35);
+            label189.TabIndex = 44;
+            label189.Text = "PeakX";
+            label189.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F2Angle
+            // 
+            F2Angle.BackColor = Color.Gray;
+            F2Angle.Location = new Point(706, 328);
+            F2Angle.Name = "F2Angle";
+            F2Angle.Size = new Size(85, 37);
+            F2Angle.TabIndex = 43;
+            F2Angle.Text = "label116";
+            F2Angle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label119
+            // 
+            label119.BackColor = Color.LightGray;
+            label119.Location = new Point(706, 291);
+            label119.Name = "label119";
+            label119.Size = new Size(85, 37);
+            label119.TabIndex = 42;
+            label119.Text = "Distance";
+            label119.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F2PeakY
+            // 
+            F2PeakY.BackColor = Color.Gray;
+            F2PeakY.Location = new Point(706, 256);
+            F2PeakY.Name = "F2PeakY";
+            F2PeakY.Size = new Size(85, 35);
+            F2PeakY.TabIndex = 41;
+            F2PeakY.Text = "label128";
+            F2PeakY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label132
+            // 
+            label132.BackColor = Color.LightGray;
+            label132.Location = new Point(706, 221);
+            label132.Name = "label132";
+            label132.Size = new Size(85, 35);
+            label132.TabIndex = 40;
+            label132.Text = "AreaY";
+            label132.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F2Area
+            // 
+            F2Area.BackColor = Color.Gray;
+            F2Area.Location = new Point(615, 328);
+            F2Area.Name = "F2Area";
+            F2Area.Size = new Size(85, 37);
+            F2Area.TabIndex = 39;
+            F2Area.Text = "label133";
+            F2Area.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label148
+            // 
+            label148.BackColor = Color.LightGray;
+            label148.Location = new Point(615, 291);
+            label148.Name = "label148";
+            label148.Size = new Size(85, 37);
+            label148.TabIndex = 38;
+            label148.Text = "Area";
+            label148.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F2PeakX
+            // 
+            F2PeakX.BackColor = Color.Gray;
+            F2PeakX.Location = new Point(615, 256);
+            F2PeakX.Name = "F2PeakX";
+            F2PeakX.Size = new Size(85, 35);
+            F2PeakX.TabIndex = 37;
+            F2PeakX.Text = "label160";
+            F2PeakX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label165
+            // 
+            label165.BackColor = Color.LightGray;
+            label165.Location = new Point(615, 221);
+            label165.Name = "label165";
+            label165.Size = new Size(85, 35);
+            label165.TabIndex = 36;
+            label165.Text = "AreaX";
+            label165.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F2Height
+            // 
+            F2Height.BackColor = Color.Gray;
+            F2Height.Location = new Point(524, 328);
+            F2Height.Name = "F2Height";
+            F2Height.Size = new Size(85, 37);
+            F2Height.TabIndex = 35;
+            F2Height.Text = "label166";
+            F2Height.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label167
+            // 
+            label167.BackColor = Color.LightGray;
+            label167.Location = new Point(524, 291);
+            label167.Name = "label167";
+            label167.Size = new Size(85, 37);
+            label167.TabIndex = 34;
+            label167.Text = "Height";
+            label167.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F2AreaY
+            // 
+            F2AreaY.BackColor = Color.Gray;
+            F2AreaY.Location = new Point(524, 256);
+            F2AreaY.Name = "F2AreaY";
+            F2AreaY.Size = new Size(85, 35);
+            F2AreaY.TabIndex = 33;
+            F2AreaY.Text = "label168";
+            F2AreaY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label169
+            // 
+            label169.BackColor = Color.LightGray;
+            label169.Location = new Point(524, 221);
+            label169.Name = "label169";
+            label169.Size = new Size(85, 35);
+            label169.TabIndex = 32;
+            label169.Text = "PeakY";
+            label169.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F2Width
+            // 
+            F2Width.BackColor = Color.Gray;
+            F2Width.Location = new Point(433, 328);
+            F2Width.Name = "F2Width";
+            F2Width.Size = new Size(85, 37);
+            F2Width.TabIndex = 31;
+            F2Width.Text = "label170";
+            F2Width.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label171
+            // 
+            label171.BackColor = Color.LightGray;
+            label171.Location = new Point(433, 291);
+            label171.Name = "label171";
+            label171.Size = new Size(85, 37);
+            label171.TabIndex = 30;
+            label171.Text = "Length";
+            label171.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F2AreaX
+            // 
+            F2AreaX.BackColor = Color.Gray;
+            F2AreaX.Location = new Point(433, 256);
+            F2AreaX.Name = "F2AreaX";
+            F2AreaX.Size = new Size(85, 35);
+            F2AreaX.TabIndex = 29;
+            F2AreaX.Text = "label172";
+            F2AreaX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label173
+            // 
+            label173.BackColor = Color.LightGray;
+            label173.Location = new Point(433, 221);
+            label173.Name = "label173";
+            label173.Size = new Size(85, 35);
+            label173.TabIndex = 28;
+            label173.Text = "PeakX";
+            label173.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F1Angle
+            // 
+            F1Angle.BackColor = Color.Gray;
+            F1Angle.Location = new Point(706, 179);
+            F1Angle.Name = "F1Angle";
+            F1Angle.Size = new Size(85, 37);
+            F1Angle.TabIndex = 27;
+            F1Angle.Text = "label109";
+            F1Angle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label111
+            // 
+            label111.BackColor = Color.LightGray;
+            label111.Location = new Point(706, 142);
+            label111.Name = "label111";
+            label111.Size = new Size(85, 37);
+            label111.TabIndex = 26;
+            label111.Text = "Distance";
+            label111.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F1PeakY
+            // 
+            F1PeakY.BackColor = Color.Gray;
+            F1PeakY.Location = new Point(706, 107);
+            F1PeakY.Name = "F1PeakY";
+            F1PeakY.Size = new Size(85, 35);
+            F1PeakY.TabIndex = 25;
+            F1PeakY.Text = "label112";
+            F1PeakY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label115
+            // 
+            label115.BackColor = Color.LightGray;
+            label115.Location = new Point(706, 72);
+            label115.Name = "label115";
+            label115.Size = new Size(85, 35);
+            label115.TabIndex = 24;
+            label115.Text = "AreaY";
+            label115.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F1Area
+            // 
+            F1Area.BackColor = Color.Gray;
+            F1Area.Location = new Point(615, 179);
+            F1Area.Name = "F1Area";
+            F1Area.Size = new Size(85, 37);
+            F1Area.TabIndex = 23;
+            F1Area.Text = "label69";
+            F1Area.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label99
+            // 
+            label99.BackColor = Color.LightGray;
+            label99.Location = new Point(615, 142);
+            label99.Name = "label99";
+            label99.Size = new Size(85, 37);
+            label99.TabIndex = 22;
+            label99.Text = "Area";
+            label99.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F1PeakX
+            // 
+            F1PeakX.BackColor = Color.Gray;
+            F1PeakX.Location = new Point(615, 107);
+            F1PeakX.Name = "F1PeakX";
+            F1PeakX.Size = new Size(85, 35);
+            F1PeakX.TabIndex = 21;
+            F1PeakX.Text = "label100";
+            F1PeakX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label105
+            // 
+            label105.BackColor = Color.LightGray;
+            label105.Location = new Point(615, 72);
+            label105.Name = "label105";
+            label105.Size = new Size(85, 35);
+            label105.TabIndex = 20;
+            label105.Text = "AreaX";
+            label105.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F1Height
+            // 
+            F1Height.BackColor = Color.Gray;
+            F1Height.Location = new Point(524, 179);
+            F1Height.Name = "F1Height";
+            F1Height.Size = new Size(85, 37);
+            F1Height.TabIndex = 19;
+            F1Height.Text = "label59";
+            F1Height.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label60
+            // 
+            label60.BackColor = Color.LightGray;
+            label60.Location = new Point(524, 142);
+            label60.Name = "label60";
+            label60.Size = new Size(85, 37);
+            label60.TabIndex = 18;
+            label60.Text = "Height";
+            label60.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F1AreaY
+            // 
+            F1AreaY.BackColor = Color.Gray;
+            F1AreaY.Location = new Point(524, 107);
+            F1AreaY.Name = "F1AreaY";
+            F1AreaY.Size = new Size(85, 35);
+            F1AreaY.TabIndex = 17;
+            F1AreaY.Text = "label64";
+            F1AreaY.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label68
+            // 
+            label68.BackColor = Color.LightGray;
+            label68.Location = new Point(524, 72);
+            label68.Name = "label68";
+            label68.Size = new Size(85, 35);
+            label68.TabIndex = 16;
+            label68.Text = "PeakY";
+            label68.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F1Width
+            // 
+            F1Width.BackColor = Color.Gray;
+            F1Width.Location = new Point(433, 179);
+            F1Width.Name = "F1Width";
+            F1Width.Size = new Size(85, 37);
+            F1Width.TabIndex = 15;
+            F1Width.Text = "label58";
+            F1Width.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label55
+            // 
+            label55.BackColor = Color.LightGray;
+            label55.Location = new Point(433, 142);
+            label55.Name = "label55";
+            label55.Size = new Size(85, 37);
+            label55.TabIndex = 14;
+            label55.Text = "Length";
+            label55.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F1AreaX
+            // 
+            F1AreaX.BackColor = Color.Gray;
+            F1AreaX.Location = new Point(433, 107);
+            F1AreaX.Name = "F1AreaX";
+            F1AreaX.Size = new Size(85, 35);
+            F1AreaX.TabIndex = 13;
+            F1AreaX.Text = "label54";
+            F1AreaX.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label50
+            // 
+            label50.BackColor = Color.LightGray;
+            label50.Location = new Point(433, 72);
+            label50.Name = "label50";
+            label50.Size = new Size(85, 35);
+            label50.TabIndex = 12;
+            label50.Text = "PeakX";
+            label50.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F1picturebox
+            // 
+            F1picturebox.BackColor = Color.White;
+            F1picturebox.Location = new Point(144, 21);
+            F1picturebox.Name = "F1picturebox";
+            F1picturebox.Size = new Size(211, 194);
+            F1picturebox.TabIndex = 7;
+            F1picturebox.TabStop = false;
+            // 
+            // F5
+            // 
+            F5.BorderStyle = BorderStyle.FixedSingle;
+            F5.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            F5.ForeColor = Color.White;
+            F5.Location = new Point(1, 669);
+            F5.Name = "F5";
+            F5.Size = new Size(70, 143);
+            F5.TabIndex = 6;
+            F5.Text = "5";
+            F5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F4
+            // 
+            F4.BorderStyle = BorderStyle.FixedSingle;
+            F4.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            F4.ForeColor = Color.White;
+            F4.Location = new Point(1, 519);
+            F4.Name = "F4";
+            F4.Size = new Size(70, 143);
+            F4.TabIndex = 5;
+            F4.Text = "4";
+            F4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F3
+            // 
+            F3.BorderStyle = BorderStyle.FixedSingle;
+            F3.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            F3.ForeColor = Color.White;
+            F3.Location = new Point(1, 369);
+            F3.Name = "F3";
+            F3.Size = new Size(70, 143);
+            F3.TabIndex = 4;
+            F3.Text = "3";
+            F3.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F2
+            // 
+            F2.BorderStyle = BorderStyle.FixedSingle;
+            F2.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            F2.ForeColor = Color.White;
+            F2.Location = new Point(1, 220);
+            F2.Name = "F2";
+            F2.Size = new Size(70, 143);
+            F2.TabIndex = 3;
+            F2.Text = "2";
+            F2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F1
+            // 
+            F1.BorderStyle = BorderStyle.FixedSingle;
+            F1.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            F1.ForeColor = Color.White;
+            F1.Location = new Point(1, 72);
+            F1.Name = "F1";
+            F1.Size = new Size(70, 143);
+            F1.TabIndex = 2;
+            F1.Text = "1";
+            F1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            label30.BorderStyle = BorderStyle.FixedSingle;
+            label30.Font = new Font("맑은 고딕", 15F, FontStyle.Bold);
+            label30.ForeColor = Color.White;
+            label30.Location = new Point(1, 4);
+            label30.Name = "label30";
+            label30.Size = new Size(70, 64);
+            label30.TabIndex = 0;
+            label30.Text = "NO";
+            label30.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // F2picturebox
+            // 
+            F2picturebox.BackColor = Color.White;
+            F2picturebox.Location = new Point(144, 179);
+            F2picturebox.Name = "F2picturebox";
+            F2picturebox.Size = new Size(211, 194);
+            F2picturebox.TabIndex = 8;
+            F2picturebox.TabStop = false;
+            // 
+            // F3picturebox
+            // 
+            F3picturebox.BackColor = Color.White;
+            F3picturebox.Location = new Point(144, 326);
+            F3picturebox.Name = "F3picturebox";
+            F3picturebox.Size = new Size(211, 194);
+            F3picturebox.TabIndex = 9;
+            F3picturebox.TabStop = false;
+            // 
+            // F4picturebox
+            // 
+            F4picturebox.BackColor = Color.White;
+            F4picturebox.Location = new Point(144, 475);
+            F4picturebox.Name = "F4picturebox";
+            F4picturebox.Size = new Size(211, 194);
+            F4picturebox.TabIndex = 10;
+            F4picturebox.TabStop = false;
+            // 
+            // F5picturebox
+            // 
+            F5picturebox.BackColor = Color.White;
+            F5picturebox.Location = new Point(144, 622);
+            F5picturebox.Name = "F5picturebox";
+            F5picturebox.Size = new Size(211, 194);
+            F5picturebox.TabIndex = 11;
+            F5picturebox.TabStop = false;
+            // 
+            // Img46to50Label
+            // 
+            Img46to50Label.AutoSize = true;
+            Img46to50Label.BackColor = Color.DimGray;
+            Img46to50Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            Img46to50Label.ForeColor = Color.White;
+            Img46to50Label.Location = new Point(341, 48);
+            Img46to50Label.Name = "Img46to50Label";
+            Img46to50Label.Size = new Size(74, 28);
+            Img46to50Label.TabIndex = 10;
+            Img46to50Label.Text = "46~50";
+            // 
+            // Img41to45Label
+            // 
+            Img41to45Label.AutoSize = true;
+            Img41to45Label.BackColor = Color.DimGray;
+            Img41to45Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            Img41to45Label.ForeColor = Color.White;
+            Img41to45Label.Location = new Point(261, 48);
+            Img41to45Label.Name = "Img41to45Label";
+            Img41to45Label.Size = new Size(74, 28);
+            Img41to45Label.TabIndex = 9;
+            Img41to45Label.Text = "41~45";
+            // 
+            // Img36to40Label
+            // 
+            Img36to40Label.AutoSize = true;
+            Img36to40Label.BackColor = Color.DimGray;
+            Img36to40Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            Img36to40Label.ForeColor = Color.White;
+            Img36to40Label.Location = new Point(181, 48);
+            Img36to40Label.Name = "Img36to40Label";
+            Img36to40Label.Size = new Size(74, 28);
+            Img36to40Label.TabIndex = 8;
+            Img36to40Label.Text = "36~40";
+            // 
+            // Img31to35Label
+            // 
+            Img31to35Label.AutoSize = true;
+            Img31to35Label.BackColor = Color.DimGray;
+            Img31to35Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            Img31to35Label.ForeColor = Color.White;
+            Img31to35Label.Location = new Point(101, 48);
+            Img31to35Label.Name = "Img31to35Label";
+            Img31to35Label.Size = new Size(74, 28);
+            Img31to35Label.TabIndex = 7;
+            Img31to35Label.Text = "31~35";
+            // 
+            // Img26to30Label
+            // 
+            Img26to30Label.AutoSize = true;
+            Img26to30Label.BackColor = Color.DimGray;
+            Img26to30Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            Img26to30Label.ForeColor = Color.White;
+            Img26to30Label.Location = new Point(21, 48);
+            Img26to30Label.Name = "Img26to30Label";
+            Img26to30Label.Size = new Size(74, 28);
+            Img26to30Label.TabIndex = 6;
+            Img26to30Label.Text = "26~30";
+            // 
+            // Img21to25Label
+            // 
+            Img21to25Label.AutoSize = true;
+            Img21to25Label.BackColor = Color.DimGray;
+            Img21to25Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            Img21to25Label.ForeColor = Color.White;
+            Img21to25Label.Location = new Point(341, 15);
+            Img21to25Label.Name = "Img21to25Label";
+            Img21to25Label.Size = new Size(74, 28);
+            Img21to25Label.TabIndex = 5;
+            Img21to25Label.Text = "21~25";
+            // 
+            // Img16to20Label
+            // 
+            Img16to20Label.AutoSize = true;
+            Img16to20Label.BackColor = Color.DimGray;
+            Img16to20Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            Img16to20Label.ForeColor = Color.White;
+            Img16to20Label.Location = new Point(261, 15);
+            Img16to20Label.Name = "Img16to20Label";
+            Img16to20Label.Size = new Size(74, 28);
+            Img16to20Label.TabIndex = 4;
+            Img16to20Label.Text = "16~20";
+            // 
+            // Img11to15Label
+            // 
+            Img11to15Label.AutoSize = true;
+            Img11to15Label.BackColor = Color.DimGray;
+            Img11to15Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            Img11to15Label.ForeColor = Color.White;
+            Img11to15Label.Location = new Point(181, 15);
+            Img11to15Label.Name = "Img11to15Label";
+            Img11to15Label.Size = new Size(74, 28);
+            Img11to15Label.TabIndex = 3;
+            Img11to15Label.Text = "11~15";
+            // 
+            // Img6to10Label
+            // 
+            Img6to10Label.AutoSize = true;
+            Img6to10Label.BackColor = Color.DimGray;
+            Img6to10Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            Img6to10Label.ForeColor = Color.White;
+            Img6to10Label.Location = new Point(101, 15);
+            Img6to10Label.Name = "Img6to10Label";
+            Img6to10Label.Size = new Size(74, 28);
+            Img6to10Label.TabIndex = 2;
+            Img6to10Label.Text = "06~10";
+            // 
+            // Img1to5Label
+            // 
+            Img1to5Label.AutoSize = true;
+            Img1to5Label.BackColor = Color.DimGray;
+            Img1to5Label.Font = new Font("맑은 고딕", 15F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            Img1to5Label.ForeColor = Color.White;
+            Img1to5Label.Location = new Point(21, 15);
+            Img1to5Label.Name = "Img1to5Label";
+            Img1to5Label.Size = new Size(74, 28);
+            Img1to5Label.TabIndex = 1;
+            Img1to5Label.Text = "01~05";
+            // 
+            // SicngleImgCheckPanelExitButton
+            // 
+            SicngleImgCheckPanelExitButton.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            SicngleImgCheckPanelExitButton.Location = new Point(1667, 0);
+            SicngleImgCheckPanelExitButton.Name = "SicngleImgCheckPanelExitButton";
+            SicngleImgCheckPanelExitButton.Size = new Size(39, 36);
+            SicngleImgCheckPanelExitButton.TabIndex = 0;
+            SicngleImgCheckPanelExitButton.Text = "X";
+            SicngleImgCheckPanelExitButton.UseVisualStyleBackColor = true;
+            SicngleImgCheckPanelExitButton.Click += (this.SicngleImgCheckPanelExitButton_Click);
+            // 
+            // FTPSettingButton
+            // 
+            FTPSettingButton.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            FTPSettingButton.Location = new Point(1545, 19);
+            FTPSettingButton.Name = "FTPSettingButton";
+            FTPSettingButton.Size = new Size(119, 75);
+            FTPSettingButton.TabIndex = 12;
+            FTPSettingButton.Text = "FTPSetting";
+            FTPSettingButton.UseVisualStyleBackColor = true;
+            FTPSettingButton.Click += (this.FTPSettingButton_Click);
+            // 
+            // PluralStaticLabel
+            // 
+            PluralStaticLabel.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            PluralStaticLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            PluralStaticLabel.ForeColor = Color.White;
+            PluralStaticLabel.Location = new Point(547, 19);
+            PluralStaticLabel.Name = "PluralStaticLabel";
+            PluralStaticLabel.Size = new Size(173, 75);
+            PluralStaticLabel.TabIndex = 3;
+            PluralStaticLabel.Text = "복수 통계";
+            PluralStaticLabel.TextAlign = ContentAlignment.MiddleCenter;
+            PluralStaticLabel.Click += (this.PluralStaticLabel_Click);
+            // 
+            // SingleStaticLabel
+            // 
+            SingleStaticLabel.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            SingleStaticLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            SingleStaticLabel.ForeColor = Color.White;
+            SingleStaticLabel.Location = new Point(368, 19);
+            SingleStaticLabel.Name = "SingleStaticLabel";
+            SingleStaticLabel.Size = new Size(173, 75);
+            SingleStaticLabel.TabIndex = 2;
+            SingleStaticLabel.Text = "단일 통계";
+            SingleStaticLabel.TextAlign = ContentAlignment.MiddleCenter;
+            SingleStaticLabel.Click += (this.SingleStaticLabel_Click);
+            // 
+            // ListLabel
+            // 
+            ListLabel.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            ListLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            ListLabel.ForeColor = Color.White;
+            ListLabel.Location = new Point(189, 19);
+            ListLabel.Name = "ListLabel";
+            ListLabel.Size = new Size(173, 75);
+            ListLabel.TabIndex = 1;
+            ListLabel.Text = "리스트";
+            ListLabel.TextAlign = ContentAlignment.MiddleCenter;
+            ListLabel.Click += (this.ListLabel_Click);
+            // 
+            // RecipeSelectLabel
+            // 
+            RecipeSelectLabel.BackColor = Color.FromArgb((int)(byte)64, (int)(byte)64, (int)(byte)64);
+            RecipeSelectLabel.Font = new Font("맑은 고딕", 20F, FontStyle.Bold);
+            RecipeSelectLabel.ForeColor = Color.White;
+            RecipeSelectLabel.Location = new Point(10, 19);
+            RecipeSelectLabel.Name = "RecipeSelectLabel";
+            RecipeSelectLabel.Size = new Size(173, 75);
+            RecipeSelectLabel.TabIndex = 0;
+            RecipeSelectLabel.Text = "레시피";
+            RecipeSelectLabel.TextAlign = ContentAlignment.MiddleCenter;
+            RecipeSelectLabel.Click += (this.RecipeSelectLabel_Click);
             // 
             // CaldataPanel
             // 
@@ -10416,6 +12935,70 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // LockPanel
+            // 
+            LockPanel.BackColor = Color.Gainsboro;
+            LockPanel.Controls.Add(CurrentUserLabel);
+            LockPanel.Controls.Add(button1);
+            LockPanel.Controls.Add(UnlockPasswordtb);
+            LockPanel.Controls.Add(label356);
+            LockPanel.Controls.Add(ProgramExitbtr);
+            LockPanel.Location = new Point(0, 0);
+            LockPanel.Name = "LockPanel";
+            LockPanel.Size = new Size(54, 93);
+            LockPanel.TabIndex = 15;
+            LockPanel.Visible = false;
+            // 
+            // CurrentUserLabel
+            // 
+            CurrentUserLabel.AutoSize = true;
+            CurrentUserLabel.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            CurrentUserLabel.Location = new Point(842, 415);
+            CurrentUserLabel.Name = "CurrentUserLabel";
+            CurrentUserLabel.Size = new Size(22, 30);
+            CurrentUserLabel.TabIndex = 4;
+            CurrentUserLabel.Text = "-";
+            CurrentUserLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(940, 497);
+            button1.Name = "button1";
+            button1.Size = new Size(61, 38);
+            button1.TabIndex = 3;
+            button1.Text = "확인";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += (this.button1_Click_1);
+            // 
+            // UnlockPasswordtb
+            // 
+            UnlockPasswordtb.Location = new Point(841, 453);
+            UnlockPasswordtb.Name = "UnlockPasswordtb";
+            UnlockPasswordtb.PasswordChar = '*';
+            UnlockPasswordtb.Size = new Size(251, 23);
+            UnlockPasswordtb.TabIndex = 2;
+            // 
+            // label356
+            // 
+            label356.AutoSize = true;
+            label356.Font = new Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, (byte)129);
+            label356.Location = new Point(842, 351);
+            label356.Name = "label356";
+            label356.Size = new Size(251, 60);
+            label356.TabIndex = 1;
+            label356.Text = "잠금 해제\r\n비밀번호를 입력해주세요\r\n";
+            label356.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ProgramExitbtr
+            // 
+            ProgramExitbtr.Location = new Point(1004, 497);
+            ProgramExitbtr.Name = "ProgramExitbtr";
+            ProgramExitbtr.Size = new Size(89, 38);
+            ProgramExitbtr.TabIndex = 0;
+            ProgramExitbtr.Text = "프로그램\r\n종료";
+            ProgramExitbtr.UseVisualStyleBackColor = true;
+            ProgramExitbtr.Click += (this.button1_Click);
+            // 
             // ViewerForm
             // 
             this.AutoScaleDimensions = new SizeF(7F, 15F);
@@ -10423,9 +13006,10 @@
             this.BackColor = Color.Black;
             this.ClientSize = new Size(1920, 1080);
             this.Controls.Add(RECIPEPanel);
+            this.Controls.Add(LoginPanel);
+            this.Controls.Add(LockPanel);
             this.Controls.Add(CaldataPanel);
             this.Controls.Add(TCPIPPanel);
-            this.Controls.Add(LoginPanel);
             this.Controls.Add(panel1);
             this.Controls.Add(TopTitlePanel);
             this.Controls.Add(WIALogoPicotureBox);
@@ -10444,11 +13028,26 @@
             IDPWChangePanel.PerformLayout();
             TCPIPPanel.ResumeLayout(false);
             RECIPEPanel.ResumeLayout(false);
+            ListPanel.ResumeLayout(false);
+            ListPanel.PerformLayout();
+            SingleStaticPanel.ResumeLayout(false);
+            SingleStaticPanel.PerformLayout();
+            SingleStaticPanel_5.ResumeLayout(false);
+            SingleStaticPanel_2.ResumeLayout(false);
+            SingleStaticPanel_4.ResumeLayout(false);
+            SingleStaticPanel_4.PerformLayout();
+            SingleStaticPanel_3.ResumeLayout(false);
+            SingleStaticPanel_1.ResumeLayout(false);
+            RecipeSelectPanel.ResumeLayout(false);
             PerulStaticPanel.ResumeLayout(false);
             PerulStaticPanel.PerformLayout();
+            PerulStaticPanel_11.ResumeLayout(false);
+            PerulStaticPanel_10.ResumeLayout(false);
+            PerulStaticPanel_9.ResumeLayout(false);
+            PerulStaticPanel_8.ResumeLayout(false);
             PerulStaticPanel_7.ResumeLayout(false);
-            PerulStaticPanel_5.ResumeLayout(false);
             PerulStaticPanel_6.ResumeLayout(false);
+            PerulStaticPanel_5.ResumeLayout(false);
             PerulStaticPanel_4.ResumeLayout(false);
             PerulStaticPanel_3.ResumeLayout(false);
             PerulStaticPanel_2.ResumeLayout(false);
@@ -10467,14 +13066,6 @@
             ((System.ComponentModel.ISupportInitialize)F3picturebox).EndInit();
             ((System.ComponentModel.ISupportInitialize)F4picturebox).EndInit();
             ((System.ComponentModel.ISupportInitialize)F5picturebox).EndInit();
-            ListPanel.ResumeLayout(false);
-            RecipeSelectPanel.ResumeLayout(false);
-            SingleStaticPanel.ResumeLayout(false);
-            SingleStaticPanel.PerformLayout();
-            SingleStaticPanel_4.ResumeLayout(false);
-            SingleStaticPanel_1.ResumeLayout(false);
-            SingleStaticPanel_2.ResumeLayout(false);
-            SingleStaticPanel_3.ResumeLayout(false);
             CaldataPanel.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -10482,6 +13073,8 @@
             ((System.ComponentModel.ISupportInitialize)RearOriginPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)FrontCalResult).EndInit();
             ((System.ComponentModel.ISupportInitialize)RearCalResult).EndInit();
+            LockPanel.ResumeLayout(false);
+            LockPanel.PerformLayout();
             this.ResumeLayout(false);
         }
 
@@ -10802,8 +13395,6 @@
         private Button SingleStaticPanelCountDownButton;
         private Button SingleStaticPanelCountUpButton;
         private Panel SingleStaticPanel_1;
-        private Label label38;
-        private Label label37;
         private ScottPlot.WinForms.FormsPlot DecelerationPeakY;
         private ScottPlot.WinForms.FormsPlot DecelerationPeakX;
         private ScottPlot.WinForms.FormsPlot AccelerationPeakY;
@@ -10875,13 +13466,6 @@
         private Label label262;
         private Label label264;
         private Label label266;
-        private Panel SingleStaticPanel_3;
-        private Label label351;
-        private Label label352;
-        private ScottPlot.WinForms.FormsPlot DecelerationPatternY;
-        private ScottPlot.WinForms.FormsPlot DecelerationPatternX;
-        private ScottPlot.WinForms.FormsPlot AccelerationPatternY;
-        private ScottPlot.WinForms.FormsPlot AccelerationPatternX;
         private Panel SingleStaticPanel_2;
         private Label ACWidth_Grade;
         private Label ACWidth_ROUT;
@@ -10901,8 +13485,6 @@
         private Label label418;
         private Label label419;
         private Label label420;
-        private Label label421;
-        private Label label422;
         private ScottPlot.WinForms.FormsPlot AccelerationWidth;
         private Label DCArea_ROUT;
         private Label DCArea_Sum;
@@ -11029,18 +13611,13 @@
         private FlowLayoutPanel PlurerFlowPanel1;
         private Label label17;
         private Label label16;
-        private Label label19;
         private Label label18;
         private Label label20;
-        private Label label133;
-        private Label label160;
-        private Label label166;
         private Label label24;
         private Label label23;
         private Label label22;
         private Label label21;
         private Label label236;
-        private Label label168;
         private Label DCFinalGradelabel;
         private Label ACFinalGradelabel;
         private Panel SingleStaticPanel_4;
@@ -11113,61 +13690,258 @@
         private Label label326;
         private Label label325;
         private Label label324;
-        private Label label337;
-        private Label label343;
         private Label label329;
         private Panel PerulStaticPanel_1;
         private FlowLayoutPanel PlurerFlowPanel2;
         private Panel PerulStaticPanel_2;
-        private Label label384;
-        private Label label344;
-        private Label label345;
-        private Label label346;
-        private Label label347;
-        private Label label348;
-        private Label label349;
-        private Label label350;
-        private Label label353;
-        private Label label354;
-        private Label label355;
-        private Label label357;
-        private Label label365;
-        private Label label366;
-        private Label label367;
-        private Label label368;
-        private Label label369;
-        private Label label381;
-        private Label label382;
-        private Label label383;
         private Button PluerPageUpbtr;
         private Button PluerPageDownbtr;
         private Panel PerulStaticPanel_3;
+        private ScottPlot.WinForms.FormsPlot ACPeakYScorePlot;
+        private ScottPlot.WinForms.FormsPlot ACPeakXScorePlot;
+        private Label LockButton;
+        private Panel LockPanel;
+        private Button ProgramExitbtr;
+        private Label label356;
+        private Button button1;
+        private TextBox UnlockPasswordtb;
+        private Label CurrentUserLabel;
+        private Label label125;
+        private Panel SingleStaticPanel_3;
+        private Label label351;
+        private Label label352;
+        private Label label385;
+        private Label label387;
+        private Label label388;
+        private Label label389;
+        private Label label390;
+        private Label label391;
+        private Label label403;
+        private Label label404;
+        private Label label405;
+        private Label label406;
+        private Label label407;
+        private Label label423;
+        private Label label424;
+        private Label label425;
+        private Label label426;
+        private Label label427;
+        private Label label428;
+        private Label label450;
+        private Label label451;
+        private Label label456;
+        private Label label457;
+        private Label label458;
+        private Label label459;
+        private Label label460;
+        private Label label461;
+        private Label label462;
+        private Label label463;
+        private Label label464;
+        private Label label465;
+        private Label label466;
+        private ScottPlot.WinForms.FormsPlot DecelerationDistance;
+        private ScottPlot.WinForms.FormsPlot DecelerationAreaY;
+        private ScottPlot.WinForms.FormsPlot DecelerationAreaX;
+        private Label label467;
+        private Label label468;
+        private Label label469;
+        private Label label470;
+        private Label label471;
+        private Label label472;
+        private Label label473;
+        private Label label474;
+        private Label label475;
+        private Label label476;
+        private Label label477;
+        private Label label478;
+        private Label label479;
+        private Label label480;
+        private Label label481;
+        private Label label482;
+        private Label label483;
+        private Label label484;
+        private Label label485;
+        private Label label486;
+        private Label label487;
+        private Label label488;
+        private Label label489;
+        private Label label490;
+        private Label label491;
+        private Label label492;
+        private Label label493;
+        private Label label494;
+        private Label label495;
+        private Label label496;
+        private Label label497;
+        private Label label498;
+        private Label label499;
+        private Label label500;
+        private Label label501;
+        private Label label502;
+        private Label label503;
+        private Label label504;
+        private Label label505;
+        private Label label506;
+        private Label label507;
+        private Label label508;
+        private Label label509;
+        private Label label510;
+        private Label label511;
+        private Label label512;
+        private Label label513;
+        private Label label514;
+        private ScottPlot.WinForms.FormsPlot AccelerationDistance;
+        private ScottPlot.WinForms.FormsPlot AccelerationAreaY;
+        private ScottPlot.WinForms.FormsPlot AccelerationAreaX;
+        private Label label515;
+        private Label label516;
+        private Label label517;
+        private Label label518;
+        private Label label519;
+        private Label label520;
+        private Label label521;
+        private Label label522;
+        private Label label523;
+        private Label label524;
+        private Label label525;
+        private Label label526;
+        private Label label527;
+        private Label label528;
+        private Label label529;
+        private Label label530;
+        private Label label531;
+        private Label label532;
+        private Label label543;
+        private Label label544;
+        private Label label545;
+        private Label label546;
+        private Label label547;
+        private Label label548;
+        private Label label549;
+        private Label label550;
+        private Label label551;
+        private Label label552;
+        private Label label553;
+        private Label label554;
+        private Label label537;
+        private Label label538;
+        private Label label539;
+        private Label label540;
+        private Label label541;
+        private Label label542;
+        private Label label421;
+        private Label label422;
+        private Label label533;
+        private Label label534;
+        private Label label535;
+        private Label label536;
+        private Label label555;
+        private Label label556;
+        private Label label557;
+        private Label label558;
+        private Label label559;
+        private Label label560;
+        private Label label561;
+        private Label label562;
+        private Label label563;
+        private Label label564;
+        private Label label565;
+        private Label label568;
+        private Label label566;
+        private Label label567;
+        private Label label19;
+        private Label label37;
+        private Label label38;
+        private Label label133;
+        private Label label160;
+        private Label label166;
+        private Label label168;
+        private Label label337;
+        private Label label343;
+        private Label label569;
+        private Label label570;
+        private Label label571;
+        private Label label344;
+        private Label label345;
+        private Label label381;
+        private Label label346;
+        private Label label579;
+        private Label label347;
+        private Label label578;
+        private Label label348;
+        private Label label577;
+        private Label label349;
+        private Label label576;
+        private Label label350;
+        private Label label574;
+        private Label label354;
+        private Label label573;
+        private Label label355;
+        private Label label572;
+        private Label label357;
+        private Label label384;
+        private Label label365;
+        private Label label383;
+        private Label label366;
+        private Label label382;
+        private Label label367;
+        private Label label369;
+        private Label label368;
+        private ScottPlot.WinForms.FormsPlot ACAreaYScorePlot;
+        private ScottPlot.WinForms.FormsPlot ACAreaXScorePlot;
+        private Panel PerulStaticPanel_4;
+        private ScottPlot.WinForms.FormsPlot ACDistanceScorePlot;
         private ScottPlot.WinForms.FormsPlot ACAreaScorePlot;
         private ScottPlot.WinForms.FormsPlot ACHeightScorePlot;
         private ScottPlot.WinForms.FormsPlot ACWidthScorePlot;
-        private ScottPlot.WinForms.FormsPlot ACPeakYScorePlot;
-        private ScottPlot.WinForms.FormsPlot ACPeakXScorePlot;
-        private Panel PerulStaticPanel_4;
+        private Panel PerulStaticPanel_5;
+        private ScottPlot.WinForms.FormsPlot ACAreaYMADPlot;
+        private ScottPlot.WinForms.FormsPlot ACAreaXMADPlot;
+        private ScottPlot.WinForms.FormsPlot ACPeakYMADPlot;
+        private ScottPlot.WinForms.FormsPlot ACPeakXMADPlot;
+        private Panel PerulStaticPanel_6;
+        private ScottPlot.WinForms.FormsPlot ACDistanceMADPlot;
         private ScottPlot.WinForms.FormsPlot ACAreaMADPlot;
         private ScottPlot.WinForms.FormsPlot ACHeightMADPlot;
         private ScottPlot.WinForms.FormsPlot ACWidthMADPlot;
-        private ScottPlot.WinForms.FormsPlot ACPeakYMADPlot;
-        private ScottPlot.WinForms.FormsPlot ACPeakXMADPlot;
-        private Panel PerulStaticPanel_5;
+        private Panel PerulStaticPanel_7;
+        private ScottPlot.WinForms.FormsPlot DCAreaYScorePlot;
+        private ScottPlot.WinForms.FormsPlot DCAreaXScorePlot;
+        private ScottPlot.WinForms.FormsPlot DCPeakYScorePlot;
+        private ScottPlot.WinForms.FormsPlot DCPeakXScorePlot;
+        private Panel PerulStaticPanel_8;
+        private ScottPlot.WinForms.FormsPlot DCDistanceScorePlot;
         private ScottPlot.WinForms.FormsPlot DCAreaScorePlot;
         private ScottPlot.WinForms.FormsPlot DCHeightScorePlot;
         private ScottPlot.WinForms.FormsPlot DCWidthScorePlot;
-        private ScottPlot.WinForms.FormsPlot DCPeakYScorePlot;
-        private ScottPlot.WinForms.FormsPlot DCPeakXScorePlot;
-        private Panel PerulStaticPanel_6;
+        private Panel PerulStaticPanel_9;
+        private ScottPlot.WinForms.FormsPlot DCAreaYMADPlot;
+        private ScottPlot.WinForms.FormsPlot DCAreaXMADPlot;
+        private ScottPlot.WinForms.FormsPlot DCPeakYMADPlot;
+        private ScottPlot.WinForms.FormsPlot DCPeakXMADPlot;
+        private Panel PerulStaticPanel_10;
+        private ScottPlot.WinForms.FormsPlot DCDistanceMADPlot;
         private ScottPlot.WinForms.FormsPlot DCAreaMADPlot;
         private ScottPlot.WinForms.FormsPlot DCHeightMADPlot;
         private ScottPlot.WinForms.FormsPlot DCWidthMADPlot;
-        private ScottPlot.WinForms.FormsPlot DCPeakYMADPlot;
-        private ScottPlot.WinForms.FormsPlot DCPeakXMADPlot;
-        private Panel PerulStaticPanel_7;
+        private Panel PerulStaticPanel_11;
         private ScottPlot.WinForms.FormsPlot FinalGradeCountPlot;
         private ScottPlot.WinForms.FormsPlot FinalDCGradeCountPlot;
         private ScottPlot.WinForms.FormsPlot FinalACGradeCountPlot;
+        private Button PlurStaticCSVSaveBtr;
+        private Button SingleStaticSavebtr;
+        private Panel SingleStaticPanel_5;
+        private ScottPlot.WinForms.FormsPlot SensingROUT;
+        private Label label581;
+        private Label label580;
+        private Label label575;
+        private Label label353;
+        private Label label584;
+        private Label label585;
+        private Label label582;
+        private Label label583;
+        private Button ComentSavBtr;
+        private TextBox ComentTextBox;
     }
 }
