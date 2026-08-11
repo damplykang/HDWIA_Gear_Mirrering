@@ -13,6 +13,7 @@ using System.Text.Json.Serialization;
 using System.Xml.Linq;
 using static System.Windows.Forms.DataFormats;
 using static System.Windows.Forms.LinkLabel;
+using static WIA_ViewerProgram.HistoryManager;
 
 using static WIA_ViewerProgram.HistoryManager;
 
@@ -721,14 +722,26 @@ namespace WIA_ViewerProgram
             {
                 r1Path = Path.Combine(RearPath, $"{R1.Text}.jpg");
             }
-            else
+            else if(MaxGearHallCount==46) {// 23개차이
+                AC_DC_countsub = 22;
+            }
+            else if (MaxGearHallCount == 41)
             {
                 r1Path = Path.Combine(RearPath, $"0{R1.Text}.jpg");
             }
+            else if (MaxGearHallCount == 48)
+            {
 
             if (int.Parse(R2.Text) >= 10)
             {
                 r2Path = Path.Combine(RearPath, $"{R2.Text}.jpg");
+            }
+
+
+
+            if (int.Parse(R1.Text) <= MaxGearHallCount)
+            {
+                r1_Count = ((int.Parse(R1.Text) + AC_DC_countsub) % MaxGearHallCount) + 1;
             }
             else
             {
@@ -761,20 +774,9 @@ namespace WIA_ViewerProgram
                 r5Path = Path.Combine(RearPath, $"0{R5.Text}.jpg");
             }
 
-            if (!TryLoadPicture(F1picturebox, f1Path, "Front F1")) missingImages.Add(f1Path);
-            if (!TryLoadPicture(F2picturebox, f2Path, "Front F2")) missingImages.Add(f2Path);
-            if (!TryLoadPicture(F3picturebox, f3Path, "Front F3")) missingImages.Add(f3Path);
-            if (!TryLoadPicture(F4picturebox, f4Path, "Front F4")) missingImages.Add(f4Path);
-            if (!TryLoadPicture(F5picturebox, f5Path, "Front F5")) missingImages.Add(f5Path);
-            if (!TryLoadPicture(R1picturebox, r1Path, "Rear R1")) missingImages.Add(r1Path);
-            if (!TryLoadPicture(R2picturebox, r2Path, "Rear R2")) missingImages.Add(r2Path);
-            if (!TryLoadPicture(R3picturebox, r3Path, "Rear R3")) missingImages.Add(r3Path);
-            if (!TryLoadPicture(R4picturebox, r4Path, "Rear R4")) missingImages.Add(r4Path);
-            if (!TryLoadPicture(R5picturebox, r5Path, "Rear R5")) missingImages.Add(r5Path);
-
-            if (missingImages.Count > 0)
+            if (int.Parse(R5.Text) <= MaxGearHallCount)
             {
-                ShowMissingFileWarning("이미지 파일 없음", missingImages);
+                r5_Count = ((int.Parse(R5.Text) + AC_DC_countsub) % MaxGearHallCount) + 1;
             }
         }
 
@@ -2650,6 +2652,7 @@ namespace WIA_ViewerProgram
             }
 
 
+
             double ACTotaqlScore = -1;
             double DCTotaqlScore = -1;
 
@@ -3660,6 +3663,17 @@ hline.LineWidth = 2;                              // 선 두께
                 control.Dispose();
             }
 
+            for (int i = PlurerFlowPanel2.Controls.Count - 1; i >= 0; i--)
+            {
+                Control control = PlurerFlowPanel2.Controls[i];
+
+                // 패널에서 도구 제거
+                PlurerFlowPanel2.Controls.RemoveAt(i);
+
+                // 메모리 자원 반환
+                control.Dispose();
+            }
+
 
 
             if (!EnsureLoggedIn())
@@ -3824,6 +3838,34 @@ hline.LineWidth = 2;                              // 선 두께
                     SNolabel2.Margin = LabelPadding;
                     PlurerFlowPanel2.Controls.Add(SNolabel2);
 
+
+                    //
+                    Label RoutLabel = new Label();
+                    RoutLabel.Text = $"{SensingRunOut}";
+                    RoutLabel.Name = $"ROUT{count}"; // 이후 수정해야함
+                    RoutLabel.AutoSize = false;
+                    RoutLabel.Size = new Size(58, 57);
+                    RoutLabel.Visible = true;
+                    RoutLabel.ForeColor = Color.White;
+                    RoutLabel.BackColor = Color.FromArgb(64, 64, 64);
+                    RoutLabel.TextAlign = ContentAlignment.MiddleCenter;
+                    RoutLabel.Font = new Font("맑은 고딕", 12, FontStyle.Bold);
+                    RoutLabel.Margin = LabelPadding;
+                    PlurerFlowPanel1.Controls.Add(RoutLabel);
+
+
+                    Label RoutLabel2 = new Label();
+                    RoutLabel2.Text = $"{SensingRunOut}";
+                    RoutLabel2.Name = $"ROUT{count}"; // 이후 수정해야함
+                    RoutLabel2.AutoSize = false;
+                    RoutLabel2.Size = new Size(58, 57);
+                    RoutLabel2.Visible = true;
+                    RoutLabel2.ForeColor = Color.White;
+                    RoutLabel2.BackColor = Color.FromArgb(64, 64, 64);
+                    RoutLabel2.TextAlign = ContentAlignment.MiddleCenter;
+                    RoutLabel2.Font = new Font("맑은 고딕", 12, FontStyle.Bold);
+                    RoutLabel2.Margin = LabelPadding;
+                    PlurerFlowPanel2.Controls.Add(RoutLabel2);
 
                     //
                     Label RoutLabel = new Label();
@@ -4143,6 +4185,15 @@ hline.LineWidth = 2;                              // 선 두께
                                 ACAreaOutlierCount++;
                             }
                         }
+
+                        foreach (double value in FSingleDistance)
+                        {
+                            if (value <= addRatio * FSingleDistance.Average())
+                            {
+                                ACDistanceOutlierCount++;
+                            }
+                        }
+                        double AC_OutlierRatio = ((ACAreayOutlierCount + ACAreaxOutlierCount + ACDistanceOutlierCount + ACPeakxOutlierCount + ACPeakyOutlierCount + ACWidthOutlierCount + ACHeightOutlierCount + ACAreaOutlierCount) / ((double)8 * (double)FSinglePeakX.Length)) * 100;
 
                         foreach (double value in FSingleDistance)
                         {
@@ -5225,6 +5276,21 @@ hline.LineWidth = 2;                              // 선 두께
             PerulStaticPanel_8.Location = new Point(3, 61);
             PerulStaticPanel_8.Size = new Size(1676, 700);
             PerulStaticPanel_8.Visible = true;
+
+            PerulStaticPanel_9.Location = new Point(3, 61);
+            PerulStaticPanel_9.Size = new Size(1676, 700);
+            PerulStaticPanel_9.Visible = true;
+
+            PerulStaticPanel_10.Location = new Point(3, 61);
+            PerulStaticPanel_10.Size = new Size(1676, 700);
+            PerulStaticPanel_10.Visible = true;
+
+            PerulStaticPanel_11.Location = new Point(3, 61);
+            PerulStaticPanel_11.Size = new Size(1676, 700);
+            PerulStaticPanel_11.Visible = true;
+
+
+
 
             PerulStaticPanel_9.Location = new Point(3, 61);
             PerulStaticPanel_9.Size = new Size(1676, 700);

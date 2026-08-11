@@ -1741,6 +1741,340 @@ namespace WIA_ViewerProgram
                             double Area_ROUT = Area_MaxDATA - Area_MinDATA;
 
 
+                    //--------------------------------DCDistance의 스코어 계산!-------------------------------------------------
+                    double Distance_Max_score = 0;
+                    if (Distance_Max >= 7.7)
+                    {
+                        Distance_Max_score = 0.2 * 60;
+                    }
+                    else if (Distance_Max >= 6.7)
+                    {
+                        Distance_Max_score = 0.2 * 70;
+                    }
+                    else if (Distance_Max >= 5.9)
+                    {
+                        Distance_Max_score = 0.2 * 80;
+                    }
+                    else if (Peakx_Max >= 5.1)
+                    {
+                        Distance_Max_score = 0.2 * 90;
+                    }
+                    else
+                    {
+                        Distance_Max_score = 0.2 * 100;
+                    }
+
+                    double Distance_MaxInterval_score = 0;
+                    if (Distance_MaxInterval >= 4.8)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 60;
+                    }
+                    else if (Distance_MaxInterval >= 4.3)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 70;
+                    }
+                    else if (Distance_MaxInterval >= 4.0)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 80;
+                    }
+                    else if (Distance_MaxInterval >= 3.6)
+                    {
+                        Distance_MaxInterval_score = 0.3 * 90;
+                    }
+                    else
+                    {
+                        Distance_MaxInterval_score = 0.3 * 100;
+                    }
+                    /// PEAK y 누적치 점수
+                    double Distance_nugeock_score = 0;
+                    if (Distance_nugeock >= 3.6)
+                    {
+                        Distance_nugeock_score = 0.4 * 60;
+                    }
+                    else if (Distance_nugeock >= 3.0)
+                    {
+                        Distance_nugeock_score = 0.4 * 70;
+                    }
+                    else if (Distance_nugeock >= 2.5)
+                    {
+                        Distance_nugeock_score = 0.4 * 80;
+                    }
+                    else if (Distance_nugeock >= 2.1)
+                    {
+                        Distance_nugeock_score = 0.4 * 90;
+                    }
+                    else
+                    {
+                        Distance_nugeock_score = 0.4 * 100;
+                    }
+                    //PEAK X R/OUT
+                    double Distance_ROUT_score = 0.0;
+                    if (Distance_ROUT >= 10.7)
+                    {
+                        Distance_ROUT_score = 0.1 * 60;
+                    }
+                    else if (Distance_ROUT >= 9.8)
+                    {
+                        Distance_ROUT_score = 0.1 * 70;
+                    }
+                    else if (Distance_ROUT >= 8.9)
+                    {
+                        Distance_ROUT_score = 0.1 * 80;
+                    }
+                    else if (Distance_ROUT >= 8.1)
+                    {
+                        Distance_ROUT_score = 0.1 * 90;
+                    }
+                    else
+                    {
+                        Distance_ROUT_score = 0.1 * 100;
+                    }
+                    double Distance_FinalScore = Distance_Max_score + Distance_MaxInterval_score + Distance_nugeock_score + Distance_ROUT_score;
+                    string Distance_Grade;
+                    if (Distance_FinalScore >= 96)
+                    {
+                        Distance_Grade = "A";
+                    }
+                    else if (Distance_FinalScore >= 91)
+                    {
+                        Distance_Grade = "B";
+                    }
+                    else if (Distance_FinalScore >= 86)
+                    {
+                        Distance_Grade = "C";
+                    }
+                    else if (Distance_FinalScore >= 81)
+                    {
+                        Distance_Grade = "D";
+                    }
+                    else
+                    {
+                        Distance_Grade = "E";
+                    }
+
+
+                    //--------------------------------DCAreay의 스코어 계산!-------------------------------------------------
+                    double Areay_Max_score = 0;
+                    if (Areay_Max >= 7.7)
+                    {
+                        Areay_Max_score = 0.2 * 60;
+                    }
+                    else if (Areay_Max >= 6.7)
+                    {
+                        Areay_Max_score = 0.2 * 70;
+                    }
+                    else if (Areay_Max >= 5.9)
+                    {
+                        Areay_Max_score = 0.2 * 80;
+                    }
+                    else if (Peakx_Max >= 5.1)
+                    {
+                        Areay_Max_score = 0.2 * 90;
+                    }
+                    else
+                    {
+                        Areay_Max_score = 0.2 * 100;
+                    }
+
+                    double Areay_MaxInterval_score = 0;
+                    if (Areay_MaxInterval >= 4.8)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 60;
+                    }
+                    else if (Areay_MaxInterval >= 4.3)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 70;
+                    }
+                    else if (Areay_MaxInterval >= 4.0)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 80;
+                    }
+                    else if (Areay_MaxInterval >= 3.6)
+                    {
+                        Areay_MaxInterval_score = 0.3 * 90;
+                    }
+                    else
+                    {
+                        Areay_MaxInterval_score = 0.3 * 100;
+                    }
+                    /// PEAK y 누적치 점수
+                    double Areay_nugeock_score = 0;
+                    if (Areay_nugeock >= 3.6)
+                    {
+                        Areay_nugeock_score = 0.4 * 60;
+                    }
+                    else if (Areay_nugeock >= 3.0)
+                    {
+                        Areay_nugeock_score = 0.4 * 70;
+                    }
+                    else if (Areay_nugeock >= 2.5)
+                    {
+                        Areay_nugeock_score = 0.4 * 80;
+                    }
+                    else if (Areay_nugeock >= 2.1)
+                    {
+                        Areay_nugeock_score = 0.4 * 90;
+                    }
+                    else
+                    {
+                        Areay_nugeock_score = 0.4 * 100;
+                    }
+                    //PEAK X R/OUT
+                    double Areay_ROUT_score = 0.0;
+                    if (Areay_ROUT >= 10.7)
+                    {
+                        Areay_ROUT_score = 0.1 * 60;
+                    }
+                    else if (Areay_ROUT >= 9.8)
+                    {
+                        Areay_ROUT_score = 0.1 * 70;
+                    }
+                    else if (Areay_ROUT >= 8.9)
+                    {
+                        Areay_ROUT_score = 0.1 * 80;
+                    }
+                    else if (Areay_ROUT >= 8.1)
+                    {
+                        Areay_ROUT_score = 0.1 * 90;
+                    }
+                    else
+                    {
+                        Areay_ROUT_score = 0.1 * 100;
+                    }
+                    double Areay_FinalScore = Areay_Max_score + Areay_MaxInterval_score + Areay_nugeock_score + Areay_ROUT_score;
+                    string Areay_Grade;
+                    if (Areay_FinalScore >= 96)
+                    {
+                        Areay_Grade = "A";
+                    }
+                    else if (Areay_FinalScore >= 91)
+                    {
+                        Areay_Grade = "B";
+                    }
+                    else if (Areay_FinalScore >= 86)
+                    {
+                        Areay_Grade = "C";
+                    }
+                    else if (Areay_FinalScore >= 81)
+                    {
+                        Areay_Grade = "D";
+                    }
+                    else
+                    {
+                        Areay_Grade = "E";
+                    }
+
+                    //--------------------------------DC Areax의 스코어 계산!-------------------------------------------------
+                    // Areax의 스코어 계산!
+                    double Areax_Max_score = 0;
+                    if (Areax_Max >= 18.4)
+                    {
+                        Areax_Max_score = 0.2 * 60;
+                    }
+                    else if (Areax_Max >= 16.0)
+                    {
+                        Areax_Max_score = 0.2 * 70;
+                    }
+                    else if (Areax_Max >= 13.9)
+                    {
+                        Areax_Max_score = 0.2 * 80;
+                    }
+                    else if (Areax_Max >= 12.1)
+                    {
+                        Areax_Max_score = 0.2 * 90;
+                    }
+                    else
+                    {
+                        Areax_Max_score = 0.2 * 100;
+                    }
+                    double Areax_MaxInterval_score = 0;
+                    if (Areax_MaxInterval >= 8.1)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 60;
+                    }
+                    else if (Areax_MaxInterval >= 7.4)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 70;
+                    }
+                    else if (Areax_MaxInterval >= 6.7)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 80;
+                    }
+                    else if (Areax_MaxInterval >= 6.1)
+                    {
+                        Areax_MaxInterval_score = 0.3 * 90;
+                    }
+                    else
+                    {
+                        Areax_MaxInterval_score = 0.3 * 100;
+                    }
+                    /// PEAK X 누적치
+                    double Areax_nugeock_score = 0;
+                    if (Areax_nugeock >= 8.7)
+                    {
+                        Areax_nugeock_score = 0.4 * 60;
+                    }
+                    else if (Areax_nugeock >= 7.3)
+                    {
+                        Areax_nugeock_score = 0.4 * 70;
+                    }
+                    else if (Areax_nugeock >= 6.1)
+                    {
+                        Areax_nugeock_score = 0.4 * 80;
+                    }
+                    else if (Areax_nugeock >= 6.1)
+                    {
+                        Areax_nugeock_score = 0.4 * 90;
+                    }
+                    else
+                    {
+                        Areax_nugeock_score = 0.4 * 100;
+                    }
+                    //PEAK X R/OUT
+                    double Areax_ROUT_score = 0.0;
+                    if (Areax_ROUT >= 26.7)
+                    {
+                        Areax_ROUT_score = 0.1 * 60;
+                    }
+                    else if (Areax_ROUT >= 24.3)
+                    {
+                        Areax_ROUT_score = 0.1 * 70;
+                    }
+                    else if (Areax_ROUT >= 22.1)
+                    {
+                        Areax_ROUT_score = 0.1 * 80;
+                    }
+                    else if (Areax_ROUT >= 20.1)
+                    {
+                        Areax_ROUT_score = 0.1 * 90;
+                    }
+                    else
+                    {
+                        Areax_ROUT_score = 0.1 * 100;
+                    }
+                    double Areax_FinalScore = Areax_Max_score + Areax_MaxInterval_score + Areax_nugeock_score + Areax_ROUT_score;
+                    string Areax_Grade;
+                    if (Areax_FinalScore >= 96)
+                    {
+                        Areax_Grade = "A";
+                    }
+                    else if (Areax_FinalScore >= 91)
+                    {
+                        Areax_Grade = "B";
+                    }
+                    else if (Areax_FinalScore >= 86)
+                    {
+                        Areax_Grade = "C";
+                    }
+                    else if (Areax_FinalScore >= 81)
+                    {
+                        Areax_Grade = "D";
+                    }
+                    else
+                    {
+                        Areax_Grade = "E";
+                    }
+
                             //--------------------------------DC Distance의 스코어 계산!-------------------------------------------------
                             if (!TryComputeMetricScores(CurrentModelBaseData.DC, "DC", "Distance", Distance_Max, Distance_MaxInterval, Distance_nugeock, Distance_ROUT,
                                 out double Distance_Max_score, out double Distance_MaxInterval_score, out double Distance_nugeock_score, out double Distance_ROUT_score, out double Distance_FinalScore, out string Distance_Grade))
