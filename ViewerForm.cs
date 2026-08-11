@@ -13,6 +13,7 @@ using System.Text.Json.Serialization;
 using System.Xml.Linq;
 using static System.Windows.Forms.DataFormats;
 using static System.Windows.Forms.LinkLabel;
+using static WIA_ViewerProgram.HistoryManager;
 
 using static WIA_ViewerProgram.HistoryManager;
 
@@ -320,6 +321,15 @@ namespace WIA_ViewerProgram
                 SingleStaticPanel_4.Size = new Size(1700, 746);
                 SingleStaticPanel_4.BackColor = Color.Black;
                 SingleStaticPanel_4.Visible = true;
+                SingleStaticPanel_1.Visible = false;
+                SingleStaticPanel_5.Visible = false;
+            }
+            else if (SingleStaticPanelCount == 5)
+            {
+                SingleStaticPanel_5.Location = new Point(0, 70);
+                SingleStaticPanel_5.Size = new Size(1700, 746);
+                SingleStaticPanel_5.BackColor = Color.Black;
+                SingleStaticPanel_5.Visible = true;
                 SingleStaticPanel_1.Visible = false;
                 SingleStaticPanel_2.Visible = false;
                 SingleStaticPanel_3.Visible = false;
@@ -690,14 +700,6 @@ namespace WIA_ViewerProgram
                 f2Path = Path.Combine(FrontPath, $"0{F2.Text}.jpg");
             }
 
-            if (int.Parse(F3.Text) >= 10)
-            {
-                f3Path = Path.Combine(FrontPath, $"{F3.Text}.jpg");
-            }
-            else
-            {
-                f3Path = Path.Combine(FrontPath, $"0{F3.Text}.jpg");
-            }
 
             if (int.Parse(F4.Text) >= 10)
             {
@@ -775,6 +777,104 @@ namespace WIA_ViewerProgram
             if (missingImages.Count > 0)
             {
                 ShowMissingFileWarning("이미지 파일 없음", missingImages);
+            }
+        }
+
+            if (int.Parse(F2.Text) >= 10)
+            {
+                f2Path = Path.Combine(FrontPath, $"{F2.Text}.jpg");
+            }
+            else
+            {
+                f2Path = Path.Combine(FrontPath, $"0{F2.Text}.jpg");
+            }
+
+            if (int.Parse(F3.Text) >= 10)
+            {
+                f3Path = Path.Combine(FrontPath, $"{F3.Text}.jpg");
+            }
+            else
+            {
+                f3Path = Path.Combine(FrontPath, $"0{F3.Text}.jpg");
+            }
+
+            if (int.Parse(F4.Text) >= 10)
+            {
+                f4Path = Path.Combine(FrontPath, $"{F4.Text}.jpg");
+            }
+            else
+            {
+                f4Path = Path.Combine(FrontPath, $"0{F4.Text}.jpg");
+            }
+            if (int.Parse(F5.Text) >= 10)
+            {
+                f5Path = Path.Combine(FrontPath, $"{F5.Text}.jpg");
+            }
+            else
+            {
+                f5Path = Path.Combine(FrontPath, $"0{F5.Text}.jpg");
+            }
+
+
+            if (int.Parse(R1.Text) >= 10)
+            {
+                r1Path = Path.Combine(RearPath, $"{R1.Text}.jpg");
+            }
+            else if(MaxGearHallCount==46) {// 23개차이
+                AC_DC_countsub = 22;
+            }
+            else if (MaxGearHallCount == 41)
+            {
+                r1Path = Path.Combine(RearPath, $"0{R1.Text}.jpg");
+            }
+            else if (MaxGearHallCount == 48)
+            {
+
+            if (int.Parse(R2.Text) >= 10)
+            {
+                r2Path = Path.Combine(RearPath, $"{R2.Text}.jpg");
+            }
+
+
+
+            if (int.Parse(R1.Text) <= MaxGearHallCount)
+            {
+                r1_Count = ((int.Parse(R1.Text) + AC_DC_countsub) % MaxGearHallCount) + 1;
+            }
+            else
+            {
+                r2Path = Path.Combine(RearPath, $"0{R2.Text}.jpg");
+            }
+
+            if (int.Parse(R3.Text) >= 10)
+            {
+                r3Path = Path.Combine(RearPath, $"{R3.Text}.jpg");
+            }
+            else
+            {
+                r3Path = Path.Combine(RearPath, $"0{R3.Text}.jpg");
+            }
+
+            if (int.Parse(R4.Text) >= 10)
+            {
+                r4Path = Path.Combine(RearPath, $"{R4.Text}.jpg");
+            }
+            else
+            {
+                r4Path = Path.Combine(RearPath, $"0{R4.Text}.jpg");
+            }
+            if (int.Parse(R5.Text) >= 10)
+            {
+                r5Path = Path.Combine(RearPath, $"{R5.Text}.jpg");
+            }
+            else
+            {
+                r5Path = Path.Combine(RearPath, $"0{R5.Text}.jpg");
+            }
+
+            if (int.Parse(R5.Text) <= MaxGearHallCount)
+            {
+                r5_Count = ((int.Parse(R5.Text) + AC_DC_countsub) % MaxGearHallCount) + 1;
             }
         }
 
@@ -3497,7 +3597,85 @@ hline.LineWidth = 2;                              // 선 두께
                 ys[i] = yValues[i];
             }
 
+        /* y축과 평행한 수선을 그리는 방법
+         * // Y = 2 위치에 빨간색 가로 기준선 추가
+var hline = formsPlot1.Plot.Add.HorizontalLine(2);
+hline.Color = ScottPlot.Colors.Red;               // 선 색상
+hline.LinePattern = ScottPlot.LinePattern.Dashed; // 점선 스타일
+hline.LineWidth = 2;                              // 선 두께
+         */
+        //scatert데이터 그리기!
+        private void PlotIndexScatter(FormsPlot plot, float[] yValues, int count, string yAxisLabel, double BaseValue, double RangeA, double RangeB, double RangeC, double RangeD, double RangeE)
+        {
+            plot.Plot.Clear();
+            if (count <= 0)
+            {
+                plot.Refresh();
+                return;
+            }
 
+            double[] xs = new double[count];
+            double[] ys = new double[count];
+            for (int i = 0; i < count; i++)
+            {
+                xs[i] = i + 1;
+                ys[i] = yValues[i];
+            }
+
+
+
+            //A그레이드에 범위 설정 및 그리기
+            var scatterbasevlue = plot.Plot.Add.HorizontalLine(BaseValue);
+            scatterbasevlue.Color = ScottPlot.Colors.Black;
+            scatterbasevlue.LinePattern = ScottPlot.LinePattern.Dashed;
+            scatterbasevlue.LineWidth = 1;
+
+
+            var RangeA_Top = plot.Plot.Add.HorizontalLine(BaseValue + RangeA);
+            RangeA_Top.Color = ScottPlot.Colors.Green;
+            RangeA_Top.LinePattern = ScottPlot.LinePattern.Dashed;
+            RangeA_Top.LineWidth = 1;
+            var RangeA_Bottom = plot.Plot.Add.HorizontalLine(BaseValue - RangeA);
+            RangeA_Bottom.Color = ScottPlot.Colors.Green;
+            RangeA_Bottom.LinePattern = ScottPlot.LinePattern.Dashed;
+            RangeA_Bottom.LineWidth = 1;
+
+            var RangeB_Top = plot.Plot.Add.HorizontalLine(BaseValue + RangeB);
+            RangeB_Top.Color = ScottPlot.Colors.LimeGreen;
+            RangeB_Top.LinePattern = ScottPlot.LinePattern.Dashed;
+            RangeB_Top.LineWidth = 1;
+            var RangeB_Bottom = plot.Plot.Add.HorizontalLine(BaseValue - RangeB);
+            RangeB_Bottom.Color = ScottPlot.Colors.LimeGreen;
+            RangeB_Bottom.LinePattern = ScottPlot.LinePattern.Dashed;
+            RangeB_Bottom.LineWidth = 1;
+
+            var RangeC_Top = plot.Plot.Add.HorizontalLine(BaseValue + RangeC);
+            RangeC_Top.Color = ScottPlot.Colors.Yellow;
+            RangeC_Top.LinePattern = ScottPlot.LinePattern.Dashed;
+            RangeC_Top.LineWidth = 1;
+            var RangeC_Bottom = plot.Plot.Add.HorizontalLine(BaseValue - RangeC);
+            RangeC_Bottom.Color = ScottPlot.Colors.Yellow;
+            RangeC_Bottom.LinePattern = ScottPlot.LinePattern.Dashed;
+            RangeC_Bottom.LineWidth = 1;
+
+            var RangeD_Top = plot.Plot.Add.HorizontalLine(BaseValue + RangeD);
+            RangeD_Top.Color = ScottPlot.Colors.Orange;
+            RangeD_Top.LinePattern = ScottPlot.LinePattern.Dashed;
+            RangeD_Top.LineWidth = 1;
+            var RangeD_Bottom = plot.Plot.Add.HorizontalLine(BaseValue - RangeD);
+            RangeD_Bottom.Color = ScottPlot.Colors.Orange;
+            RangeD_Bottom.LinePattern = ScottPlot.LinePattern.Dashed;
+            RangeD_Bottom.LineWidth = 1;
+
+
+            var RangeE_Top = plot.Plot.Add.HorizontalLine(BaseValue + RangeE);
+            RangeE_Top.Color = ScottPlot.Colors.Red;
+            RangeE_Top.LinePattern = ScottPlot.LinePattern.Dashed;
+            RangeE_Top.LineWidth = 1;
+            var RangeE_Bottom = plot.Plot.Add.HorizontalLine(BaseValue - RangeE);
+            RangeE_Bottom.Color = ScottPlot.Colors.Red;
+            RangeE_Bottom.LinePattern = ScottPlot.LinePattern.Dashed;
+            RangeE_Bottom.LineWidth = 1;
 
             var scatterValue = plot.Plot.Add.Scatter(xs, ys);// 이걸 한번 더하면 추가 데이터를 생성
             var tickGen = (ScottPlot.TickGenerators.NumericAutomatic)plot.Plot.Axes.Bottom.TickGenerator;
@@ -3853,6 +4031,62 @@ hline.LineWidth = 2;                              // 선 두께
                     RoutLabel2.Margin = LabelPadding;
                     PlurerFlowPanel2.Controls.Add(RoutLabel2);
 
+                    //
+                    Label RoutLabel = new Label();
+                    RoutLabel.Text = $"{SensingRunOut}";
+                    RoutLabel.Name = $"ROUT{count}"; // 이후 수정해야함
+                    RoutLabel.AutoSize = false;
+                    RoutLabel.Size = new Size(58, 57);
+                    RoutLabel.Visible = true;
+                    RoutLabel.ForeColor = Color.White;
+                    RoutLabel.BackColor = Color.FromArgb(64, 64, 64);
+                    RoutLabel.TextAlign = ContentAlignment.MiddleCenter;
+                    RoutLabel.Font = new Font("맑은 고딕", 12, FontStyle.Bold);
+                    RoutLabel.Margin = LabelPadding;
+                    PlurerFlowPanel1.Controls.Add(RoutLabel);
+
+
+                    Label RoutLabel2 = new Label();
+                    RoutLabel2.Text = $"{SensingRunOut}";
+                    RoutLabel2.Name = $"ROUT{count}"; // 이후 수정해야함
+                    RoutLabel2.AutoSize = false;
+                    RoutLabel2.Size = new Size(58, 57);
+                    RoutLabel2.Visible = true;
+                    RoutLabel2.ForeColor = Color.White;
+                    RoutLabel2.BackColor = Color.FromArgb(64, 64, 64);
+                    RoutLabel2.TextAlign = ContentAlignment.MiddleCenter;
+                    RoutLabel2.Font = new Font("맑은 고딕", 12, FontStyle.Bold);
+                    RoutLabel2.Margin = LabelPadding;
+                    PlurerFlowPanel2.Controls.Add(RoutLabel2);
+
+                    //
+                    Label RoutLabel = new Label();
+                    RoutLabel.Text = $"{SensingRunOut}";
+                    RoutLabel.Name = $"ROUT{count}"; // 이후 수정해야함
+                    RoutLabel.AutoSize = false;
+                    RoutLabel.Size = new Size(58, 57);
+                    RoutLabel.Visible = true;
+                    RoutLabel.ForeColor = Color.White;
+                    RoutLabel.BackColor = Color.FromArgb(64, 64, 64);
+                    RoutLabel.TextAlign = ContentAlignment.MiddleCenter;
+                    RoutLabel.Font = new Font("맑은 고딕", 12, FontStyle.Bold);
+                    RoutLabel.Margin = LabelPadding;
+                    PlurerFlowPanel1.Controls.Add(RoutLabel);
+
+
+                    Label RoutLabel2 = new Label();
+                    RoutLabel2.Text = $"{SensingRunOut}";
+                    RoutLabel2.Name = $"ROUT{count}"; // 이후 수정해야함
+                    RoutLabel2.AutoSize = false;
+                    RoutLabel2.Size = new Size(58, 57);
+                    RoutLabel2.Visible = true;
+                    RoutLabel2.ForeColor = Color.White;
+                    RoutLabel2.BackColor = Color.FromArgb(64, 64, 64);
+                    RoutLabel2.TextAlign = ContentAlignment.MiddleCenter;
+                    RoutLabel2.Font = new Font("맑은 고딕", 12, FontStyle.Bold);
+                    RoutLabel2.Margin = LabelPadding;
+                    PlurerFlowPanel2.Controls.Add(RoutLabel2);
+
 
 
                     string[] lines = File.ReadAllLines(ACPath);
@@ -4143,6 +4377,24 @@ hline.LineWidth = 2;                              // 선 두께
                                 ACAreaOutlierCount++;
                             }
                         }
+
+                        foreach (double value in FSingleDistance)
+                        {
+                            if (value <= addRatio * FSingleDistance.Average())
+                            {
+                                ACDistanceOutlierCount++;
+                            }
+                        }
+                        double AC_OutlierRatio = ((ACAreayOutlierCount + ACAreaxOutlierCount + ACDistanceOutlierCount + ACPeakxOutlierCount + ACPeakyOutlierCount + ACWidthOutlierCount + ACHeightOutlierCount + ACAreaOutlierCount) / ((double)8 * (double)FSinglePeakX.Length)) * 100;
+
+                        foreach (double value in FSingleDistance)
+                        {
+                            if (value <= addRatio * FSingleDistance.Average())
+                            {
+                                ACDistanceOutlierCount++;
+                            }
+                        }
+                        double AC_OutlierRatio = ((ACAreayOutlierCount + ACAreaxOutlierCount + ACDistanceOutlierCount + ACPeakxOutlierCount + ACPeakyOutlierCount + ACWidthOutlierCount + ACHeightOutlierCount + ACAreaOutlierCount) / ((double)8 * (double)FSinglePeakX.Length)) * 100;
 
                         foreach (double value in FSingleDistance)
                         {
